@@ -31,4 +31,5 @@
 - (UIImage*)imageScaleToMaxSize:(CGSize )maxSize;
 - (UIImage *)fixOrientationWithImageOrientation:(UIImageOrientation )orientation ;
 
++ (CGSize )size:(CGSize )size ThatFits:(CGSize)fitSize;
 @end

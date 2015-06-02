@@ -136,7 +136,7 @@ const static NSString *_blank = @"\t";
         [string appendString:[obj description]];
 //        [string appendString:@","];
     }
-    return string;
+    return [self replaceUnicode:string];
 
 }
 

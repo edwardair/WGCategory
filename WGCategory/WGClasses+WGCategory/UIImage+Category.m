@@ -108,6 +108,24 @@ static void addRoundedRectToPath(CGContextRef context, CGRect rect, float ovalWi
     
 }
 
+#pragma mark - 自适应size
++ (CGSize )size:(CGSize )size ThatFits:(CGSize)fitSize{
+    if (size.width==0 || size.height==0) {
+        return size;
+    }
+    if (fitSize.width==0 || fitSize.height==0) {
+        return fitSize;
+    }
+
+    float wRate = size.width/fitSize.width;
+    float hRate = size.height/fitSize.height;
+    
+    float rate = wRate>hRate?(fitSize.width/size.width):(fitSize.height/size.height);
+    
+    rate = MIN(1, rate);
+    
+    return CGSizeMake(size.width*rate, size.height*rate);
+}
 #pragma mark - UIImage 旋转
 - (UIImage *)imageRotatedByRadians:(CGFloat)radians
 {
@@ -146,6 +164,7 @@ static void addRoundedRectToPath(CGContextRef context, CGRect rect, float ovalWi
 
 #pragma mark - 处理某个特定View,只要是继承UIView的object 都可以处理,必须先import QuzrtzCore.framework
 +(UIImage*)captureView:(UIView *)theView{
+    //TODO: 截屏方法应该缺少scale检测，需要后期测试功能是否可用
     UIGraphicsBeginImageContextWithOptions(theView.bounds.size, YES, 0);
     CGContextRef context = UIGraphicsGetCurrentContext();
     [theView.layer renderInContext:context];

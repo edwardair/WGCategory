@@ -9,10 +9,14 @@
 #import <UIKit/UIKit.h>
 
 //----------------------------------
-//16进制字符串 @"ffffffff"转化为UIColor
+//16进制字符串 @"ffffffff"转化为UIColor，支持 fffffffff或者#ffffffff格式
 static inline  UIColor * colorWithHexString(NSString *str){
     if (!str || [str isEqualToString:@""]) {
         return [UIColor colorWithRed:1 green:1 blue:1 alpha:1];
+    }
+    
+    if ([str hasPrefix:@"#"]) {
+        str = [str substringToIndex:1];
     }
     
     unsigned rgba[4] = {255,255,255,255};// 默认 alpha==1
@@ -32,6 +36,15 @@ static inline  UIColor * colorWithHexString(NSString *str){
 
     UIColor *color= [UIColor colorWithRed:rgba[0]/255.0f green:rgba[1]/255.0f blue:rgba[2]/255.0f alpha:rgba[3]/255.f];
     return color;
+}
+
+//----------------------------------
+//255,255,255,255 转化为UIColor
+static inline  UIColor * colorWithRGB(float r,float g,float b){
+    return [UIColor colorWithRed:r/255.0f green:g/255.0f blue:b/255.0f alpha:255/255.f];
+}
+static inline  UIColor * colorWithRGBA(float r,float g,float b,float a){
+    return [UIColor colorWithRed:r/255.0f green:g/255.0f blue:b/255.0f alpha:a/255.f];
 }
 
 
