@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-//#import "CGPointExtension.h"
+#import "CGPointExtension.h"
 
 #import "WGFrameTest.h"
 #import "WGLog.h"
@@ -22,7 +22,6 @@
 #import "WGCheckBox.h"
 #import "WGTextView.h"
 #import "WGPopoverView.h"
-
 
 #import "NSObject+WGObject.h"
 #import "UIView+Category.h"
