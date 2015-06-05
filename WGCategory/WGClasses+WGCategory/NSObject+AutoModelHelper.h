@@ -35,7 +35,7 @@
 /**
  *  自动打印Model属性申明，简化代码
  *  仅支持NSDictionary
- *  NSDictionary 属性名称为  key+"_WGAuto"
+ *  NSDictionary 属性名称为  "WGAuto_"+key
  *  else 打印错误
  */
 + (void)autoGenerateModelPropertyWithData:(id)data;
