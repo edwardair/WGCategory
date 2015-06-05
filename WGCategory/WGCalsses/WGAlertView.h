@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-typedef void (^ AlertViewClickedAtIndex)(NSInteger buttonIndex);
+@class WGAlertView;
+typedef void (^ AlertViewClickedAtIndex)(NSInteger buttonIndex,WGAlertView *alert_);
 
 @interface WGAlertView : UIAlertView<UIAlertViewDelegate>
 - (instancetype)initWithTitle:(NSString *)title

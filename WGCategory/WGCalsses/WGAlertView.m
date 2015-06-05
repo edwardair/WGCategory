@@ -43,7 +43,7 @@
 #pragma mark - UIAlertView delegate -
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     if (_block) {
-        _block(buttonIndex);
+        _block(buttonIndex,self);
     }
 }
 
