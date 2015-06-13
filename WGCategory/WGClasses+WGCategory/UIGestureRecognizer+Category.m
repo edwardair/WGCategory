@@ -34,10 +34,10 @@
 
 #pragma mark - tag
 static const char *property_tag;
-- (int )tag{
+- (int )wg_tag{
     return [objc_getAssociatedObject(self, property_tag) intValue];
 }
-- (void)setTag:(int)tag{
+- (void)setWg_Tag:(int)tag{
     objc_setAssociatedObject(self, property_tag, @(tag), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 

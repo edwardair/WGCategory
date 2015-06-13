@@ -8,6 +8,6 @@
 
 @interface UIGestureRecognizer(Category)
 #pragma mark - tag
-- (int)tag;
-- (void)setTag:(int )tag;
+- (int)wg_tag;
+- (void)setWg_Tag:(int )tag;
 @end
