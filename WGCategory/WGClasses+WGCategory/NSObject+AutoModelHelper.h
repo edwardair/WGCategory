@@ -25,6 +25,8 @@
  
  */
 
+#define AutoPropertyNamePrefix @""  //属性前缀，可以任意自定义
+
 #import <Foundation/Foundation.h>
 
 /**
@@ -33,12 +35,22 @@
 @interface NSObject (AutoModelHelper)
 
 /**
- *  自动打印Model属性申明，简化代码
- *  仅支持NSDictionary
- *  NSDictionary 属性名称为  "WGAuto_"+key
- *  else 打印错误
+*  自动打印Model属性申明，简化代码
+*  支持字典、数组
+ 
+   注意：当data为数组时，一般服务器获取的数组中，每个value的数据结构是相同的，故默认只取第一个obj
+        如有额外情况，使用+autoFullGenerateModelPropertyWithData
+ 
+*  @param data      OC对象
+*  @param className 当前data的model类名
+*/
++ (void)autoGenerateModelPropertyWithData:(id)data ClassName:(NSString *)className;
+/**
+ *  同上
+ 
+ *  如果data为数组，则将所有value都尝试转化为model声明
  */
-+ (void)autoGenerateModelPropertyWithData:(id)data;
++ (void)autoFullGenerateModelPropertyWithData:(id)data ClassName:(NSString *)className;
 
 /**
  *   类 初始化实例后自动赋值

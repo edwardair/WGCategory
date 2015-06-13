@@ -10,7 +10,6 @@
 #import <objc/runtime.h>
 #import "WGDefines.h"
 
-#define AutoPropertyNamePrefix @""  //属性前缀
 #define PropertyDeclaration(retainType,className,propertyName) ([NSString stringWithFormat:@"@property (nonatomic,%@) %@ *%@;",[self retainTypeFromValue:retainType],className,[AutoPropertyNamePrefix stringByAppendingString:propertyName]])
 
 @implementation NSObject (AutoModelHelper)
@@ -98,16 +97,18 @@
     else
         return @"strong";//一般对象都为string类型
 }
++ (void)autoGenerateModelPropertyWithData:(id)data ClassName:(NSString *)className{
+    [self autoGenerateModelPropertyWithData:data ClassName:className Full:NO];
+}
++ (void)autoFullGenerateModelPropertyWithData:(id)data ClassName:(NSString *)className{
+    [self autoGenerateModelPropertyWithData:data ClassName:className Full:YES];
+}
 
-+ (void)autoGenerateModelPropertyWithData:(id)data{
++ (void)autoGenerateModelPropertyWithData:(id)data ClassName:(NSString *)className Full:(BOOL )full{
     
-    if (![self isEnableForData:data]) {
-        return;
-    }
+    NSMutableString *property = [NSMutableString stringWithString:@"\n\n\n"];
+    [property appendFormat:@"@interface %@:NSObject\n",className];
     
-    NSMutableString *property = [NSMutableString stringWithString:@"自动化生成Model属性声明，Model模板可在.h中复制：\n\n"];
-    [property appendString:@"@interface ClassName:NSObject\n"];
-
     if ([data isKindOfClass:[NSDictionary class]]) {
         
         NSDictionary *tmp = (NSDictionary *)data;
@@ -117,24 +118,45 @@
             
             NSString *classNameOfValue = [self publicClassNameWithValue:value];
             
+            if ([value isKindOfClass:[NSArray class]]) {
+                //如果属性对应的数据为数组，则尝试检测value的子数据是否能转化为Model的属性打印
+                [self autoGenerateModelPropertyWithData:value ClassName:[key uppercaseString]];
+            }else if([value isKindOfClass:[NSDictionary class]]){
+                //字典需要转化为属性打印，并且在data打印前面
+                [self autoGenerateModelPropertyWithData:value ClassName:[key uppercaseString]];
+
+                //如果value为字典，则此字典将会生成一个字典，属性名相应替换为key的大写状态
+                classNameOfValue = [key uppercaseString];
+                
+            }else{
+                //...其他类型，暂时不做处理
+            }
+            
             [property appendString:PropertyDeclaration(value, classNameOfValue, key)];
             [property appendString:@"\n"];
         }
         
         [property appendString:@"@end\n"];
-        [property appendString:@"@implementation ClassName \n@end"];
+        [property appendFormat:@"@implementation %@ \n@end\n\n\n",className];
         
     }
     else if([data isKindOfClass:[NSArray class]]){
-        
-        return;
+        //如果为数组，遍历数组每一个value，尝试转化为Model属性打印
+        for (id obj in data) {
+            [self autoGenerateModelPropertyWithData:obj ClassName:[NSString stringWithFormat:@"%@_%ld",className,(long)[(NSArray *)data indexOfObject:obj]]];
+            //MARK: 一般服务器获取的数组中，每个value的数据结构是相同的，故只取第一个obj
+            //如有额外情况，将break注释即可
+            break;
+        }
     }
     else {
-        
-        return;
+        //如果非字典、数组的其他类型，一般都是类似NSString的基本类型，忽略
     }
     
-    WGLogMsg(property);
+    //只有字典类型才生成model
+    if ([data isKindOfClass:[NSDictionary class]]) {
+        WGLogMsg(property);
+    }
 }
 
 #pragma mark - 一键赋值

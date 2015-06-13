@@ -36,11 +36,12 @@
     NSDictionary *dic = @{
                           @"name":@"A",
                           @"b":@{
-                                  @"array":@[@"1",@"2",@"3"]
+                                  @"array":@[@{@"ddd":@"ddddd"},@"2",@"3"],
+                                  @"dic":@{@"ccc":@"aaaa"}
                                   }
                           };
     
-    [AA autoGenerateModelPropertyWithData:dic];
+    [NSObject autoGenerateModelPropertyWithData:@[dic] ClassName:@"TEST"];
     
     
 }
