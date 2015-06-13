@@ -9,15 +9,15 @@
 #import "FirstViewController.h"
 #import "WGDefines.h"
 
-@interface TEST_B_ARRAY_0_1:NSObject
+@interface TEST_B_ARRAY_2_3:NSObject
 @property (nonatomic,copy) NSString *ddd;
 @end
-@implementation TEST_B_ARRAY_0_1
+@implementation TEST_B_ARRAY_2_3
 @end
-@interface TEST_B_ARRAY1_0:NSObject
+@interface TEST_B_ARRAY1_2:NSObject
 @property (nonatomic,copy) NSString *ddd;
 @end
-@implementation TEST_B_ARRAY1_0
+@implementation TEST_B_ARRAY1_2
 @end
 @interface TEST_B_DIC:NSObject
 @property (nonatomic,copy) NSString *ccc;
@@ -66,8 +66,15 @@
     
     [dic logWithKey:@"TEST"];
     
+    TEST *model = [dic valueToModelWithModelClassName:NSStringFromClass([TEST class])];
+    WGLogValue([model.b.array[0][0] ddd]);
     
+    id dic1 = [model valueFromModel];
     
+    WGLogFormatValue(@"%@：\n%@",NSStringFromClass([dic1 class]),dic1);
+    
+    id array2 = [model.b.array valueFromModel];
+    WGLogFormatValue(@"%@：\n%@",NSStringFromClass([array2 class]),array2);
     
     
 }

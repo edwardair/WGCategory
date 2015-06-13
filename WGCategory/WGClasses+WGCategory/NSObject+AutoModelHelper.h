@@ -11,70 +11,39 @@
  
  #pragma mark - 请求到的数据的数据模型
  @interface InformationModel:NSObject
- <
- AutoModelHelperDelegate
- >
  @property (nonatomic,copy) NSString *communitytext;
  @property (nonatomic,copy) NSString *id;
  @property (nonatomic,copy) NSString *communityid;
  @property (nonatomic,copy) NSString *communityname;
- 
- @end
+  @end
  @implementation InformationModel
  @end
  
  */
 
+/**
+ *  某些属性名，比如  description，会跟系统冲突，可以在前面加上此前缀
+ 
+     注意：不能给属性为“另一个子model”加上此字段
+ *
+ */
+#define AutoPropertyNamePrefix @"WGAuto_"
 
 #import <Foundation/Foundation.h>
 
 /**
- *  Model生成自动化帮助封装
+ *  model生成自动化帮助封装
  */
-@interface NSObject (AutoModelHelper)
-
+@interface NSObject (WGJsonModel)
 /**
-*  自动打印Model属性申明，简化代码
-*  支持字典、数组
- 
-   注意：当data为数组时，一般服务器获取的数组中，每个value的数据结构是相同的，故默认只取第一个obj
-        如有额外情况，使用+autoFullGenerateModelPropertyWithData
- 
-*  @param data      OC对象
-*  @param className 当前data的model类名
-*/
-+ (void)autoGenerateModelPropertyWithData:(id)data ClassName:(NSString *)className;
-/**
- *  同上
- 
- *  如果data为数组，则将所有value都尝试转化为model声明
+ *  通用model类型转化为NSDictionary、NSArray
  */
-+ (void)autoFullGenerateModelPropertyWithData:(id)data ClassName:(NSString *)className;
-
-/**
- *   类 初始化实例后自动赋值
- *  帮助自动化赋值
- *  注意：只有对通过 autoGenerateModelProperty方法 生成的属性才适用
- * return className的实例对象
- */
-+ (id)autoSaveValueWithData:(id)data OwnClassName:(NSString *)className;
-+ (id)autoSaveValueWithData:(id)data;
-
-/**
-*   实例赋值
- *  帮助自动化赋值
- *  注意：只有对通过 autoGenerateModelProperty方法 生成的属性才适用
- */
-- (void)autoSaveValueWithData:(id)data;
-/**
- *  模型转化为JSON
- */
-- (NSDictionary *)jsonFromModel;
+- (id )valueFromModel;
 @end
 
 
 
-#pragma mark -
+#pragma mark - 数据转model声明打印
 @interface NSArray (GENERATE_DEBUG)
 /**
  *  生成model打印
@@ -93,22 +62,32 @@
 - (NSString *)logWithKey:(NSString *)key;
 @end
 
-@interface NSArray (JsonToModel)
-
-@end
-@interface NSArray (ModelToJson)
-
+#pragma mark - value转model
+@interface NSArray (WGJsonModel)
+- (instancetype)valueToModelWithModelClassName:(NSString *)propertyAttributeName;
 @end
 
-@interface NSDictionary (JsonToModel)
-
-@end
-@interface NSDictionary (ModelToJson)
-
+@interface NSDictionary (WGJsonModel)
+- (id )valueToModelWithModelClassName:(NSString *)className;
 @end
 
 
-
+#pragma mark - model转value
+@interface NSArray (WGModelToJson)
+- (id )valueFromModel;
+@end
+@interface NSDictionary (WGModelToJson)
+- (id )valueFromModel;
+@end
+@interface NSString (WGModelToJson)
+- (id )valueFromModel;
+@end
+@interface NSNumber (WGModelToJson)
+- (id )valueFromModel;
+@end
+@interface NSValue (WGModelToJson)
+- (id )valueFromModel;
+@end
 
 
 
