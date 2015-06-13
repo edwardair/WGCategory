@@ -10,7 +10,7 @@
 #import <objc/runtime.h>
 #import "WGDefines.h"
 
-#define AutoPropertyNamePrefix @"WGAuto_"  //属性前缀
+#define AutoPropertyNamePrefix @""  //属性前缀
 #define PropertyDeclaration(retainType,className,propertyName) ([NSString stringWithFormat:@"@property (nonatomic,%@) %@ *%@;",[self retainTypeFromValue:retainType],className,[AutoPropertyNamePrefix stringByAppendingString:propertyName]])
 
 @implementation NSObject (AutoModelHelper)
@@ -107,7 +107,6 @@
     
     NSMutableString *property = [NSMutableString stringWithString:@"自动化生成Model属性声明，Model模板可在.h中复制：\n\n"];
     [property appendString:@"@interface ClassName:NSObject\n"];
-    [property appendString:@"@implementation ClassName \n@end"];
 
     if ([data isKindOfClass:[NSDictionary class]]) {
         

@@ -74,6 +74,20 @@ self = [super initWithFrame:frame]; \
 if(!self) \
 return nil;
 
+#pragma mark - 单例
+#define WGSHARED_INTERFACE \
++ (instancetype)shared;
+#define WGSHARED_IMPLEMENTATION \
++ (instancetype)shared{\
+static id instance;\
+static dispatch_once_t onceToken;\
+dispatch_once(&onceToken, ^{\
+    instance = [[[self class]alloc]init];\
+});\
+return instance;\
+}
+
+
 
 
 
