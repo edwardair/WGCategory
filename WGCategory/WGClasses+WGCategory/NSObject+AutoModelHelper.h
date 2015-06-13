@@ -14,10 +14,10 @@
  <
  AutoModelHelperDelegate
  >
- @property (nonatomic,copy) NSString *WGAuto_communitytext;
- @property (nonatomic,copy) NSString *WGAuto_id;
- @property (nonatomic,copy) NSString *WGAuto_communityid;
- @property (nonatomic,copy) NSString *WGAuto_communityname;
+ @property (nonatomic,copy) NSString *communitytext;
+ @property (nonatomic,copy) NSString *id;
+ @property (nonatomic,copy) NSString *communityid;
+ @property (nonatomic,copy) NSString *communityname;
  
  @end
  @implementation InformationModel
@@ -25,7 +25,6 @@
  
  */
 
-#define AutoPropertyNamePrefix @""  //属性前缀，可以任意自定义
 
 #import <Foundation/Foundation.h>
 
@@ -72,3 +71,50 @@
  */
 - (NSDictionary *)jsonFromModel;
 @end
+
+
+
+#pragma mark -
+@interface NSArray (GENERATE_DEBUG)
+/**
+ *  生成model打印
+ *
+ *  @param key key的大写字母形式为model的类名
+ */
+- (NSString *)logWithKey:(NSString *)key;
+@end
+
+@interface NSDictionary (GENERATE_DEBUG)
+/**
+ *  生成model打印
+ *
+ *  @param key key的大写字母形式为model的类名
+ */
+- (NSString *)logWithKey:(NSString *)key;
+@end
+
+@interface NSArray (JsonToModel)
+
+@end
+@interface NSArray (ModelToJson)
+
+@end
+
+@interface NSDictionary (JsonToModel)
+
+@end
+@interface NSDictionary (ModelToJson)
+
+@end
+
+
+
+
+
+
+
+
+
+
+
+

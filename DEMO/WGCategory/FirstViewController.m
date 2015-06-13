@@ -9,19 +9,34 @@
 #import "FirstViewController.h"
 #import "WGDefines.h"
 
-@interface A_B : NSObject
+@interface TEST_B_ARRAY_0_1:NSObject
+@property (nonatomic,copy) NSString *ddd;
+@end
+@implementation TEST_B_ARRAY_0_1
+@end
+@interface TEST_B_ARRAY1_0:NSObject
+@property (nonatomic,copy) NSString *ddd;
+@end
+@implementation TEST_B_ARRAY1_0
+@end
+@interface TEST_B_DIC:NSObject
+@property (nonatomic,copy) NSString *ccc;
+@end
+@implementation TEST_B_DIC
+@end
+@interface TEST_B:NSObject
 @property (nonatomic,strong) NSArray *array;
+@property (nonatomic,strong) NSArray *array1;
+@property (nonatomic,strong) TEST_B_DIC *dic;
 @end
-@implementation A_B
+@implementation TEST_B
 @end
-
-@interface AA : NSObject
+@interface TEST:NSObject
 @property (nonatomic,copy) NSString *name;
-@property (nonatomic,strong) A_B *b;
+@property (nonatomic,strong) TEST_B *b;
 @end
-@implementation AA
+@implementation TEST
 @end
-
 
 
 @interface FirstViewController ()
@@ -34,14 +49,25 @@
     [super viewDidLoad];
 
     NSDictionary *dic = @{
-                          @"name":@"A",
-                          @"b":@{
-                                  @"array":@[@{@"ddd":@"ddddd"},@"2",@"3"],
-                                  @"dic":@{@"ccc":@"aaaa"}
+                          @"name" : @"A",
+                          @"b" : @{
+                                  @"array" :@[
+                                          @[
+                                              @{@"ddd" : @"ddddd"
+                                                }
+                                              ]
+                                          ],
+                                  @"array1" : @[
+                                          @{@"ddd" : @"ddddd"}
+                                          ],
+                                  @"dic" : @{@"ccc" : @"aaaa"}
                                   }
                           };
     
-    [NSObject autoGenerateModelPropertyWithData:@[dic] ClassName:@"TEST"];
+    [dic logWithKey:@"TEST"];
+    
+    
+    
     
     
 }
