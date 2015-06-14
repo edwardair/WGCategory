@@ -64,33 +64,12 @@
 
 #pragma mark - value转model
 @interface NSArray (WGJsonModel)
-- (instancetype)valueToModelWithModelClassName:(NSString *)propertyAttributeName;
+- (id )valueToModelWithModelClassName:(NSString *)propertyAttributeName;
 @end
 
 @interface NSDictionary (WGJsonModel)
 - (id )valueToModelWithModelClassName:(NSString *)className;
 @end
-
-
-#pragma mark - model转value
-@interface NSArray (WGModelToJson)
-- (id )valueFromModel;
-@end
-@interface NSDictionary (WGModelToJson)
-- (id )valueFromModel;
-@end
-@interface NSString (WGModelToJson)
-- (id )valueFromModel;
-@end
-@interface NSNumber (WGModelToJson)
-- (id )valueFromModel;
-@end
-@interface NSValue (WGModelToJson)
-- (id )valueFromModel;
-@end
-
-
-
 
 
 

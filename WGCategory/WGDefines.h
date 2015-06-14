@@ -41,7 +41,7 @@
 #import "UIActionSheet+WGActionSheet.h"
 #import "UIColor+WGColor.h"
 #import "NSObject+AutoModelHelper.h"
-
+#import "NSObject+WGJSONValue.h"
 
 #pragma mark -  WGNull 默认当前项目 字符串空值时，使用什么字符串显示UI -
 //当网络客户端时，往往需要检查服务器返回的string是否为空（null），当为null时，返回@“空”，可根据实际项目需求修改

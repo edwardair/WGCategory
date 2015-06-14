@@ -178,10 +178,10 @@
 
 #pragma mark - value转model
 @implementation NSArray (JsonToModel)
-- (instancetype)valueToModelWithModelClassName:(NSString *)propertyAttributeName{
+- (id )valueToModelWithModelClassName:(NSString *)propertyAttributeName{
     return [self valueToModelWithModelClassName:propertyAttributeName Level:0];
 }
-- (instancetype)valueToModelWithModelClassName:(NSString *)propertyAttributeName Level:(int )level{
+- (id )valueToModelWithModelClassName:(NSString *)propertyAttributeName Level:(int )level{
     
     propertyAttributeName = [NSString stringWithFormat:@"%@_%d",propertyAttributeName,level];
     propertyAttributeName = [propertyAttributeName uppercaseString];
@@ -255,6 +255,23 @@
 
 
 #pragma mark - model转value
+#pragma mark - model转value
+@interface NSArray (WGModelToJson)
+- (instancetype)valueFromModel;
+@end
+@interface NSDictionary (WGModelToJson)
+- (instancetype)valueFromModel;
+@end
+@interface NSString (WGModelToJson)
+- (instancetype)valueFromModel;
+@end
+@interface NSNumber (WGModelToJson)
+- (instancetype)valueFromModel;
+@end
+@interface NSValue (WGModelToJson)
+- (instancetype)valueFromModel;
+@end
+
 @implementation NSArray (WGModelToJson)
 - (instancetype )valueFromModel{
     NSMutableArray *tmp = [NSMutableArray arrayWithCapacity:self.count];
