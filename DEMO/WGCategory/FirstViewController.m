@@ -66,17 +66,20 @@
     
     [dic logWithKey:@"TEST"];
     
-    TEST *model = [dic valueToModelWithModelClassName:NSStringFromClass([TEST class])];
+    TEST *model = [dic modelWithClass:[TEST class]];
     WGLogValue([model.b.array[0][0] ddd]);
     
-    id dic1 = [model valueFromModel];
+    id dic1 = [model modelValue];
     
     WGLogFormatValue(@"%@：\n%@",NSStringFromClass([dic1 class]),dic1);
     
-    id array2 = [model.b.array valueFromModel];
+    id array2 = [model.b.array modelValue];
     WGLogFormatValue(@"%@：\n%@",NSStringFromClass([array2 class]),array2);
     
+    WGLogWarn([self modelValue]);
     
+    NSString *str = @"aa";
+    WGLogWarn([str modelValue]);
 }
 
 - (void)didReceiveMemoryWarning {

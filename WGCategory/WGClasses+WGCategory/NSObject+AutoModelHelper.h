@@ -31,18 +31,6 @@
 
 #import <Foundation/Foundation.h>
 
-/**
- *  model生成自动化帮助封装
- */
-@interface NSObject (WGJsonModel)
-/**
- *  通用model类型转化为NSDictionary、NSArray
- */
-- (id )valueFromModel;
-@end
-
-
-
 #pragma mark - 数据转model声明打印
 @interface NSArray (GENERATE_DEBUG)
 /**
@@ -62,17 +50,15 @@
 - (NSString *)logWithKey:(NSString *)key;
 @end
 
-#pragma mark - value转model
-@interface NSArray (WGJsonModel)
-- (id )valueToModelWithModelClassName:(NSString *)propertyAttributeName;
+
+
+#pragma mark - model转value
+@interface NSObject (WGModelValue)
+/**
+ *  model转化为NSDictionary、NSArray
+ */
+- (id )modelValue;
 @end
-
-@interface NSDictionary (WGJsonModel)
-- (id )valueToModelWithModelClassName:(NSString *)className;
-@end
-
-
-
 
 
 

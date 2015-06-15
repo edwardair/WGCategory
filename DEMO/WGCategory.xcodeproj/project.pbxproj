@@ -78,6 +78,8 @@
 		F7A4F9B51B1D561600B84A4E /* WGLog.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F9771B1D561600B84A4E /* WGLog.m */; };
 		F7A4F9B61B1D561600B84A4E /* WGTextInputAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F9791B1D561600B84A4E /* WGTextInputAccessoryView.m */; };
 		F7A4F9B71B1D561600B84A4E /* WGTextInputAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F9791B1D561600B84A4E /* WGTextInputAccessoryView.m */; };
+		F7C19B081B2EA9FA00137B46 /* NSObject+WGJSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F7C19B071B2EA9FA00137B46 /* NSObject+WGJSONModel.m */; };
+		F7C19B0B1B2EAD1F00137B46 /* NSObject+WGModelValue.m in Sources */ = {isa = PBXBuildFile; fileRef = F7C19B0A1B2EAD1F00137B46 /* NSObject+WGModelValue.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -172,6 +174,10 @@
 		F7A4F9771B1D561600B84A4E /* WGLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGLog.m; sourceTree = "<group>"; };
 		F7A4F9781B1D561600B84A4E /* WGTextInputAccessoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGTextInputAccessoryView.h; sourceTree = "<group>"; };
 		F7A4F9791B1D561600B84A4E /* WGTextInputAccessoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGTextInputAccessoryView.m; sourceTree = "<group>"; };
+		F7C19B061B2EA9FA00137B46 /* NSObject+WGJSONModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+WGJSONModel.h"; sourceTree = "<group>"; };
+		F7C19B071B2EA9FA00137B46 /* NSObject+WGJSONModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+WGJSONModel.m"; sourceTree = "<group>"; };
+		F7C19B091B2EAD1F00137B46 /* NSObject+WGModelValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+WGModelValue.h"; sourceTree = "<group>"; };
+		F7C19B0A1B2EAD1F00137B46 /* NSObject+WGModelValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+WGModelValue.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -307,6 +313,10 @@
 				F7A4F94D1B1D561600B84A4E /* NSDate+Category.m */,
 				F7A4F94E1B1D561600B84A4E /* NSObject+AutoModelHelper.h */,
 				F7A4F94F1B1D561600B84A4E /* NSObject+AutoModelHelper.m */,
+				F7C19B061B2EA9FA00137B46 /* NSObject+WGJSONModel.h */,
+				F7C19B071B2EA9FA00137B46 /* NSObject+WGJSONModel.m */,
+				F7C19B091B2EAD1F00137B46 /* NSObject+WGModelValue.h */,
+				F7C19B0A1B2EAD1F00137B46 /* NSObject+WGModelValue.m */,
 				181855AA1B2DC129008AD711 /* NSObject+WGJSONValue.h */,
 				181855AB1B2DC129008AD711 /* NSObject+WGJSONValue.m */,
 				F7A4F9501B1D561600B84A4E /* NSObject+WGObject.h */,
@@ -481,11 +491,13 @@
 				F7A4F9921B1D561600B84A4E /* NSString+WGString.m in Sources */,
 				F7A4F9B01B1D561600B84A4E /* WGFrameTest.m in Sources */,
 				F7A4F9901B1D561600B84A4E /* NSObject+WGObject.m in Sources */,
+				F7C19B0B1B2EAD1F00137B46 /* NSObject+WGModelValue.m in Sources */,
 				F7A4F9981B1D561600B84A4E /* UIButton+Category.m in Sources */,
 				F7A4F98A1B1D561600B84A4E /* WGTextView.m in Sources */,
 				F7A4F9861B1D561600B84A4E /* WGLabel.m in Sources */,
 				F7A4F97A1B1D561600B84A4E /* CGPointExtension.m in Sources */,
 				F7A4F9B61B1D561600B84A4E /* WGTextInputAccessoryView.m in Sources */,
+				F7C19B081B2EA9FA00137B46 /* NSObject+WGJSONModel.m in Sources */,
 				F7A4F88F1B1D531A00B84A4E /* AppDelegate.m in Sources */,
 				F7A4F9801B1D561600B84A4E /* WGCheckBox.m in Sources */,
 				F7A4F99A1B1D561600B84A4E /* UIColor+WGColor.m in Sources */,
