@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		181855AC1B2DC129008AD711 /* NSObject+WGJSONValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 181855AB1B2DC129008AD711 /* NSObject+WGJSONValue.m */; };
 		F7A4F88C1B1D531A00B84A4E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F88B1B1D531A00B84A4E /* main.m */; };
 		F7A4F88F1B1D531A00B84A4E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F88E1B1D531A00B84A4E /* AppDelegate.m */; };
 		F7A4F8921B1D531A00B84A4E /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F8911B1D531A00B84A4E /* FirstViewController.m */; };
@@ -36,8 +35,6 @@
 		F7A4F98B1B1D561600B84A4E /* WGTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F94A1B1D561600B84A4E /* WGTextView.m */; };
 		F7A4F98C1B1D561600B84A4E /* NSDate+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F94D1B1D561600B84A4E /* NSDate+Category.m */; };
 		F7A4F98D1B1D561600B84A4E /* NSDate+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F94D1B1D561600B84A4E /* NSDate+Category.m */; };
-		F7A4F98E1B1D561600B84A4E /* NSObject+AutoModelHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F94F1B1D561600B84A4E /* NSObject+AutoModelHelper.m */; };
-		F7A4F98F1B1D561600B84A4E /* NSObject+AutoModelHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F94F1B1D561600B84A4E /* NSObject+AutoModelHelper.m */; };
 		F7A4F9901B1D561600B84A4E /* NSObject+WGObject.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F9511B1D561600B84A4E /* NSObject+WGObject.m */; };
 		F7A4F9911B1D561600B84A4E /* NSObject+WGObject.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F9511B1D561600B84A4E /* NSObject+WGObject.m */; };
 		F7A4F9921B1D561600B84A4E /* NSString+WGString.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F9531B1D561600B84A4E /* NSString+WGString.m */; };
@@ -78,8 +75,10 @@
 		F7A4F9B51B1D561600B84A4E /* WGLog.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F9771B1D561600B84A4E /* WGLog.m */; };
 		F7A4F9B61B1D561600B84A4E /* WGTextInputAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F9791B1D561600B84A4E /* WGTextInputAccessoryView.m */; };
 		F7A4F9B71B1D561600B84A4E /* WGTextInputAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F9791B1D561600B84A4E /* WGTextInputAccessoryView.m */; };
-		F7C19B081B2EA9FA00137B46 /* NSObject+WGJSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F7C19B071B2EA9FA00137B46 /* NSObject+WGJSONModel.m */; };
-		F7C19B0B1B2EAD1F00137B46 /* NSObject+WGModelValue.m in Sources */ = {isa = PBXBuildFile; fileRef = F7C19B0A1B2EAD1F00137B46 /* NSObject+WGModelValue.m */; };
+		F7C19BC61B2EB06100137B46 /* NSObject+AutoModelHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = F7C19BBF1B2EB06100137B46 /* NSObject+AutoModelHelper.m */; };
+		F7C19BC71B2EB06100137B46 /* NSObject+WGJSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F7C19BC11B2EB06100137B46 /* NSObject+WGJSONModel.m */; };
+		F7C19BC81B2EB06100137B46 /* NSObject+WGJSONValue.m in Sources */ = {isa = PBXBuildFile; fileRef = F7C19BC31B2EB06100137B46 /* NSObject+WGJSONValue.m */; };
+		F7C19BC91B2EB06100137B46 /* NSObject+WGModelValue.m in Sources */ = {isa = PBXBuildFile; fileRef = F7C19BC51B2EB06100137B46 /* NSObject+WGModelValue.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,8 +92,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		181855AA1B2DC129008AD711 /* NSObject+WGJSONValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+WGJSONValue.h"; sourceTree = "<group>"; };
-		181855AB1B2DC129008AD711 /* NSObject+WGJSONValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+WGJSONValue.m"; sourceTree = "<group>"; };
 		F7A4F8861B1D531A00B84A4E /* WGCategory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WGCategory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7A4F88A1B1D531A00B84A4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F7A4F88B1B1D531A00B84A4E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -131,8 +128,6 @@
 		F7A4F94A1B1D561600B84A4E /* WGTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGTextView.m; sourceTree = "<group>"; };
 		F7A4F94C1B1D561600B84A4E /* NSDate+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Category.h"; sourceTree = "<group>"; };
 		F7A4F94D1B1D561600B84A4E /* NSDate+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Category.m"; sourceTree = "<group>"; };
-		F7A4F94E1B1D561600B84A4E /* NSObject+AutoModelHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+AutoModelHelper.h"; sourceTree = "<group>"; };
-		F7A4F94F1B1D561600B84A4E /* NSObject+AutoModelHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+AutoModelHelper.m"; sourceTree = "<group>"; };
 		F7A4F9501B1D561600B84A4E /* NSObject+WGObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+WGObject.h"; sourceTree = "<group>"; };
 		F7A4F9511B1D561600B84A4E /* NSObject+WGObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+WGObject.m"; sourceTree = "<group>"; };
 		F7A4F9521B1D561600B84A4E /* NSString+WGString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+WGString.h"; sourceTree = "<group>"; };
@@ -174,10 +169,14 @@
 		F7A4F9771B1D561600B84A4E /* WGLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGLog.m; sourceTree = "<group>"; };
 		F7A4F9781B1D561600B84A4E /* WGTextInputAccessoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGTextInputAccessoryView.h; sourceTree = "<group>"; };
 		F7A4F9791B1D561600B84A4E /* WGTextInputAccessoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGTextInputAccessoryView.m; sourceTree = "<group>"; };
-		F7C19B061B2EA9FA00137B46 /* NSObject+WGJSONModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+WGJSONModel.h"; sourceTree = "<group>"; };
-		F7C19B071B2EA9FA00137B46 /* NSObject+WGJSONModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+WGJSONModel.m"; sourceTree = "<group>"; };
-		F7C19B091B2EAD1F00137B46 /* NSObject+WGModelValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+WGModelValue.h"; sourceTree = "<group>"; };
-		F7C19B0A1B2EAD1F00137B46 /* NSObject+WGModelValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+WGModelValue.m"; sourceTree = "<group>"; };
+		F7C19BBE1B2EB06100137B46 /* NSObject+AutoModelHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+AutoModelHelper.h"; sourceTree = "<group>"; };
+		F7C19BBF1B2EB06100137B46 /* NSObject+AutoModelHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+AutoModelHelper.m"; sourceTree = "<group>"; };
+		F7C19BC01B2EB06100137B46 /* NSObject+WGJSONModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+WGJSONModel.h"; sourceTree = "<group>"; };
+		F7C19BC11B2EB06100137B46 /* NSObject+WGJSONModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+WGJSONModel.m"; sourceTree = "<group>"; };
+		F7C19BC21B2EB06100137B46 /* NSObject+WGJSONValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+WGJSONValue.h"; sourceTree = "<group>"; };
+		F7C19BC31B2EB06100137B46 /* NSObject+WGJSONValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+WGJSONValue.m"; sourceTree = "<group>"; };
+		F7C19BC41B2EB06100137B46 /* NSObject+WGModelValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+WGModelValue.h"; sourceTree = "<group>"; };
+		F7C19BC51B2EB06100137B46 /* NSObject+WGModelValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+WGModelValue.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -309,16 +308,9 @@
 		F7A4F94B1B1D561600B84A4E /* WGClasses+WGCategory */ = {
 			isa = PBXGroup;
 			children = (
+				F7C19BBD1B2EB06100137B46 /* WGJSONModel */,
 				F7A4F94C1B1D561600B84A4E /* NSDate+Category.h */,
 				F7A4F94D1B1D561600B84A4E /* NSDate+Category.m */,
-				F7A4F94E1B1D561600B84A4E /* NSObject+AutoModelHelper.h */,
-				F7A4F94F1B1D561600B84A4E /* NSObject+AutoModelHelper.m */,
-				F7C19B061B2EA9FA00137B46 /* NSObject+WGJSONModel.h */,
-				F7C19B071B2EA9FA00137B46 /* NSObject+WGJSONModel.m */,
-				F7C19B091B2EAD1F00137B46 /* NSObject+WGModelValue.h */,
-				F7C19B0A1B2EAD1F00137B46 /* NSObject+WGModelValue.m */,
-				181855AA1B2DC129008AD711 /* NSObject+WGJSONValue.h */,
-				181855AB1B2DC129008AD711 /* NSObject+WGJSONValue.m */,
 				F7A4F9501B1D561600B84A4E /* NSObject+WGObject.h */,
 				F7A4F9511B1D561600B84A4E /* NSObject+WGObject.m */,
 				F7A4F9521B1D561600B84A4E /* NSString+WGString.h */,
@@ -368,6 +360,21 @@
 				F7A4F9791B1D561600B84A4E /* WGTextInputAccessoryView.m */,
 			);
 			path = WGFunctions;
+			sourceTree = "<group>";
+		};
+		F7C19BBD1B2EB06100137B46 /* WGJSONModel */ = {
+			isa = PBXGroup;
+			children = (
+				F7C19BBE1B2EB06100137B46 /* NSObject+AutoModelHelper.h */,
+				F7C19BBF1B2EB06100137B46 /* NSObject+AutoModelHelper.m */,
+				F7C19BC01B2EB06100137B46 /* NSObject+WGJSONModel.h */,
+				F7C19BC11B2EB06100137B46 /* NSObject+WGJSONModel.m */,
+				F7C19BC21B2EB06100137B46 /* NSObject+WGJSONValue.h */,
+				F7C19BC31B2EB06100137B46 /* NSObject+WGJSONValue.m */,
+				F7C19BC41B2EB06100137B46 /* NSObject+WGModelValue.h */,
+				F7C19BC51B2EB06100137B46 /* NSObject+WGModelValue.m */,
+			);
+			path = WGJSONModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -473,11 +480,12 @@
 				F7A4F9941B1D561600B84A4E /* NSTimer+WGTimer.m in Sources */,
 				F7A4F99E1B1D561600B84A4E /* UIDevice+Category.m in Sources */,
 				F7A4F9B41B1D561600B84A4E /* WGLog.m in Sources */,
-				F7A4F98E1B1D561600B84A4E /* NSObject+AutoModelHelper.m in Sources */,
+				F7C19BC81B2EB06100137B46 /* NSObject+WGJSONValue.m in Sources */,
 				F7A4F9841B1D561600B84A4E /* WGCoreTextView.m in Sources */,
 				F7A4F9821B1D561600B84A4E /* WGControl.m in Sources */,
 				F7A4F9A81B1D561600B84A4E /* UITextField+Category.m in Sources */,
 				F7A4F9AE1B1D561600B84A4E /* UIViewController+Category.m in Sources */,
+				F7C19BC91B2EB06100137B46 /* NSObject+WGModelValue.m in Sources */,
 				F7A4F98C1B1D561600B84A4E /* NSDate+Category.m in Sources */,
 				F7A4F97E1B1D561600B84A4E /* WGAlertView.m in Sources */,
 				F7A4F9A61B1D561600B84A4E /* UILabel+Category.m in Sources */,
@@ -491,17 +499,16 @@
 				F7A4F9921B1D561600B84A4E /* NSString+WGString.m in Sources */,
 				F7A4F9B01B1D561600B84A4E /* WGFrameTest.m in Sources */,
 				F7A4F9901B1D561600B84A4E /* NSObject+WGObject.m in Sources */,
-				F7C19B0B1B2EAD1F00137B46 /* NSObject+WGModelValue.m in Sources */,
+				F7C19BC61B2EB06100137B46 /* NSObject+AutoModelHelper.m in Sources */,
 				F7A4F9981B1D561600B84A4E /* UIButton+Category.m in Sources */,
 				F7A4F98A1B1D561600B84A4E /* WGTextView.m in Sources */,
 				F7A4F9861B1D561600B84A4E /* WGLabel.m in Sources */,
 				F7A4F97A1B1D561600B84A4E /* CGPointExtension.m in Sources */,
 				F7A4F9B61B1D561600B84A4E /* WGTextInputAccessoryView.m in Sources */,
-				F7C19B081B2EA9FA00137B46 /* NSObject+WGJSONModel.m in Sources */,
+				F7C19BC71B2EB06100137B46 /* NSObject+WGJSONModel.m in Sources */,
 				F7A4F88F1B1D531A00B84A4E /* AppDelegate.m in Sources */,
 				F7A4F9801B1D561600B84A4E /* WGCheckBox.m in Sources */,
 				F7A4F99A1B1D561600B84A4E /* UIColor+WGColor.m in Sources */,
-				181855AC1B2DC129008AD711 /* NSObject+WGJSONValue.m in Sources */,
 				F7A4F8921B1D531A00B84A4E /* FirstViewController.m in Sources */,
 				F7A4F88C1B1D531A00B84A4E /* main.m in Sources */,
 				F7A4F9881B1D561600B84A4E /* WGPopoverView.m in Sources */,
@@ -528,7 +535,6 @@
 				F7A4F9A91B1D561600B84A4E /* UITextField+Category.m in Sources */,
 				F7A4F9A11B1D561600B84A4E /* UIGestureRecognizer+Category.m in Sources */,
 				F7A4F9911B1D561600B84A4E /* NSObject+WGObject.m in Sources */,
-				F7A4F98F1B1D561600B84A4E /* NSObject+AutoModelHelper.m in Sources */,
 				F7A4F9851B1D561600B84A4E /* WGCoreTextView.m in Sources */,
 				F7A4F9B71B1D561600B84A4E /* WGTextInputAccessoryView.m in Sources */,
 				F7A4F99D1B1D561600B84A4E /* UIControl+Category.m in Sources */,

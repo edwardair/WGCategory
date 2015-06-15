@@ -23,7 +23,7 @@ model;                                                                     \
 @interface NSObject (WGJSONModel)
 /**
  *  生成model
- 注意：如果value==nil，则会返回nil
+ 注意：如果value==nil，则会返回nil，可以使用MODELWITHVALUE(value, class)宏来确保返回非nil
  *
  *  @param class 需要转化的model的类
  *
@@ -32,7 +32,7 @@ model;                                                                     \
 - (id )modelWithClass:(Class )class;
 /**
  *  生成model
- 注意：如果value==nil，则会返回nil
+ 注意：如果value==nil，则会返回nil，可以使用MODELWITHVALUE(value, class)宏来确保返回非nil
  *
  *  @param className 需要转化的model的类名
  *
