@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-#pragma mark - json解析
+#pragma mark - json解析转value
 @interface NSString(WGJSONValue)
 - (id )JSONValue;
 @end

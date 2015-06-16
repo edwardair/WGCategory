@@ -48,7 +48,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    NSDictionary *dic = @{
+    id dic = @{
                           @"name" : @"A",
                           @"b" : @{
                                   @"array" :@[

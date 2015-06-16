@@ -54,7 +54,7 @@
 @interface NSDictionary (WGModelValue)
 - (instancetype)modelValue;
 @end
-@implementation NSDictionary (WGModelToJson)
+@implementation NSDictionary (WGModelValue)
 - (instancetype )modelValue{
     return self;
 }
@@ -64,7 +64,7 @@
 @interface NSString (WGModelValue)
 - (instancetype)modelValue;
 @end
-@implementation NSString (WGModelToJson)
+@implementation NSString (WGModelValue)
 - (instancetype )modelValue{
     return self;
 }
@@ -74,7 +74,7 @@
 @interface NSNumber (WGModelValue)
 - (instancetype)modelValue;
 @end
-@implementation NSNumber (WGModelToJson)
+@implementation NSNumber (WGModelValue)
 - (instancetype )modelValue{
     return self;
 }
@@ -84,7 +84,7 @@
 @interface NSValue (WGModelValue)
 - (instancetype)modelValue;
 @end
-@implementation NSValue (WGModelToJson)
+@implementation NSValue (WGModelValue)
 - (instancetype )modelValue{
     return self;
 }

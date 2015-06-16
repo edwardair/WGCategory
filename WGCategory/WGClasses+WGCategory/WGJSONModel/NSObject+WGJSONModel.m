@@ -23,6 +23,9 @@
 
 #pragma mark -
 @implementation NSArray (WGJSONModel)
+- (id)modelWithClass:(Class)class{
+    return [self modelWithClassName:NSStringFromClass(class)];
+}
 - (id )modelWithClassName:(NSString *)propertyAttributeName{
     return [self modelWithClassName:propertyAttributeName Level:0];
 }
@@ -49,6 +52,10 @@
 
 #pragma mark -
 @implementation NSDictionary (WGJSONModel)
+- (id)modelWithClass:(Class)class{
+    return [self modelWithClassName:NSStringFromClass(class)];
+}
+
 - (id )modelWithClassName:(NSString *)className{
     return [self modelWithClassName:className Level:0];
 }
@@ -70,7 +77,6 @@
         //model属性名
         const char* propertyName_CStr = property_getName(properties[i]);
         NSString *propertyName_NSString = [NSString stringWithFormat:@"%s",propertyName_CStr];
-        
         //数据源中的key
         NSString *dataKeyString = propertyName_NSString;
         if (AutoPropertyNamePrefix.length && [dataKeyString hasPrefix:AutoPropertyNamePrefix]) {
@@ -81,7 +87,10 @@
         
         //检测value是否为null，跳过此value的赋值
         if (value) {
-            
+            if ([dataKeyString isEqualToString:@"description"]) {
+                
+            }
+
             if ([value respondsToSelector:@selector(modelWithClassName:Level:)]) {
                 //需要递归转化model
                 value = [value modelWithClassName:[NSString stringWithFormat:@"%@_%@",className,propertyName_NSString] Level:level+1];

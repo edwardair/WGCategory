@@ -52,13 +52,3 @@
 
 
 
-#pragma mark - model转value
-@interface NSObject (WGModelValue)
-/**
- *  model转化为NSDictionary、NSArray
- */
-- (id )modelValue;
-@end
-
-
-
