@@ -7,6 +7,6 @@
 //
 
 #import "WGDefines.h"
-@interface UIControl (Category)
+@interface UIControl (WGCategory)
 
 @end

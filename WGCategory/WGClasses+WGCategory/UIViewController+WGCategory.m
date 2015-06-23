@@ -18,7 +18,7 @@
 @end
 
 #pragma mark - UIViewController
-@implementation UIViewController (Category)
+@implementation UIViewController (WGCategory)
 
 #ifdef InFrameTestMode
 

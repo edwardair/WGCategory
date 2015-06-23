@@ -7,7 +7,7 @@
 //
 
 
-@interface UIViewController (Category)
+@interface UIViewController (WGCategory)
 - (void)disableAutoAdjustScrollViewInsets;
 - (void)disableExtendedLayoutFull;
 

@@ -13,7 +13,7 @@ CGRect CGRectScaleBy(CGRect rect, CGFloat scaleFactor);//按照比例缩放到�
 CGRect CGRectChangeBy(CGRect rect, CGFloat dOriginX, CGFloat dOriginY, CGFloat dWidth, CGFloat dHeight);//按照给定参数不成比例修改rect
 
 
-@interface UIView(Category)
+@interface UIView(WGCategory)
 
 @property CGPoint wg_leftOrigin;
 @property  CGSize wg_size;

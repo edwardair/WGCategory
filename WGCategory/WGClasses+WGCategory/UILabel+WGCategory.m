@@ -8,7 +8,7 @@
 
 
 #import "WGDefines.h"
-@implementation UILabel (Category)
+@implementation UILabel (WGCategory)
 
 #pragma mark copy zone
 - (id )copyWithZone:(NSZone *)zone{
@@ -27,7 +27,7 @@
 
 
 #pragma mark - WGLabel Category
-@implementation WGLabel (Category)
+@implementation WGLabel (WGCategory)
 - (void)setText:(NSString *)text{
     NSString *text_ = [NSString  handleNetString:text];
     

@@ -7,7 +7,7 @@
 //
 
 
-@interface UITextField (Category)
+@interface UITextField (WGCategory)
 /**
  *@brief UITextField实现NSCopy协议
  *

@@ -7,9 +7,7 @@
 //
 #import <UIKit/UIKit.h>
 
-#import "UITextView+Category.h"
-
-@interface UITextView (Category)
+@interface UITextView (WGCategory)
 /**
  *@brief UITextView实现NSCopy协议
  *

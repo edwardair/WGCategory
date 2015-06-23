@@ -6,7 +6,7 @@
 //  Copyright (c) 2014年 Apple. All rights reserved.
 //
 
-@interface UIGestureRecognizer(Category)
+@interface UIGestureRecognizer(WGCategory)
 #pragma mark - tag
 - (int)wg_tag;
 - (void)setWg_Tag:(int )tag;

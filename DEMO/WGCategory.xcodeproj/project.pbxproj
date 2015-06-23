@@ -33,8 +33,8 @@
 		F7A4F9891B1D561600B84A4E /* WGPopoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F9481B1D561600B84A4E /* WGPopoverView.m */; };
 		F7A4F98A1B1D561600B84A4E /* WGTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F94A1B1D561600B84A4E /* WGTextView.m */; };
 		F7A4F98B1B1D561600B84A4E /* WGTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F94A1B1D561600B84A4E /* WGTextView.m */; };
-		F7A4F98C1B1D561600B84A4E /* NSDate+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F94D1B1D561600B84A4E /* NSDate+Category.m */; };
-		F7A4F98D1B1D561600B84A4E /* NSDate+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F94D1B1D561600B84A4E /* NSDate+Category.m */; };
+		F7A4F98C1B1D561600B84A4E /* NSDate+WGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F94D1B1D561600B84A4E /* NSDate+WGCategory.m */; };
+		F7A4F98D1B1D561600B84A4E /* NSDate+WGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F94D1B1D561600B84A4E /* NSDate+WGCategory.m */; };
 		F7A4F9901B1D561600B84A4E /* NSObject+WGObject.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F9511B1D561600B84A4E /* NSObject+WGObject.m */; };
 		F7A4F9911B1D561600B84A4E /* NSObject+WGObject.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F9511B1D561600B84A4E /* NSObject+WGObject.m */; };
 		F7A4F9921B1D561600B84A4E /* NSString+WGString.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F9531B1D561600B84A4E /* NSString+WGString.m */; };
@@ -43,30 +43,30 @@
 		F7A4F9951B1D561600B84A4E /* NSTimer+WGTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F9551B1D561600B84A4E /* NSTimer+WGTimer.m */; };
 		F7A4F9961B1D561600B84A4E /* UIActionSheet+WGActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F9571B1D561600B84A4E /* UIActionSheet+WGActionSheet.m */; };
 		F7A4F9971B1D561600B84A4E /* UIActionSheet+WGActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F9571B1D561600B84A4E /* UIActionSheet+WGActionSheet.m */; };
-		F7A4F9981B1D561600B84A4E /* UIButton+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F9591B1D561600B84A4E /* UIButton+Category.m */; };
-		F7A4F9991B1D561600B84A4E /* UIButton+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F9591B1D561600B84A4E /* UIButton+Category.m */; };
+		F7A4F9981B1D561600B84A4E /* UIButton+WGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F9591B1D561600B84A4E /* UIButton+WGCategory.m */; };
+		F7A4F9991B1D561600B84A4E /* UIButton+WGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F9591B1D561600B84A4E /* UIButton+WGCategory.m */; };
 		F7A4F99A1B1D561600B84A4E /* UIColor+WGColor.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F95B1B1D561600B84A4E /* UIColor+WGColor.m */; };
 		F7A4F99B1B1D561600B84A4E /* UIColor+WGColor.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F95B1B1D561600B84A4E /* UIColor+WGColor.m */; };
-		F7A4F99C1B1D561600B84A4E /* UIControl+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F95D1B1D561600B84A4E /* UIControl+Category.m */; };
-		F7A4F99D1B1D561600B84A4E /* UIControl+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F95D1B1D561600B84A4E /* UIControl+Category.m */; };
-		F7A4F99E1B1D561600B84A4E /* UIDevice+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F95F1B1D561600B84A4E /* UIDevice+Category.m */; };
-		F7A4F99F1B1D561600B84A4E /* UIDevice+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F95F1B1D561600B84A4E /* UIDevice+Category.m */; };
-		F7A4F9A01B1D561600B84A4E /* UIGestureRecognizer+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F9611B1D561600B84A4E /* UIGestureRecognizer+Category.m */; };
-		F7A4F9A11B1D561600B84A4E /* UIGestureRecognizer+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F9611B1D561600B84A4E /* UIGestureRecognizer+Category.m */; };
-		F7A4F9A21B1D561600B84A4E /* UIImage+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F9631B1D561600B84A4E /* UIImage+Category.m */; };
-		F7A4F9A31B1D561600B84A4E /* UIImage+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F9631B1D561600B84A4E /* UIImage+Category.m */; };
-		F7A4F9A41B1D561600B84A4E /* UIImageView+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F9651B1D561600B84A4E /* UIImageView+Category.m */; };
-		F7A4F9A51B1D561600B84A4E /* UIImageView+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F9651B1D561600B84A4E /* UIImageView+Category.m */; };
-		F7A4F9A61B1D561600B84A4E /* UILabel+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F9671B1D561600B84A4E /* UILabel+Category.m */; };
-		F7A4F9A71B1D561600B84A4E /* UILabel+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F9671B1D561600B84A4E /* UILabel+Category.m */; };
-		F7A4F9A81B1D561600B84A4E /* UITextField+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F9691B1D561600B84A4E /* UITextField+Category.m */; };
-		F7A4F9A91B1D561600B84A4E /* UITextField+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F9691B1D561600B84A4E /* UITextField+Category.m */; };
-		F7A4F9AA1B1D561600B84A4E /* UITextView+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F96B1B1D561600B84A4E /* UITextView+Category.m */; };
-		F7A4F9AB1B1D561600B84A4E /* UITextView+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F96B1B1D561600B84A4E /* UITextView+Category.m */; };
-		F7A4F9AC1B1D561600B84A4E /* UIView+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F96D1B1D561600B84A4E /* UIView+Category.m */; };
-		F7A4F9AD1B1D561600B84A4E /* UIView+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F96D1B1D561600B84A4E /* UIView+Category.m */; };
-		F7A4F9AE1B1D561600B84A4E /* UIViewController+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F96F1B1D561600B84A4E /* UIViewController+Category.m */; };
-		F7A4F9AF1B1D561600B84A4E /* UIViewController+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F96F1B1D561600B84A4E /* UIViewController+Category.m */; };
+		F7A4F99C1B1D561600B84A4E /* UIControl+WGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F95D1B1D561600B84A4E /* UIControl+WGCategory.m */; };
+		F7A4F99D1B1D561600B84A4E /* UIControl+WGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F95D1B1D561600B84A4E /* UIControl+WGCategory.m */; };
+		F7A4F99E1B1D561600B84A4E /* UIDevice+WGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F95F1B1D561600B84A4E /* UIDevice+WGCategory.m */; };
+		F7A4F99F1B1D561600B84A4E /* UIDevice+WGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F95F1B1D561600B84A4E /* UIDevice+WGCategory.m */; };
+		F7A4F9A01B1D561600B84A4E /* UIGestureRecognizer+WGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F9611B1D561600B84A4E /* UIGestureRecognizer+WGCategory.m */; };
+		F7A4F9A11B1D561600B84A4E /* UIGestureRecognizer+WGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F9611B1D561600B84A4E /* UIGestureRecognizer+WGCategory.m */; };
+		F7A4F9A21B1D561600B84A4E /* UIImage+WGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F9631B1D561600B84A4E /* UIImage+WGCategory.m */; };
+		F7A4F9A31B1D561600B84A4E /* UIImage+WGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F9631B1D561600B84A4E /* UIImage+WGCategory.m */; };
+		F7A4F9A41B1D561600B84A4E /* UIImageView+WGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F9651B1D561600B84A4E /* UIImageView+WGCategory.m */; };
+		F7A4F9A51B1D561600B84A4E /* UIImageView+WGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F9651B1D561600B84A4E /* UIImageView+WGCategory.m */; };
+		F7A4F9A61B1D561600B84A4E /* UILabel+WGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F9671B1D561600B84A4E /* UILabel+WGCategory.m */; };
+		F7A4F9A71B1D561600B84A4E /* UILabel+WGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F9671B1D561600B84A4E /* UILabel+WGCategory.m */; };
+		F7A4F9A81B1D561600B84A4E /* UITextField+WGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F9691B1D561600B84A4E /* UITextField+WGCategory.m */; };
+		F7A4F9A91B1D561600B84A4E /* UITextField+WGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F9691B1D561600B84A4E /* UITextField+WGCategory.m */; };
+		F7A4F9AA1B1D561600B84A4E /* UITextView+WGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F96B1B1D561600B84A4E /* UITextView+WGCategory.m */; };
+		F7A4F9AB1B1D561600B84A4E /* UITextView+WGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F96B1B1D561600B84A4E /* UITextView+WGCategory.m */; };
+		F7A4F9AC1B1D561600B84A4E /* UIView+WGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F96D1B1D561600B84A4E /* UIView+WGCategory.m */; };
+		F7A4F9AD1B1D561600B84A4E /* UIView+WGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F96D1B1D561600B84A4E /* UIView+WGCategory.m */; };
+		F7A4F9AE1B1D561600B84A4E /* UIViewController+WGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F96F1B1D561600B84A4E /* UIViewController+WGCategory.m */; };
+		F7A4F9AF1B1D561600B84A4E /* UIViewController+WGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F96F1B1D561600B84A4E /* UIViewController+WGCategory.m */; };
 		F7A4F9B01B1D561600B84A4E /* WGFrameTest.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F9731B1D561600B84A4E /* WGFrameTest.m */; };
 		F7A4F9B11B1D561600B84A4E /* WGFrameTest.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F9731B1D561600B84A4E /* WGFrameTest.m */; };
 		F7A4F9B21B1D561600B84A4E /* WGGetGestureSecrets.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F9751B1D561600B84A4E /* WGGetGestureSecrets.m */; };
@@ -75,7 +75,7 @@
 		F7A4F9B51B1D561600B84A4E /* WGLog.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F9771B1D561600B84A4E /* WGLog.m */; };
 		F7A4F9B61B1D561600B84A4E /* WGTextInputAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F9791B1D561600B84A4E /* WGTextInputAccessoryView.m */; };
 		F7A4F9B71B1D561600B84A4E /* WGTextInputAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F9791B1D561600B84A4E /* WGTextInputAccessoryView.m */; };
-		F7C19BC61B2EB06100137B46 /* NSObject+AutoModelHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = F7C19BBF1B2EB06100137B46 /* NSObject+AutoModelHelper.m */; };
+		F7C19BC61B2EB06100137B46 /* NSObject+WGAutoModelHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = F7C19BBF1B2EB06100137B46 /* NSObject+WGAutoModelHelper.m */; };
 		F7C19BC71B2EB06100137B46 /* NSObject+WGJSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F7C19BC11B2EB06100137B46 /* NSObject+WGJSONModel.m */; };
 		F7C19BC81B2EB06100137B46 /* NSObject+WGJSONValue.m in Sources */ = {isa = PBXBuildFile; fileRef = F7C19BC31B2EB06100137B46 /* NSObject+WGJSONValue.m */; };
 		F7C19BC91B2EB06100137B46 /* NSObject+WGModelValue.m in Sources */ = {isa = PBXBuildFile; fileRef = F7C19BC51B2EB06100137B46 /* NSObject+WGModelValue.m */; };
@@ -126,8 +126,8 @@
 		F7A4F9481B1D561600B84A4E /* WGPopoverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGPopoverView.m; sourceTree = "<group>"; };
 		F7A4F9491B1D561600B84A4E /* WGTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGTextView.h; sourceTree = "<group>"; };
 		F7A4F94A1B1D561600B84A4E /* WGTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGTextView.m; sourceTree = "<group>"; };
-		F7A4F94C1B1D561600B84A4E /* NSDate+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Category.h"; sourceTree = "<group>"; };
-		F7A4F94D1B1D561600B84A4E /* NSDate+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Category.m"; sourceTree = "<group>"; };
+		F7A4F94C1B1D561600B84A4E /* NSDate+WGCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+WGCategory.h"; sourceTree = "<group>"; };
+		F7A4F94D1B1D561600B84A4E /* NSDate+WGCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+WGCategory.m"; sourceTree = "<group>"; };
 		F7A4F9501B1D561600B84A4E /* NSObject+WGObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+WGObject.h"; sourceTree = "<group>"; };
 		F7A4F9511B1D561600B84A4E /* NSObject+WGObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+WGObject.m"; sourceTree = "<group>"; };
 		F7A4F9521B1D561600B84A4E /* NSString+WGString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+WGString.h"; sourceTree = "<group>"; };
@@ -136,30 +136,30 @@
 		F7A4F9551B1D561600B84A4E /* NSTimer+WGTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+WGTimer.m"; sourceTree = "<group>"; };
 		F7A4F9561B1D561600B84A4E /* UIActionSheet+WGActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIActionSheet+WGActionSheet.h"; sourceTree = "<group>"; };
 		F7A4F9571B1D561600B84A4E /* UIActionSheet+WGActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIActionSheet+WGActionSheet.m"; sourceTree = "<group>"; };
-		F7A4F9581B1D561600B84A4E /* UIButton+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Category.h"; sourceTree = "<group>"; };
-		F7A4F9591B1D561600B84A4E /* UIButton+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Category.m"; sourceTree = "<group>"; };
+		F7A4F9581B1D561600B84A4E /* UIButton+WGCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+WGCategory.h"; sourceTree = "<group>"; };
+		F7A4F9591B1D561600B84A4E /* UIButton+WGCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+WGCategory.m"; sourceTree = "<group>"; };
 		F7A4F95A1B1D561600B84A4E /* UIColor+WGColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+WGColor.h"; sourceTree = "<group>"; };
 		F7A4F95B1B1D561600B84A4E /* UIColor+WGColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+WGColor.m"; sourceTree = "<group>"; };
-		F7A4F95C1B1D561600B84A4E /* UIControl+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIControl+Category.h"; sourceTree = "<group>"; };
-		F7A4F95D1B1D561600B84A4E /* UIControl+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIControl+Category.m"; sourceTree = "<group>"; };
-		F7A4F95E1B1D561600B84A4E /* UIDevice+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+Category.h"; sourceTree = "<group>"; };
-		F7A4F95F1B1D561600B84A4E /* UIDevice+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+Category.m"; sourceTree = "<group>"; };
-		F7A4F9601B1D561600B84A4E /* UIGestureRecognizer+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIGestureRecognizer+Category.h"; sourceTree = "<group>"; };
-		F7A4F9611B1D561600B84A4E /* UIGestureRecognizer+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIGestureRecognizer+Category.m"; sourceTree = "<group>"; };
-		F7A4F9621B1D561600B84A4E /* UIImage+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Category.h"; sourceTree = "<group>"; };
-		F7A4F9631B1D561600B84A4E /* UIImage+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Category.m"; sourceTree = "<group>"; };
-		F7A4F9641B1D561600B84A4E /* UIImageView+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+Category.h"; sourceTree = "<group>"; };
-		F7A4F9651B1D561600B84A4E /* UIImageView+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Category.m"; sourceTree = "<group>"; };
-		F7A4F9661B1D561600B84A4E /* UILabel+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Category.h"; sourceTree = "<group>"; };
-		F7A4F9671B1D561600B84A4E /* UILabel+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Category.m"; sourceTree = "<group>"; };
-		F7A4F9681B1D561600B84A4E /* UITextField+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+Category.h"; sourceTree = "<group>"; };
-		F7A4F9691B1D561600B84A4E /* UITextField+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+Category.m"; sourceTree = "<group>"; };
-		F7A4F96A1B1D561600B84A4E /* UITextView+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+Category.h"; sourceTree = "<group>"; };
-		F7A4F96B1B1D561600B84A4E /* UITextView+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+Category.m"; sourceTree = "<group>"; };
-		F7A4F96C1B1D561600B84A4E /* UIView+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Category.h"; sourceTree = "<group>"; };
-		F7A4F96D1B1D561600B84A4E /* UIView+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Category.m"; sourceTree = "<group>"; };
-		F7A4F96E1B1D561600B84A4E /* UIViewController+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Category.h"; sourceTree = "<group>"; };
-		F7A4F96F1B1D561600B84A4E /* UIViewController+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Category.m"; sourceTree = "<group>"; };
+		F7A4F95C1B1D561600B84A4E /* UIControl+WGCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIControl+WGCategory.h"; sourceTree = "<group>"; };
+		F7A4F95D1B1D561600B84A4E /* UIControl+WGCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIControl+WGCategory.m"; sourceTree = "<group>"; };
+		F7A4F95E1B1D561600B84A4E /* UIDevice+WGCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+WGCategory.h"; sourceTree = "<group>"; };
+		F7A4F95F1B1D561600B84A4E /* UIDevice+WGCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+WGCategory.m"; sourceTree = "<group>"; };
+		F7A4F9601B1D561600B84A4E /* UIGestureRecognizer+WGCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIGestureRecognizer+WGCategory.h"; sourceTree = "<group>"; };
+		F7A4F9611B1D561600B84A4E /* UIGestureRecognizer+WGCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIGestureRecognizer+WGCategory.m"; sourceTree = "<group>"; };
+		F7A4F9621B1D561600B84A4E /* UIImage+WGCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+WGCategory.h"; sourceTree = "<group>"; };
+		F7A4F9631B1D561600B84A4E /* UIImage+WGCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+WGCategory.m"; sourceTree = "<group>"; };
+		F7A4F9641B1D561600B84A4E /* UIImageView+WGCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+WGCategory.h"; sourceTree = "<group>"; };
+		F7A4F9651B1D561600B84A4E /* UIImageView+WGCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WGCategory.m"; sourceTree = "<group>"; };
+		F7A4F9661B1D561600B84A4E /* UILabel+WGCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+WGCategory.h"; sourceTree = "<group>"; };
+		F7A4F9671B1D561600B84A4E /* UILabel+WGCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+WGCategory.m"; sourceTree = "<group>"; };
+		F7A4F9681B1D561600B84A4E /* UITextField+WGCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+WGCategory.h"; sourceTree = "<group>"; };
+		F7A4F9691B1D561600B84A4E /* UITextField+WGCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+WGCategory.m"; sourceTree = "<group>"; };
+		F7A4F96A1B1D561600B84A4E /* UITextView+WGCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+WGCategory.h"; sourceTree = "<group>"; };
+		F7A4F96B1B1D561600B84A4E /* UITextView+WGCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+WGCategory.m"; sourceTree = "<group>"; };
+		F7A4F96C1B1D561600B84A4E /* UIView+WGCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WGCategory.h"; sourceTree = "<group>"; };
+		F7A4F96D1B1D561600B84A4E /* UIView+WGCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WGCategory.m"; sourceTree = "<group>"; };
+		F7A4F96E1B1D561600B84A4E /* UIViewController+WGCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+WGCategory.h"; sourceTree = "<group>"; };
+		F7A4F96F1B1D561600B84A4E /* UIViewController+WGCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+WGCategory.m"; sourceTree = "<group>"; };
 		F7A4F9701B1D561600B84A4E /* WGDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGDefines.h; sourceTree = "<group>"; };
 		F7A4F9721B1D561600B84A4E /* WGFrameTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGFrameTest.h; sourceTree = "<group>"; };
 		F7A4F9731B1D561600B84A4E /* WGFrameTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGFrameTest.m; sourceTree = "<group>"; };
@@ -169,8 +169,8 @@
 		F7A4F9771B1D561600B84A4E /* WGLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGLog.m; sourceTree = "<group>"; };
 		F7A4F9781B1D561600B84A4E /* WGTextInputAccessoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGTextInputAccessoryView.h; sourceTree = "<group>"; };
 		F7A4F9791B1D561600B84A4E /* WGTextInputAccessoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGTextInputAccessoryView.m; sourceTree = "<group>"; };
-		F7C19BBE1B2EB06100137B46 /* NSObject+AutoModelHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+AutoModelHelper.h"; sourceTree = "<group>"; };
-		F7C19BBF1B2EB06100137B46 /* NSObject+AutoModelHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+AutoModelHelper.m"; sourceTree = "<group>"; };
+		F7C19BBE1B2EB06100137B46 /* NSObject+WGAutoModelHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+WGAutoModelHelper.h"; sourceTree = "<group>"; };
+		F7C19BBF1B2EB06100137B46 /* NSObject+WGAutoModelHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+WGAutoModelHelper.m"; sourceTree = "<group>"; };
 		F7C19BC01B2EB06100137B46 /* NSObject+WGJSONModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+WGJSONModel.h"; sourceTree = "<group>"; };
 		F7C19BC11B2EB06100137B46 /* NSObject+WGJSONModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+WGJSONModel.m"; sourceTree = "<group>"; };
 		F7C19BC21B2EB06100137B46 /* NSObject+WGJSONValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+WGJSONValue.h"; sourceTree = "<group>"; };
@@ -309,8 +309,8 @@
 			isa = PBXGroup;
 			children = (
 				F7C19BBD1B2EB06100137B46 /* WGJSONModel */,
-				F7A4F94C1B1D561600B84A4E /* NSDate+Category.h */,
-				F7A4F94D1B1D561600B84A4E /* NSDate+Category.m */,
+				F7A4F94C1B1D561600B84A4E /* NSDate+WGCategory.h */,
+				F7A4F94D1B1D561600B84A4E /* NSDate+WGCategory.m */,
 				F7A4F9501B1D561600B84A4E /* NSObject+WGObject.h */,
 				F7A4F9511B1D561600B84A4E /* NSObject+WGObject.m */,
 				F7A4F9521B1D561600B84A4E /* NSString+WGString.h */,
@@ -319,30 +319,30 @@
 				F7A4F9551B1D561600B84A4E /* NSTimer+WGTimer.m */,
 				F7A4F9561B1D561600B84A4E /* UIActionSheet+WGActionSheet.h */,
 				F7A4F9571B1D561600B84A4E /* UIActionSheet+WGActionSheet.m */,
-				F7A4F9581B1D561600B84A4E /* UIButton+Category.h */,
-				F7A4F9591B1D561600B84A4E /* UIButton+Category.m */,
+				F7A4F9581B1D561600B84A4E /* UIButton+WGCategory.h */,
+				F7A4F9591B1D561600B84A4E /* UIButton+WGCategory.m */,
 				F7A4F95A1B1D561600B84A4E /* UIColor+WGColor.h */,
 				F7A4F95B1B1D561600B84A4E /* UIColor+WGColor.m */,
-				F7A4F95C1B1D561600B84A4E /* UIControl+Category.h */,
-				F7A4F95D1B1D561600B84A4E /* UIControl+Category.m */,
-				F7A4F95E1B1D561600B84A4E /* UIDevice+Category.h */,
-				F7A4F95F1B1D561600B84A4E /* UIDevice+Category.m */,
-				F7A4F9601B1D561600B84A4E /* UIGestureRecognizer+Category.h */,
-				F7A4F9611B1D561600B84A4E /* UIGestureRecognizer+Category.m */,
-				F7A4F9621B1D561600B84A4E /* UIImage+Category.h */,
-				F7A4F9631B1D561600B84A4E /* UIImage+Category.m */,
-				F7A4F9641B1D561600B84A4E /* UIImageView+Category.h */,
-				F7A4F9651B1D561600B84A4E /* UIImageView+Category.m */,
-				F7A4F9661B1D561600B84A4E /* UILabel+Category.h */,
-				F7A4F9671B1D561600B84A4E /* UILabel+Category.m */,
-				F7A4F9681B1D561600B84A4E /* UITextField+Category.h */,
-				F7A4F9691B1D561600B84A4E /* UITextField+Category.m */,
-				F7A4F96A1B1D561600B84A4E /* UITextView+Category.h */,
-				F7A4F96B1B1D561600B84A4E /* UITextView+Category.m */,
-				F7A4F96C1B1D561600B84A4E /* UIView+Category.h */,
-				F7A4F96D1B1D561600B84A4E /* UIView+Category.m */,
-				F7A4F96E1B1D561600B84A4E /* UIViewController+Category.h */,
-				F7A4F96F1B1D561600B84A4E /* UIViewController+Category.m */,
+				F7A4F95C1B1D561600B84A4E /* UIControl+WGCategory.h */,
+				F7A4F95D1B1D561600B84A4E /* UIControl+WGCategory.m */,
+				F7A4F95E1B1D561600B84A4E /* UIDevice+WGCategory.h */,
+				F7A4F95F1B1D561600B84A4E /* UIDevice+WGCategory.m */,
+				F7A4F9601B1D561600B84A4E /* UIGestureRecognizer+WGCategory.h */,
+				F7A4F9611B1D561600B84A4E /* UIGestureRecognizer+WGCategory.m */,
+				F7A4F9621B1D561600B84A4E /* UIImage+WGCategory.h */,
+				F7A4F9631B1D561600B84A4E /* UIImage+WGCategory.m */,
+				F7A4F9641B1D561600B84A4E /* UIImageView+WGCategory.h */,
+				F7A4F9651B1D561600B84A4E /* UIImageView+WGCategory.m */,
+				F7A4F9661B1D561600B84A4E /* UILabel+WGCategory.h */,
+				F7A4F9671B1D561600B84A4E /* UILabel+WGCategory.m */,
+				F7A4F9681B1D561600B84A4E /* UITextField+WGCategory.h */,
+				F7A4F9691B1D561600B84A4E /* UITextField+WGCategory.m */,
+				F7A4F96A1B1D561600B84A4E /* UITextView+WGCategory.h */,
+				F7A4F96B1B1D561600B84A4E /* UITextView+WGCategory.m */,
+				F7A4F96C1B1D561600B84A4E /* UIView+WGCategory.h */,
+				F7A4F96D1B1D561600B84A4E /* UIView+WGCategory.m */,
+				F7A4F96E1B1D561600B84A4E /* UIViewController+WGCategory.h */,
+				F7A4F96F1B1D561600B84A4E /* UIViewController+WGCategory.m */,
 			);
 			path = "WGClasses+WGCategory";
 			sourceTree = "<group>";
@@ -365,8 +365,8 @@
 		F7C19BBD1B2EB06100137B46 /* WGJSONModel */ = {
 			isa = PBXGroup;
 			children = (
-				F7C19BBE1B2EB06100137B46 /* NSObject+AutoModelHelper.h */,
-				F7C19BBF1B2EB06100137B46 /* NSObject+AutoModelHelper.m */,
+				F7C19BBE1B2EB06100137B46 /* NSObject+WGAutoModelHelper.h */,
+				F7C19BBF1B2EB06100137B46 /* NSObject+WGAutoModelHelper.m */,
 				F7C19BC01B2EB06100137B46 /* NSObject+WGJSONModel.h */,
 				F7C19BC11B2EB06100137B46 /* NSObject+WGJSONModel.m */,
 				F7C19BC21B2EB06100137B46 /* NSObject+WGJSONValue.h */,
@@ -478,29 +478,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				F7A4F9941B1D561600B84A4E /* NSTimer+WGTimer.m in Sources */,
-				F7A4F99E1B1D561600B84A4E /* UIDevice+Category.m in Sources */,
+				F7A4F99E1B1D561600B84A4E /* UIDevice+WGCategory.m in Sources */,
 				F7A4F9B41B1D561600B84A4E /* WGLog.m in Sources */,
 				F7C19BC81B2EB06100137B46 /* NSObject+WGJSONValue.m in Sources */,
 				F7A4F9841B1D561600B84A4E /* WGCoreTextView.m in Sources */,
 				F7A4F9821B1D561600B84A4E /* WGControl.m in Sources */,
-				F7A4F9A81B1D561600B84A4E /* UITextField+Category.m in Sources */,
-				F7A4F9AE1B1D561600B84A4E /* UIViewController+Category.m in Sources */,
+				F7A4F9A81B1D561600B84A4E /* UITextField+WGCategory.m in Sources */,
+				F7A4F9AE1B1D561600B84A4E /* UIViewController+WGCategory.m in Sources */,
 				F7C19BC91B2EB06100137B46 /* NSObject+WGModelValue.m in Sources */,
-				F7A4F98C1B1D561600B84A4E /* NSDate+Category.m in Sources */,
+				F7A4F98C1B1D561600B84A4E /* NSDate+WGCategory.m in Sources */,
 				F7A4F97E1B1D561600B84A4E /* WGAlertView.m in Sources */,
-				F7A4F9A61B1D561600B84A4E /* UILabel+Category.m in Sources */,
-				F7A4F9A01B1D561600B84A4E /* UIGestureRecognizer+Category.m in Sources */,
+				F7A4F9A61B1D561600B84A4E /* UILabel+WGCategory.m in Sources */,
+				F7A4F9A01B1D561600B84A4E /* UIGestureRecognizer+WGCategory.m in Sources */,
 				F7A4F8951B1D531A00B84A4E /* SecondViewController.m in Sources */,
-				F7A4F9A21B1D561600B84A4E /* UIImage+Category.m in Sources */,
+				F7A4F9A21B1D561600B84A4E /* UIImage+WGCategory.m in Sources */,
 				F7A4F9B21B1D561600B84A4E /* WGGetGestureSecrets.m in Sources */,
-				F7A4F9A41B1D561600B84A4E /* UIImageView+Category.m in Sources */,
-				F7A4F99C1B1D561600B84A4E /* UIControl+Category.m in Sources */,
-				F7A4F9AA1B1D561600B84A4E /* UITextView+Category.m in Sources */,
+				F7A4F9A41B1D561600B84A4E /* UIImageView+WGCategory.m in Sources */,
+				F7A4F99C1B1D561600B84A4E /* UIControl+WGCategory.m in Sources */,
+				F7A4F9AA1B1D561600B84A4E /* UITextView+WGCategory.m in Sources */,
 				F7A4F9921B1D561600B84A4E /* NSString+WGString.m in Sources */,
 				F7A4F9B01B1D561600B84A4E /* WGFrameTest.m in Sources */,
 				F7A4F9901B1D561600B84A4E /* NSObject+WGObject.m in Sources */,
-				F7C19BC61B2EB06100137B46 /* NSObject+AutoModelHelper.m in Sources */,
-				F7A4F9981B1D561600B84A4E /* UIButton+Category.m in Sources */,
+				F7C19BC61B2EB06100137B46 /* NSObject+WGAutoModelHelper.m in Sources */,
+				F7A4F9981B1D561600B84A4E /* UIButton+WGCategory.m in Sources */,
 				F7A4F98A1B1D561600B84A4E /* WGTextView.m in Sources */,
 				F7A4F9861B1D561600B84A4E /* WGLabel.m in Sources */,
 				F7A4F97A1B1D561600B84A4E /* CGPointExtension.m in Sources */,
@@ -513,7 +513,7 @@
 				F7A4F88C1B1D531A00B84A4E /* main.m in Sources */,
 				F7A4F9881B1D561600B84A4E /* WGPopoverView.m in Sources */,
 				F7A4F9961B1D561600B84A4E /* UIActionSheet+WGActionSheet.m in Sources */,
-				F7A4F9AC1B1D561600B84A4E /* UIView+Category.m in Sources */,
+				F7A4F9AC1B1D561600B84A4E /* UIView+WGCategory.m in Sources */,
 				F7A4F97C1B1D561600B84A4E /* WGActionSheet.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -522,31 +522,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F7A4F9AF1B1D561600B84A4E /* UIViewController+Category.m in Sources */,
+				F7A4F9AF1B1D561600B84A4E /* UIViewController+WGCategory.m in Sources */,
 				F7A4F97B1B1D561600B84A4E /* CGPointExtension.m in Sources */,
-				F7A4F99F1B1D561600B84A4E /* UIDevice+Category.m in Sources */,
+				F7A4F99F1B1D561600B84A4E /* UIDevice+WGCategory.m in Sources */,
 				F7A4F9891B1D561600B84A4E /* WGPopoverView.m in Sources */,
 				F7A4F9811B1D561600B84A4E /* WGCheckBox.m in Sources */,
-				F7A4F9A71B1D561600B84A4E /* UILabel+Category.m in Sources */,
+				F7A4F9A71B1D561600B84A4E /* UILabel+WGCategory.m in Sources */,
 				F7A4F9B51B1D561600B84A4E /* WGLog.m in Sources */,
 				F7A4F9871B1D561600B84A4E /* WGLabel.m in Sources */,
 				F7A4F97F1B1D561600B84A4E /* WGAlertView.m in Sources */,
 				F7A4F98B1B1D561600B84A4E /* WGTextView.m in Sources */,
-				F7A4F9A91B1D561600B84A4E /* UITextField+Category.m in Sources */,
-				F7A4F9A11B1D561600B84A4E /* UIGestureRecognizer+Category.m in Sources */,
+				F7A4F9A91B1D561600B84A4E /* UITextField+WGCategory.m in Sources */,
+				F7A4F9A11B1D561600B84A4E /* UIGestureRecognizer+WGCategory.m in Sources */,
 				F7A4F9911B1D561600B84A4E /* NSObject+WGObject.m in Sources */,
 				F7A4F9851B1D561600B84A4E /* WGCoreTextView.m in Sources */,
 				F7A4F9B71B1D561600B84A4E /* WGTextInputAccessoryView.m in Sources */,
-				F7A4F99D1B1D561600B84A4E /* UIControl+Category.m in Sources */,
+				F7A4F99D1B1D561600B84A4E /* UIControl+WGCategory.m in Sources */,
 				F7A4F9951B1D561600B84A4E /* NSTimer+WGTimer.m in Sources */,
-				F7A4F9A31B1D561600B84A4E /* UIImage+Category.m in Sources */,
-				F7A4F9991B1D561600B84A4E /* UIButton+Category.m in Sources */,
-				F7A4F9A51B1D561600B84A4E /* UIImageView+Category.m in Sources */,
+				F7A4F9A31B1D561600B84A4E /* UIImage+WGCategory.m in Sources */,
+				F7A4F9991B1D561600B84A4E /* UIButton+WGCategory.m in Sources */,
+				F7A4F9A51B1D561600B84A4E /* UIImageView+WGCategory.m in Sources */,
 				F7A4F9831B1D561600B84A4E /* WGControl.m in Sources */,
-				F7A4F9AD1B1D561600B84A4E /* UIView+Category.m in Sources */,
+				F7A4F9AD1B1D561600B84A4E /* UIView+WGCategory.m in Sources */,
 				F7A4F9931B1D561600B84A4E /* NSString+WGString.m in Sources */,
-				F7A4F98D1B1D561600B84A4E /* NSDate+Category.m in Sources */,
-				F7A4F9AB1B1D561600B84A4E /* UITextView+Category.m in Sources */,
+				F7A4F98D1B1D561600B84A4E /* NSDate+WGCategory.m in Sources */,
+				F7A4F9AB1B1D561600B84A4E /* UITextView+WGCategory.m in Sources */,
 				F7A4F9971B1D561600B84A4E /* UIActionSheet+WGActionSheet.m in Sources */,
 				F7A4F99B1B1D561600B84A4E /* UIColor+WGColor.m in Sources */,
 				F7A4F8A91B1D531A00B84A4E /* WGCategoryTests.m in Sources */,

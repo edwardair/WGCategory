@@ -6,9 +6,9 @@
 //  Copyright (c) 2014年 abc. All rights reserved.
 //
 
-#import "NSDate+Category.h"
+#import "NSDate+WGCategory.h"
 
-@implementation NSDate (Category)
+@implementation NSDate (WGCategory)
 + (NSDateFormatter *)shareFormatter{
     static dispatch_once_t onceToken;
     static NSDateFormatter *formatter;

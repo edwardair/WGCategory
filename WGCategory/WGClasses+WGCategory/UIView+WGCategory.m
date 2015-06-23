@@ -8,7 +8,7 @@
 
 #import "WGDefines.h"
 
-@implementation UIView(Category)
+@implementation UIView(WGCategory)
 #pragma mark C ---CGRect
 CGPoint CGRectGetCenter(CGRect rect)
 {

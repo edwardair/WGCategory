@@ -9,7 +9,7 @@
 
 //MARK: 增加  图片、文字显示inset方案
 
-@interface UIButton (Category)
+@interface UIButton (WGCategory)
 
 @end
 

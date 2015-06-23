@@ -1,8 +1,8 @@
 
 #import "sys/sysctl.h"
-#import "UIDevice+Category.h"
+#import "UIDevice+WGCategory.h"
 
-@implementation UIDevice (Category)
+@implementation UIDevice (WGCategory)
 
 + (UIDeviceResolution) currentResolution {
     static UIDeviceResolution dev = UIDevice_None;
