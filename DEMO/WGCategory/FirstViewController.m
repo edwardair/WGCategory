@@ -39,6 +39,14 @@
 @end
 
 
+@interface TEST2:NSObject
+@property (nonatomic,copy) NSString *name;
+@property (nonatomic,copy) NSString *b;
+@end
+@implementation TEST2
+@end
+
+
 @interface FirstViewController ()
 
 @end
@@ -48,6 +56,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    
+    id str111 = [[NSClassFromString(@"NSValue") alloc]init];
+    if (!str111) {
+        WGLogValue(@"aaaaa");
+    }
+    
     id dic = @{
                           @"name" : @"A",
                           @"b" : @{
@@ -80,6 +94,13 @@
     
     NSString *str = @"aa";
     WGLogWarn([str modelValue]);
+    
+    //MODEL转字典
+    TEST2 *test2 = [[TEST2 alloc]init];
+    test2.name = @"test2";
+    test2.b = nil;//检测test2在转字典时，能否将b对应的key加入到字典中
+    WGLogValue(test2.modelValue);
+    
 }
 
 - (void)didReceiveMemoryWarning {
