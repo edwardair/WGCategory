@@ -6,7 +6,7 @@
 //
 
 
-@interface UIImageView (Category)
+@interface UIImageView (WGCategory)
 /**
 *@brief UIImageView实现NSCopy协议
 *

@@ -8,30 +8,30 @@
 
 #import "WGDefines.h"
 
-@implementation UIView(Category)
+@implementation UIView(WGCategory)
 #pragma mark C ---CGRect
-CGPoint CGRectGetCenter(CGRect rect)
+CGPoint WGCGRectGetCenter(CGRect rect)
 {
     return ccp(CGRectGetMidX(rect), CGRectGetMidY(rect));
 }
 
-CGRect CGRectMoveTo(CGRect rect, CGPoint origin)
+CGRect WGCGRectMoveTo(CGRect rect, CGPoint origin)
 {
     CGPoint sub = ccpSub(origin, rect.origin);
-    return CGRectMoveBy(rect, sub);
+    return WGCGRectMoveBy(rect, sub);
 }
 
-CGRect CGRectMoveBy(CGRect rect,CGPoint delta){
+CGRect WGCGRectMoveBy(CGRect rect,CGPoint delta){
     rect.origin = ccpAdd(rect.origin, delta);
     return rect;
 }
-CGRect CGRectScaleBy(CGRect rect,CGFloat scaleFactor){
+CGRect WGCGRectScaleBy(CGRect rect,CGFloat scaleFactor){
     rect.size.width *= scaleFactor;
     rect.size.height *= scaleFactor;
     return rect;
 }
-CGRect CGRectChangeBy(CGRect rect, CGFloat dOriginX, CGFloat dOriginY, CGFloat dWidth, CGFloat dHeight){
-    rect = CGRectMoveBy(rect, ccp(dOriginX, dOriginY));
+CGRect WGCGRectChangeBy(CGRect rect, CGFloat dOriginX, CGFloat dOriginY, CGFloat dWidth, CGFloat dHeight){
+    rect = WGCGRectMoveBy(rect, ccp(dOriginX, dOriginY));
     rect.size.width += dWidth;
     rect.size.height += dHeight;
     return rect;
@@ -68,7 +68,7 @@ CGRect CGRectChangeBy(CGRect rect, CGFloat dOriginX, CGFloat dOriginY, CGFloat d
     return self.frame.origin;
 }
 - (void)setWg_leftOrigin:(CGPoint)wg_leftOrigin{
-    self.frame = CGRectMoveTo(self.frame, wg_leftOrigin);
+    self.frame = WGCGRectMoveTo(self.frame, wg_leftOrigin);
 }
 
 //size
@@ -76,7 +76,7 @@ CGRect CGRectChangeBy(CGRect rect, CGFloat dOriginX, CGFloat dOriginY, CGFloat d
     return self.frame.size;
 }
 - (void)setWg_size:(CGSize)wg_size{
-    self.frame = CGRectChangeBy(self.frame, 0, 0, wg_size.width, wg_size.height);
+    self.frame = WGCGRectChangeBy(self.frame, 0, 0, wg_size.width, wg_size.height);
 }
 
 //left
@@ -85,7 +85,7 @@ CGRect CGRectChangeBy(CGRect rect, CGFloat dOriginX, CGFloat dOriginY, CGFloat d
 }
 - (void)setWg_left:(CGFloat)wg_left{//设置left 相当于左右平移
     CGFloat delta = wg_left - self.wg_left;
-    self.frame = CGRectMoveBy(self.frame, ccp(delta, 0));
+    self.frame = WGCGRectMoveBy(self.frame, ccp(delta, 0));
 }
 
 //right
@@ -103,7 +103,7 @@ CGRect CGRectChangeBy(CGRect rect, CGFloat dOriginX, CGFloat dOriginY, CGFloat d
 }
 - (void)setWg_top:(CGFloat)wg_top{//设置top相当于上下平移
     CGFloat delta = wg_top - self.wg_top;
-    self.frame = CGRectMoveBy(self.frame, ccp(0, delta));
+    self.frame = WGCGRectMoveBy(self.frame, ccp(0, delta));
 }
 
 //bottom
@@ -121,7 +121,7 @@ CGRect CGRectChangeBy(CGRect rect, CGFloat dOriginX, CGFloat dOriginY, CGFloat d
 }
 - (void)setWg_width:(CGFloat)wg_width{
     CGFloat delta = wg_width- self.wg_width;
-    self.frame = CGRectChangeBy(self.frame, 0, 0, delta, 0);
+    self.frame = WGCGRectChangeBy(self.frame, 0, 0, delta, 0);
 }
 
 //hieght
@@ -130,7 +130,7 @@ CGRect CGRectChangeBy(CGRect rect, CGFloat dOriginX, CGFloat dOriginY, CGFloat d
 }
 - (void)setWg_height:(CGFloat)wg_height{
     CGFloat delta = wg_height- self.wg_height;
-    self.frame = CGRectChangeBy(self.frame, 0, 0, 0, delta);
+    self.frame = WGCGRectChangeBy(self.frame, 0, 0, 0, delta);
 }
 
 

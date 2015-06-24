@@ -6,9 +6,9 @@
 //  Copyright (c) 2014年 Apple. All rights reserved.
 //
 
-#import "UIButton+Category.h"
+#import "UIButton+WGCategory.h"
 
-@implementation UIButton (Category)
+@implementation UIButton (WGCategory)
 
 @end
 

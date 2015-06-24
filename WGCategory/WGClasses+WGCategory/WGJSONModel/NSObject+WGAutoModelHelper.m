@@ -6,7 +6,7 @@
 //  Copyright (c) 2014年 Eduoduo. All rights reserved.
 //
 
-#import "NSObject+AutoModelHelper.h"
+#import "NSObject+WGAutoModelHelper.h"
 #import <objc/runtime.h>
 #import "WGDefines.h"
 

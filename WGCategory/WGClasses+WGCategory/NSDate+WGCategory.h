@@ -11,7 +11,7 @@
 typedef NSTimeInterval Second;//秒
 typedef long long Millisecond;//毫秒
 
-@interface NSDate (Category)
+@interface NSDate (WGCategory)
 + (NSDateFormatter *)shareFormatter;
 /**
  *  NSDate根据formatterString格式化出相应需要的年月日时分秒

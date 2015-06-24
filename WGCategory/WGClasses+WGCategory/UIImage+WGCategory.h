@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIImage (Category)
+@interface UIImage (WGCategory)
 /**
  *  修改UIImage 颜色
  *

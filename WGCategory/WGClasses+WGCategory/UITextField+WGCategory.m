@@ -1,25 +1,25 @@
 //
-//  WGTextView+Category.m
-//  WebViewUserOutCSS
+//  UITextField+WGTextField.m
+//  wuxigovapp
 //
-//  Created by Apple on 14-1-28.
+//  Created by Apple on 14-1-8.
 //  Copyright (c) 2014年 Apple. All rights reserved.
 //
 
-#import "UITextView+Category.h"
+#import "WGDefines.h"
 
-@implementation UITextView (Category)
+@implementation UITextField (WGCategory)
 #pragma mark copy zone
 - (id )copyWithZone:(NSZone *)zone{
-    UITextView *newView = [[[self class] allocWithZone:zone] initWithFrame:self.frame];
+    UITextField *newView = [super copyWithZone:zone];
     newView.text = self.text;
     newView.textAlignment = self.textAlignment;
     newView.textColor = self.textColor;
     newView.delegate = self.delegate;
     newView.keyboardType = self.keyboardType;
     newView.returnKeyType = self.returnKeyType;
-    newView.editable = self.editable;
-    newView.selectable = self.isSelectable;
+    newView.placeholder = self.placeholder;
+    newView.clearsOnBeginEditing = self.clearsOnBeginEditing;
     newView.inputAccessoryView = self.inputAccessoryView;
     newView.inputView = self.inputView;
     return newView;

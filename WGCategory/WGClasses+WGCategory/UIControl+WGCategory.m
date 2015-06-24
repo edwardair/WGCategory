@@ -6,8 +6,8 @@
 //  Copyright (c) 2014年 Apple. All rights reserved.
 //
 
-#import "UIControl+Category.h"
-@implementation UIControl (Category)
+#import "UIControl+WGCategory.h"
+@implementation UIControl (WGCategory)
 - (UIControl *)copyWithZone:(NSZone *)zone{
     UIControl *newCopy = [super copyWithZone:zone];
     return newCopy;

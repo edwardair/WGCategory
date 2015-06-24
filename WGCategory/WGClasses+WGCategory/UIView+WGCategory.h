@@ -6,14 +6,14 @@
 //  Copyright (c) 2013年 Apple. All rights reserved.
 //
 
-CGPoint CGRectGetCenter(CGRect rect);//获取rect的中心点
-CGRect CGRectMoveTo(CGRect rect, CGPoint origin);//以左上角为基准点平移
-CGRect CGRectMoveBy(CGRect rect, CGPoint delta);//以左上角为基准点平移
-CGRect CGRectScaleBy(CGRect rect, CGFloat scaleFactor);//按照比例缩放到当前的scaleFactor倍数
-CGRect CGRectChangeBy(CGRect rect, CGFloat dOriginX, CGFloat dOriginY, CGFloat dWidth, CGFloat dHeight);//按照给定参数不成比例修改rect
+CGPoint WGCGRectGetCenter(CGRect rect);//获取rect的中心点
+CGRect WGCGRectMoveTo(CGRect rect, CGPoint origin);//以左上角为基准点平移
+CGRect WGCGRectMoveBy(CGRect rect, CGPoint delta);//以左上角为基准点平移
+CGRect WGCGRectScaleBy(CGRect rect, CGFloat scaleFactor);//按照比例缩放到当前的scaleFactor倍数
+CGRect WGCGRectChangeBy(CGRect rect, CGFloat dOriginX, CGFloat dOriginY, CGFloat dWidth, CGFloat dHeight);//按照给定参数不成比例修改rect
 
 
-@interface UIView(Category)
+@interface UIView(WGCategory)
 
 @property CGPoint wg_leftOrigin;
 @property  CGSize wg_size;

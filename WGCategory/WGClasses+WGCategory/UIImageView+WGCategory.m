@@ -7,7 +7,7 @@
 
 #import "WGDefines.h"
 
-@implementation UIImageView (Category)
+@implementation UIImageView (WGCategory)
 #pragma mark - copy zone
 - (id )copyWithZone:(NSZone *)zone{
     UIImageView *newView = [super copyWithZone:zone];

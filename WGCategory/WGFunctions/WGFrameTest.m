@@ -221,11 +221,11 @@ static WGFrameTest *test = nil;
         if (_frameChangingWidthOrHeight==0) {
             static CGPoint increate;
             increate = ccpAdd(increate, detlaPoint);
-            if ( fabsf(increate.x) > (fabsf(increate.y)+10) ) {
+            if ( fabs(increate.x) > (fabs(increate.y)+10) ) {
                 self.frameChangingWidthOrHeight = 1;
                 //确定后 清零
                 increate = CGPointZero;
-            }else if ( fabsf(increate.y) > (fabs(increate.x)+10) ){
+            }else if ( fabs(increate.y) > (fabs(increate.x)+10) ){
                 self.frameChangingWidthOrHeight = 2;
                 //确定后 清零
                 increate = CGPointZero;

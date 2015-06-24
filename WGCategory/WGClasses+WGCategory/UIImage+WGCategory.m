@@ -6,9 +6,9 @@
 //  Copyright (c) 2014年 Apple. All rights reserved.
 //
 
-#import "UIImage+Category.h"
+#import "UIImage+WGCategory.h"
 
-@implementation UIImage (Category)
+@implementation UIImage (WGCategory)
 #pragma mark - 图片修改颜色
 - (UIImage *) imageWithTintColor:(UIColor *)tintColor
 {

@@ -25,7 +25,7 @@ enum {
 
 
 
-@interface UIDevice (Category)
+@interface UIDevice (WGCategory)
 
 /**
  *@brief	获取当前设备分辨率模式，区分iPhone高低请、iPad高低请、iPhone 3.5inch、iPhone 4.0inch
