@@ -8,6 +8,7 @@
 
 #import "NSObject+WGModelValue.h"
 #import <objc/runtime.h>
+#import "WGDefines.h"
 #pragma mark -
 @implementation NSObject (WGModelValue)
 - (id )modelValue{
@@ -27,6 +28,11 @@
         
         //将value深层转化
         value = [value modelValue];
+        
+        //确保value不是null
+        if (!value) {
+            value = @"";
+        }
         
         [json setValue:value forKey:propertyName_NSString];
     }
