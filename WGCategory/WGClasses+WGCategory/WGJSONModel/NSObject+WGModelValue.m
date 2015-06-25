@@ -16,14 +16,14 @@
 @property NSString *NSString;
 @property NSMutableString *NSMutableString;
 @property NSNumber *NSNumber;
-@property NSData *NSData;
-@property NSMutableData *NSMutableData;
+//@property NSData *NSData;//一般model不会保有此种类型的属性，故不作考虑
+//@property NSMutableData *NSMutableData;//一般model不会保有此种类型的属性，故不作考虑
 @property NSArray *NSArray;
 @property NSMutableArray *NSMutableArray;
 @property NSDictionary *NSDictionary;
 @property NSMutableDictionary *NSMutableDictionary;
-@property NSValue *NSValue;
-@property NSDate *NSDate;
+//@property NSValue *NSValue;//一般model不会保有此种类型的属性，故不作考虑
+//@property NSDate *NSDate;//一般model不会保有此种类型的属性，故不作考虑
 @end
 @implementation WGNullValueHelper
 @end
