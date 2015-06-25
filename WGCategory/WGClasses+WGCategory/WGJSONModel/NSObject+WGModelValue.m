@@ -108,8 +108,11 @@
         WGLogError(@"检测到不支持的属性类型");
         return nil;
     }else{
-        id value = [[NSClassFromString(className) alloc]init];
-        return value;
+        if ([NSClassFromString(className) isSubclassOfClass:[NSValue class]]) {
+            return @0;//NSValue alloc init后，还是为nil，需要特殊处理
+        }else{
+            return [[NSClassFromString(className) alloc]init];
+        }
     }
 }
 @end

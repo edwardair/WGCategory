@@ -41,7 +41,7 @@
 
 @interface TEST2:NSObject
 @property (nonatomic,copy) NSString *name;
-@property (nonatomic,copy) NSString *b;
+@property (nonatomic,copy) NSValue *b;
 @end
 @implementation TEST2
 @end
