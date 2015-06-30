@@ -11,8 +11,8 @@
 #import "WGDefines.h"
 @implementation NSObject (WGJSONModel)
 #pragma mark -
-- (id)modelWithClass:(Class)class{
-    return [self modelWithClassName:NSStringFromClass(class)];
+- (id)modelWithClass:(Class)modelClass{
+    return [self modelWithClassName:NSStringFromClass(modelClass)];
 }
 - (id )modelWithClassName:(NSString *)className{
     WGLogFormatWarn(@"不支持此类：%@转化为model，仅返回%@的实例对象，不赋值",NSStringFromClass([self class]),className);
@@ -23,8 +23,8 @@
 
 #pragma mark -
 @implementation NSArray (WGJSONModel)
-- (id)modelWithClass:(Class)class{
-    return [self modelWithClassName:NSStringFromClass(class)];
+- (id)modelWithClass:(Class)modelClass{
+    return [self modelWithClassName:NSStringFromClass(modelClass)];
 }
 - (id )modelWithClassName:(NSString *)propertyAttributeName{
     return [self modelWithClassName:propertyAttributeName Level:0];
@@ -52,8 +52,8 @@
 
 #pragma mark -
 @implementation NSDictionary (WGJSONModel)
-- (id)modelWithClass:(Class)class{
-    return [self modelWithClassName:NSStringFromClass(class)];
+- (id)modelWithClass:(Class)modelClass{
+    return [self modelWithClassName:NSStringFromClass(modelClass)];
 }
 
 - (id )modelWithClassName:(NSString *)className{
@@ -61,16 +61,16 @@
 }
 - (id )modelWithClassName:(NSString *)className Level:(int )level{
     
-    Class class = NSClassFromString([className uppercaseString]);
-    if (!class) {
+    Class modelClass = NSClassFromString([className uppercaseString]);
+    if (!modelClass) {
         //如果class不存在，则直接返回self
         return self;
     }
     
-    id model = [[class alloc]init];
+    id model = [[modelClass alloc]init];
     
     u_int count;
-    objc_property_t *properties  = class_copyPropertyList(class, &count);
+    objc_property_t *properties  = class_copyPropertyList(modelClass, &count);
     
     for (int i = 0; i<count; i++){
         

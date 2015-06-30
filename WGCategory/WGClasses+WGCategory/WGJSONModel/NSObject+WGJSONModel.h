@@ -25,11 +25,11 @@ model;                                                                     \
  *  生成model
  注意：如果value==nil，则会返回nil，可以使用MODELWITHVALUE(value, class)宏来确保返回非nil
  *
- *  @param class 需要转化的model的类
+ *  @param modelClass 需要转化的model的类
  *
  *  @return if value==nil, return nil; else class.instance
  */
-- (id )modelWithClass:(Class )class;
+- (id )modelWithClass:(Class )modelClass;
 /**
  *  生成model
  注意：如果value==nil，则会返回nil，可以使用MODELWITHVALUE(value, class)宏来确保返回非nil
