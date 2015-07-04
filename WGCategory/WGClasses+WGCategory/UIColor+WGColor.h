@@ -16,7 +16,7 @@ static inline  UIColor * colorWithHexString(NSString *str){
     }
     
     if ([str hasPrefix:@"#"]) {
-        str = [str substringToIndex:1];
+        str = [str substringFromIndex:1];
     }
     
     unsigned rgba[4] = {255,255,255,255};// 默认 alpha==1
