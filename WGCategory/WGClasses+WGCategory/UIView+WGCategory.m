@@ -12,17 +12,17 @@
 #pragma mark C ---CGRect
 CGPoint WGCGRectGetCenter(CGRect rect)
 {
-    return ccp(CGRectGetMidX(rect), CGRectGetMidY(rect));
+    return CGPointMake(CGRectGetMidX(rect), CGRectGetMidY(rect));
 }
 
 CGRect WGCGRectMoveTo(CGRect rect, CGPoint origin)
 {
-    CGPoint sub = ccpSub(origin, rect.origin);
+    CGPoint sub = CGPointMake(rect.origin.x-origin.x, rect.origin.y-origin.y);
     return WGCGRectMoveBy(rect, sub);
 }
 
 CGRect WGCGRectMoveBy(CGRect rect,CGPoint delta){
-    rect.origin = ccpAdd(rect.origin, delta);
+    rect.origin = CGPointMake(rect.origin.x+delta.x, rect.origin.y+delta.y);
     return rect;
 }
 CGRect WGCGRectScaleBy(CGRect rect,CGFloat scaleFactor){
@@ -31,7 +31,7 @@ CGRect WGCGRectScaleBy(CGRect rect,CGFloat scaleFactor){
     return rect;
 }
 CGRect WGCGRectChangeBy(CGRect rect, CGFloat dOriginX, CGFloat dOriginY, CGFloat dWidth, CGFloat dHeight){
-    rect = WGCGRectMoveBy(rect, ccp(dOriginX, dOriginY));
+    rect = WGCGRectMoveBy(rect, CGPointMake(dOriginX, dOriginY));
     rect.size.width += dWidth;
     rect.size.height += dHeight;
     return rect;
@@ -85,7 +85,7 @@ CGRect WGCGRectChangeBy(CGRect rect, CGFloat dOriginX, CGFloat dOriginY, CGFloat
 }
 - (void)setWg_left:(CGFloat)wg_left{//设置left 相当于左右平移
     CGFloat delta = wg_left - self.wg_left;
-    self.frame = WGCGRectMoveBy(self.frame, ccp(delta, 0));
+    self.frame = WGCGRectMoveBy(self.frame, CGPointMake(delta, 0));
 }
 
 //right
@@ -103,7 +103,7 @@ CGRect WGCGRectChangeBy(CGRect rect, CGFloat dOriginX, CGFloat dOriginY, CGFloat
 }
 - (void)setWg_top:(CGFloat)wg_top{//设置top相当于上下平移
     CGFloat delta = wg_top - self.wg_top;
-    self.frame = WGCGRectMoveBy(self.frame, ccp(0, delta));
+    self.frame = WGCGRectMoveBy(self.frame, CGPointMake(0, delta));
 }
 
 //bottom

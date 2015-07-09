@@ -25,14 +25,3 @@
 
 @end
 
-
-#pragma mark - WGLabel Category
-@implementation WGLabel (WGCategory)
-- (void)setText:(NSString *)text{
-    NSString *text_ = [NSString  handleNetString:text];
-    
-    [super setText:text_];
-    
-}
-@end
-

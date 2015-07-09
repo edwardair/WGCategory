@@ -7,7 +7,7 @@
 //
 
 #import "UIButton+WGCategory.h"
-
+#import "WGDefines.h"
 @implementation UIButton (WGCategory)
 
 @end
@@ -19,7 +19,7 @@
 
 @implementation RoundButton
 - (void)setup{
-    self.layer.cornerRadius = 5.f;
+    [self setCorners:UIRectCornerAllCorners ByRadius:5.f];
     self.clipsToBounds = YES;
 }
 - (id )initWithCoder:(NSCoder *)aDecoder{

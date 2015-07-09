@@ -87,10 +87,6 @@
         
         //检测value是否为null，跳过此value的赋值
         if (value) {
-            if ([dataKeyString isEqualToString:@"description"]) {
-                
-            }
-
             if ([value respondsToSelector:@selector(modelWithClassName:Level:)]) {
                 //需要递归转化model
                 value = [value modelWithClassName:[NSString stringWithFormat:@"%@_%@",className,propertyName_NSString] Level:level+1];

@@ -8,9 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-#import "CGPointExtension.h"
-
-#import "WGFrameTest.h"
 #import "WGLog.h"
 #import "WGTextInputAccessoryView.h"
 
@@ -38,7 +35,6 @@
 #import "UIDevice+WGCategory.h"
 #import "UIImage+WGCategory.h"
 #import "NSDate+WGCategory.h"
-#import "UIActionSheet+WGActionSheet.h"
 #import "UIColor+WGColor.h"
 
 //JSON MODEL

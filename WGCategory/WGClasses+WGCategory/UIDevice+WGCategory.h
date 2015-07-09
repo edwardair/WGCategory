@@ -42,6 +42,4 @@ enum {
 + (BOOL )isIOS7Version;
 
 
-
-
 @end

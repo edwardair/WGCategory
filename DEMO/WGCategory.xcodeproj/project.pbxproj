@@ -15,8 +15,6 @@
 		F7A4F89A1B1D531A00B84A4E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7A4F8991B1D531A00B84A4E /* Images.xcassets */; };
 		F7A4F89D1B1D531A00B84A4E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7A4F89B1B1D531A00B84A4E /* LaunchScreen.xib */; };
 		F7A4F8A91B1D531A00B84A4E /* WGCategoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F8A81B1D531A00B84A4E /* WGCategoryTests.m */; };
-		F7A4F97A1B1D561600B84A4E /* CGPointExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F9391B1D561600B84A4E /* CGPointExtension.m */; };
-		F7A4F97B1B1D561600B84A4E /* CGPointExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F9391B1D561600B84A4E /* CGPointExtension.m */; };
 		F7A4F97C1B1D561600B84A4E /* WGActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F93C1B1D561600B84A4E /* WGActionSheet.m */; };
 		F7A4F97D1B1D561600B84A4E /* WGActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F93C1B1D561600B84A4E /* WGActionSheet.m */; };
 		F7A4F97E1B1D561600B84A4E /* WGAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F93E1B1D561600B84A4E /* WGAlertView.m */; };
@@ -41,8 +39,6 @@
 		F7A4F9931B1D561600B84A4E /* NSString+WGString.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F9531B1D561600B84A4E /* NSString+WGString.m */; };
 		F7A4F9941B1D561600B84A4E /* NSTimer+WGTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F9551B1D561600B84A4E /* NSTimer+WGTimer.m */; };
 		F7A4F9951B1D561600B84A4E /* NSTimer+WGTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F9551B1D561600B84A4E /* NSTimer+WGTimer.m */; };
-		F7A4F9961B1D561600B84A4E /* UIActionSheet+WGActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F9571B1D561600B84A4E /* UIActionSheet+WGActionSheet.m */; };
-		F7A4F9971B1D561600B84A4E /* UIActionSheet+WGActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F9571B1D561600B84A4E /* UIActionSheet+WGActionSheet.m */; };
 		F7A4F9981B1D561600B84A4E /* UIButton+WGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F9591B1D561600B84A4E /* UIButton+WGCategory.m */; };
 		F7A4F9991B1D561600B84A4E /* UIButton+WGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F9591B1D561600B84A4E /* UIButton+WGCategory.m */; };
 		F7A4F99A1B1D561600B84A4E /* UIColor+WGColor.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F95B1B1D561600B84A4E /* UIColor+WGColor.m */; };
@@ -67,8 +63,6 @@
 		F7A4F9AD1B1D561600B84A4E /* UIView+WGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F96D1B1D561600B84A4E /* UIView+WGCategory.m */; };
 		F7A4F9AE1B1D561600B84A4E /* UIViewController+WGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F96F1B1D561600B84A4E /* UIViewController+WGCategory.m */; };
 		F7A4F9AF1B1D561600B84A4E /* UIViewController+WGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F96F1B1D561600B84A4E /* UIViewController+WGCategory.m */; };
-		F7A4F9B01B1D561600B84A4E /* WGFrameTest.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F9731B1D561600B84A4E /* WGFrameTest.m */; };
-		F7A4F9B11B1D561600B84A4E /* WGFrameTest.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F9731B1D561600B84A4E /* WGFrameTest.m */; };
 		F7A4F9B21B1D561600B84A4E /* WGGetGestureSecrets.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F9751B1D561600B84A4E /* WGGetGestureSecrets.m */; };
 		F7A4F9B31B1D561600B84A4E /* WGGetGestureSecrets.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F9751B1D561600B84A4E /* WGGetGestureSecrets.m */; };
 		F7A4F9B41B1D561600B84A4E /* WGLog.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F9771B1D561600B84A4E /* WGLog.m */; };
@@ -107,9 +101,6 @@
 		F7A4F8A21B1D531A00B84A4E /* WGCategoryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WGCategoryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7A4F8A71B1D531A00B84A4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F7A4F8A81B1D531A00B84A4E /* WGCategoryTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WGCategoryTests.m; sourceTree = "<group>"; };
-		F7A4F9371B1D561600B84A4E /* ccMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ccMacros.h; sourceTree = "<group>"; };
-		F7A4F9381B1D561600B84A4E /* CGPointExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGPointExtension.h; sourceTree = "<group>"; };
-		F7A4F9391B1D561600B84A4E /* CGPointExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGPointExtension.m; sourceTree = "<group>"; };
 		F7A4F93B1B1D561600B84A4E /* WGActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGActionSheet.h; sourceTree = "<group>"; };
 		F7A4F93C1B1D561600B84A4E /* WGActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGActionSheet.m; sourceTree = "<group>"; };
 		F7A4F93D1B1D561600B84A4E /* WGAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGAlertView.h; sourceTree = "<group>"; };
@@ -134,8 +125,6 @@
 		F7A4F9531B1D561600B84A4E /* NSString+WGString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+WGString.m"; sourceTree = "<group>"; };
 		F7A4F9541B1D561600B84A4E /* NSTimer+WGTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+WGTimer.h"; sourceTree = "<group>"; };
 		F7A4F9551B1D561600B84A4E /* NSTimer+WGTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+WGTimer.m"; sourceTree = "<group>"; };
-		F7A4F9561B1D561600B84A4E /* UIActionSheet+WGActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIActionSheet+WGActionSheet.h"; sourceTree = "<group>"; };
-		F7A4F9571B1D561600B84A4E /* UIActionSheet+WGActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIActionSheet+WGActionSheet.m"; sourceTree = "<group>"; };
 		F7A4F9581B1D561600B84A4E /* UIButton+WGCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+WGCategory.h"; sourceTree = "<group>"; };
 		F7A4F9591B1D561600B84A4E /* UIButton+WGCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+WGCategory.m"; sourceTree = "<group>"; };
 		F7A4F95A1B1D561600B84A4E /* UIColor+WGColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+WGColor.h"; sourceTree = "<group>"; };
@@ -161,8 +150,6 @@
 		F7A4F96E1B1D561600B84A4E /* UIViewController+WGCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+WGCategory.h"; sourceTree = "<group>"; };
 		F7A4F96F1B1D561600B84A4E /* UIViewController+WGCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+WGCategory.m"; sourceTree = "<group>"; };
 		F7A4F9701B1D561600B84A4E /* WGDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGDefines.h; sourceTree = "<group>"; };
-		F7A4F9721B1D561600B84A4E /* WGFrameTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGFrameTest.h; sourceTree = "<group>"; };
-		F7A4F9731B1D561600B84A4E /* WGFrameTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGFrameTest.m; sourceTree = "<group>"; };
 		F7A4F9741B1D561600B84A4E /* WGGetGestureSecrets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGGetGestureSecrets.h; sourceTree = "<group>"; };
 		F7A4F9751B1D561600B84A4E /* WGGetGestureSecrets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGGetGestureSecrets.m; sourceTree = "<group>"; };
 		F7A4F9761B1D561600B84A4E /* WGLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGLog.h; sourceTree = "<group>"; };
@@ -262,7 +249,6 @@
 		F7A4F9351B1D561600B84A4E /* WGCategory */ = {
 			isa = PBXGroup;
 			children = (
-				F7A4F9361B1D561600B84A4E /* CGPointExtension */,
 				F7A4F93A1B1D561600B84A4E /* WGCalsses */,
 				F7A4F94B1B1D561600B84A4E /* WGClasses+WGCategory */,
 				F7A4F9701B1D561600B84A4E /* WGDefines.h */,
@@ -270,16 +256,6 @@
 			);
 			name = WGCategory;
 			path = ../WGCategory;
-			sourceTree = "<group>";
-		};
-		F7A4F9361B1D561600B84A4E /* CGPointExtension */ = {
-			isa = PBXGroup;
-			children = (
-				F7A4F9371B1D561600B84A4E /* ccMacros.h */,
-				F7A4F9381B1D561600B84A4E /* CGPointExtension.h */,
-				F7A4F9391B1D561600B84A4E /* CGPointExtension.m */,
-			);
-			path = CGPointExtension;
 			sourceTree = "<group>";
 		};
 		F7A4F93A1B1D561600B84A4E /* WGCalsses */ = {
@@ -317,8 +293,6 @@
 				F7A4F9531B1D561600B84A4E /* NSString+WGString.m */,
 				F7A4F9541B1D561600B84A4E /* NSTimer+WGTimer.h */,
 				F7A4F9551B1D561600B84A4E /* NSTimer+WGTimer.m */,
-				F7A4F9561B1D561600B84A4E /* UIActionSheet+WGActionSheet.h */,
-				F7A4F9571B1D561600B84A4E /* UIActionSheet+WGActionSheet.m */,
 				F7A4F9581B1D561600B84A4E /* UIButton+WGCategory.h */,
 				F7A4F9591B1D561600B84A4E /* UIButton+WGCategory.m */,
 				F7A4F95A1B1D561600B84A4E /* UIColor+WGColor.h */,
@@ -350,8 +324,6 @@
 		F7A4F9711B1D561600B84A4E /* WGFunctions */ = {
 			isa = PBXGroup;
 			children = (
-				F7A4F9721B1D561600B84A4E /* WGFrameTest.h */,
-				F7A4F9731B1D561600B84A4E /* WGFrameTest.m */,
 				F7A4F9741B1D561600B84A4E /* WGGetGestureSecrets.h */,
 				F7A4F9751B1D561600B84A4E /* WGGetGestureSecrets.m */,
 				F7A4F9761B1D561600B84A4E /* WGLog.h */,
@@ -497,13 +469,11 @@
 				F7A4F99C1B1D561600B84A4E /* UIControl+WGCategory.m in Sources */,
 				F7A4F9AA1B1D561600B84A4E /* UITextView+WGCategory.m in Sources */,
 				F7A4F9921B1D561600B84A4E /* NSString+WGString.m in Sources */,
-				F7A4F9B01B1D561600B84A4E /* WGFrameTest.m in Sources */,
 				F7A4F9901B1D561600B84A4E /* NSObject+WGObject.m in Sources */,
 				F7C19BC61B2EB06100137B46 /* NSObject+WGAutoModelHelper.m in Sources */,
 				F7A4F9981B1D561600B84A4E /* UIButton+WGCategory.m in Sources */,
 				F7A4F98A1B1D561600B84A4E /* WGTextView.m in Sources */,
 				F7A4F9861B1D561600B84A4E /* WGLabel.m in Sources */,
-				F7A4F97A1B1D561600B84A4E /* CGPointExtension.m in Sources */,
 				F7A4F9B61B1D561600B84A4E /* WGTextInputAccessoryView.m in Sources */,
 				F7C19BC71B2EB06100137B46 /* NSObject+WGJSONModel.m in Sources */,
 				F7A4F88F1B1D531A00B84A4E /* AppDelegate.m in Sources */,
@@ -512,7 +482,6 @@
 				F7A4F8921B1D531A00B84A4E /* FirstViewController.m in Sources */,
 				F7A4F88C1B1D531A00B84A4E /* main.m in Sources */,
 				F7A4F9881B1D561600B84A4E /* WGPopoverView.m in Sources */,
-				F7A4F9961B1D561600B84A4E /* UIActionSheet+WGActionSheet.m in Sources */,
 				F7A4F9AC1B1D561600B84A4E /* UIView+WGCategory.m in Sources */,
 				F7A4F97C1B1D561600B84A4E /* WGActionSheet.m in Sources */,
 			);
@@ -523,7 +492,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F7A4F9AF1B1D561600B84A4E /* UIViewController+WGCategory.m in Sources */,
-				F7A4F97B1B1D561600B84A4E /* CGPointExtension.m in Sources */,
 				F7A4F99F1B1D561600B84A4E /* UIDevice+WGCategory.m in Sources */,
 				F7A4F9891B1D561600B84A4E /* WGPopoverView.m in Sources */,
 				F7A4F9811B1D561600B84A4E /* WGCheckBox.m in Sources */,
@@ -547,10 +515,8 @@
 				F7A4F9931B1D561600B84A4E /* NSString+WGString.m in Sources */,
 				F7A4F98D1B1D561600B84A4E /* NSDate+WGCategory.m in Sources */,
 				F7A4F9AB1B1D561600B84A4E /* UITextView+WGCategory.m in Sources */,
-				F7A4F9971B1D561600B84A4E /* UIActionSheet+WGActionSheet.m in Sources */,
 				F7A4F99B1B1D561600B84A4E /* UIColor+WGColor.m in Sources */,
 				F7A4F8A91B1D531A00B84A4E /* WGCategoryTests.m in Sources */,
-				F7A4F9B11B1D561600B84A4E /* WGFrameTest.m in Sources */,
 				F7A4F9B31B1D561600B84A4E /* WGGetGestureSecrets.m in Sources */,
 				F7A4F97D1B1D561600B84A4E /* WGActionSheet.m in Sources */,
 			);
