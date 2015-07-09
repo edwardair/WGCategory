@@ -7,6 +7,7 @@
 //
 
 #import "WGDefines.h"
+#import <objc/runtime.h>
 
 @implementation UIView(WGCategory)
 #pragma mark C ---CGRect
@@ -137,8 +138,17 @@ CGRect WGCGRectChangeBy(CGRect rect, CGFloat dOriginX, CGFloat dOriginY, CGFloat
 #pragma mark - copy zone
 - (id )copyWithZone:(NSZone *)zone{
     UIView *newView = [[[self class]allocWithZone:zone] initWithFrame:self.frame];
-    newView.backgroundColor = self.backgroundColor;
-    newView.tag = self.tag;
+
+    u_int count;
+    objc_property_t *properties  = class_copyPropertyList([self class], &count);
+    
+    for (int i = 0; i<count; i++){
+        NSString *propertyName = [NSString stringWithUTF8String:property_getName(properties[i])];
+        [newView setValue:[self valueForKey:propertyName] forKey:propertyName];
+    }
+//
+//    newView.backgroundColor = self.backgroundColor;
+//    newView.tag = self.tag;
     for (UIView *sub in self.subviews) {
         [newView addSubview:[sub copy]];
     }

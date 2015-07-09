@@ -56,6 +56,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 50, 100)];
+    label.backgroundColor = [UIColor redColor];
+    label.tag = 11;
+    
+    UILabel *c = [label copy];
+    
     
     id str111 = [[NSClassFromString(@"NSValue") alloc]init];
     if (!str111) {
