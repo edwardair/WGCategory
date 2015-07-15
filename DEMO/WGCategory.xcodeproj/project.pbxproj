@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F76AE7C01B55FC2E000B68C6 /* TestTimerVCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F76AE7BF1B55FC2E000B68C6 /* TestTimerVCViewController.m */; };
 		F7A4F88C1B1D531A00B84A4E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F88B1B1D531A00B84A4E /* main.m */; };
 		F7A4F88F1B1D531A00B84A4E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F88E1B1D531A00B84A4E /* AppDelegate.m */; };
 		F7A4F8921B1D531A00B84A4E /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F8911B1D531A00B84A4E /* FirstViewController.m */; };
@@ -86,6 +87,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F76AE7BE1B55FC2E000B68C6 /* TestTimerVCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestTimerVCViewController.h; sourceTree = "<group>"; };
+		F76AE7BF1B55FC2E000B68C6 /* TestTimerVCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestTimerVCViewController.m; sourceTree = "<group>"; };
 		F7A4F8861B1D531A00B84A4E /* WGCategory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WGCategory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7A4F88A1B1D531A00B84A4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F7A4F88B1B1D531A00B84A4E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -212,6 +215,8 @@
 				F7A4F8911B1D531A00B84A4E /* FirstViewController.m */,
 				F7A4F8931B1D531A00B84A4E /* SecondViewController.h */,
 				F7A4F8941B1D531A00B84A4E /* SecondViewController.m */,
+				F76AE7BE1B55FC2E000B68C6 /* TestTimerVCViewController.h */,
+				F76AE7BF1B55FC2E000B68C6 /* TestTimerVCViewController.m */,
 				F7A4F8961B1D531A00B84A4E /* Main.storyboard */,
 				F7A4F8991B1D531A00B84A4E /* Images.xcassets */,
 				F7A4F89B1B1D531A00B84A4E /* LaunchScreen.xib */,
@@ -460,6 +465,7 @@
 				F7C19BC91B2EB06100137B46 /* NSObject+WGModelValue.m in Sources */,
 				F7A4F98C1B1D561600B84A4E /* NSDate+WGCategory.m in Sources */,
 				F7A4F97E1B1D561600B84A4E /* WGAlertView.m in Sources */,
+				F76AE7C01B55FC2E000B68C6 /* TestTimerVCViewController.m in Sources */,
 				F7A4F9A61B1D561600B84A4E /* UILabel+WGCategory.m in Sources */,
 				F7A4F9A01B1D561600B84A4E /* UIGestureRecognizer+WGCategory.m in Sources */,
 				F7A4F8951B1D531A00B84A4E /* SecondViewController.m in Sources */,

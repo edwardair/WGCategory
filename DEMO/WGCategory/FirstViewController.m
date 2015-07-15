@@ -8,6 +8,7 @@
 
 #import "FirstViewController.h"
 #import "WGDefines.h"
+#import "TestTimerVCViewController.h"
 
 @interface TEST_B_ARRAY_2_3:NSObject
 @property (nonatomic,copy) NSString *ddd;
@@ -55,13 +56,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self presentViewController:[[TestTimerVCViewController alloc]init] animated:YES completion:NULL];
 
-    UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 50, 100)];
-    label.backgroundColor = [UIColor redColor];
-    label.tag = 11;
-    
-    UILabel *c = [label copy];
-    
+    });
     
     id str111 = [[NSClassFromString(@"NSValue") alloc]init];
     if (!str111) {
