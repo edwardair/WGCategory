@@ -22,28 +22,8 @@
     [self setCorners:UIRectCornerAllCorners ByRadius:5.f];
     self.clipsToBounds = YES;
 }
-- (id )initWithCoder:(NSCoder *)aDecoder{
-    self = [super initWithCoder:aDecoder];
-    if (self) {
-        [self setup];
-    }
-    return self;
-}
-- (id )initWithFrame:(CGRect)frame{
-    self = [super initWithFrame:frame];
-    if (self) {
-        [self setup];
-    }
-    return self;
-}
-- (id)init{
-    if ((self = [super init])) {
-        [self setup];
-    }
-    return self;
-}
-- (void)awakeFromNib{
-    [super awakeFromNib];
+- (void)layoutSubviews{
+    [super layoutSubviews];
     [self setup];
 }
 @end
