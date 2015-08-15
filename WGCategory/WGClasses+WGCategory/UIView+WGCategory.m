@@ -190,6 +190,7 @@ CGRect WGCGRectChangeBy(CGRect rect, CGFloat dOriginX, CGFloat dOriginY, CGFloat
 }
 - (void)setCornerRadius:(CGFloat)cornerRadius{
     self.layer.cornerRadius = cornerRadius;
+    self.layer.masksToBounds = YES;
 }
 
 
