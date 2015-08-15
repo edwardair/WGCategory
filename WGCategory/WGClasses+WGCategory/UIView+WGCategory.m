@@ -181,4 +181,16 @@ CGRect WGCGRectChangeBy(CGRect rect, CGFloat dOriginX, CGFloat dOriginY, CGFloat
     self.layer.mask = maskLayer;
 }
 
+#pragma mark - IBInspectable
+- (void)setBoardWidth:(CGFloat)boardWidth{
+    self.layer.borderWidth = boardWidth;
+}
+- (void)setBoardColor:(UIColor *)boardColor{
+    self.layer.borderColor = boardColor.CGColor;
+}
+- (void)setCornerRadius:(CGFloat)cornerRadius{
+    self.layer.cornerRadius = cornerRadius;
+}
+
+
 @end

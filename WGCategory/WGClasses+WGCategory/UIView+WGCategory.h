@@ -12,6 +12,7 @@ CGRect WGCGRectMoveBy(CGRect rect, CGPoint delta);//以左上角为基准点平�
 CGRect WGCGRectScaleBy(CGRect rect, CGFloat scaleFactor);//按照比例缩放到当前的scaleFactor倍数
 CGRect WGCGRectChangeBy(CGRect rect, CGFloat dOriginX, CGFloat dOriginY, CGFloat dWidth, CGFloat dHeight);//按照给定参数不成比例修改rect
 
+IB_DESIGNABLE
 
 @interface UIView(WGCategory)
 
@@ -23,6 +24,11 @@ CGRect WGCGRectChangeBy(CGRect rect, CGFloat dOriginX, CGFloat dOriginY, CGFloat
 @property  CGFloat wg_bottom;
 @property  CGFloat wg_width;
 @property  CGFloat wg_height;
+
+@property (nonatomic,assign) IBInspectable CGFloat boardWidth;
+@property (nonatomic,assign) IBInspectable UIColor *boardColor;
+@property (nonatomic,assign) IBInspectable CGFloat cornerRadius;
+
 
 /**
  *  获取 UIView的父VC
