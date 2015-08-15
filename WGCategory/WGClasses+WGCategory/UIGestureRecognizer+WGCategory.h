@@ -8,6 +8,5 @@
 
 @interface UIGestureRecognizer(WGCategory)
 #pragma mark - tag
-- (int)wg_tag;
-- (void)setWg_Tag:(int )tag;
+@property (nonatomic,assign) int wg_tag;
 @end

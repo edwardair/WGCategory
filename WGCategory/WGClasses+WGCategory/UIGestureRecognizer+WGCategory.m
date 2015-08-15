@@ -38,8 +38,8 @@ static const char *property_tag;
 - (int )wg_tag{
     return [objc_getAssociatedObject(self, property_tag) intValue];
 }
-- (void)setWg_Tag:(int)tag{
-    objc_setAssociatedObject(self, property_tag, @(tag), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+- (void)setWg_tag:(int)wg_tag{
+    objc_setAssociatedObject(self, property_tag, @(wg_tag), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 
