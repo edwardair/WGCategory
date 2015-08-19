@@ -74,6 +74,8 @@
 		F7C19BC71B2EB06100137B46 /* NSObject+WGJSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F7C19BC11B2EB06100137B46 /* NSObject+WGJSONModel.m */; };
 		F7C19BC81B2EB06100137B46 /* NSObject+WGJSONValue.m in Sources */ = {isa = PBXBuildFile; fileRef = F7C19BC31B2EB06100137B46 /* NSObject+WGJSONValue.m */; };
 		F7C19BC91B2EB06100137B46 /* NSObject+WGModelValue.m in Sources */ = {isa = PBXBuildFile; fileRef = F7C19BC51B2EB06100137B46 /* NSObject+WGModelValue.m */; };
+		F7E3D41A1B84136C001AE298 /* UIView+IBDESIGNABLE.m in Sources */ = {isa = PBXBuildFile; fileRef = F7E3D4191B84136C001AE298 /* UIView+IBDESIGNABLE.m */; };
+		F7E3D41D1B841780001AE298 /* TestDesignableView.m in Sources */ = {isa = PBXBuildFile; fileRef = F7E3D41C1B841780001AE298 /* TestDesignableView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -167,6 +169,10 @@
 		F7C19BC31B2EB06100137B46 /* NSObject+WGJSONValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+WGJSONValue.m"; sourceTree = "<group>"; };
 		F7C19BC41B2EB06100137B46 /* NSObject+WGModelValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+WGModelValue.h"; sourceTree = "<group>"; };
 		F7C19BC51B2EB06100137B46 /* NSObject+WGModelValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+WGModelValue.m"; sourceTree = "<group>"; };
+		F7E3D4181B84136C001AE298 /* UIView+IBDESIGNABLE.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+IBDESIGNABLE.h"; sourceTree = "<group>"; };
+		F7E3D4191B84136C001AE298 /* UIView+IBDESIGNABLE.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+IBDESIGNABLE.m"; sourceTree = "<group>"; };
+		F7E3D41B1B841780001AE298 /* TestDesignableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestDesignableView.h; sourceTree = "<group>"; };
+		F7E3D41C1B841780001AE298 /* TestDesignableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestDesignableView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,6 +219,8 @@
 				F7A4F88E1B1D531A00B84A4E /* AppDelegate.m */,
 				F7A4F8901B1D531A00B84A4E /* FirstViewController.h */,
 				F7A4F8911B1D531A00B84A4E /* FirstViewController.m */,
+				F7E3D41B1B841780001AE298 /* TestDesignableView.h */,
+				F7E3D41C1B841780001AE298 /* TestDesignableView.m */,
 				F7A4F8931B1D531A00B84A4E /* SecondViewController.h */,
 				F7A4F8941B1D531A00B84A4E /* SecondViewController.m */,
 				F76AE7BE1B55FC2E000B68C6 /* TestTimerVCViewController.h */,
@@ -320,6 +328,8 @@
 				F7A4F96B1B1D561600B84A4E /* UITextView+WGCategory.m */,
 				F7A4F96C1B1D561600B84A4E /* UIView+WGCategory.h */,
 				F7A4F96D1B1D561600B84A4E /* UIView+WGCategory.m */,
+				F7E3D4181B84136C001AE298 /* UIView+IBDESIGNABLE.h */,
+				F7E3D4191B84136C001AE298 /* UIView+IBDESIGNABLE.m */,
 				F7A4F96E1B1D561600B84A4E /* UIViewController+WGCategory.h */,
 				F7A4F96F1B1D561600B84A4E /* UIViewController+WGCategory.m */,
 			);
@@ -456,7 +466,9 @@
 			files = (
 				F7A4F9941B1D561600B84A4E /* NSTimer+WGTimer.m in Sources */,
 				F7A4F99E1B1D561600B84A4E /* UIDevice+WGCategory.m in Sources */,
+				F7E3D41D1B841780001AE298 /* TestDesignableView.m in Sources */,
 				F7A4F9B41B1D561600B84A4E /* WGLog.m in Sources */,
+				F7E3D41A1B84136C001AE298 /* UIView+IBDESIGNABLE.m in Sources */,
 				F7C19BC81B2EB06100137B46 /* NSObject+WGJSONValue.m in Sources */,
 				F7A4F9841B1D561600B84A4E /* WGCoreTextView.m in Sources */,
 				F7A4F9821B1D561600B84A4E /* WGControl.m in Sources */,

@@ -10,7 +10,7 @@
 #import <objc/runtime.h>
 
 @implementation UIView(WGCategory)
-#pragma mark C ---CGRect
+#pragma mark - CGRect
 CGPoint WGCGRectGetCenter(CGRect rect)
 {
     return CGPointMake(CGRectGetMidX(rect), CGRectGetMidY(rect));
@@ -179,18 +179,6 @@ CGRect WGCGRectChangeBy(CGRect rect, CGFloat dOriginX, CGFloat dOriginY, CGFloat
     maskLayer.frame = self.bounds;
     maskLayer.path = maskPath.CGPath;
     self.layer.mask = maskLayer;
-}
-
-#pragma mark - IBInspectable
-- (void)setBoardWidth:(CGFloat)boardWidth{
-    self.layer.borderWidth = boardWidth;
-}
-- (void)setBoardColor:(UIColor *)boardColor{
-    self.layer.borderColor = boardColor.CGColor;
-}
-- (void)setCornerRadius:(CGFloat)cornerRadius{
-    self.layer.cornerRadius = cornerRadius;
-    self.layer.masksToBounds = YES;
 }
 
 

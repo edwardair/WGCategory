@@ -36,6 +36,7 @@
 #import "UIImage+WGCategory.h"
 #import "NSDate+WGCategory.h"
 #import "UIColor+WGColor.h"
+#import "UIView+IBDESIGNABLE.h"
 
 //JSON MODEL
 #import "NSObject+WGAutoModelHelper.h"
