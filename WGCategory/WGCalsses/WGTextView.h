@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+IB_DESIGNABLE
 @interface WGTextView : UITextView
-@property (copy, nonatomic) NSString *placeHolder;
-@property (nonatomic,strong) NSAttributedString *attributedString;
+@property (copy, nonatomic) IBInspectable NSString *placeHolder;
+@property (nonatomic,strong) IBInspectable NSAttributedString *attributedString;
 @end
