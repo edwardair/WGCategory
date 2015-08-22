@@ -107,7 +107,12 @@
             }
             
             [self setValue:value forKey:propertyName_NSString];
-        }else{//value为空时，同样需要将value赋给self.xxx，以确保将self所带的数据覆盖掉
+        }else{
+            //当value==nil，并且属性类型为BOOL、int等类型时，直接赋值程序会闪退
+            //MARK：属性为 char类型的，还是会导致闪退问题
+            value = [NSString handleNetString:value];
+            
+            //value为空时，同样需要将value赋给self.xxx，以确保将self所带的数据覆盖掉
             [self setValue:value forKey:propertyName_NSString];
         }
     }
