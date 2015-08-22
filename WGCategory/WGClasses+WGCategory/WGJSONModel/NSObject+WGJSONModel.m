@@ -69,8 +69,22 @@
     
     id model = [[modelClass alloc]init];
     
+    [model updateData:self WithLevel:level];
+    
+    return model;
+}
+
+@end
+
+
+#pragma mark - Model
+@implementation NSObject (WGJSONModel_Append)
+- (void)updateData:(NSDictionary *)dic{
+    [self updateData:dic WithLevel:0];
+}
+- (void)updateData:(NSDictionary *)dic WithLevel:(int)lv{
     u_int count;
-    objc_property_t *properties  = class_copyPropertyList(modelClass, &count);
+    objc_property_t *properties  = class_copyPropertyList([self class], &count);
     
     for (int i = 0; i<count; i++){
         
@@ -83,22 +97,20 @@
             dataKeyString = [dataKeyString stringByReplacingOccurrencesOfString:AutoPropertyNamePrefix withString:@""];
         }
         
-        id value = self[dataKeyString];
+        id value = dic[dataKeyString];
         
         //检测value是否为null，跳过此value的赋值
         if (value) {
             if ([value respondsToSelector:@selector(modelWithClassName:Level:)]) {
                 //需要递归转化model
-                value = [value modelWithClassName:[NSString stringWithFormat:@"%@_%@",className,propertyName_NSString] Level:level+1];
+                value = [value modelWithClassName:[NSString stringWithFormat:@"%@_%@",NSStringFromClass([self class]),propertyName_NSString] Level:lv+1];
             }
             
-            [model setValue:value forKey:propertyName_NSString];
+            [self setValue:value forKey:propertyName_NSString];
         }
     }
     
     free(properties);
-    
-    return model;
-}
 
+}
 @end
