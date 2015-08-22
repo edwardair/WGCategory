@@ -49,12 +49,12 @@ model;                                                                     \
  *
  *  @param dic 数据源
  */
-- (void)updateData:(NSDictionary *)dic;
+- (void)modelUpdateWithData:(NSDictionary *)dic;
 /**
  *  同上
  *
  *  @param dic 数据源
  *  @param lv  lv==0时，同上方法；此方法为内部使用的，外部一般不需要调用
  */
-- (void)updateData:(NSDictionary *)dic WithLevel:(int )lv;
+- (void)modelUpdateWithData:(NSDictionary *)dic Level:(int )lv;
 @end

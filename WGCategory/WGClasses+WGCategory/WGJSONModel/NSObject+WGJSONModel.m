@@ -69,7 +69,7 @@
     
     id model = [[modelClass alloc]init];
     
-    [model updateData:self WithLevel:level];
+    [model modelUpdateWithData:self Level:level];
     
     return model;
 }
@@ -79,10 +79,10 @@
 
 #pragma mark - Model
 @implementation NSObject (WGJSONModel_Append)
-- (void)updateData:(NSDictionary *)dic{
-    [self updateData:dic WithLevel:0];
+- (void)modelUpdateWithData:(NSDictionary *)dic{
+    [self modelUpdateWithData:dic Level:0];
 }
-- (void)updateData:(NSDictionary *)dic WithLevel:(int)lv{
+- (void)modelUpdateWithData:(NSDictionary *)dic Level:(int)lv{
     u_int count;
     objc_property_t *properties  = class_copyPropertyList([self class], &count);
     
@@ -106,6 +106,8 @@
                 value = [value modelWithClassName:[NSString stringWithFormat:@"%@_%@",NSStringFromClass([self class]),propertyName_NSString] Level:lv+1];
             }
             
+            [self setValue:value forKey:propertyName_NSString];
+        }else{//value为空时，同样需要将value赋给self.xxx，以确保将self所带的数据覆盖掉
             [self setValue:value forKey:propertyName_NSString];
         }
     }
