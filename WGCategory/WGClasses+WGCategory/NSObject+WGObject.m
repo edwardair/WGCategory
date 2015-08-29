@@ -87,4 +87,9 @@
     return [languages objectAtIndex:0];
 }
 
+#pragma mark - 覆写NSObject的nilValue方法，防止程序闪退
+- (void)setNilValueForKey:(NSString *)key{
+    WGLogFormatWarn(@"%@企图设置nilValue，key=%@",NSStringFromClass([self class]),key);
+}
+                    
 @end
