@@ -11,8 +11,8 @@
 //此代码会引起  xib刷新错误，暂时去掉
 //IB_DESIGNABLE
 @interface UIView (IBDESIGNABLE)
-//@property (nonatomic,assign) IBInspectable CGFloat boardWidth;
-//@property (nonatomic,assign) IBInspectable UIColor *boardColor;
-//@property (nonatomic,assign) IBInspectable CGFloat cornerRadius;
+@property (nonatomic,assign) IBInspectable CGFloat boardWidth;
+@property (nonatomic,assign) IBInspectable UIColor *boardColor;
+@property (nonatomic,assign) IBInspectable CGFloat cornerRadius;
 @end
 
