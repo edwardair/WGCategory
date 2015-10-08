@@ -17,7 +17,6 @@ typedef void (^ AlertViewClickedAtIndex)(NSInteger buttonIndex,WGAlertView *aler
                                                     delegate:nil               \
                                            cancelButtonTitle:cancelTitle       \
                                            otherButtonTitles:__VA_ARGS__];     \
-    [alert_ show];                                                             \
     alert_;                                                                    \
   })
 
