@@ -57,6 +57,22 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+//    endtime = "2015-10-27 19:58:46";
+//    isok = 1;
+//    objectId = R6seM88I;
+//    openid = c72f0ce72ce6e3cd;
+//    regtime = "2015-09-27 19:57:46";
+
+    NSString *reg = @"2015-09-27 19:57:46";
+    NSString *end = @"2015-10-27 19:58:46";
+    NSDate *regDate = [NSDate dateFromString:reg WithFormatterString:@"yyyy-MM-dd HH:mm:ss"];
+    NSDate *endDate = [NSDate dateFromString:end WithFormatterString:@"yyyy-MM-dd HH:mm:ss"];
+    NSDate *now = [NSDate date];
+    NSTimeInterval a = [now timeIntervalSinceDate:regDate];
+    NSTimeInterval b = [now timeIntervalSinceDate:endDate];
+
+    
+    
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self presentViewController:[[TestTimerVCViewController alloc]init] animated:YES completion:NULL];
 
