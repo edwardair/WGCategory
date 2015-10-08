@@ -12,8 +12,15 @@
 @implementation NSString(WGJSONValue)
 - (id )JSONValue {
     NSData* data = [self dataUsingEncoding:NSUTF8StringEncoding];
+    return data.JSONValue;
+}
+@end
+@implementation NSData (WGJSONValue)
+- (id )JSONValue{
     __autoreleasing NSError* error = nil;
-    id result = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+    id result = [NSJSONSerialization JSONObjectWithData:self
+                                                options:kNilOptions
+                                                  error:&error];
     if (error != nil) return nil;
     return result;
 }
@@ -22,19 +29,29 @@
 #pragma mark - value转json
 @implementation NSArray (WGJSONValue)
 - (NSString *)JSONString {
+    NSData *data = self.JSONData;
+    return [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+}
+- (NSData *)JSONData{
     NSError* error = nil;
     id result = [NSJSONSerialization dataWithJSONObject:self
-                                                options:kNilOptions error:&error];
-    if (error != nil) return @"";
+                                                options:kNilOptions
+                                                  error:&error];
+    if (error != nil) return nil;
     return result;
 }
 @end
 @implementation NSDictionary (WGJSONValue)
 - (NSString *)JSONString {
+    NSData *data = self.JSONData;
+    return [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+}
+- (NSData *)JSONData{
     NSError* error = nil;
     id result = [NSJSONSerialization dataWithJSONObject:self
-                                                options:kNilOptions error:&error];
-    if (error != nil) return @"";
+                                                options:kNilOptions
+                                                  error:&error];
+    if (error != nil) return nil;
     return result;
 }
 @end

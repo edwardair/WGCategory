@@ -12,11 +12,16 @@
 @interface NSString(WGJSONValue)
 - (id )JSONValue;
 @end
+@interface NSData (WGJSONValue)
+- (id )JSONValue;
+@end
 
 #pragma mark - value转json
 @interface NSArray (WGJSONValue)
 - (NSString *)JSONString;
+- (NSData *)JSONData;
 @end
 @interface NSDictionary (WGJSONValue)
 - (NSString *)JSONString;
+- (NSData *)JSONData;
 @end
