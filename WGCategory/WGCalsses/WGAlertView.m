@@ -9,7 +9,6 @@
 #import "WGAlertView.h"
 
 @interface WGAlertView ()
-@property (nonatomic,copy) AlertViewClickedAtIndex block;
 @end
 @implementation WGAlertView
 
@@ -38,6 +37,13 @@
         }
     }
     return self;
+}
+#pragma mark - setter
+- (void)setBlock:(AlertViewClickedAtIndex)block{
+    _block = block;
+    
+    self.delegate = self;
+    
 }
 
 #pragma mark - UIAlertView delegate -
