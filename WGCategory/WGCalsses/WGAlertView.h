@@ -23,7 +23,7 @@ typedef void (^ AlertViewClickedAtIndex)(NSInteger buttonIndex,WGAlertView *aler
 @end
 
 @interface WGAlertView : UIAlertView<UIAlertViewDelegate>
-@property (nonatomic,assign) id<WGAlertViewDelegate> delegate;
+@property (nonatomic,assign) id<WGAlertViewDelegate> wgDelegate;
 - (instancetype)initWithTitle:(NSString *)title
                       message:(NSString *)message
                         block:(AlertViewClickedAtIndex)block
