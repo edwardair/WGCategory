@@ -7,7 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-
+/**
+ *  model转NSDictionary、NSArray
+ */
 @interface NSObject (WGModelValue)
 - (id )modelValue;
 @end

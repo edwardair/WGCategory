@@ -40,13 +40,13 @@ CGRect WGCGRectChangeBy(CGRect rect, CGFloat dOriginX, CGFloat dOriginY, CGFloat
 #pragma mark ----------------------------
 #pragma mark	遍历查找self的父viewController
 - (UIViewController *)superViewController{
-    for (UIView* next = [self superview]; next; next = next.superview) {
-        UIResponder* nextResponder = [next nextResponder];
-        if ([nextResponder isKindOfClass:[UIViewController class]]) {
-            return (UIViewController*)nextResponder;
-        }
+    
+    UIResponder *nextResponder = [self nextResponder];
+    if ([nextResponder isKindOfClass:[UIViewController class]]) {
+        return (UIViewController*)nextResponder;
+    }else{
+        return self.superview.superViewController;
     }
-    return nil;
 }
 
 #pragma mark ----------------------------
