@@ -10,17 +10,16 @@
 @class WGAlertView;
 typedef void (^ AlertViewClickedAtIndex)(NSInteger buttonIndex,WGAlertView *alert_);
 
-#define ShowAlert(title,msg, cancelTitle, ...)                           \
-({                                                                           \
-WGAlertView *alert_ =                                                    \
-[[WGAlertView alloc] initWithTitle:title                             \
-message:nil                               \
-delegate:nil                       \
-cancelButtonTitle:cancelTitle                  \
-otherButtonTitles:__VA_ARGS__];                     \
-[alert_ show];                                                  \
-alert_;                                                                    \
-})
+#define ShowAlert(title, msg, cancelTitle, ...)                                \
+  ({                                                                           \
+    WGAlertView *alert_ = [[WGAlertView alloc] initWithTitle:title             \
+                                                     message:msg               \
+                                                    delegate:nil               \
+                                           cancelButtonTitle:cancelTitle       \
+                                           otherButtonTitles:__VA_ARGS__];     \
+    [alert_ show];                                                             \
+    alert_;                                                                    \
+  })
 
 @protocol WGAlertViewDelegate <NSObject>
 @optional
