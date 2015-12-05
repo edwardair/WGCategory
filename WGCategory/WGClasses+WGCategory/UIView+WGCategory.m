@@ -51,15 +51,15 @@ CGRect WGCGRectChangeBy(CGRect rect, CGFloat dOriginX, CGFloat dOriginY, CGFloat
 
 #pragma mark ----------------------------
 #pragma mark  重载系统方法，初始化默认背景色为clearColor
-- (id )initWithNoneBGColor{
-    UIView *view = [[[self class]alloc]init];
-    view.backgroundColor = [UIColor clearColor];
-    return view;
++ (instancetype)initWithNoneBGColor{
+    id instance = [[[self class]alloc]init];
+    [instance setBackgroundColor:[UIColor clearColor]];
+    return instance;
 }
-- (id )initWithNoneBGColorWithFrame:(CGRect)frame{
-    UIView *view = [[[self class] alloc]initWithFrame:frame];
-    view.backgroundColor = [UIColor clearColor];
-    return view;
++(instancetype)initWithNoneBGColorWithFrame:(CGRect)frame{
+    id instance = [[[self class]alloc]initWithFrame:frame];
+    [instance setBackgroundColor:[UIColor clearColor]];
+    return instance;
 }
 #pragma mark ----------------------------
 #pragma mark 获取view四周坐标及宽高

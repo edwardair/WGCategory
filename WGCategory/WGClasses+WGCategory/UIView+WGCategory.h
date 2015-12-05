@@ -38,7 +38,7 @@ CGRect WGCGRectChangeBy(CGRect rect, CGFloat dOriginX, CGFloat dOriginY, CGFloat
  *
  *  @return UIView
  */
-- (id )initWithNoneBGColor;
++ (instancetype )initWithNoneBGColor;
 
 /**
  *  默认背景色为clearColor，带frame初始化，
@@ -47,7 +47,7 @@ CGRect WGCGRectChangeBy(CGRect rect, CGFloat dOriginX, CGFloat dOriginY, CGFloat
  *
  *  @return UIView
  */
-- (id )initWithNoneBGColorWithFrame:(CGRect )frame;
++ (instancetype )initWithNoneBGColorWithFrame:(CGRect )frame;
 
 /**
  *@brief UIView实现NSCopy协议

@@ -16,7 +16,7 @@ static WGTextInputAccessoryView *inputAccessoryView = nil;
     
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        inputAccessoryView = [[WGTextInputAccessoryView alloc]initWithNoneBGColorWithFrame:CGRectMake(0, 0, Bounds.size.width, 50)];
+        inputAccessoryView = [WGTextInputAccessoryView initWithNoneBGColorWithFrame:CGRectMake(0, 0, Bounds.size.width, 50)];
         inputAccessoryView.backgroundColor = [UIColor colorWithRed:1 green:0 blue:0 alpha:.5f];
     });
     
