@@ -99,6 +99,11 @@
         
         id value = dic[dataKeyString];
         
+        //value不能为NSNull类型，而只为nil是安全的
+        if ([value isEqual:[NSNull null]]) {
+            value = nil;
+        }
+
         //检测value是否为null，跳过此value的赋值
         if (value) {
             if ([value respondsToSelector:@selector(modelWithClassName:Level:)]) {
