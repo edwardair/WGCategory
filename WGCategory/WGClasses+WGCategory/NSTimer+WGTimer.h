@@ -48,6 +48,7 @@
 *
 */
 - (void)resume;
+- (void)resumeTimerAfterTimeInterval:(NSTimeInterval)interval;
 
 /**
 *@brief	停止计时器并移除，之后再次使用需要重新初始化

@@ -80,11 +80,15 @@
     [self setFireDate:[NSDate distantFuture]];
 }
 - (void)resume{
-    if (!self.isValid) {
-        return;
-    }
-    [self setFireDate:[NSDate dateWithTimeIntervalSinceNow:0]];
+    [self resumeTimerAfterTimeInterval:0];
 }
+- (void)resumeTimerAfterTimeInterval:(NSTimeInterval)interval{
+    if (![self isValid]) {
+        return ;
+    }
+    [self setFireDate:[NSDate dateWithTimeIntervalSinceNow:interval]];
+}
+
 - (void)stop{
     [self invalidate];
 }
