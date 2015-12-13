@@ -110,12 +110,15 @@ static const char *property_wg_edgeinsets = "property_wg_edgeinsets";
  willDisplayCell:(UITableViewCell *)cell
 forRowAtIndexPath:(NSIndexPath *)indexPath{
     for (WGTableViewEdgeInset *model in self.wg_edgeInsets) {
-        if (model.tableView && model.enable(indexPath)) {
-            if ([cell respondsToSelector:@selector(setSeparatorInset:)]) {
-                [cell setSeparatorInset:model.edgeInsets];
-            }
-            if ([cell respondsToSelector:@selector(setLayoutMargins:)]) {
-                [cell setLayoutMargins:model.edgeInsets];
+        //只有cell属于tableView时，才修改edgeInsets
+        if ([cell isEqual:[model.tableView cellForRowAtIndexPath:indexPath]]) {
+            if (model.tableView && model.enable(indexPath)) {
+                if ([cell respondsToSelector:@selector(setSeparatorInset:)]) {
+                    [cell setSeparatorInset:model.edgeInsets];
+                }
+                if ([cell respondsToSelector:@selector(setLayoutMargins:)]) {
+                    [cell setLayoutMargins:model.edgeInsets];
+                }
             }
         }
     }
