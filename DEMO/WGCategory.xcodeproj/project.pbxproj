@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F764EBC61C27935700944741 /* UITableView+WGAutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = F764EBC51C27935700944741 /* UITableView+WGAutoLayout.m */; };
 		F76AE7C01B55FC2E000B68C6 /* TestTimerVCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F76AE7BF1B55FC2E000B68C6 /* TestTimerVCViewController.m */; };
 		F7A4F88C1B1D531A00B84A4E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F88B1B1D531A00B84A4E /* main.m */; };
 		F7A4F88F1B1D531A00B84A4E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F88E1B1D531A00B84A4E /* AppDelegate.m */; };
@@ -89,6 +90,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F764EBC41C27935700944741 /* UITableView+WGAutoLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+WGAutoLayout.h"; sourceTree = "<group>"; };
+		F764EBC51C27935700944741 /* UITableView+WGAutoLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+WGAutoLayout.m"; sourceTree = "<group>"; };
 		F76AE7BE1B55FC2E000B68C6 /* TestTimerVCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestTimerVCViewController.h; sourceTree = "<group>"; };
 		F76AE7BF1B55FC2E000B68C6 /* TestTimerVCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestTimerVCViewController.m; sourceTree = "<group>"; };
 		F7A4F8861B1D531A00B84A4E /* WGCategory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WGCategory.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -332,6 +335,8 @@
 				F7E3D4191B84136C001AE298 /* UIView+IBDESIGNABLE.m */,
 				F7A4F96E1B1D561600B84A4E /* UIViewController+WGCategory.h */,
 				F7A4F96F1B1D561600B84A4E /* UIViewController+WGCategory.m */,
+				F764EBC41C27935700944741 /* UITableView+WGAutoLayout.h */,
+				F764EBC51C27935700944741 /* UITableView+WGAutoLayout.m */,
 			);
 			path = "WGClasses+WGCategory";
 			sourceTree = "<group>";
@@ -498,6 +503,7 @@
 				F7A4F9801B1D561600B84A4E /* WGCheckBox.m in Sources */,
 				F7A4F99A1B1D561600B84A4E /* UIColor+WGColor.m in Sources */,
 				F7A4F8921B1D531A00B84A4E /* FirstViewController.m in Sources */,
+				F764EBC61C27935700944741 /* UITableView+WGAutoLayout.m in Sources */,
 				F7A4F88C1B1D531A00B84A4E /* main.m in Sources */,
 				F7A4F9881B1D561600B84A4E /* WGPopoverView.m in Sources */,
 				F7A4F9AC1B1D561600B84A4E /* UIView+WGCategory.m in Sources */,
