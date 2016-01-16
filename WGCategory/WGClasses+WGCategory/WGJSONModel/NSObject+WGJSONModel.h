@@ -58,3 +58,8 @@ model;                                                                     \
  */
 - (void)modelUpdateWithData:(NSDictionary *)dic Level:(int )lv;
 @end
+
+
+
+
+
