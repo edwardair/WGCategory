@@ -11,7 +11,7 @@
 @implementation NSArray (WGJSONModel)
 - (NSArray *)batchModelsWithClass:(Class)aClass{
     NSMutableArray *models = [NSMutableArray arrayWithCapacity:self.count];
-    for (id value in models) {
+    for (id value in self) {
         [models addObject:MODELWITHVALUE(value, aClass)];
     }
     return models;
