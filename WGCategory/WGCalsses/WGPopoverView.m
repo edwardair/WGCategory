@@ -66,7 +66,7 @@ userDefinedInterface:(UserDefinedInterface )userDefinedBlack
     _emptyTouched = [[UIControl alloc]initWithFrame:[[UIScreen mainScreen] bounds]];
     [keyWindow addSubview:_emptyTouched];
     [_emptyTouched addTarget:self action:@selector(dismiss) forControlEvents:UIControlEventTouchDown];
-    [_emptyTouched setBackgroundColor:[UIColor colorWithRed:.16 green:.17 blue:.21 alpha:.5]];
+    [_emptyTouched setBackgroundColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:.7]];
     
     [keyWindow addSubview:self];
     
