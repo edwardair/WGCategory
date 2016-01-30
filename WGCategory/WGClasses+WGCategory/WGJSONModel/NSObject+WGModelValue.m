@@ -82,7 +82,7 @@
     
     NSString *type = @"";
     
-    for (int i = 0; i < outCount; i++) {
+    for (unsigned int i = 0; i < outCount; i++) {
         const char *tmp = property_getAttributes(properties[i]);
         //以 ','  号分割的第一个字符串
         char *tmp_pre = [self propertyAttributesPrefixWithAttributes:tmp];
