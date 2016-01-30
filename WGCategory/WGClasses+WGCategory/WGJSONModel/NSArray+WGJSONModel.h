@@ -8,14 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSArray (WGJSONModel)
 /**
  *  将NSArray中的值，批量转化为aClass对应的MODEL
- *
- *  @param aClass
- *
- *  @return @[]
  */
+@interface NSArray (WGJSONModel_Batch)
 - (NSArray *)batchModelsWithClass:(Class)aClass;
 - (NSArray *)batchModelsWithClassName:(NSString *)className;
 @end

@@ -8,7 +8,7 @@
 
 #import "NSArray+WGJSONModel.h"
 #import "NSObject+WGJSONModel.h"
-@implementation NSArray (WGJSONModel)
+@implementation NSArray (WGJSONModel_Batch)
 - (NSArray *)batchModelsWithClass:(Class)aClass{
     NSMutableArray *models = [NSMutableArray arrayWithCapacity:self.count];
     for (id value in self) {
