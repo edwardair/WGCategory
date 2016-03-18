@@ -43,7 +43,7 @@
 - (void)drawRect:(CGRect)rect
 {
     
-    if (![self isFirstResponder]) {
+//    if (![self isFirstResponder]) {
         if (self.text.length == 0) {
             
             //绘制placeHolder
@@ -61,7 +61,7 @@
                                                          rect.size.height - 8 * 2)];
             }
         }
-    }
+//    }
 }
 
 - (void)dealloc{
