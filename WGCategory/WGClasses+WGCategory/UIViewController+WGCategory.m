@@ -11,26 +11,25 @@
 #pragma mark - MODEL
 @interface WGTableViewEdgeInset:NSObject
 @property (nonatomic,strong) UITableView *tableView;
-@property (nonatomic,assign) UIEdgeInsets edgeInsets;
-@property (nonatomic,copy) WGTableViewEdgeInsetEnable enable;
+@property (nonatomic,copy) WGTableViewEdgeInsetsBlock edgeInsetsBlock;
 @end
 @implementation WGTableViewEdgeInset
 @end
 
 #pragma mark - UIViewController
+@interface UIViewController()
+@property (nonatomic,strong) NSArray *wg_edgeInsets;
+@end
 @implementation UIViewController (WGCategory)
 
 #ifdef InFrameTestMode
-
 #pragma mark - InFrameTestMode frame测试模式
 
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wobjc-protocol-method-implementation"
-
 - (void)viewWillAppear:(BOOL)animated{
     [WGFrameTest shareFrameTestWithViewController:self];
 }
-
 #pragma clang diagnostic pop
 
 #endif
@@ -43,15 +42,11 @@
 - (void)disableExtendedLayoutFull{
     if ([UIDevice isIOS7Version])
         self.edgesForExtendedLayout = UIRectEdgeNone;
-    //MARK: 注销是为了 消除警告
-//    else
-//        self.wantsFullScreenLayout = NO;
 }
 
 
 
 #pragma mark - UITableView EdgeInsets
-#define Start UITableView *
 
 static const char *property_wg_edgeinsets = "property_wg_edgeinsets";
 - (NSArray *)wg_edgeInsets{
@@ -61,19 +56,15 @@ static const char *property_wg_edgeinsets = "property_wg_edgeinsets";
     objc_setAssociatedObject(self, property_wg_edgeinsets, [NSArray arrayWithArray:wg_edgeInsets], OBJC_ASSOCIATION_RETAIN);
 }
 - (void)wg_setTableView:(UITableView *)table
-      WithEdgeInsets:(UIEdgeInsets)edgeInsets
-     CellChangeIfEnableAtIndexPath:(WGTableViewEdgeInsetEnable )enable{
+edgeInsetsAtIndexPath:(WGTableViewEdgeInsetsBlock)edgeInsets{
     WGTableViewEdgeInset *model = [[WGTableViewEdgeInset alloc]init];
     model.tableView = table;
-    model.edgeInsets = edgeInsets;
-    model.enable = enable;
+    model.edgeInsetsBlock = edgeInsets;
     
     WGTableViewEdgeInset *model_ = nil;
     NSArray *exists = [NSArray arrayWithArray:self.wg_edgeInsets];
     for (model_ in exists) {
-        if ([model_.tableView isEqual:model.tableView] &&
-            UIEdgeInsetsEqualToEdgeInsets(model_.edgeInsets, model.edgeInsets)
-            ) {
+        if ([model_.tableView isEqual:model.tableView]) {
             break;
         }else{
             model_ = nil;
@@ -85,7 +76,7 @@ static const char *property_wg_edgeinsets = "property_wg_edgeinsets";
         self.wg_edgeInsets = exists;
     }else{
         //更新
-        model_.enable = model.enable;
+        model_.edgeInsetsBlock = model.edgeInsetsBlock;
     }
     //调用viewDidLayoutSubviews
     [self.view setNeedsLayout];
@@ -93,14 +84,23 @@ static const char *property_wg_edgeinsets = "property_wg_edgeinsets";
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wobjc-protocol-method-implementation"
 
+NSIndexPath *wgFirstStaticIndexPath(){
+    static NSIndexPath *wgFirstStaticIndexPath;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        wgFirstStaticIndexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+    });
+    return wgFirstStaticIndexPath;
+}
+
 - (void)viewDidLayoutSubviews{
     for (WGTableViewEdgeInset *model in self.wg_edgeInsets) {
         if (model.tableView) {
             if ([model.tableView respondsToSelector:@selector(setSeparatorInset:)]) {
-                [model.tableView setSeparatorInset:model.edgeInsets];
+                [model.tableView setSeparatorInset:model.edgeInsetsBlock(wgFirstStaticIndexPath())];
             }
             if ([model.tableView respondsToSelector:@selector(setLayoutMargins:)]) {
-                [model.tableView setLayoutMargins:model.edgeInsets];
+                [model.tableView setLayoutMargins:model.edgeInsetsBlock(wgFirstStaticIndexPath())];
             }
         }
     }
@@ -110,15 +110,12 @@ static const char *property_wg_edgeinsets = "property_wg_edgeinsets";
  willDisplayCell:(UITableViewCell *)cell
 forRowAtIndexPath:(NSIndexPath *)indexPath{
     for (WGTableViewEdgeInset *model in self.wg_edgeInsets) {
-        //只有cell属于tableView时，才修改edgeInsets
-        if ([cell isEqual:[model.tableView cellForRowAtIndexPath:indexPath]]) {
-            if (model.tableView && model.enable(indexPath)) {
-                if ([cell respondsToSelector:@selector(setSeparatorInset:)]) {
-                    [cell setSeparatorInset:model.edgeInsets];
-                }
-                if ([cell respondsToSelector:@selector(setLayoutMargins:)]) {
-                    [cell setLayoutMargins:model.edgeInsets];
-                }
+        if ([model.tableView isEqual:tableView]) {
+            if ([cell respondsToSelector:@selector(setSeparatorInset:)]) {
+                [cell setSeparatorInset:model.edgeInsetsBlock(indexPath)];
+            }
+            if ([cell respondsToSelector:@selector(setLayoutMargins:)]) {
+                [cell setLayoutMargins:model.edgeInsetsBlock(indexPath)];
             }
         }
     }

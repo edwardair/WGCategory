@@ -13,8 +13,7 @@
 
 
 #pragma mark - UITableView EdgeInsets
-typedef BOOL (^WGTableViewEdgeInsetEnable) (NSIndexPath *indexPath);
-@property (nonatomic,strong) NSArray *wg_edgeInsets;
+typedef UIEdgeInsets (^WGTableViewEdgeInsetsBlock) (NSIndexPath *indexPath);
 /**
  *  修改UITableView.seperateInsets
  *
@@ -24,8 +23,7 @@ typedef BOOL (^WGTableViewEdgeInsetEnable) (NSIndexPath *indexPath);
  *  @param enable     根据需要，针对某个cell才启用修改
  */
 - (void)wg_setTableView:(UITableView *)table
-      WithEdgeInsets:(UIEdgeInsets)edgeInsets
-              CellChangeIfEnableAtIndexPath:(WGTableViewEdgeInsetEnable )enable;
+  edgeInsetsAtIndexPath:(WGTableViewEdgeInsetsBlock )edgeInsets;
 
 @end
 
