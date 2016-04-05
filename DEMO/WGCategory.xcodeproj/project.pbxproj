@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F7118AEC1CB366F5007AF228 /* SecondTestView.m in Sources */ = {isa = PBXBuildFile; fileRef = F7118AEB1CB366F5007AF228 /* SecondTestView.m */; };
+		F7118AEF1CB377E5007AF228 /* WGTableViewEdgeInsets.m in Sources */ = {isa = PBXBuildFile; fileRef = F7118AEE1CB377E5007AF228 /* WGTableViewEdgeInsets.m */; };
 		F764EBC61C27935700944741 /* UITableView+WGAutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = F764EBC51C27935700944741 /* UITableView+WGAutoLayout.m */; };
 		F769C04A1C4A078D00E6A7C1 /* NSArray+WGJSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F769C0491C4A078D00E6A7C1 /* NSArray+WGJSONModel.m */; };
 		F76AE7C01B55FC2E000B68C6 /* TestTimerVCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F76AE7BF1B55FC2E000B68C6 /* TestTimerVCViewController.m */; };
@@ -91,6 +93,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F7118AEA1CB366F5007AF228 /* SecondTestView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondTestView.h; sourceTree = "<group>"; };
+		F7118AEB1CB366F5007AF228 /* SecondTestView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondTestView.m; sourceTree = "<group>"; };
+		F7118AED1CB374C9007AF228 /* WGTableViewEdgeInsets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGTableViewEdgeInsets.h; sourceTree = "<group>"; };
+		F7118AEE1CB377E5007AF228 /* WGTableViewEdgeInsets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGTableViewEdgeInsets.m; sourceTree = "<group>"; };
 		F764EBC41C27935700944741 /* UITableView+WGAutoLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+WGAutoLayout.h"; sourceTree = "<group>"; };
 		F764EBC51C27935700944741 /* UITableView+WGAutoLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+WGAutoLayout.m"; sourceTree = "<group>"; };
 		F769C0481C4A078D00E6A7C1 /* NSArray+WGJSONModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+WGJSONModel.h"; sourceTree = "<group>"; };
@@ -229,6 +235,8 @@
 				F7E3D41C1B841780001AE298 /* TestDesignableView.m */,
 				F7A4F8931B1D531A00B84A4E /* SecondViewController.h */,
 				F7A4F8941B1D531A00B84A4E /* SecondViewController.m */,
+				F7118AEA1CB366F5007AF228 /* SecondTestView.h */,
+				F7118AEB1CB366F5007AF228 /* SecondTestView.m */,
 				F76AE7BE1B55FC2E000B68C6 /* TestTimerVCViewController.h */,
 				F76AE7BF1B55FC2E000B68C6 /* TestTimerVCViewController.m */,
 				F7A4F8961B1D531A00B84A4E /* Main.storyboard */,
@@ -332,6 +340,8 @@
 				F7A4F9691B1D561600B84A4E /* UITextField+WGCategory.m */,
 				F7A4F96A1B1D561600B84A4E /* UITextView+WGCategory.h */,
 				F7A4F96B1B1D561600B84A4E /* UITextView+WGCategory.m */,
+				F7118AED1CB374C9007AF228 /* WGTableViewEdgeInsets.h */,
+				F7118AEE1CB377E5007AF228 /* WGTableViewEdgeInsets.m */,
 				F7A4F96C1B1D561600B84A4E /* UIView+WGCategory.h */,
 				F7A4F96D1B1D561600B84A4E /* UIView+WGCategory.m */,
 				F7E3D4181B84136C001AE298 /* UIView+IBDESIGNABLE.h */,
@@ -480,6 +490,7 @@
 				F7A4F9B41B1D561600B84A4E /* WGLog.m in Sources */,
 				F7E3D41A1B84136C001AE298 /* UIView+IBDESIGNABLE.m in Sources */,
 				F7C19BC81B2EB06100137B46 /* NSObject+WGJSONValue.m in Sources */,
+				F7118AEF1CB377E5007AF228 /* WGTableViewEdgeInsets.m in Sources */,
 				F7A4F9841B1D561600B84A4E /* WGCoreTextView.m in Sources */,
 				F7A4F9821B1D561600B84A4E /* WGControl.m in Sources */,
 				F7A4F9A81B1D561600B84A4E /* UITextField+WGCategory.m in Sources */,
@@ -500,6 +511,7 @@
 				F7A4F9901B1D561600B84A4E /* NSObject+WGObject.m in Sources */,
 				F7C19BC61B2EB06100137B46 /* NSObject+WGAutoModelHelper.m in Sources */,
 				F7A4F9981B1D561600B84A4E /* UIButton+WGCategory.m in Sources */,
+				F7118AEC1CB366F5007AF228 /* SecondTestView.m in Sources */,
 				F7A4F98A1B1D561600B84A4E /* WGTextView.m in Sources */,
 				F7A4F9861B1D561600B84A4E /* WGLabel.m in Sources */,
 				F769C04A1C4A078D00E6A7C1 /* NSArray+WGJSONModel.m in Sources */,
@@ -674,6 +686,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.eduoduo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "7a4a7ffb-a474-40af-aa19-222c92df8f70";
 			};
 			name = Debug;
 		};
@@ -686,6 +699,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.eduoduo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "7a4a7ffb-a474-40af-aa19-222c92df8f70";
 			};
 			name = Release;
 		};

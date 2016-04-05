@@ -38,6 +38,7 @@
 #import "UIColor+WGColor.h"
 #import "UIView+IBDESIGNABLE.h"
 #import "UITableView+WGAutoLayout.h"
+#import "WGTableViewEdgeInsets.h"
 
 //JSON MODEL
 #import "NSObject+WGAutoModelHelper.h"

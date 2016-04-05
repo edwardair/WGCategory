@@ -1,4 +1,3 @@
-//
 //  WGCategory+NSObject.m
 //  WGCategoryAppend
 //
@@ -61,20 +60,29 @@
 }
 
 #pragma mark - category 修改系统api
-+ (void)replaceSystemAPI:(SEL )originSelector ByReplacedSelector:(SEL )replaceSelector{
-    
-    Class aClass = [self class];
-    Method originMethod = class_getInstanceMethod(aClass, originSelector);
-    Method replaceMethod = class_getInstanceMethod(aClass, replaceSelector);
-    
-    //    // 将目标函数的原实现绑定到original Implemention方法上
-    //    IMP originIMP = method_getImplementation(originMethod);
-    //    class_addMethod(aClass, originSelector, originIMP, method_getTypeEncoding(originMethod));
-    
-    // 然后用我们自己的函数的实现，替换目标函数对应的实现
-    IMP replaceIMP = method_getImplementation(replaceMethod);
-    class_replaceMethod(aClass, originSelector, replaceIMP, method_getTypeEncoding(originMethod));
-    
++ (void)swizzleExchangeInstanceAPI:(SEL )oldSelector newSelector:(SEL )newSelector{
+    Method oldMethod = class_getInstanceMethod(self, oldSelector);
+    Method newMethod = class_getInstanceMethod(self, newSelector);
+    method_exchangeImplementations(oldMethod,newMethod);
+}
++ (void)swizzleExchangeClassAPI:(SEL )oldSelector newSelector:(SEL )newSelector{
+    Method oldMethod = class_getClassMethod(self, oldSelector);
+    Method newMethod = class_getClassMethod(self, newSelector);
+    method_exchangeImplementations(oldMethod,newMethod);
+}
++ (BOOL)swizzleAddInstanceAPI:(SEL )newSelector withIMP:(IMP)imp types:(const char *)types{
+    Method newMethod = class_getInstanceMethod(self, newSelector);
+    if (!newMethod) {
+       return class_addMethod(self, newSelector, imp, types);
+    }
+    return NO;
+}
++ (BOOL)swizzleAddClassAPI:(SEL )newSelector withIMP:(IMP)imp types:(const char *)types{
+    Method newMethod = class_getClassMethod(self, newSelector);
+    if (!newMethod) {
+       return class_addMethod(self, newSelector, imp, types);
+    }
+    return NO;
 }
 
 

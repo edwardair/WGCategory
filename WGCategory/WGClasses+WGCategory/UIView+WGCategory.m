@@ -9,6 +9,7 @@
 #import "WGDefines.h"
 #import <objc/runtime.h>
 
+
 @implementation UIView(WGCategory)
 #pragma mark - CGRect
 CGPoint WGCGRectGetCenter(CGRect rect)
@@ -180,6 +181,8 @@ CGRect WGCGRectChangeBy(CGRect rect, CGFloat dOriginX, CGFloat dOriginY, CGFloat
     maskLayer.path = maskPath.CGPath;
     self.layer.mask = maskLayer;
 }
+
+
 
 
 @end

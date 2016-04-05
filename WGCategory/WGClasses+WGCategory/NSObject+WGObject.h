@@ -44,7 +44,10 @@
  *  @param originSelector  原Class的selector
  *  @param replaceSelector 修改后的selector
  */
-+ (void)replaceSystemAPI:(SEL )originSelector ByReplacedSelector:(SEL )replaceSelector;
++ (void)swizzleExchangeInstanceAPI:(SEL )oldSelector newSelector:(SEL )newSelector;
++ (void)swizzleExchangeClassAPI:(SEL )oldSelector newSelector:(SEL )newSelector;
++ (BOOL)swizzleAddInstanceAPI:(SEL )newSelector withIMP:(IMP)imp types:(const char *)types;
++ (BOOL)swizzleAddClassAPI:(SEL )newSelector withIMP:(IMP)imp types:(const char *)types;
 
 /**
  *  获取系统语言
