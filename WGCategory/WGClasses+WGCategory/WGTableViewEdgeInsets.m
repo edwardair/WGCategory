@@ -14,7 +14,7 @@
 
 #pragma mark - MODEL
 @interface WGTableViewEdgeInset:NSObject
-@property (nonatomic,strong) UITableView *tableView;
+@property (nonatomic,weak) UITableView *tableView;
 @property (nonatomic,copy) WGTableViewEdgeInsetsBlock edgeInsetsBlock;
 @end
 @implementation WGTableViewEdgeInset
