@@ -62,9 +62,9 @@ static const char *property_wg_edgeinsets = "property_wg_edgeinsets";
         exists = [exists arrayByAddingObject:model];
         self.wg_edgeInsets = exists;
         
-        //动态exchange tableView:willDisplayCell:forRowAtIndexPath:方法
-        [[self class]swizzleExchangeInstanceAPI:@selector(tableView:willDisplayCell:forRowAtIndexPath:)
-                                    newSelector:@selector(mytableView:willDisplayCell:forRowAtIndexPath:)];
+//        //动态exchange tableView:willDisplayCell:forRowAtIndexPath:方法
+//        [[self class]swizzleExchangeInstanceAPI:@selector(tableView:willDisplayCell:forRowAtIndexPath:)
+//                                    newSelector:@selector(mytableView:willDisplayCell:forRowAtIndexPath:)];
     }else{
         //更新
         model_.edgeInsetsBlock = model.edgeInsetsBlock;
@@ -105,6 +105,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath{
 -(void)tableView:(UITableView *)tableView
  willDisplayCell:(UITableViewCell *)cell
 forRowAtIndexPath:(NSIndexPath *)indexPath{
+    wgtableviewEdgeInsets(self, @selector(tableView:willDisplayCell:forRowAtIndexPath:), tableView, cell, indexPath);
 }
 #pragma clang diagnostic pop
 @end
@@ -116,6 +117,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath{
 -(void)tableView:(UITableView *)tableView
  willDisplayCell:(UITableViewCell *)cell
 forRowAtIndexPath:(NSIndexPath *)indexPath{
+    wgtableviewEdgeInsets(self, @selector(tableView:willDisplayCell:forRowAtIndexPath:), tableView, cell, indexPath);
 }
 #pragma clang diagnostic pop
 

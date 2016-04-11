@@ -46,4 +46,14 @@
     cell.textLabel.text = [NSString stringWithFormat:@"%@",indexPath];
     return cell;
 }
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    FirstViewController *second = [self.storyboard instantiateViewControllerWithIdentifier:@"first"];
+    [self presentViewController:second animated:YES completion:^{
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(10 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [second dismissViewControllerAnimated:YES completion:NULL];
+        });
+    }];
+}
 @end
