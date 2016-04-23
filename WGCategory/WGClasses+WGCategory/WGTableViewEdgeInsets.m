@@ -32,7 +32,7 @@ static const char *property_wg_edgeinsets = "property_wg_edgeinsets";
     return [NSArray arrayWithArray:objc_getAssociatedObject(self, property_wg_edgeinsets)];
 }
 - (void)setWg_edgeInsets:(NSArray *)wg_edgeInsets{
-    objc_setAssociatedObject(self, property_wg_edgeinsets, [NSArray arrayWithArray:wg_edgeInsets], OBJC_ASSOCIATION_RETAIN);
+    objc_setAssociatedObject(self, property_wg_edgeinsets, [NSArray arrayWithArray:wg_edgeInsets], OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 - (void)wg_setTableView:(UITableView *)table
   edgeInsetsAtIndexPath:(WGTableViewEdgeInsetsBlock)edgeInsets{
