@@ -7,6 +7,34 @@
 //
 
 #import "AppDelegate.h"
+#import "WGDefines.h"
+#import <objc/runtime.h>
+
+
+@interface ATest_List_V1_V2:NSObject
+@property (nonatomic,copy) NSString *v3;
+@end
+@implementation ATest_List_V1_V2
+@end
+@interface ATest_List_V1Test:NSObject
+@property (nonatomic,strong) ATest_List_V1_V2 *v2;
+@end
+@implementation ATest_List_V1Test
+@end
+@interface ATest_List:NSObject
+@property (nonatomic,strong) ATest_List_V1Test *v1;
+@end
+@implementation ATest_List
+@end
+
+@protocol ATest_List;
+@interface ATest:NSObject
+@property (nonatomic,copy) NSString *name;
+@property (nonatomic,strong) NSNumber *value;
+@property (nonatomic,strong) NSArray<ATest_List> *list;
+@end
+@implementation ATest
+@end
 
 @interface AppDelegate ()
 
@@ -17,6 +45,32 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    NSArray *a1 = @[];
+    NSArray *a2 = [NSArray arrayWithArray:a1];
+    NSMutableArray *a3 = [[NSMutableArray alloc]init];
+    
+    
+    NSDictionary *dic = @{
+                          @"name":@"test",
+                          @"value":@5,
+                          @"list":@[
+                                  @{@"v1":@{@"v2":@{@"v3":@"test1"}}},
+                                  @{@"v1":@{@"v2":@{@"v3":@"test2"}}},
+                                  @{@"v1":@{@"v2":@{@"v3":@"test3"}}},
+                                  ],
+//                          @"list1":@[
+//                                  @{@"v1":@{@"v1":@[@1,@2,@3]}},
+//                                  @{@"v2":@{@"v1":@[@1,@2,@3]}},
+//                                  @{@"v3":@{@"v1":@[@1,@2,@3]}},
+//                                  ],
+                          };
+    [dic logWithKey:@"ATest"];
+
+    ATest *testModel = [dic modelWithClass:[ATest class]];
+    
+    
+    
     return YES;
 }
 

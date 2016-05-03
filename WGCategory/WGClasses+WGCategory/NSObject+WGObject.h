@@ -53,4 +53,7 @@
  *  获取系统语言
  */
 + (NSString *)systemLanguage;
+
+typedef Class(^PropertyClass)(NSString *propertyName);
++ (PropertyClass) propertyClass;
 @end

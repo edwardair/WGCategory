@@ -17,10 +17,9 @@ model = [[class alloc] init];                                            \
 model;                                                                     \
 })
 
-/**
- *  NSDictionary、NSArray转model
- */
-@interface NSObject (WGJSONModel)
+
+@protocol WGJSONModelProtocol
+@optional
 /**
  *  生成model
  注意：如果value==nil，则会返回nil，可以使用MODELWITHVALUE(value, class)宏来确保返回非nil
@@ -42,6 +41,15 @@ model;                                                                     \
 @end
 
 
+
+#pragma mark -
+@interface NSArray (WGJSONModel)<WGJSONModelProtocol>
+@end
+#pragma mark -
+@interface NSDictionary (WGJSONModel)<WGJSONModelProtocol>
+@end
+
+
 #pragma mark - Model
 @interface NSObject (WGJSONModel_Append)
 /**
@@ -50,13 +58,13 @@ model;                                                                     \
  *  @param dic 数据源
  */
 - (void)modelUpdateWithData:(NSDictionary *)dic;
-/**
- *  同上
- *
- *  @param dic 数据源
- *  @param lv  lv==0时，同上方法；此方法为内部使用的，外部一般不需要调用
- */
-- (void)modelUpdateWithData:(NSDictionary *)dic Level:(int )lv;
+///**
+// *  同上
+// *
+// *  @param dic 数据源
+// *  @param lv  lv==0时，同上方法；此方法为内部使用的，外部一般不需要调用
+// */
+//- (void)modelUpdateWithData:(NSDictionary *)dic;
 @end
 
 

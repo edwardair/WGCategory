@@ -32,10 +32,6 @@
 #pragma mark ----------------------------
 #pragma mark 正则表达式
 - (BOOL)isMatchingRegularEpressionByPattern:(NSString *)pattern{
-    //self为空字符，不匹配正则
-    if (self.length==0) {
-        return NO;
-    }
     //nil 调用此方法，不执行，返回NO
     NSLog(@"匹配字符串：%@\n正则表达式：%@",self,pattern);
     NSError *error;
@@ -169,4 +165,14 @@ const static NSString *_blank = @"\t";
     return [returnStr stringByReplacingOccurrencesOfString:@"\\r\\n"withString:@"\n"];
 }
 
+- (NSString *)uppercaseFirstString {
+    if (self.length==0) {
+        return self;
+    }else{
+        NSString *firstCharacter = [[self substringToIndex:1] uppercaseString];
+        NSString *lastString = [self substringFromIndex:[self rangeOfComposedCharacterSequenceAtIndex:1].location];
+        lastString = lastString.length?lastString:@"";
+        return [firstCharacter stringByAppendingString:lastString];
+    }
+}
 @end

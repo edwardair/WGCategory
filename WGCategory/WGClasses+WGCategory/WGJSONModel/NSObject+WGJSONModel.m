@@ -8,109 +8,88 @@
 
 #import "NSObject+WGJSONModel.h"
 #import <objc/runtime.h>
+#import <objc/message.h>
 #import "WGDefines.h"
-@implementation NSObject (WGJSONModel)
-#pragma mark -
-- (id)modelWithClass:(Class)modelClass{
-    return [self modelWithClassName:NSStringFromClass(modelClass)];
-}
-- (id )modelWithClassName:(NSString *)className{
-    WGLogFormatWarn(@"不支持此类：%@转化为model，仅返回%@的实例对象，不赋值",NSStringFromClass([self class]),className);
-    return [[NSClassFromString(className) alloc]init];
-}
-@end
 
 
-#pragma mark -
+#pragma mark - NSArray
 @implementation NSArray (WGJSONModel)
 - (id)modelWithClass:(Class)modelClass{
     return [self modelWithClassName:NSStringFromClass(modelClass)];
 }
 - (id )modelWithClassName:(NSString *)propertyAttributeName{
-    return [self modelWithClassName:propertyAttributeName Level:0];
-}
-- (id )modelWithClassName:(NSString *)propertyAttributeName Level:(int )level{
-    
-    propertyAttributeName = [NSString stringWithFormat:@"%@_%d",propertyAttributeName,level];
-    propertyAttributeName = [propertyAttributeName uppercaseString];
-    
     NSMutableArray *models = [NSMutableArray arrayWithCapacity:self.count];
     for (id obj in self) {
-        if (![obj respondsToSelector:@selector(modelWithClassName:Level:)]) {
-            
+        if (![obj respondsToSelector:@selector(modelWithClassName:)]) {
             //如果条件成立，则直接返回self，不做model转化
             return self;
-            
         }else{
-            [models addObject:[obj modelWithClassName:propertyAttributeName Level:level+1]];
+            [models addObject:[obj modelWithClassName:propertyAttributeName]];
         }
     }
-    
     return models;
 }
 @end
 
-#pragma mark -
+
+#pragma mark - NSDictionary
 @implementation NSDictionary (WGJSONModel)
 - (id)modelWithClass:(Class)modelClass{
     return [self modelWithClassName:NSStringFromClass(modelClass)];
 }
-
 - (id )modelWithClassName:(NSString *)className{
-    return [self modelWithClassName:className Level:0];
-}
-- (id )modelWithClassName:(NSString *)className Level:(int )level{
-    
-    Class modelClass = NSClassFromString([className uppercaseString]);
+    Class modelClass = NSClassFromString(className);
     if (!modelClass) {
         //如果class不存在，则直接返回self
         return self;
     }
-    
     id model = [[modelClass alloc]init];
-    
-    [model modelUpdateWithData:self Level:level];
-    
+    [model modelUpdateWithData:self];
     return model;
 }
-
 @end
 
 
 #pragma mark - Model
 @implementation NSObject (WGJSONModel_Append)
 - (void)modelUpdateWithData:(NSDictionary *)dic{
-    [self modelUpdateWithData:dic Level:0];
+    [self modelUpdateWithData:dic inClass:[self class]];
 }
-- (void)modelUpdateWithData:(NSDictionary *)dic Level:(int)lv{
-    u_int count;
-    objc_property_t *properties  = class_copyPropertyList([self class], &count);
+- (void)modelUpdateWithData:(NSDictionary *)dic inClass:(Class )class{
+    //如果父类非NSObject，则递归
+    Class superclass = class_getSuperclass(class);
+    if(![superclass isEqual:[NSObject class]]){
+        [self modelUpdateWithData:dic inClass:superclass];
+    }
     
+    u_int count;
+    objc_property_t *properties  = class_copyPropertyList(class, &count);
     for (int i = 0; i<count; i++){
-        
         //model属性名
         const char* propertyName_CStr = property_getName(properties[i]);
         NSString *propertyName_NSString = [NSString stringWithFormat:@"%s",propertyName_CStr];
         //数据源中的key
-        NSString *dataKeyString = propertyName_NSString;
+        NSString *dataKeyString = [NSString stringWithString:propertyName_NSString];
         if (AutoPropertyNamePrefix.length && [dataKeyString hasPrefix:AutoPropertyNamePrefix]) {
             dataKeyString = [dataKeyString stringByReplacingOccurrencesOfString:AutoPropertyNamePrefix withString:@""];
         }
         
         id value = dic[dataKeyString];
-        
         //value不能为NSNull类型，而只为nil是安全的
         if ([value isEqual:[NSNull null]]) {
             value = nil;
         }
-
         //检测value是否为null，跳过此value的赋值
         if (value) {
-            if ([value respondsToSelector:@selector(modelWithClassName:Level:)]) {
+            if ([value conformsToProtocol:@protocol(WGJSONModelProtocol)]) {
                 //需要递归转化model
-                value = [value modelWithClassName:[NSString stringWithFormat:@"%@_%@",NSStringFromClass([self class]),propertyName_NSString] Level:lv+1];
+                if ([value isKindOfClass:[NSArray class]]) {
+                    value = [value modelWithClassName:[NSString stringWithFormat:@"%@_%@",NSStringFromClass([self class]),[propertyName_NSString uppercaseFirstString]]];
+                }else{
+                    Class valueClass = class.propertyClass(propertyName_NSString);
+                    value = [value modelWithClassName:NSStringFromClass(valueClass)];
+                }
             }
-            
             [self setValue:value forKey:propertyName_NSString];
         }else{
             //MARK：value=nil时，可以直接安全设置，详情见-[WGObject setNilValueForKey:]
@@ -120,6 +99,5 @@
     }
     
     free(properties);
-
 }
 @end

@@ -99,5 +99,28 @@
 - (void)setNilValueForKey:(NSString *)key{
     WGLogFormatWarn(@"%@企图设置nilValue，key=%@",NSStringFromClass([self class]),key);
 }
+
+#pragma mark - 获取属性名对应的Class
++ (char *)propertyAttributesPrefixWithAttributes:(const char *)property_attributes{
+    size_t len = strlen(property_attributes);
+    char *prefix = malloc(len);
+    memset(prefix, 0, len);
+    memccpy(prefix, property_attributes, ',', len);
+    return prefix;
+}
++ (PropertyClass)propertyClass{
+    PropertyClass block = ^ Class(NSString *propertyName){
+        objc_property_t property = class_getProperty(self, propertyName.UTF8String);
+        char *columnPropertyAttributes = property_copyAttributeValue(property, "T");
+
+        NSString *className = [NSString stringWithFormat:@"%s",columnPropertyAttributes];
+        free(columnPropertyAttributes);
+        
+        className = [className stringFromRegularEpression:@"[^@\"]+"].firstObject;
+//NSArray<ATest_List>
+        return NSClassFromString(className);
+    };
+    return block;
+}
                     
 @end

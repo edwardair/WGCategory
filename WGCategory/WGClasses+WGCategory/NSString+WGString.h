@@ -82,4 +82,8 @@
  */
 + (NSString *)replaceUnicode:(NSString *)unicodeStr;
 
+/**
+ *  首字母大写
+ */
+- (NSString *)uppercaseFirstString;
 @end
