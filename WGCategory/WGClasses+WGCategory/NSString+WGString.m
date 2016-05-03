@@ -29,6 +29,7 @@
         return string;
     }
 }
+
 #pragma mark ----------------------------
 #pragma mark 正则表达式
 - (BOOL)isMatchingRegularEpressionByPattern:(NSString *)pattern{
@@ -37,22 +38,18 @@
     NSError *error;
     //检测正则表达式
     NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:pattern options:0 error:&error];
-    
     if (nil != regex) {
         NSRange firstMatch = [regex rangeOfFirstMatchInString:self options:0 range:NSMakeRange(0, self.length)];
-        if (firstMatch.length && firstMatch.location!=NSNotFound) {
-            NSMutableString *ss = [NSMutableString stringWithString:self];
-            NSLog(@"正则匹配结果：%@",[ss substringWithRange:firstMatch]);
-        }
         NSLog(@"正则匹配度：%lu:%lu",(unsigned long)firstMatch.length,(unsigned long)self.length);
-        if (firstMatch.length==self.length) {
+        if (firstMatch.location==0 && firstMatch.length==self.length) {
+            NSMutableString *ss = [NSMutableString stringWithString:self];
+            WGLogFormatValue(@"正则匹配结果：%@",[ss substringWithRange:firstMatch]);
             return YES;
         }
     }
     return NO;
 }
 - (NSArray *)stringFromRegularEpression:(NSString *)pattern{
-    
     NSError *error;
     //检测正则表达式
     NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:pattern options:0 error:&error];
@@ -64,20 +61,15 @@
             [texts addObject:[self substringWithRange:result.range]];
         }
         
-
         return [NSArray arrayWithArray:texts];
-
     }
     else{
         NSLog(@"regex初始化错误：%@",error.description);
     }
-    
     return nil;
-    
 }
 
 #pragma mark - NSObject 无差别地 转化为 NSString lv从0开始
-
 const static NSString *_blank = @"\t";
 + (NSString *)changeObjToString:(id )obj CurLV:(int )lv{
     NSMutableString *string = [NSMutableString string];
@@ -88,11 +80,7 @@ const static NSString *_blank = @"\t";
     
     if ([obj isKindOfClass:[NSString class]]) {
         [string appendString:blank];
-
         [string appendString:obj];
-
-//        [string appendString:@","];
-        
     }
     else if ([obj isKindOfClass:[NSArray class]]){
         [string appendString:blank];
@@ -106,36 +94,32 @@ const static NSString *_blank = @"\t";
             if (i!=[obj count]-1) {
                 [string appendString:@","];
             }
-
         }
-        
         
         [string appendString:@"\n"];
         [string appendString:blank];
         [string appendString:@")"];
-        
     }
     else if ([obj isKindOfClass:[NSDictionary class]]){
         [string appendString:blank];
         [string appendString:@"{"];
+        
         for (NSString *key in [obj allKeys]) {
             [string appendString:@"\n"];
             [string appendString:blank];
             [string appendString:(NSString *)_blank];
             [string appendFormat:@"%@=%@;",key,[self changeObjToString:obj[key] CurLV:lv+1]];
         }
+        
         [string appendString:@"\n"];
         [string appendString:blank];
         [string appendString:@"}"];
     }else{//NSObject
         [string appendString:blank];
         [string appendString:[obj description]];
-//        [string appendString:@","];
     }
     return [self replaceUnicode:string];
-
 }
-
 - (NSString *)md5{
     const char *cStr = [self UTF8String];
     unsigned char digest[16];
@@ -148,23 +132,17 @@ const static NSString *_blank = @"\t";
     
     return  output;
 }
-
 + (NSString *)replaceUnicode:(NSString *)unicodeStr {
     NSString *tempStr1 = [unicodeStr stringByReplacingOccurrencesOfString:@"\\u"withString:@"\\U"];
-    
     NSString *tempStr2 = [tempStr1 stringByReplacingOccurrencesOfString:@"\""withString:@"\\\""];
-    
     NSString *tempStr3 = [[@"\"" stringByAppendingString:tempStr2]stringByAppendingString:@"\""];
-    
     NSData *tempData = [tempStr3 dataUsingEncoding:NSUTF8StringEncoding];
-    
     NSString* returnStr = [NSPropertyListSerialization propertyListWithData:tempData
                                                                     options:NSPropertyListImmutable
                                                                      format:NULL
                                                                       error:nil];
     return [returnStr stringByReplacingOccurrencesOfString:@"\\r\\n"withString:@"\n"];
 }
-
 - (NSString *)uppercaseFirstString {
     if (self.length==0) {
         return self;

@@ -70,7 +70,6 @@
     ATest *testModel = [dic modelWithClass:[ATest class]];
     
     
-    
     return YES;
 }
 
