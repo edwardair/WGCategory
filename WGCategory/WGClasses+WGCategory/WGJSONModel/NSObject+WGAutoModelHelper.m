@@ -55,42 +55,28 @@
 @end
 #pragma mark - 数据转model声明打印
 @implementation NSArray (GENERATE_DEBUG)
-//- (NSString *)logWithKey:(NSString *)key{
-//    return [self logWithKey:key Level:0];
-//}
-
 - (NSString *)logWithKey:(NSString *)key{
     key = [[NSString handleNetString:key] uppercaseFirstString];
     key = [NSString stringWithFormat:@"%@",key];
-    
     for (id obj in self) {
-        
         if ([obj respondsToSelector:@selector(logWithKey:)]) {
             [obj logWithKey:key];
         }
-        
         break;
     }
-    
     return @"NSArray";
 }
 @end
 
 #pragma mark -
 @implementation NSDictionary (GENERATE_DEBUG)
-//- (NSString *)logWithKey:(NSString *)key{
-//    return [self logWithKey:key];
-//}
-
 - (NSString *)logWithKey:(NSString *)key{
     key = [[NSString handleNetString:key] uppercaseFirstString];
-    
     NSMutableString *property = [NSMutableString stringWithString:@"\n\n\n"];
     [property appendFormat:@"@interface %@:NSObject\n",key];
     for (NSString *k in [self allKeys]) {
         id value = self[k];
         NSString *uppercaseK = [k uppercaseFirstString];
-        
         //属性原始类型名称
         NSString *propertyAttributes = [NSObject publicClassNameWithValue:value];
         //如果value可实现logWithKey方法，则调用
@@ -102,9 +88,7 @@
     }
     [property appendString:@"@end\n"];
     [property appendFormat:@"@implementation %@ \n@end\n\n\n",key];
-    
     WGLogMsg(property);
-    
     return key;
 }
 @end

@@ -112,15 +112,23 @@
     PropertyClass block = ^ Class(NSString *propertyName){
         objc_property_t property = class_getProperty(self, propertyName.UTF8String);
         char *columnPropertyAttributes = property_copyAttributeValue(property, "T");
-
         NSString *className = [NSString stringWithFormat:@"%s",columnPropertyAttributes];
         free(columnPropertyAttributes);
-        
         className = [className stringFromRegularEpression:@"[^@\"]+"].firstObject;
-//NSArray<ATest_List>
         return NSClassFromString(className);
     };
     return block;
 }
-                    
++ (PropertyClass)propertyClass_NSArray{
+    PropertyClass block = ^ Class(NSString *propertyName){
+        objc_property_t property = class_getProperty(self, propertyName.UTF8String);
+        char *columnPropertyAttributes = property_copyAttributeValue(property, "T");
+        NSString *className = [NSString stringWithFormat:@"%s",columnPropertyAttributes];
+        free(columnPropertyAttributes);
+        className = [className stringFromRegularEpression:@"[^<]*(?=>)"].firstObject;
+        return NSClassFromString(className);
+    };
+    return block;
+}
+
 @end

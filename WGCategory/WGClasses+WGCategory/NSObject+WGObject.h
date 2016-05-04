@@ -55,5 +55,6 @@
 + (NSString *)systemLanguage;
 
 typedef Class(^PropertyClass)(NSString *propertyName);
-+ (PropertyClass) propertyClass;
++ (PropertyClass) propertyClass;//获取属性的类型
++ (PropertyClass)propertyClass_NSArray;//获取属性为NSArray类型时，支持的协议名
 @end

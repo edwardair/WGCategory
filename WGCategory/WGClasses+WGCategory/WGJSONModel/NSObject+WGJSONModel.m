@@ -11,7 +11,6 @@
 #import <objc/message.h>
 #import "WGDefines.h"
 
-
 #pragma mark - NSArray
 @implementation NSArray (WGJSONModel)
 - (id)modelWithClass:(Class)modelClass{
@@ -61,7 +60,6 @@
     if(![superclass isEqual:[NSObject class]]){
         [self modelUpdateWithData:dic inClass:superclass];
     }
-    
     u_int count;
     objc_property_t *properties  = class_copyPropertyList(class, &count);
     for (int i = 0; i<count; i++){
@@ -81,13 +79,17 @@
         }
         //检测value是否为null，跳过此value的赋值
         if (value) {
+            //需要递归转化model
             if ([value conformsToProtocol:@protocol(WGJSONModelProtocol)]) {
-                //需要递归转化model
+                //如果属性为NSArray，则检测是否引用某协议，此协议名字即为所使用的类名
                 if ([value isKindOfClass:[NSArray class]]) {
-                    value = [value modelWithClassName:[NSString stringWithFormat:@"%@_%@",NSStringFromClass([self class]),[propertyName_NSString uppercaseFirstString]]];
+                    Class valueClass = class.propertyClass_NSArray(propertyName_NSString);
+                    if (class) {
+                        value = [value modelWithClass:valueClass];
+                    }
                 }else{
                     Class valueClass = class.propertyClass(propertyName_NSString);
-                    value = [value modelWithClassName:NSStringFromClass(valueClass)];
+                    value = [value modelWithClass:valueClass];
                 }
             }
             [self setValue:value forKey:propertyName_NSString];
@@ -97,7 +99,6 @@
             [self setValue:value forKey:propertyName_NSString];
         }
     }
-    
     free(properties);
 }
 @end
