@@ -152,7 +152,7 @@ Pod::Spec.new do |s|
   
   s.subspec 'WGCategory' do |define|
     define.source_files = 'WGCategory/WGDefines.h'
-    define.dependency 'WGCategory/WGClasses','WGCategory/WGClasses+WGCategory','WGCategory/WGFunctions'
+    define.dependency 'WGCategory/WGClasses'#,'WGCategory/WGClasses+WGCategory','WGCategory/WGFunctions'
   end
   
   
