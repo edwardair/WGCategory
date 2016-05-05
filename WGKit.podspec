@@ -20,9 +20,9 @@ Pod::Spec.new do |s|
   s.source_files  = 'WGKit/WGDefines.h'
   s.public_header_files = 'WGKit/WGDefines.h'
   
-  s.default_subspec = 'WGKit'
-  s.subspec 'WGKit' do |ss|
-  end
+  # s.default_subspec = 'WGKit'
+  # s.subspec 'WGKit' do |ss|
+  # end
   
   # s.subspec 'WGKit' do |ss|
   #   ss.source_files  = 'WGKit/WGDefines.h'
@@ -42,13 +42,13 @@ Pod::Spec.new do |s|
   s.subspec 'Category' do |ss|
     ss.source_files  = 'WGKit/UIKit/Category/*.{h,m}'
     ss.public_header_files = 'WGKit/UIKit/Category/*.{h}'
-    ss.dependency = 'UIKit'
+    ss.dependency = 'WGKit/UIKit'
   end
   
   s.subspec 'View' do |ss|
     ss.source_files  = 'WGKit/UIKit/View/*.{h,m}'
     ss.public_header_files = 'WGKit/UIKit/View/*.{h}'
-    ss.dependency = 'UIKit'
+    ss.dependency = 'WGKit/UIKit'
   end
   
   s.subspec 'WGJSONModel' do |ss|
