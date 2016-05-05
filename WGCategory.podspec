@@ -138,17 +138,17 @@ Pod::Spec.new do |s|
   
   # s.default_subspec = 'WGCategory' 
   
-  s.subspec 'WGCategory/WGClasses+WGCategory' do |ca|
-    ca.source_files = 'WGCategory/WGClasses+WGCategory/*.{h,m}'
-  end
+  # s.subspec 'WGCategory/WGClasses+WGCategory' do |ca|
+  #   ca.source_files = 'WGCategory/WGClasses+WGCategory/*.{h,m}'
+  # end
 
   s.subspec 'WGCategory/WGCalsses' do |cls|
     cls.source_files = 'WGCategory/WGCalsses/*.{h,m}'
   end
   
-  s.subspec 'WGCategory/WGFunctions' do |fu|
-    fu.source_files = 'WGCategory/WGFunctions/*.{h,m}'
-  end
+  # s.subspec 'WGCategory/WGFunctions' do |fu|
+  #   fu.source_files = 'WGCategory/WGFunctions/*.{h,m}'
+  # end
   
   s.subspec 'WGCategory' do |define|
     define.source_files = 'WGCategory/WGDefines.h'
