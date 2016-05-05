@@ -136,7 +136,7 @@ Pod::Spec.new do |s|
   # s.source_files  = "WGCategory","WGCategory/*/*.{h,m}","WGCategory/*/*/*.{h,m}"
   # s.public_header_files = "WGCategory","WGCategory/*/*.h","WGCategory/*/*/*.h"
   
-  s.default_subspec = 'WGCategory' 
+  # s.default_subspec = 'WGCategory' 
   
   s.subspec 'WGCategory/WGClasses+WGCategory' do |ca|
     ca.source_files = 'WGCategory/WGClasses+WGCategory/*.{h,m}'
@@ -152,6 +152,7 @@ Pod::Spec.new do |s|
   
   s.subspec 'WGCategory' do |define|
     define.source_files = 'WGCategory/WGDefines.h'
+    define.public_header_files = 'WGCategory/WGDefines.h'
     define.dependency 'WGCategory/WGCalsses'#,'WGCategory/WGClasses+WGCategory','WGCategory/WGFunctions'
   end
   
