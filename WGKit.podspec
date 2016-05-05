@@ -14,20 +14,20 @@ Pod::Spec.new do |s|
   s.license      = "MIT (example)"
   s.author             = { "Eduoduo" => "550621009@qq.com" }
   s.platform     = :ios, "7.0"
-  s.source       = { :git => "https://github.com/edwardair/WGCategory.git", :tag => s.version, :submodules => true}
+  s.source       = { :git => "https://github.com/edwardair/WGCategory.git", :tag => s.version}
   s.requires_arc = true
 
   s.source_files  = 'WGKit/WGDefines.h'
   s.public_header_files = 'WGKit/WGDefines.h'
   
-  s.subspec 'WGKit' do |ss|
-    # core.source_files  = 'WGKit/*/*.{h,m}'
-    # core.public_header_files = 'WGKit/*/*.{h}'
-  end
-  s.subspec 'Core' do |ss|
-    core.source_files  = 'WGKit/*/*.{h,m}'
-    core.public_header_files = 'WGKit/*/*.{h}'
-  end
+  # s.subspec 'WGKit' do |ss|
+  #   # core.source_files  = 'WGKit/*/*.{h,m}'
+  #   # core.public_header_files = 'WGKit/*/*.{h}'
+  # end
+  # s.subspec 'Core' do |ss|
+  #   core.source_files  = 'WGKit/*/*.{h,m}'
+  #   core.public_header_files = 'WGKit/*/*.{h}'
+  # end
   
   # s.subspec 'Test' do |ss|
   #   # core.source_files  = 'WGKit/*/*.{h,m}'
