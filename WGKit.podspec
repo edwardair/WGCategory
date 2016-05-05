@@ -42,7 +42,7 @@ Pod::Spec.new do |s|
   s.subspec 'Category' do |ss|
     ss.source_files  = 'WGKit/UIKit/Category/*.{h,m}'
     # ss.public_header_files = 'WGKit/UIKit/Category/*.{h}'
-    # ss.dependency = 'WGKit/UIKit'
+    ss.dependency = 'WGKit/UIKit'
   end
   
   s.subspec 'View' do |ss|
