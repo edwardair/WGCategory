@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "WGCategory"
-  s.version      = "0.0.1"
+  s.version      = "0.0.2"
   s.summary      = "A short description of WGCategory."
 
   s.description  = <<-DESC
@@ -64,7 +64,7 @@ Pod::Spec.new do |s|
   #  the deployment target. You can optionally include the target after the platform.
   #
 
-   s.platform     = :ios
+  # s.platform     = :ios
    s.platform     = :ios, "7.0"
 
   #  When using multiple platforms
@@ -78,7 +78,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/edwardair/WGCategory.git", :tag => "0.0.1" }
+  s.source       = { :git => "https://github.com/edwardair/WGCategory.git", :tag => s.version }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -89,10 +89,10 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "WGCategory","WGCategory/*/*.{h,m}","WGCategory/*/*/*.{h,m}"
+  # s.source_files  = "WGCategory","WGCategory/*/*.{h,m}","WGCategory/*/*/*.{h,m}"
   # s.exclude_files = "Classes/Exclude"
 
-  s.public_header_files = "WGCategory","WGCategory/*/*.h","WGCategory/*/*/*.h"
+  # s.public_header_files = "WGCategory","WGCategory/*/*.h","WGCategory/*/*/*.h"
 
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -128,9 +128,36 @@ Pod::Spec.new do |s|
   #  where they will only apply to your library. If you depend on other Podspecs
   #  you can include multiple dependencies to ensure it works.
 
-  # s.requires_arc = true
+  s.requires_arc = true
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   # s.dependency "JSONKit", "~> 1.4"
+  
+  # s.source_files  = "WGCategory","WGCategory/*/*.{h,m}","WGCategory/*/*/*.{h,m}"
+  # s.public_header_files = "WGCategory","WGCategory/*/*.h","WGCategory/*/*/*.h"
+  
+  s.default_subspec = 'Define' 
+  
+  # s.subspec 'Category' do |ca|
+  #   ca.source_files = 'WGCategory/WGClasses+WGCategory/*.{h,m}'
+  # end
+
+  # s.subspec 'Class' do |cls|
+  #   cls.source_files = 'WGCategory/WGClasses/*.{h,m}'
+  # end
+  
+  # s.subspec 'Function' do |fu|
+  #   fu.source_files = 'WGCategory/WGFunctions/*.{h,m}'
+  # end
+  
+  s.subspec 'Define' do |define|
+    define.source_files = 'WGCategory/WGDefines.h'
+    define.dependency 'WGCategory/WGClasses' 'WGCategory/WGClasses+WGCategory' 'WGCategory/WGFunctions'
+  end
+  
+  
+  
+  
+
 
 end
