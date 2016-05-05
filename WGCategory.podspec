@@ -21,19 +21,19 @@ Pod::Spec.new do |s|
   s.public_header_files = 'WGKit/WGDefines.h'
   
   s.subspec 'Core' do |ss|
-    core.source_files  = 'WGCategory/*/*.{h,m}'
-    core.public_header_files = 'WGCategory/*/*.{h}'
+    core.source_files  = 'WGKit/*/*.{h,m}'
+    core.public_header_files = 'WGKit/*/*.{h}'
   end
   
   # s.subspec 'Test' do |ss|
-  #   # core.source_files  = 'WGCategory/*/*.{h,m}'
-  #   # core.public_header_files = 'WGCategory/*/*.{h}'
+  #   # core.source_files  = 'WGKit/*/*.{h,m}'
+  #   # core.public_header_files = 'WGKit/*/*.{h}'
   #   ss.dependency = 'Core'
   # end
   
   # s.subspec 'Core' do |ss|
-  #   ss.source_files  = 'WGCategory/*/*.{h,m}'
-  #   ss.public_header_files = 'WGCategory/*/*.{h}'
+  #   ss.source_files  = 'WGKit/*/*.{h,m}'
+  #   ss.public_header_files = 'WGKit/*/*.{h}'
   #   ss.dependency = 'Core'
   # end
   
