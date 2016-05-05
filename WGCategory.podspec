@@ -20,8 +20,15 @@ Pod::Spec.new do |s|
   s.source_files  = 'WGCategory/WGDefines.h'
   s.public_header_files = 'WGCategory/WGDefines.h'
   
-  s.subspec 'Test' do |test|
-    test.source_files  = 'WGCategory/*/*.{h,m}'
-    test.public_header_files = 'WGCategory/*/*.{h}'
+  s.subspec 'Core/Test' do |ss|
+    # core.source_files  = 'WGCategory/*/*.{h,m}'
+    # core.public_header_files = 'WGCategory/*/*.{h}'
   end
+  
+  # s.subspec 'Core' do |ss|
+  #   ss.source_files  = 'WGCategory/*/*.{h,m}'
+  #   ss.public_header_files = 'WGCategory/*/*.{h}'
+  #   ss.dependency = 'Core'
+  # end
+  
 end
