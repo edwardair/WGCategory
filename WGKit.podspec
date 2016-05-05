@@ -31,25 +31,31 @@ Pod::Spec.new do |s|
   
   s.subspec 'Core' do |ss|
     ss.source_files  = 'WGKit/Core/*.{h,m}'
-    ss.public_header_files = 'WGKit/Core/*.{h}'
+    # ss.public_header_files = 'WGKit/Core/*.{h}'
   end
   
   s.subspec 'UIKit' do |ss|
-    ss.source_files  = 'WGKit/UIKit/*.{h,m}'
+    # ss.source_files  = 'WGKit/UIKit/*.{h,m}'
     # ss.public_header_files = 'WGKit/UIKit/*.{h}'
+    
+    sss.subspec 'Category' do |sss|
+      sss.source_files  = 'WGKit/UIKit/Category/*.{h,m}'
+      # ss.public_header_files = 'WGKit/UIKit/Category/*.{h}'
+      # ss.dependency = 'WGKit/UIKit'
+    end
   end
   
-  s.subspec 'Category' do |ss|
-    ss.source_files  = 'WGKit/UIKit/Category/*.{h,m}'
-    # ss.public_header_files = 'WGKit/UIKit/Category/*.{h}'
-    # ss.dependency = 'WGKit/UIKit'
-  end
+  # s.subspec 'Category' do |ss|
+  #   ss.source_files  = 'WGKit/UIKit/Category/*.{h,m}'
+  #   # ss.public_header_files = 'WGKit/UIKit/Category/*.{h}'
+  #   # ss.dependency = 'WGKit/UIKit'
+  # end
   
-  s.subspec 'View' do |ss|
-    ss.source_files  = 'WGKit/UIKit/View/*.{h,m}'
-    # ss.public_header_files = 'WGKit/UIKit/View/*.{h}'
-    # ss.dependency = 'WGKit/UIKit'
-  end
+  # s.subspec 'View' do |ss|
+  #   ss.source_files  = 'WGKit/UIKit/View/*.{h,m}'
+  #   # ss.public_header_files = 'WGKit/UIKit/View/*.{h}'
+  #   # ss.dependency = 'WGKit/UIKit'
+  # end
   
   s.subspec 'WGJSONModel' do |ss|
     ss.source_files  = 'WGKit/WGJSONModel/*.{h,m}'
