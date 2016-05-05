@@ -20,6 +20,8 @@ Pod::Spec.new do |s|
   s.source_files  = 'WGKit/WGDefines.h'
   s.public_header_files = 'WGKit/WGDefines.h'
   
+  # s.default_subspec = 'WGKit'
+  
   # s.subspec 'WGKit' do |ss|
   #   # core.source_files  = 'WGKit/*/*.{h,m}'
   #   # core.public_header_files = 'WGKit/*/*.{h}'
