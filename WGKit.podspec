@@ -35,7 +35,7 @@ Pod::Spec.new do |s|
   end
   
   s.subspec 'UIKit' do |ss|
-    # ss.source_files  = 'WGKit/UIKit/*.{h,m}'
+    ss.source_files  = 'WGKit/UIKit/*.{h,m}'
     # ss.public_header_files = 'WGKit/UIKit/*.{h}'
   end
   
