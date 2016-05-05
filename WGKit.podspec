@@ -24,10 +24,10 @@ Pod::Spec.new do |s|
   #   # core.source_files  = 'WGKit/*/*.{h,m}'
   #   # core.public_header_files = 'WGKit/*/*.{h}'
   # end
-  # s.subspec 'Core' do |ss|
-  #   core.source_files  = 'WGKit/*/*.{h,m}'
-  #   core.public_header_files = 'WGKit/*/*.{h}'
-  # end
+  s.subspec 'Core' do |ss|
+    core.source_files  = 'WGKit/Core/*.{h,m}'
+    core.public_header_files = 'WGKit/Core/*.{h}'
+  end
   
   # s.subspec 'Test' do |ss|
   #   # core.source_files  = 'WGKit/*/*.{h,m}'
