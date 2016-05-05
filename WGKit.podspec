@@ -41,23 +41,23 @@ Pod::Spec.new do |s|
   
   s.subspec 'Category' do |ss|
     ss.source_files  = 'WGKit/UIKit/Category/*.{h,m}'
-    ss.public_header_files = 'WGKit/UIKit/Category/*.{h}'
-    ss.dependency = 'WGKit/UIKit'
+    # ss.public_header_files = 'WGKit/UIKit/Category/*.{h}'
+    # ss.dependency = 'WGKit/UIKit'
   end
   
   s.subspec 'View' do |ss|
     ss.source_files  = 'WGKit/UIKit/View/*.{h,m}'
-    ss.public_header_files = 'WGKit/UIKit/View/*.{h}'
-    ss.dependency = 'WGKit/UIKit'
+    # ss.public_header_files = 'WGKit/UIKit/View/*.{h}'
+    # ss.dependency = 'WGKit/UIKit'
   end
   
   s.subspec 'WGJSONModel' do |ss|
     ss.source_files  = 'WGKit/WGJSONModel/*.{h,m}'
-    ss.public_header_files = 'WGKit/WGJSONModel/*.{h}'
+    # ss.public_header_files = 'WGKit/WGJSONModel/*.{h}'
   end
   
   s.subspec 'Other' do |ss|
     ss.source_files  = 'WGKit/Other/*.{h,m}'
-    ss.public_header_files = 'WGKit/Other/*.{h}'
+    # ss.public_header_files = 'WGKit/Other/*.{h}'
   end
 end
