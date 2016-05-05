@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "WGKit"
-  s.version      = "0.0.2"
+  s.version      = "0.0.3"
   s.summary      = "A short description of WGKit."
   s.description  = <<-DESC
                    A longer description of WGKit in Markdown format.
@@ -20,50 +20,25 @@ Pod::Spec.new do |s|
   s.source_files  = 'WGKit/WGDefines.h'
   s.public_header_files = 'WGKit/WGDefines.h'
   
-  # s.default_subspec = 'WGKit'
-  # s.subspec 'WGKit' do |ss|
-  # end
-  
-  # s.subspec 'WGKit' do |ss|
-  #   ss.source_files  = 'WGKit/WGDefines.h'
-  #   ss.public_header_files = 'WGKit/WGDefines.h'
-  # end
-  
   s.subspec 'Core' do |ss|
     ss.source_files  = 'WGKit/Core/*.{h,m}'
-    # ss.public_header_files = 'WGKit/Core/*.{h}'
   end
   
   s.subspec 'UIKit' do |ss|
-    # ss.source_files  = 'WGKit/UIKit/*.{h,m}'
-    # ss.public_header_files = 'WGKit/UIKit/*.{h}'
     
     ss.subspec 'Category' do |sss|
       sss.source_files  = 'WGKit/UIKit/Category/*.{h,m}'
-      # ss.public_header_files = 'WGKit/UIKit/Category/*.{h}'
-      # ss.dependency = 'WGKit/UIKit'
+    end
+    ss.subspec 'View' do |sss|
+      sss.source_files  = 'WGKit/UIKit/View/*.{h,m}'
     end
   end
   
-  # s.subspec 'Category' do |ss|
-  #   ss.source_files  = 'WGKit/UIKit/Category/*.{h,m}'
-  #   # ss.public_header_files = 'WGKit/UIKit/Category/*.{h}'
-  #   # ss.dependency = 'WGKit/UIKit'
-  # end
-  
-  # s.subspec 'View' do |ss|
-  #   ss.source_files  = 'WGKit/UIKit/View/*.{h,m}'
-  #   # ss.public_header_files = 'WGKit/UIKit/View/*.{h}'
-  #   # ss.dependency = 'WGKit/UIKit'
-  # end
-  
   s.subspec 'WGJSONModel' do |ss|
     ss.source_files  = 'WGKit/WGJSONModel/*.{h,m}'
-    # ss.public_header_files = 'WGKit/WGJSONModel/*.{h}'
   end
   
   s.subspec 'Other' do |ss|
     ss.source_files  = 'WGKit/Other/*.{h,m}'
-    # ss.public_header_files = 'WGKit/Other/*.{h}'
   end
 end
