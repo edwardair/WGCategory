@@ -17,19 +17,19 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/edwardair/WGCategory.git", :tag => s.version, :submodules => true}
   s.requires_arc = true
 
-  s.source_files  = 'WGCategory/WGDefines.h'
-  s.public_header_files = 'WGCategory/WGDefines.h'
+  s.source_files  = 'WGKit/WGDefines.h'
+  s.public_header_files = 'WGKit/WGDefines.h'
   
   s.subspec 'Core' do |ss|
-    # core.source_files  = 'WGCategory/*/*.{h,m}'
-    # core.public_header_files = 'WGCategory/*/*.{h}'
+    core.source_files  = 'WGCategory/*/*.{h,m}'
+    core.public_header_files = 'WGCategory/*/*.{h}'
   end
   
-  s.subspec 'Test' do |ss|
-    # core.source_files  = 'WGCategory/*/*.{h,m}'
-    # core.public_header_files = 'WGCategory/*/*.{h}'
-    ss.dependency = 'Core'
-  end
+  # s.subspec 'Test' do |ss|
+  #   # core.source_files  = 'WGCategory/*/*.{h,m}'
+  #   # core.public_header_files = 'WGCategory/*/*.{h}'
+  #   ss.dependency = 'Core'
+  # end
   
   # s.subspec 'Core' do |ss|
   #   ss.source_files  = 'WGCategory/*/*.{h,m}'
