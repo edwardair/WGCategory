@@ -32,16 +32,18 @@ Pod::Spec.new do |s|
     ss.public_header_files = 'WGKit/Core/*.{h}'
   end
   
-  # s.subspec 'Test' do |ss|
-  #   # core.source_files  = 'WGKit/*/*.{h,m}'
-  #   # core.public_header_files = 'WGKit/*/*.{h}'
-  #   ss.dependency = 'Core'
-  # end
+  s.subspec 'UIKit' do |ss|
+    ss.source_files  = 'WGKit/UIKit/*.{h,m}'
+    ss.public_header_files = 'WGKit/UIKit/*.{h}'
+  end
   
-  # s.subspec 'Core' do |ss|
-  #   ss.source_files  = 'WGKit/*/*.{h,m}'
-  #   ss.public_header_files = 'WGKit/*/*.{h}'
-  #   ss.dependency = 'Core'
-  # end
+  s.subspec 'WGJSONModel' do |ss|
+    ss.source_files  = 'WGKit/WGJSONModel/*.{h,m}'
+    ss.public_header_files = 'WGKit/WGJSONModel/*.{h}'
+  end
   
+  s.subspec 'Other' do |ss|
+    ss.source_files  = 'WGKit/Other/*.{h,m}'
+    ss.public_header_files = 'WGKit/Other/*.{h}'
+  end
 end
