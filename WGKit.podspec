@@ -37,7 +37,7 @@ Pod::Spec.new do |s|
     # ss.public_header_files = 'WGKit/UIKit/*.{h}'
   end
   
-  s.subspec 'Category' do |ss|
+  s.subspec 'UIKit/Category' do |ss|
     ss.source_files  = 'WGKit/UIKit/Category/*.{h,m}'
     ss.public_header_files = 'WGKit/UIKit/Category/*.{h}'
   end
