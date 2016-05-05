@@ -129,7 +129,7 @@ Pod::Spec.new do |s|
   #  you can include multiple dependencies to ensure it works.
 
   s.requires_arc = true
-  s.default_subspec = 'WGCategory'
+  s.default_subspec = 'WGCategory/WGCalsses'
   
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   # s.dependency "JSONKit", "~> 1.4"
@@ -145,6 +145,7 @@ Pod::Spec.new do |s|
 
   s.subspec 'WGCategory/WGCalsses' do |cls|
     cls.source_files = 'WGCategory/WGCalsses/*.{h,m}'
+    cls.public_header_files = 'WGCategory/WGCalsses/*.{h}'
   end
   
   # s.subspec 'WGCategory/WGFunctions' do |fu|
