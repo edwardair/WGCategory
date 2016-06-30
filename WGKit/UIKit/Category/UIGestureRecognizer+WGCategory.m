@@ -26,12 +26,12 @@
 #endif
 
 #pragma mark - tag
-static const char *property_tag;
+static const char property_tag;
 - (int )wg_tag{
-    return [objc_getAssociatedObject(self, property_tag) intValue];
+    return [objc_getAssociatedObject(self, &property_tag) intValue];
 }
 - (void)setWg_tag:(int)wg_tag{
-    objc_setAssociatedObject(self, property_tag, @(wg_tag), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(self, &property_tag, @(wg_tag), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 @end
 

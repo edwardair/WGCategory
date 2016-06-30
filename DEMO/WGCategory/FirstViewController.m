@@ -9,6 +9,7 @@
 #import "FirstViewController.h"
 #import "WGDefines.h"
 #import "TestTimerVCViewController.h"
+#import "TestTableViewCell.h"
 
 
 @interface FirstViewController ()<UITableViewDataSource,UITableViewDelegate>
@@ -23,16 +24,11 @@
     
     [self wg_setTableView:_tableview
     edgeInsetsAtIndexPath:^UIEdgeInsets(NSIndexPath *indexPath) {
-        return UIEdgeInsetsMake(0, 50, 0, 100);
+        return UIEdgeInsetsMake(0, 0, 0, 0);
     }];
 
     
 }
-//-(void)tableView:(UITableView *)tableView
-//   willDisplayCell:(UITableViewCell *)cell
-// forRowAtIndexPath:(NSIndexPath *)indexPath{
-//    NSLog(@"11111----------------");
-//}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -41,19 +37,31 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return 10;
 }
+static NSInteger i = -1;
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (i==indexPath.row) {
+        return 20;
+    }else{
+        return 44.f;
+    }
+}
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    UITableViewCell *cell  =[tableView dequeueReusableCellWithIdentifier:@"cell"];
-    cell.textLabel.text = [NSString stringWithFormat:@"%@",indexPath];
+    TestTableViewCell *cell  =[tableView dequeueReusableCellWithIdentifier:@"cell"];
+    if (!cell) {
+        cell = [[TestTableViewCell alloc]initWithFrame:CGRectMake(0, 0, tableView.wg_width, 44.f)];
+    }
+    cell.testLabel.text = [NSString stringWithFormat:@"%@%d",indexPath,arc4random()%10000];
     return cell;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    FirstViewController *second = [self.storyboard instantiateViewControllerWithIdentifier:@"first"];
-    [self presentViewController:second animated:YES completion:^{
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(10 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [second dismissViewControllerAnimated:YES completion:NULL];
-        });
-    }];
+    if (i==indexPath.row) {
+        i = -1;
+    }else{
+        i = indexPath.row;
+    }
+    [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+
 }
 @end
