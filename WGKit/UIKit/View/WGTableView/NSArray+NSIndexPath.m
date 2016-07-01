@@ -19,28 +19,43 @@
     }
     return indexes;
 }
-- (NSArray<UITableViewCell *> *)cellsFromAllSections{
++ (NSArray<NSIndexPath *> *)indexPathsFromAllSections:(NSArray<NSArray *> *)sections{
+    NSMutableArray<NSIndexPath *> *indexes = @[].mutableCopy;
+    NSInteger section = 0;
+    for (NSArray *tmp in sections) {
+        if ([tmp isKindOfClass:[NSArray class]]) {
+            [indexes addObjectsFromArray:[NSArray indexPathsFromRow:0
+                                                          inSection:section++
+                                                             length:tmp.count]];
+        }
+    }
+    return indexes;
+}
+
++ (NSArray<UITableViewCell *> *)cellsFromAllSections:(NSArray<NSArray *> *)sections{
     NSMutableArray *cells = @[].mutableCopy;
-    for (NSArray *tmp in self) {
+    for (NSArray *tmp in sections) {
         if ([tmp isKindOfClass:[NSArray class]]) {
             [cells addObjectsFromArray:tmp];
         }
     }
     return cells;
 }
-- (NSArray<UITableViewCell *> *)cellsForIndexPathsIn:(NSArray<NSArray *> *)cells{
++ (NSArray<UITableViewCell *> *)
+cellsForIndexPaths:(NSArray<NSIndexPath *> *)indexes
+In:(NSArray<NSArray *> *)cells {
     NSMutableArray<UITableViewCell *> *tmp = @[].mutableCopy;
-    for (NSIndexPath *indexPath in self) {
+    for (NSIndexPath *indexPath in indexes) {
         NSInteger section = indexPath.section;
-        if (section<cells.count) {
+        if (section < cells.count) {
             NSArray *theSection = cells[section];
             NSInteger row = indexPath.row;
-            if (row<theSection.count) {
+            if (row < theSection.count) {
                 UITableViewCell *theCell = theSection[row];
                 [tmp addObject:theCell];
             }
         }
     }
-    return tmp;
+  return tmp;
 }
 @end

@@ -8,17 +8,18 @@
 
 #import <UIKit/UIKit.h>
 #import "WGTableView.h"
-#import "WGTableViewModel.h"
 #import "WGTableViewCell.h"
 #import "NSArray+NSIndexPath.h"
 
-
 @interface WGTableViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
-@property (nonatomic,strong,readonly) UITableView *tableView;
+@property (nonatomic,strong,readonly) UITableView *tableView;/**< 默认为满屏宽高*/
 @property (nonatomic,strong,readonly) NSMutableArray *dataSource;/**< @[] if not used*/
-@property (nonatomic,strong,readonly) NSMutableArray *cells;
+@property (nonatomic,strong,readonly) NSMutableArray *cells;/**< 通过以下定义方法增加cell*/
 
-- (NSMutableArray *)sectionAtIndex:(NSInteger )section;
+/**
+ *  安全获取某个section，如果section之前的不存在，则会创建空section
+ */
+- (NSMutableArray *(^)(NSInteger))sectionAtIndex;
 
 - (void)addCells:(NSArray<UITableViewCell *> *)cells
        atSection:(NSInteger )section;
@@ -41,9 +42,8 @@
 /**
  *  reload 重新批量刷新cell高度
  */
-- (void)reloadAllCells;
-- (void)reloadCellsForIndexes:(NSArray<NSIndexPath *> *)indexes;
-- (void)reloadCells:(NSArray *)cells;
+- (void)updateHeightOfAllCells;
+- (void)updateHeightAtIndexes:(NSArray<NSIndexPath *> *)indexes;
 @end
 
 

@@ -26,13 +26,13 @@
 //    self.tableView.delegate = self;
 }
 - (IBAction)reload:(id)sender {
-    [self reloadAllCells];
+    [self updateHeightOfAllCells];
 }
 
 - (IBAction)delete:(id)sender {
     int count = 10;
     NSMutableArray *indexes = @[].mutableCopy;
-    NSMutableArray *theSection = [self sectionAtIndex:0];
+    NSMutableArray *theSection = self.sectionAtIndex(0);
     for (NSInteger i = theSection.count-1; i>=0; i--) {
         [indexes addObject:[NSIndexPath indexPathForRow:i inSection:0]];
         count--;
@@ -80,57 +80,59 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"测试数据" message:@"msg" preferredStyle:UIAlertControllerStyleAlert];
-    [alert addAction:[UIAlertAction actionWithTitle:@"cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-        
-    }]];
-    [alert addAction:[UIAlertAction actionWithTitle:@"ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        NSMutableArray *theSection = [self sectionAtIndex:indexPath.section];
+    if ([UIDevice currentDevice].systemVersion.floatValue<8.0) {
+        NSMutableArray *theSection = self.sectionAtIndex(indexPath.section);
         TestTableViewCell *cell = theSection[indexPath.row];
-        [cell updateModel:[[alert textFields].firstObject text]];
+        [cell updateModel:@"tatweta"];
         [cell setNeedUpdateHeight];
-//        
-//        [self.tableView beginUpdates];
-//        [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-//        [self.tableView endUpdates];
-////        [self.tableView beginUpdates];
-//        [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-////        [self.tableView endUpdates];
-//        
-//
-        [self reloadCells:@[cell]];
-    }]];
-    [alert addAction:[UIAlertAction actionWithTitle:@"copy" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        NSMutableArray *theSection = self.cells[indexPath.section];
-        TestTableViewCell *cell = theSection[indexPath.row];
-        [UIPasteboard generalPasteboard].string = cell.model;
-    }]];
-    [alert addAction:[UIAlertAction actionWithTitle:@"insert" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        NSArray *datas = @[
-                           @"1insert",
-                           @"2insert",
-                           @"3insert",
-                           ];
-        NSMutableArray *tmp = @[].mutableCopy;
-        NSMutableArray *indexes = @[].mutableCopy;
-        NSInteger i = indexPath.row;
-        for (NSString *str in datas) {
-            TestTableViewCell *cell = [[TestTableViewCell alloc]initWithFrame:CGRectMake(0, 0, 414, 44.)];
-            [cell loadModel:str
-                   doReload:^(TestTableViewCell* cell_, id model_) {
-                       cell_.testLabel.text = model_;
-                   }];
-            [tmp addObject:cell];
-            [indexes addObject:[NSIndexPath indexPathForRow:i++ inSection:0]];
-        }
-        [self insertCells:tmp atRow:indexPath.row inSection:0];
-    }]];
-    [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
-        textField.placeholder = @"test";
-    }];
-    [self presentViewController:alert animated:YES completion:^{
-        
-    }];
+        [self updateHeightAtIndexes:@[indexPath]];
+    }else{
+
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"测试数据" message:@"msg" preferredStyle:UIAlertControllerStyleAlert];
+        [alert addAction:[UIAlertAction actionWithTitle:@"cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+            
+        }]];
+        [alert addAction:[UIAlertAction actionWithTitle:@"ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            NSMutableArray *theSection = self.sectionAtIndex(indexPath.section);
+            TestTableViewCell *cell = theSection[indexPath.row];
+            [cell updateModel:[[alert textFields].firstObject text]];
+            [cell setNeedUpdateHeight];
+            [self updateHeightAtIndexes:@[indexPath]];
+        }]];
+        [alert addAction:[UIAlertAction actionWithTitle:@"copy" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            NSMutableArray *theSection = self.sectionAtIndex(indexPath.section);
+            TestTableViewCell *cell = theSection[indexPath.row];
+            [UIPasteboard generalPasteboard].string = cell.model;
+        }]];
+        [alert addAction:[UIAlertAction actionWithTitle:@"insert" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            NSArray *datas = @[
+                               @"1insert",
+                               @"2insert",
+                               @"3insert",
+                               ];
+            NSMutableArray *tmp = @[].mutableCopy;
+            NSMutableArray *indexes = @[].mutableCopy;
+            NSInteger i = indexPath.row;
+            for (NSString *str in datas) {
+                TestTableViewCell *cell = [[TestTableViewCell alloc]initWithFrame:CGRectMake(0, 0, 414, 44.)];
+                [cell loadModel:str
+                       doReload:^(TestTableViewCell* cell_, id model_) {
+                           cell_.testLabel.text = model_;
+                       }];
+                [tmp addObject:cell];
+                [indexes addObject:[NSIndexPath indexPathForRow:i++ inSection:0]];
+            }
+            [self insertCells:tmp atRow:indexPath.row inSection:0];
+        }]];
+        [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+            textField.placeholder = @"test";
+        }];
+        [self presentViewController:alert animated:YES completion:^{
+            
+        }];
+    }
+    
+
 }
 @end
 

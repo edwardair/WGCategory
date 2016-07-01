@@ -19,7 +19,16 @@ typedef void(^ReloadBlock)(id cell_, id model_);
 
 @property (nonatomic,strong,readonly) id model;
 @property (nonatomic,copy) ReloadBlock reloadBlock;
+/**
+ *  加载数据
+ *
+ *  @param model
+ *  @param block 处理具体cell的数据加载
+ */
 - (void)loadModel:(id)model doReload:(ReloadBlock )block;
+/**
+ *  更新model，当tableView reload时，将会通过ReloadBlock 回调
+ */
 - (void)updateModel:(id )model;
 @end
 

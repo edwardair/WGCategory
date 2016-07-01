@@ -10,7 +10,6 @@
 		F7118AEC1CB366F5007AF228 /* SecondTestView.m in Sources */ = {isa = PBXBuildFile; fileRef = F7118AEB1CB366F5007AF228 /* SecondTestView.m */; };
 		F73BD1E01D224873003E3C4F /* WGTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F73BD1DF1D224873003E3C4F /* WGTableViewController.m */; };
 		F73BD1E31D224D24003E3C4F /* WGTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = F73BD1E21D224D24003E3C4F /* WGTableView.m */; };
-		F73BD1E61D224F96003E3C4F /* WGTableViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F73BD1E51D224F96003E3C4F /* WGTableViewModel.m */; };
 		F73BD1E91D2250D3003E3C4F /* WGTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F73BD1E81D2250D3003E3C4F /* WGTableViewCell.m */; };
 		F76AE7C01B55FC2E000B68C6 /* TestTimerVCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F76AE7BF1B55FC2E000B68C6 /* TestTimerVCViewController.m */; };
 		F79E59B81D24AEC800A65363 /* NSArray+NSIndexPath.m in Sources */ = {isa = PBXBuildFile; fileRef = F79E59B71D24AEC800A65363 /* NSArray+NSIndexPath.m */; };
@@ -78,8 +77,6 @@
 		F73BD1DF1D224873003E3C4F /* WGTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGTableViewController.m; sourceTree = "<group>"; };
 		F73BD1E11D224D24003E3C4F /* WGTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGTableView.h; sourceTree = "<group>"; };
 		F73BD1E21D224D24003E3C4F /* WGTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGTableView.m; sourceTree = "<group>"; };
-		F73BD1E41D224F96003E3C4F /* WGTableViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGTableViewModel.h; sourceTree = "<group>"; };
-		F73BD1E51D224F96003E3C4F /* WGTableViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGTableViewModel.m; sourceTree = "<group>"; };
 		F73BD1E71D2250D3003E3C4F /* WGTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGTableViewCell.h; sourceTree = "<group>"; };
 		F73BD1E81D2250D3003E3C4F /* WGTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGTableViewCell.m; sourceTree = "<group>"; };
 		F76AE7BE1B55FC2E000B68C6 /* TestTimerVCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestTimerVCViewController.h; sourceTree = "<group>"; };
@@ -201,8 +198,6 @@
 			children = (
 				F73BD1DE1D224873003E3C4F /* WGTableViewController.h */,
 				F73BD1DF1D224873003E3C4F /* WGTableViewController.m */,
-				F73BD1E41D224F96003E3C4F /* WGTableViewModel.h */,
-				F73BD1E51D224F96003E3C4F /* WGTableViewModel.m */,
 				F73BD1E11D224D24003E3C4F /* WGTableView.h */,
 				F73BD1E21D224D24003E3C4F /* WGTableView.m */,
 				F73BD1E71D2250D3003E3C4F /* WGTableViewCell.h */,
@@ -538,7 +533,6 @@
 				F76AE7C01B55FC2E000B68C6 /* TestTimerVCViewController.m in Sources */,
 				F7A4F8951B1D531A00B84A4E /* SecondViewController.m in Sources */,
 				F7118AEC1CB366F5007AF228 /* SecondTestView.m in Sources */,
-				F73BD1E61D224F96003E3C4F /* WGTableViewModel.m in Sources */,
 				F7F18ADD1CDAEEA200CAD550 /* UITextView+WGCategory.m in Sources */,
 				F7F18ADB1CDAEEA200CAD550 /* UITableView+WGAutoLayout.m in Sources */,
 				F7F18AE41CDAEEA200CAD550 /* WGTextView.m in Sources */,

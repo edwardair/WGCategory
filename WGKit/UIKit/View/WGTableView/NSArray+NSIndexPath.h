@@ -16,17 +16,24 @@
                                     inSection:(NSInteger)section
                                        length:(NSInteger)len;
 /**
- *  【self = NSArray<NSArray *> *】 二维数组，为UITableView.dataSource，所有section的数据源
+ *  【sections = NSArray<NSArray *> *】 二维数组，为UITableView.dataSource，所有section的数据源
  *
  *  @return 转化为包含所有cell的一维数组
  */
-- (NSArray<UITableViewCell *> *)cellsFromAllSections;
++ (NSArray<NSIndexPath *> *)indexPathsFromAllSections:(NSArray<NSArray *> *)sections;
 /**
- *  self = NSArray<NSIndexPath *> *
+ *  【sections = NSArray<NSArray *> *】 二维数组，为UITableView.dataSource，所有section的数据源
+ *
+ *  @return 转化为包含所有cell的一维数组
+ */
++ (NSArray<UITableViewCell *> *)cellsFromAllSections:(NSArray<NSArray *> *)sections;
+/**
+ *  indexes = NSArray<NSIndexPath *> *
  *
  *  @param 【cells = NSArray<NSArray *> *】 二维数组，为UITableView.dataSource，所有section的数据源
  *
  *  @return indexPath对应的cell，只有设置cell.indexPath后，
  */
-- (NSArray<UITableViewCell *> *)cellsForIndexPathsIn:(NSArray<NSArray *> *)cells;
++ (NSArray<UITableViewCell *> *)cellsForIndexPaths:(NSArray<NSIndexPath *> *)indexes
+                                                In:(NSArray<NSArray *> *)cells;
 @end

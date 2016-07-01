@@ -52,31 +52,31 @@
           constraintsWithVisualFormat:@"H:|-0-[_tableView]-0-|"
           options:0
           metrics:nil
-          views:NSDictionaryOfVariableBindings(
-                                               _tableView)]];
+          views:NSDictionaryOfVariableBindings(_tableView)]];
         [self.view
          addConstraints:
          [NSLayoutConstraint
           constraintsWithVisualFormat:@"V:|-0-[_tableView]-0-|"
           options:0
           metrics:nil
-          views:NSDictionaryOfVariableBindings(
-                                               _tableView)]];
+          views:NSDictionaryOfVariableBindings(_tableView)]];
         [self.view layoutIfNeeded];
     }
     return _tableView;
 }
 
 #pragma mark - Datasource
-- (NSMutableArray *)sectionAtIndex:(NSInteger )section {
-    NSInteger existSectionCount = self.cells.count;
-    //当添加的section超出现有section数组，则添加中间空sections，以备后续填充
-    if (section>=existSectionCount) {
-        for (NSInteger i = existSectionCount; i < (section-existSectionCount); i++) {
-            [self.cells addObject:@[].mutableCopy];
+- (NSMutableArray *(^)(NSInteger))sectionAtIndex{
+    return ^ NSMutableArray *(NSInteger section){
+        NSInteger existSectionCount = self.cells.count;
+        //当添加的section超出现有section数组，则添加中间空sections，以备后续填充
+        if (section>=existSectionCount) {
+            for (NSInteger i = existSectionCount; i < (section-existSectionCount); i++) {
+                [self.cells addObject:@[].mutableCopy];
+            }
         }
-    }
-    return self.cells[section];
+        return self.cells[section];
+    };
 }
 
 #pragma mark - add
@@ -87,17 +87,14 @@
 - (void)addCells:(NSArray<UITableViewCell *> *)cells
        atSection:(NSInteger)section
        animation:(UITableViewRowAnimation)animation {
-    NSMutableArray *theSection = [self sectionAtIndex:section];
+    NSMutableArray *theSection = self.sectionAtIndex(section);
     
-    NSMutableArray<NSIndexPath *> *indexes = @[].mutableCopy;
-    NSInteger index = theSection.count;
+    NSInteger row = theSection.count;
     [theSection addObjectsFromArray:cells];
     
-    for (NSInteger i = 0; i < cells.count; i++) {
-        NSIndexPath *indexPath =
-        [NSIndexPath indexPathForRow:index++ inSection:section];
-        [indexes addObject:indexPath];
-    }
+    NSArray<NSIndexPath *> *indexes =
+    [NSArray indexPathsFromRow:row inSection:section length:cells.count];
+    
     [self.tableView insertRowsAtIndexPaths:indexes withRowAnimation:animation];
 }
 #pragma mark - insert
@@ -113,7 +110,7 @@
               atRow:(NSInteger)row
           inSection:(NSInteger)section
           animation:(UITableViewRowAnimation)animation {
-    NSMutableArray *theSection = [self sectionAtIndex:section];
+    NSMutableArray *theSection = self.sectionAtIndex(section);
     [theSection insertObjects:cells atIndexes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(row, cells.count)]];
     NSArray *indexes = [NSArray indexPathsFromRow:row
                                         inSection:section
@@ -128,7 +125,7 @@
                    animation:(UITableViewRowAnimation)animation {
     for (NSInteger i = 0; i < indexes.count; i++) {
         NSIndexPath *indexPath = indexes[i];
-        NSMutableArray *theSection = [self sectionAtIndex:indexPath.section];
+        NSMutableArray *theSection = self.sectionAtIndex(indexPath.section);
         if (indexPath.row < theSection.count) {
             [theSection removeObjectAtIndex:indexPath.row];
         }
@@ -136,22 +133,20 @@
     [self.tableView deleteRowsAtIndexPaths:indexes withRowAnimation:animation];
 }
 #pragma mark - reload
-- (void)reloadAllCells{
-    NSArray *cells = [self.cells cellsFromAllSections];
-    [self reloadCells:cells];
+- (void)updateHeightOfAllCells{
+    NSArray<NSIndexPath *> *indexPaths = [NSArray indexPathsFromAllSections:self.cells];
+    [self updateHeightAtIndexes:indexPaths];
 }
-- (void)reloadCellsForIndexes:(NSArray<NSIndexPath *> *)indexes {
-    NSArray *cells = [indexes cellsForIndexPathsIn:self.cells];
-    [self reloadCells:cells];
-}
-- (void)reloadCells:(NSArray *)cells {
-    if (cells.count==0) {
+- (void)updateHeightAtIndexes:(NSArray<NSIndexPath *> *)indexes {
+    if (indexes.count==0) {
         return;
     }
-    for (UITableViewCell *cell in cells) {
-        [cell setNeedUpdateHeight];
-    }
-    [self.tableView reloadData];
+    NSArray *cells = [NSArray cellsForIndexPaths:indexes In:self.cells];
+    [cells makeObjectsPerformSelector:@selector(setNeedUpdateHeight)];
+
+    [self.tableView reloadRowsAtIndexPaths:indexes withRowAnimation:UITableViewRowAnimationNone];
+    //MARK: 必须多调用一次，UI才会正确刷新，如果用reload，则只需一遍即可，但动画很生硬，不知道是否是系统BUG
+    [self.tableView reloadRowsAtIndexPaths:indexes withRowAnimation:UITableViewRowAnimationNone];
 }
 
 #pragma mark - UITableViewDelegate
@@ -165,7 +160,7 @@
 }
 - (CGFloat)tableView:(UITableView *)tableView
 heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSArray *theSection = [self sectionAtIndex:indexPath.section];
+    NSArray *theSection = self.sectionAtIndex(indexPath.section);
     UITableViewCell *cell = theSection[indexPath.row];
     if (!cell.didUpdateHeight) {
         cell.bounds = CGRectMake(0, 0, tableView.wg_width, cell.wg_height);
@@ -178,7 +173,7 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSMutableArray *theSection = [self sectionAtIndex:indexPath.section];
+    NSMutableArray *theSection = self.sectionAtIndex(indexPath.section);
     UITableViewCell *cell = theSection[indexPath.row];
     return cell ?: [UITableViewCell new];
 }
