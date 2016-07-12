@@ -32,8 +32,11 @@ Pod::Spec.new do |s|
     ss.subspec 'View' do |sss|
       sss.source_files  = 'WGKit/UIKit/View/*.{h,m}'
     end
+    sss.subspec 'WGTableView' do |ssss|
+    ssss.source_files  = 'WGKit/UIKit/View/WGTableView/*.{h,m}'
+    end
   end
-  
+
   s.subspec 'WGJSONModel' do |ss|
     ss.source_files  = 'WGKit/WGJSONModel/*.{h,m}'
   end
