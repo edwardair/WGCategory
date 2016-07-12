@@ -25,15 +25,13 @@ Pod::Spec.new do |s|
   end
   
   s.subspec 'UIKit' do |ss|
-    
     ss.subspec 'Category' do |sss|
       sss.source_files  = 'WGKit/UIKit/Category/*.{h,m}'
     end
     ss.subspec 'View' do |sss|
       sss.source_files  = 'WGKit/UIKit/View/*.{h,m}'
-    end
-    sss.subspec 'WGTableView' do |ssss|
-    ssss.source_files  = 'WGKit/UIKit/View/WGTableView/*.{h,m}'
+        sss.subspec 'WGTableView' do |ssss|
+        ssss.source_files  = 'WGKit/UIKit/View/WGTableView/*.{h,m}'
     end
   end
 
