@@ -30,7 +30,7 @@
                                             0,
                                             -(intrinsicContentSize.width - self.imageView.bounds.size.width) / 2);
     self.titleEdgeInsets = UIEdgeInsetsMake(
-                                            self.imageView.bounds.size.height,
+                                            self.imageView.bounds.size.height + _verticalSpacing,
                                             -(self.imageView.bounds.size.width +
                                               self.titleLabel.bounds.size.width) /
                                             2,
@@ -43,6 +43,8 @@
     UILabel *titleLabel = self.titleLabel;
     [imageView sizeToFit];
     [titleLabel sizeToFit];
-    return CGSizeMake(MAX(imageView.image.size.width, titleLabel.bounds.size.width), imageView.image.size.height+titleLabel.bounds.size.height);
+    return CGSizeMake(
+                      MAX(imageView.image.size.width, titleLabel.bounds.size.width),
+                      imageView.image.size.height + titleLabel.bounds.size.height + _verticalSpacing);
 }
 @end
