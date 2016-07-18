@@ -11,7 +11,7 @@
 /**
  *  文字图片居中垂直对齐，图片在上
  */
-@interface WGCenterImageAndTitleButton : UIButton
+NS_CLASS_AVAILABLE_IOS(8_0) @interface WGCenterImageAndTitleButton : UIButton
 /**
  *  图片与文字间的间隔，默认0
  */
