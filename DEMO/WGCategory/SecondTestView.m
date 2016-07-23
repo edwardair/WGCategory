@@ -7,7 +7,7 @@
 //
 
 #import "SecondTestView.h"
-#import "WGTableViewEdgeInsets.h"
+#import "UITableView+EdgeInsets.h"
 @implementation SecondTestView
 
 - (void)awakeFromNib{

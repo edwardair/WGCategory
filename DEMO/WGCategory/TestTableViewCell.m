@@ -8,16 +8,27 @@
 
 #import "TestTableViewCell.h"
 #import "WGDefines.h"
+#import "UITableViewCell+WGAutoLayout.h"
+#import <ReactiveCocoa.h>
+
 @implementation TestTableViewCell
+- (void)layoutSubviews{
+    [super layoutSubviews];
+}
 
 - (void)awakeFromNib{
     _testLabel.backgroundColor = [UIColor orangeColor];
-    self->_needUpdateWidthAfterLayout = ^(TestTableViewCell *weakCell){
+    self.needsUpdateWidthAfterLayout = ^(TestTableViewCell *weakCell){
         weakCell.testLabel.preferredMaxLayoutWidth = weakCell.testLabel.wg_width;
     };
+    
 }
 - (id)initWithFrame:(CGRect)frame{
     if(self=[super initWithFrame:frame]){
+        [[self rac_prepareForReuseSignal] subscribeNext:^(id x) {
+            
+        }];
+
         _testLabel = [[UILabel alloc]init];
         [self.contentView addSubview:_testLabel];
         self.contentView.backgroundColor = [UIColor colorWithRed:1.000 green:0.641 blue:1.000 alpha:1.000];
@@ -41,7 +52,7 @@
           metrics:nil
           views:NSDictionaryOfVariableBindings(_testLabel)]];
 
-        self->_needUpdateWidthAfterLayout = ^(TestTableViewCell *weakCell){
+        self.needsUpdateWidthAfterLayout = ^(TestTableViewCell *weakCell){
             weakCell.testLabel.preferredMaxLayoutWidth = weakCell.testLabel.wg_width;
         };
     }

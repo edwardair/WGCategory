@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "WGTableViewController.h"
-@interface SecondViewController : WGTableViewController
+@interface SecondViewController : UIViewController
 //@property (nonatomic,weak) IBOutlet UITableView *tableView;
 
 

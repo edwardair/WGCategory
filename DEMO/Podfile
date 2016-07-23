@@ -1,0 +1,6 @@
+#/ Uncomment this line to define a global platform for your projec
+platform :ios, '7.0'
+#use_frameworks!
+inhibit_all_warnings!
+
+pod 'ReactiveCocoa', '~> 2.5'

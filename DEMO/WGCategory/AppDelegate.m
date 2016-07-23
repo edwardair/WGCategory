@@ -9,6 +9,54 @@
 #import "AppDelegate.h"
 #import "WGDefines.h"
 #import <objc/runtime.h>
+#import <objc/message.h>
+
+
+@interface AA : NSObject
+- (void)log1122;
+@end
+
+@implementation AA
+
+- (void)log1122{
+    NSLog(@"AAA");
+}
+
+@end
+
+
+@interface Test : NSObject
+- (void)log1122;
+@end
+@implementation Test
+
+//- (void)log1122{
+//    NSLog(@">>>>>>>>>>>>>%@",self);
+//}
+//BOOL a(){
+//    _objc_msgForward;
+//    return YES;
+//}
+void runtimeLog1122(Test *self, SEL _cmd){
+    NSLog(@"BB");
+}
++ (BOOL)resolveInstanceMethod:(SEL)sel{
+    BOOL a = [super resolveInstanceMethod:sel];
+    if (!a) {
+        if (sel==@selector(log1122)) {
+            class_addMethod(self, @selector(log1122), (IMP)runtimeLog1122, "V@:");
+        }
+        return YES;
+    }
+    return a;
+}
+- (id)forwardingTargetForSelector:(SEL)aSelector{
+    if (aSelector==@selector(log1122)) {
+        return [[AA alloc]init];
+    }
+    return [super forwardingTargetForSelector:aSelector];
+}
+@end
 
 
 
@@ -20,6 +68,25 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    NSObject *a = [[NSObject alloc]init];
+    Test *b = [[Test alloc]init];
+    
+    if ([b respondsToSelector:@selector(log1122)]) {
+        NSLog(@"yes");
+    }else{
+        NSLog(@"no");
+    }
+    if ([b respondsToSelector:@selector(log1122)]) {
+        NSLog(@"yes");
+    }else{
+        NSLog(@"no");
+    }
+
+    
+//    id c = [b forwardingTargetForSelector:@selector(log1122)];
+    [b performSelector:@selector(log1122)];
+    
     return YES;
 }
 

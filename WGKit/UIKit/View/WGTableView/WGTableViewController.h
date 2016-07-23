@@ -7,14 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "WGTableView.h"
-#import "WGTableViewCell.h"
-#import "NSArray+NSIndexPath.h"
 
-@interface WGTableViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
-@property (nonatomic,strong,readonly) UITableView *tableView;/**< 默认为满屏宽高*/
-@property (nonatomic,strong,readonly) NSMutableArray *dataSource;/**< @[] if not used*/
-@property (nonatomic,strong,readonly) NSMutableArray *cells;/**< 通过以下定义方法增加cell*/
+
+@interface UIViewController (WGTableViewController)<UITableViewDelegate,UITableViewDataSource>
+@property (nonatomic,strong) UITableView *wg_tableView;
+@property (nonatomic,strong,readonly) NSMutableArray *wg_dataSource;/**< @[] if not used*/
+/**
+ *
+ */
+@property (nonatomic,strong,readonly) NSMutableArray *wg_cells;/**< 通过以下定义方法增加cell*/
 
 /**
  *  安全获取某个section，如果section之前的不存在，则会创建空section
@@ -44,6 +45,17 @@
  */
 - (void)updateHeightOfAllCells;
 - (void)updateHeightAtIndexes:(NSArray<NSIndexPath *> *)indexes;
+
+#pragma mark - UITableViewDelegate
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView;
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section;
+/**
+ *  当使用cell的复用机制时，需要确保cell的高度可以正确刷新 @see[UITableViewCell setNeedUpdateHeight]
+ */
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath;
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath;
+
 @end
 
 

@@ -37,7 +37,7 @@
 #import "UIView+IBDESIGNABLE.h"
 
 #import "UITableView+WGAutoLayout.h"
-#import "WGTableViewEdgeInsets.h"
+#import "UITableView+EdgeInsets.h"
 
 #import "UILabel+WGCategory.h"
 #import "UITextField+WGCategory.h"
@@ -61,6 +61,9 @@
 #import "NSObject+WGModelValue.h"
 #import "NSArray+WGJSONModel.h"
 
+//WGTableViewController
+#import "WGTableViewController.h"
+#import "UITableViewCell+WGAutoLayout.h"
 
 #pragma mark -  WGNull 默认当前项目 字符串空值时，使用什么字符串显示UI -
 //当网络客户端时，往往需要检查服务器返回的string是否为空（null），当为null时，返回@“空”，可根据实际项目需求修改

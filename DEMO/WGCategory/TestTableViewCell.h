@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "WGTableViewCell.h"
+#import "TestSuperTableViewCell.h"
 
-@interface TestTableViewCell : WGTableViewCell
+@interface TestTableViewCell : TestSuperTableViewCell
 @property (nonatomic,strong) UILabel *testLabel;
 @property (nonatomic,assign) BOOL shortText;
 @end

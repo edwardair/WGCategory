@@ -8,6 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+
+/**
+ *  仅配合WGTableViewController使用的定制扩展
+ */
 @interface NSArray (NSIndexPath)
 /**
  *  根据长度生成NSIndexPath数组
@@ -35,5 +39,5 @@
  *  @return indexPath对应的cell，只有设置cell.indexPath后，
  */
 + (NSArray<UITableViewCell *> *)cellsForIndexPaths:(NSArray<NSIndexPath *> *)indexes
-                                                In:(NSArray<NSArray *> *)cells;
+                                                in:(NSArray<NSArray *> *)cells;
 @end

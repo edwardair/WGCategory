@@ -7,7 +7,6 @@
 //
 
 #import "NSArray+NSIndexPath.h"
-#import "WGTableViewCell.h"
 @implementation NSArray (NSIndexPath)
 + (NSArray<NSIndexPath *> *)indexPathsFromRow:(NSInteger)row
                                     inSection:(NSInteger)section
@@ -43,7 +42,7 @@
 }
 + (NSArray<UITableViewCell *> *)
 cellsForIndexPaths:(NSArray<NSIndexPath *> *)indexes
-In:(NSArray<NSArray *> *)cells {
+in:(NSArray<NSArray *> *)cells {
     NSMutableArray<UITableViewCell *> *tmp = @[].mutableCopy;
     for (NSIndexPath *indexPath in indexes) {
         NSInteger section = indexPath.section;

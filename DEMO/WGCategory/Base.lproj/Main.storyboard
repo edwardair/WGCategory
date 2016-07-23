@@ -72,7 +72,23 @@
                     <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
                         <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="H87-FR-jHi">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="487"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="8rJ-Kc-sve" id="Ws1-Nu-vN5"/>
+                                    <outlet property="delegate" destination="8rJ-Kc-sve" id="njd-He-xfA"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="H87-FR-jHi" secondAttribute="trailing" id="96E-Vb-y5m"/>
+                            <constraint firstItem="Djb-ko-YwX" firstAttribute="top" secondItem="H87-FR-jHi" secondAttribute="bottom" id="Yn6-Le-WGA"/>
+                            <constraint firstItem="H87-FR-jHi" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" id="fMO-v1-1e1"/>
+                            <constraint firstItem="H87-FR-jHi" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leading" id="vR6-lI-5kn"/>
+                        </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <tabBarItem key="tabBarItem" title="Second" image="second" id="cPa-gy-q4n"/>
@@ -111,6 +127,9 @@
                             </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="H87-FR-jHi" id="xfL-i9-hX2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
