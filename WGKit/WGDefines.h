@@ -62,7 +62,7 @@
 #import "NSArray+WGJSONModel.h"
 
 //WGTableViewController
-#import "WGTableViewController.h"
+#import "WGTableController.h"
 #import "UITableViewCell+WGAutoLayout.h"
 
 #pragma mark -  WGNull 默认当前项目 字符串空值时，使用什么字符串显示UI -

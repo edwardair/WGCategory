@@ -9,12 +9,12 @@
 #import "SecondViewController.h"
 #import "WGDefines.h"
 #import "TestTableViewCell.h"
-#import "WGTableViewController.h"
+#import "WGTableController.h"
 #import <ReactiveCocoa.h>
 
 #pragma mark ---------------------------------------------------------
 @interface SecondViewController ()
-@property (nonatomic,weak) UIViewController *testTableViewController;
+@property (nonatomic,strong) WGTableController *testTableController;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @end
 
@@ -25,18 +25,19 @@
     [super viewDidLoad];
     [self disableAutoAdjustScrollViewInsets];
 
-    _testTableViewController = self;
-    _testTableViewController.wg_tableView = _tableView;
+    _testTableController = [[WGTableController alloc]initWithTable:_tableView delegate:self];
+    [_testTableController wg_replaceSelector:@selector(tableView:didSelectRowAtIndexPath:)];
+//    [_testTableController wg_replaceSelector:@selector(tableView:didSelectRowAtIndexPath:)];
     
 }
 - (IBAction)reload:(id)sender {
-    [self.testTableViewController updateHeightOfAllCells];
+    [self.testTableController updateHeightOfAllCells];
 }
 
 - (IBAction)delete:(id)sender {
     int count = 10;
     NSMutableArray *indexes = @[].mutableCopy;
-    NSMutableArray *theSection = self.testTableViewController.sectionAtIndex(0);
+    NSMutableArray *theSection = self.testTableController.sectionAtIndex(0);
     for (NSInteger i = theSection.count-1; i>=0; i--) {
         [indexes addObject:[NSIndexPath indexPathForRow:i inSection:0]];
         count--;
@@ -44,7 +45,7 @@
             break;
         }
     }
-    [self.testTableViewController deleteCellsAtIndexes:indexes];
+    [self.testTableController deleteCellsAtIndexes:indexes];
 }
 
 - (IBAction)newCell{
@@ -70,7 +71,7 @@
            }];
         [tmp addObject:cell];
     }
-    [self.testTableViewController addCells:tmp atSection:0];
+    [self.testTableController addCells:tmp atSection:0];
 }
 
 - (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -78,18 +79,18 @@
 }
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
     if (editingStyle==UITableViewCellEditingStyleDelete) {
-        [self.testTableViewController deleteCellsAtIndexes:@[indexPath]];
+        [self.testTableController deleteCellsAtIndexes:@[indexPath]];
     }
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     if ([UIDevice currentDevice].systemVersion.floatValue<8.0) {
-        NSMutableArray *theSection = self.testTableViewController.sectionAtIndex(indexPath.section);
+        NSMutableArray *theSection = self.testTableController.sectionAtIndex(indexPath.section);
         TestTableViewCell *cell = theSection[indexPath.row];
         [cell updateModel:@"tatweta"];
         [cell setNeedUpdateHeight];
-        [self.testTableViewController updateHeightAtIndexes:@[indexPath]];
+        [self.testTableController updateHeightAtIndexes:@[indexPath]];
     }else{
 
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"测试数据" message:@"msg" preferredStyle:UIAlertControllerStyleAlert];
@@ -97,14 +98,14 @@
             
         }]];
         [alert addAction:[UIAlertAction actionWithTitle:@"ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-            NSMutableArray *theSection = self.testTableViewController.sectionAtIndex(indexPath.section);
+            NSMutableArray *theSection = self.testTableController.sectionAtIndex(indexPath.section);
             TestTableViewCell *cell = theSection[indexPath.row];
             [cell updateModel:[[alert textFields].firstObject text]];
             [cell setNeedUpdateHeight];
-            [self.testTableViewController updateHeightAtIndexes:@[indexPath]];
+            [self.testTableController updateHeightAtIndexes:@[indexPath]];
         }]];
         [alert addAction:[UIAlertAction actionWithTitle:@"copy" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-            NSMutableArray *theSection = self.testTableViewController.sectionAtIndex(indexPath.section);
+            NSMutableArray *theSection = self.testTableController.sectionAtIndex(indexPath.section);
             TestTableViewCell *cell = theSection[indexPath.row];
             [UIPasteboard generalPasteboard].string = cell.model;
         }]];
@@ -126,7 +127,7 @@
                 [tmp addObject:cell];
                 [indexes addObject:[NSIndexPath indexPathForRow:i++ inSection:0]];
             }
-            [self.testTableViewController insertCells:tmp atRow:indexPath.row inSection:0];
+            [self.testTableController insertCells:tmp atRow:indexPath.row inSection:0];
         }]];
         [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
             textField.placeholder = @"test";

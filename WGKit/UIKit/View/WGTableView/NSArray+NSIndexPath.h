@@ -10,7 +10,7 @@
 #import <UIKit/UIKit.h>
 
 /**
- *  仅配合WGTableViewController使用的定制扩展
+ *  仅配合WGTableController使用的定制扩展
  */
 @interface NSArray (NSIndexPath)
 /**

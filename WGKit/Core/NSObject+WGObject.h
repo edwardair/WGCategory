@@ -7,6 +7,17 @@
 //
 
 
+#import <objc/runtime.h>
+
+static inline BOOL isInstanceSelectorConformsToProtocol(Protocol *protocol, SEL _cmd){
+    BOOL (^conform)(BOOL , BOOL ) = ^ BOOL (BOOL isRequiredMethod, BOOL isInstanceMethod){
+        struct objc_method_description methodDescription = protocol_getMethodDescription(protocol, _cmd, isRequiredMethod, isInstanceMethod);
+        return methodDescription.name?YES:NO;
+    };
+    return conform(NO,YES)?:conform(YES,YES);
+}
+
+
 @interface NSObject(WGObject)
 
 /**
