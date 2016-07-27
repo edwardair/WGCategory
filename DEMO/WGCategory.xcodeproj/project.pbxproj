@@ -9,13 +9,13 @@
 /* Begin PBXBuildFile section */
 		1217E182F23FDFA059B09DA6 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 960870DB7A4031CE54240AB8 /* libPods.a */; };
 		F7118AEC1CB366F5007AF228 /* SecondTestView.m in Sources */ = {isa = PBXBuildFile; fileRef = F7118AEB1CB366F5007AF228 /* SecondTestView.m */; };
-		F73BD1E01D224873003E3C4F /* WGTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = F73BD1DF1D224873003E3C4F /* WGTableController.m */; };
-		F73BD1E91D2250D3003E3C4F /* UITableViewCell+WGAutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = F73BD1E81D2250D3003E3C4F /* UITableViewCell+WGAutoLayout.m */; };
+		F73B4C801D48AE3C00580588 /* NSArray+NSIndexPath.m in Sources */ = {isa = PBXBuildFile; fileRef = F73B4C771D48AE3C00580588 /* NSArray+NSIndexPath.m */; };
+		F73B4C811D48AE3C00580588 /* UITableView+EdgeInsets.m in Sources */ = {isa = PBXBuildFile; fileRef = F73B4C791D48AE3C00580588 /* UITableView+EdgeInsets.m */; };
+		F73B4C821D48AE3C00580588 /* UITableView+WGAutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = F73B4C7B1D48AE3C00580588 /* UITableView+WGAutoLayout.m */; };
+		F73B4C831D48AE3C00580588 /* UITableViewCell+WGAutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = F73B4C7D1D48AE3C00580588 /* UITableViewCell+WGAutoLayout.m */; };
+		F73B4C841D48AE3C00580588 /* WGTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = F73B4C7F1D48AE3C00580588 /* WGTableController.m */; };
 		F76AE7C01B55FC2E000B68C6 /* TestTimerVCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F76AE7BF1B55FC2E000B68C6 /* TestTimerVCViewController.m */; };
 		F798170A1D40B8930004884A /* TestSuperTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F79817091D40B8930004884A /* TestSuperTableViewCell.m */; };
-		F798170D1D40BEB10004884A /* UITableView+WGAutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = F798170C1D40BEB10004884A /* UITableView+WGAutoLayout.m */; };
-		F79817101D40BF0D0004884A /* UITableView+EdgeInsets.m in Sources */ = {isa = PBXBuildFile; fileRef = F798170F1D40BF0D0004884A /* UITableView+EdgeInsets.m */; };
-		F79E59B81D24AEC800A65363 /* NSArray+NSIndexPath.m in Sources */ = {isa = PBXBuildFile; fileRef = F79E59B71D24AEC800A65363 /* NSArray+NSIndexPath.m */; };
 		F79E59BE1D24E56800A65363 /* TestTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F79E59BD1D24E56800A65363 /* TestTableViewCell.m */; };
 		F7A4F88C1B1D531A00B84A4E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F88B1B1D531A00B84A4E /* main.m */; };
 		F7A4F88F1B1D531A00B84A4E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F88E1B1D531A00B84A4E /* AppDelegate.m */; };
@@ -77,20 +77,20 @@
 		960870DB7A4031CE54240AB8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7118AEA1CB366F5007AF228 /* SecondTestView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondTestView.h; sourceTree = "<group>"; };
 		F7118AEB1CB366F5007AF228 /* SecondTestView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondTestView.m; sourceTree = "<group>"; };
-		F73BD1DE1D224873003E3C4F /* WGTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGTableController.h; sourceTree = "<group>"; };
-		F73BD1DF1D224873003E3C4F /* WGTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGTableController.m; sourceTree = "<group>"; };
-		F73BD1E71D2250D3003E3C4F /* UITableViewCell+WGAutoLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+WGAutoLayout.h"; sourceTree = "<group>"; };
-		F73BD1E81D2250D3003E3C4F /* UITableViewCell+WGAutoLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+WGAutoLayout.m"; sourceTree = "<group>"; };
+		F73B4C761D48AE3C00580588 /* NSArray+NSIndexPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+NSIndexPath.h"; sourceTree = "<group>"; };
+		F73B4C771D48AE3C00580588 /* NSArray+NSIndexPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+NSIndexPath.m"; sourceTree = "<group>"; };
+		F73B4C781D48AE3C00580588 /* UITableView+EdgeInsets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+EdgeInsets.h"; sourceTree = "<group>"; };
+		F73B4C791D48AE3C00580588 /* UITableView+EdgeInsets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+EdgeInsets.m"; sourceTree = "<group>"; };
+		F73B4C7A1D48AE3C00580588 /* UITableView+WGAutoLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+WGAutoLayout.h"; sourceTree = "<group>"; };
+		F73B4C7B1D48AE3C00580588 /* UITableView+WGAutoLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+WGAutoLayout.m"; sourceTree = "<group>"; };
+		F73B4C7C1D48AE3C00580588 /* UITableViewCell+WGAutoLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+WGAutoLayout.h"; sourceTree = "<group>"; };
+		F73B4C7D1D48AE3C00580588 /* UITableViewCell+WGAutoLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+WGAutoLayout.m"; sourceTree = "<group>"; };
+		F73B4C7E1D48AE3C00580588 /* WGTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGTableController.h; sourceTree = "<group>"; };
+		F73B4C7F1D48AE3C00580588 /* WGTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGTableController.m; sourceTree = "<group>"; };
 		F76AE7BE1B55FC2E000B68C6 /* TestTimerVCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestTimerVCViewController.h; sourceTree = "<group>"; };
 		F76AE7BF1B55FC2E000B68C6 /* TestTimerVCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestTimerVCViewController.m; sourceTree = "<group>"; };
 		F79817081D40B8930004884A /* TestSuperTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestSuperTableViewCell.h; sourceTree = "<group>"; };
 		F79817091D40B8930004884A /* TestSuperTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestSuperTableViewCell.m; sourceTree = "<group>"; };
-		F798170B1D40BEB10004884A /* UITableView+WGAutoLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+WGAutoLayout.h"; sourceTree = "<group>"; };
-		F798170C1D40BEB10004884A /* UITableView+WGAutoLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+WGAutoLayout.m"; sourceTree = "<group>"; };
-		F798170E1D40BF0D0004884A /* UITableView+EdgeInsets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+EdgeInsets.h"; sourceTree = "<group>"; };
-		F798170F1D40BF0D0004884A /* UITableView+EdgeInsets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+EdgeInsets.m"; sourceTree = "<group>"; };
-		F79E59B61D24AEC800A65363 /* NSArray+NSIndexPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+NSIndexPath.h"; sourceTree = "<group>"; };
-		F79E59B71D24AEC800A65363 /* NSArray+NSIndexPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+NSIndexPath.m"; sourceTree = "<group>"; };
 		F79E59BC1D24E56800A65363 /* TestTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestTableViewCell.h; sourceTree = "<group>"; };
 		F79E59BD1D24E56800A65363 /* TestTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestTableViewCell.m; sourceTree = "<group>"; };
 		F7A4F8861B1D531A00B84A4E /* WGCategory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WGCategory.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -215,21 +215,21 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		F73BD1DD1D224873003E3C4F /* WGTableView */ = {
+		F73B4C751D48AE3C00580588 /* WGTableController */ = {
 			isa = PBXGroup;
 			children = (
-				F73BD1DE1D224873003E3C4F /* WGTableController.h */,
-				F73BD1DF1D224873003E3C4F /* WGTableController.m */,
-				F798170B1D40BEB10004884A /* UITableView+WGAutoLayout.h */,
-				F798170C1D40BEB10004884A /* UITableView+WGAutoLayout.m */,
-				F73BD1E71D2250D3003E3C4F /* UITableViewCell+WGAutoLayout.h */,
-				F73BD1E81D2250D3003E3C4F /* UITableViewCell+WGAutoLayout.m */,
-				F798170E1D40BF0D0004884A /* UITableView+EdgeInsets.h */,
-				F798170F1D40BF0D0004884A /* UITableView+EdgeInsets.m */,
-				F79E59B61D24AEC800A65363 /* NSArray+NSIndexPath.h */,
-				F79E59B71D24AEC800A65363 /* NSArray+NSIndexPath.m */,
+				F73B4C761D48AE3C00580588 /* NSArray+NSIndexPath.h */,
+				F73B4C771D48AE3C00580588 /* NSArray+NSIndexPath.m */,
+				F73B4C781D48AE3C00580588 /* UITableView+EdgeInsets.h */,
+				F73B4C791D48AE3C00580588 /* UITableView+EdgeInsets.m */,
+				F73B4C7A1D48AE3C00580588 /* UITableView+WGAutoLayout.h */,
+				F73B4C7B1D48AE3C00580588 /* UITableView+WGAutoLayout.m */,
+				F73B4C7C1D48AE3C00580588 /* UITableViewCell+WGAutoLayout.h */,
+				F73B4C7D1D48AE3C00580588 /* UITableViewCell+WGAutoLayout.m */,
+				F73B4C7E1D48AE3C00580588 /* WGTableController.h */,
+				F73B4C7F1D48AE3C00580588 /* WGTableController.m */,
 			);
-			path = WGTableView;
+			path = WGTableController;
 			sourceTree = "<group>";
 		};
 		F7A4F87D1B1D531A00B84A4E = {
@@ -400,7 +400,7 @@
 		F7F18AB31CDAEEA200CAD550 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				F73BD1DD1D224873003E3C4F /* WGTableView */,
+				F73B4C751D48AE3C00580588 /* WGTableController */,
 				F7F18AB41CDAEEA200CAD550 /* WGActionSheet.h */,
 				F7F18AB51CDAEEA200CAD550 /* WGActionSheet.m */,
 				F7F18AB61CDAEEA200CAD550 /* WGAlertView.h */,
@@ -583,21 +583,19 @@
 			files = (
 				F7F18AEC1CDAEF3C00CAD550 /* WGLog.m in Sources */,
 				F79E59BE1D24E56800A65363 /* TestTableViewCell.m in Sources */,
-				F73BD1E01D224873003E3C4F /* WGTableController.m in Sources */,
 				F7F18ACA1CDAEEA200CAD550 /* NSString+WGString.m in Sources */,
 				F7F18AE71CDAEEA200CAD550 /* NSObject+WGJSONModel.m in Sources */,
 				F7F18AD91CDAEEA200CAD550 /* UIImageView+WGCategory.m in Sources */,
 				F7F18AE91CDAEEA200CAD550 /* NSObject+WGModelValue.m in Sources */,
 				F7F18ADF1CDAEEA200CAD550 /* UIView+WGCategory.m in Sources */,
-				F79817101D40BF0D0004884A /* UITableView+EdgeInsets.m in Sources */,
 				F7F18AE51CDAEEA200CAD550 /* NSArray+WGJSONModel.m in Sources */,
 				F7F18AD21CDAEEA200CAD550 /* WGTextInputAccessoryView.m in Sources */,
 				F7F18AC91CDAEEA200CAD550 /* NSObject+WGObject.m in Sources */,
 				F7F18AD01CDAEEA200CAD550 /* WGLabel.m in Sources */,
 				F7F18ADC1CDAEEA200CAD550 /* UITextField+WGCategory.m in Sources */,
 				F7F18AE61CDAEEA200CAD550 /* NSObject+WGAutoModelHelper.m in Sources */,
-				F798170D1D40BEB10004884A /* UITableView+WGAutoLayout.m in Sources */,
 				F7F18AE11CDAEEA200CAD550 /* WGActionSheet.m in Sources */,
+				F73B4C831D48AE3C00580588 /* UITableViewCell+WGAutoLayout.m in Sources */,
 				F7F18AD11CDAEEA200CAD550 /* WGPopoverView.m in Sources */,
 				F7F18AD71CDAEEA200CAD550 /* UIGestureRecognizer+WGCategory.m in Sources */,
 				F7F18AD81CDAEEA200CAD550 /* UIImage+WGCategory.m in Sources */,
@@ -606,21 +604,23 @@
 				F7F18ACC1CDAEEA200CAD550 /* WGCheckBox.m in Sources */,
 				F76AE7C01B55FC2E000B68C6 /* TestTimerVCViewController.m in Sources */,
 				F7A4F8951B1D531A00B84A4E /* SecondViewController.m in Sources */,
+				F73B4C811D48AE3C00580588 /* UITableView+EdgeInsets.m in Sources */,
 				F7118AEC1CB366F5007AF228 /* SecondTestView.m in Sources */,
+				F73B4C821D48AE3C00580588 /* UITableView+WGAutoLayout.m in Sources */,
 				F7F18ADD1CDAEEA200CAD550 /* UITextView+WGCategory.m in Sources */,
 				F7F18AE41CDAEEA200CAD550 /* WGTextView.m in Sources */,
 				F7F18AC81CDAEEA200CAD550 /* NSDate+WGCategory.m in Sources */,
+				F73B4C801D48AE3C00580588 /* NSArray+NSIndexPath.m in Sources */,
 				F7F18AD61CDAEEA200CAD550 /* UIDevice+WGCategory.m in Sources */,
 				F7F18AD31CDAEEA200CAD550 /* UIButton+WGCategory.m in Sources */,
 				F7F18ADE1CDAEEA200CAD550 /* UIView+IBDESIGNABLE.m in Sources */,
 				F7F18ADA1CDAEEA200CAD550 /* UILabel+WGCategory.m in Sources */,
-				F79E59B81D24AEC800A65363 /* NSArray+NSIndexPath.m in Sources */,
-				F73BD1E91D2250D3003E3C4F /* UITableViewCell+WGAutoLayout.m in Sources */,
 				F7F18ACE1CDAEEA200CAD550 /* WGCoreTextView.m in Sources */,
 				F798170A1D40B8930004884A /* TestSuperTableViewCell.m in Sources */,
 				F7A4F88F1B1D531A00B84A4E /* AppDelegate.m in Sources */,
 				F7A4F8921B1D531A00B84A4E /* FirstViewController.m in Sources */,
 				F7F18AE81CDAEEA200CAD550 /* NSObject+WGJSONValue.m in Sources */,
+				F73B4C841D48AE3C00580588 /* WGTableController.m in Sources */,
 				F7F18AD51CDAEEA200CAD550 /* UIControl+WGCategory.m in Sources */,
 				F7F18AE01CDAEEA200CAD550 /* UIViewController+WGCategory.m in Sources */,
 				F7B65B5C1D375AD0006E5975 /* WGCenterImageAndTitleButton.m in Sources */,

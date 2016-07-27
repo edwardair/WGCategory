@@ -36,9 +36,6 @@
 #import "UIView+WGCategory.h"
 #import "UIView+IBDESIGNABLE.h"
 
-#import "UITableView+WGAutoLayout.h"
-#import "UITableView+EdgeInsets.h"
-
 #import "UILabel+WGCategory.h"
 #import "UITextField+WGCategory.h"
 #import "UITextView+WGCategory.h"
@@ -61,8 +58,10 @@
 #import "NSObject+WGModelValue.h"
 #import "NSArray+WGJSONModel.h"
 
-//WGTableViewController
+//WGTableController
 #import "WGTableController.h"
+#import "UITableView+WGAutoLayout.h"
+#import "UITableView+EdgeInsets.h"
 #import "UITableViewCell+WGAutoLayout.h"
 
 #pragma mark -  WGNull 默认当前项目 字符串空值时，使用什么字符串显示UI -
