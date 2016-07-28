@@ -16,16 +16,8 @@
 
 static const char key_cell_model;
 static const char key_cell_reloadModel;
-static const char key_cell_needsUpdateWidthAfterLayout;
 
 @implementation UITableViewCell (DataManager)
-void wg_layoutSubviews(UITableViewCell *self, SEL _cmd){
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored"-Warc-performSelector-leaks"
-    [self performSelector:NSSelectorFromString(@"wg_layoutSubviews")];
-#pragma clang diagnostic pop
-    !self.needsUpdateWidthAfterLayout?:self.needsUpdateWidthAfterLayout(self);
-}
 
 #pragma mark - getter
 - (id )model{
@@ -34,9 +26,6 @@ void wg_layoutSubviews(UITableViewCell *self, SEL _cmd){
 - (ReloadBlock)reloadBlock{
     return objc_getAssociatedObject(self, &key_cell_reloadModel);
 }
-- (UpdateWidthAfterLayout )needsUpdateWidthAfterLayout{
-    return objc_getAssociatedObject(self, &key_cell_needsUpdateWidthAfterLayout);
-}
 
 #pragma mark - setter
 - (void)setModel:(id)model{
@@ -44,12 +33,6 @@ void wg_layoutSubviews(UITableViewCell *self, SEL _cmd){
 }
 - (void)setReloadBlock:(ReloadBlock)reloadBlock{
     objc_setAssociatedObject(self, &key_cell_reloadModel, reloadBlock, OBJC_ASSOCIATION_COPY_NONATOMIC);
-}
-- (void)setNeedsUpdateWidthAfterLayout:(UpdateWidthAfterLayout)needsUpdateWidthAfterLayout{
-    objc_setAssociatedObject(self, &key_cell_needsUpdateWidthAfterLayout, needsUpdateWidthAfterLayout, OBJC_ASSOCIATION_COPY_NONATOMIC);
-    if ([[self class] swizzleAddInstanceAPI:NSSelectorFromString(@"wg_layoutSubviews") withIMP:(IMP)wg_layoutSubviews types:"V@:"]) {
-        [[self class] swizzleExchangeInstanceAPI:@selector(layoutSubviews) newSelector:NSSelectorFromString(@"wg_layoutSubviews")];
-    }
 }
 
 #pragma mark -

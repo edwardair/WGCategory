@@ -14,20 +14,14 @@
 @implementation TestTableViewCell
 - (void)layoutSubviews{
     [super layoutSubviews];
+    self.testLabel.preferredMaxLayoutWidth = self.testLabel.wg_width;
 }
 
 - (void)awakeFromNib{
     _testLabel.backgroundColor = [UIColor orangeColor];
-    self.needsUpdateWidthAfterLayout = ^(TestTableViewCell *weakCell){
-        weakCell.testLabel.preferredMaxLayoutWidth = weakCell.testLabel.wg_width;
-    };
-    
 }
 - (id)initWithFrame:(CGRect)frame{
     if(self=[super initWithFrame:frame]){
-        [[self rac_prepareForReuseSignal] subscribeNext:^(id x) {
-            
-        }];
 
         _testLabel = [[UILabel alloc]init];
         [self.contentView addSubview:_testLabel];
@@ -51,10 +45,6 @@
           options:0
           metrics:nil
           views:NSDictionaryOfVariableBindings(_testLabel)]];
-
-        self.needsUpdateWidthAfterLayout = ^(TestTableViewCell *weakCell){
-            weakCell.testLabel.preferredMaxLayoutWidth = weakCell.testLabel.wg_width;
-        };
     }
     return self;
 }

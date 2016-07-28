@@ -30,7 +30,7 @@
 
     
     _table = [[WGTableController alloc]initWithTable:_tableview delegate:self];
-    [_table wg_replaceSelector:@selector(tableView:cellForRowAtIndexPath:) withNewSelector:@selector(wg_tableView:cellForRowAtIndexPath:)];
+//    [_table wg_replaceSelector:@selector(tableView:cellForRowAtIndexPath:) withNewSelector:@selector(wg_tableView:cellForRowAtIndexPath:)];
     [_table wg_replaceSelector:@selector(tableView:heightForRowAtIndexPath:) withNewSelector:@selector(wg_tableView:heightForRowAtIndexPath:)];
     [_table wg_replaceSelector:@selector(tableView:didSelectRowAtIndexPath:) withNewSelector:@selector(wg_tableView:didSelectRowAtIndexPath:)];
 //    [_table wg_selector:@selector(tableView:cellForRowAtIndexPath:) forProtocol:@protocol(UITableViewDataSource)];

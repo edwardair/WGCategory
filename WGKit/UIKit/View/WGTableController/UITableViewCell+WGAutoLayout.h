@@ -7,14 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-typedef void(^UpdateWidthAfterLayout) (id weakCell);
 typedef void(^ReloadBlock)(id cell_, id model_);
 
 @interface UITableViewCell (DataManager)
 
 @property (nonatomic,strong,readonly) id model;
 @property (nonatomic,copy) ReloadBlock reloadBlock;
-@property (nonatomic,copy) UpdateWidthAfterLayout needsUpdateWidthAfterLayout;/**<AutoLayout UILabel需要换行自适应高度时，增加此block回调，修改UILable.preferredMaxLayoutWidth，也可直接在layoutSubviews中处理*/
 /**
  *  加载数据
  *
