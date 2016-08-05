@@ -11,8 +11,8 @@ Pod::Spec.new do |s|
                    * Finally, don't worry about the indent, CocoaPods strips it!
                    DESC
   s.homepage     = "http://EXAMPLE/WGCategory"
-  s.license      = "MIT (example)"
-  s.author             = { "Eduoduo" => "550621009@qq.com" }
+  s.license      = "MIT"
+  s.author       = { "Eduoduo" => "550621009@qq.com" }
   s.platform     = :ios, "7.0"
   s.source       = { :git => "https://github.com/edwardair/WGCategory.git", :tag => s.version}
   s.requires_arc = true
