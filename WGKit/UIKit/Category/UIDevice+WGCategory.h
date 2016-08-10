@@ -2,7 +2,7 @@
 
 #import <UIKit/UIKit.h>
 
-enum {
+typedef NS_ENUM(int, UIDeviceResolution){
     UIDevice_None                   = -1,//                                    未检测
     UIDevice_iPhoneStandardRes      = 1,// iPhone 1,3,3GS Standard Resolution   (320x480px)
     UIDevice_iPhoneHiRes            = 2,// iPhone 4,4S High Resolution          (640x960px)
@@ -12,8 +12,7 @@ enum {
     UIDevice_iPhone6                = 6,// iPhone6 High Resolution              (1334x750px)
     UIDevice_iPhone6P               = 7,// iPhone6P High Resolution             (2208*1242px)
     UIDevice_Not_Supprot            = 999,//                                    不支持
-}; typedef NSUInteger UIDeviceResolution;
-
+};
 
 @interface UIDevice (WGCategory)
 /**

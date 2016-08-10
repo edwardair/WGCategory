@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+#ifndef WGOBJC
 #define WGOBJC(value) _WGOBCJ(@encode(__typeof__((value))), (value))
+#endif
 
 static inline id _WGOBCJ(const char *type, ...) {
   va_list v;
