@@ -262,6 +262,7 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
         
         if (!sectionDic) {
             sectionDic = @{}.mutableCopy;
+            [cells setObject:sectionDic forKey:key];
             theSection = self.sectionAtIndex(indexPath.section);;
             [sectionDic setObject:theSection forKey:theSectionKey];
             willRemoveCellsInTheSection = @[].mutableCopy;
