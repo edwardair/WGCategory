@@ -241,15 +241,44 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
 - (void)deleteCellsAtIndexes:(NSArray<NSIndexPath *> *)indexes {
     [self deleteCellsAtIndexes:indexes animation:UITableViewRowAnimationNone];
 }
+/**
+ *  indexex中可能存在不同section的NSIndexPath数据，需要区分
+ */
 - (void)deleteCellsAtIndexes:(NSArray<NSIndexPath *> *)indexes
                    animation:(UITableViewRowAnimation)animation {
-    for (NSInteger i = 0; i < indexes.count; i++) {
-        NSIndexPath *indexPath = indexes[i];
-        NSMutableArray *theSection = self.sectionAtIndex(indexPath.section);
+    NSMutableDictionary *cells = @{}.mutableCopy;
+    
+    NSString *(^sectionKey)(NSIndexPath *) = ^NSString *(NSIndexPath *indexPath){
+        return [NSString stringWithFormat:@"%ld",(long)indexPath.section];
+    };
+    NSString *theSectionKey = @"section";
+    NSString *cellsInTheSectionKey = @"cells";
+    
+    for (NSIndexPath *indexPath in indexes) {
+        NSString *key = sectionKey(indexPath);
+        NSMutableDictionary *sectionDic = cells[key];
+        NSMutableArray *theSection = sectionDic[theSectionKey];
+        NSMutableArray *willRemoveCellsInTheSection = sectionDic[cellsInTheSectionKey];
+        
+        if (!sectionDic) {
+            sectionDic = @{}.mutableCopy;
+            theSection = self.sectionAtIndex(indexPath.section);;
+            [sectionDic setObject:theSection forKey:theSectionKey];
+            willRemoveCellsInTheSection = @[].mutableCopy;
+            [sectionDic setObject:willRemoveCellsInTheSection forKey:cellsInTheSectionKey];
+        }
         if (indexPath.row < theSection.count) {
-            [theSection removeObjectAtIndex:indexPath.row];
+            [willRemoveCellsInTheSection addObject:theSection[indexPath.row]];
         }
     }
+    //将遍历出的cell从各自的section中移除
+    for (NSString *key in cells.allKeys) {
+        NSMutableDictionary *sectionDic = cells[key];
+        NSMutableArray *theSection = sectionDic[theSectionKey];
+        NSMutableArray *willRemoveCellsInTheSection = sectionDic[cellsInTheSectionKey];
+        [theSection removeObjectsInArray:willRemoveCellsInTheSection];
+    }
+    //刷新tableView
     [self.subject.wg_tableView deleteRowsAtIndexPaths:indexes withRowAnimation:animation];
 }
 
