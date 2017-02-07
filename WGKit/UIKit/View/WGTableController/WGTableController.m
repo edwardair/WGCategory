@@ -58,7 +58,8 @@
         NSInteger existSectionCount = self.wg_cells.count;
         //当添加的section超出现有section数组，则添加中间空sections，以备后续填充
         if (section>=existSectionCount) {
-            for (NSInteger i = existSectionCount; i < (section-existSectionCount); i++) {
+            NSInteger willAddCount = section-existSectionCount+1;//+1为偏差值
+            for (NSInteger i = 0; i < willAddCount; i++) {
                 [self.wg_cells addObject:@[].mutableCopy];
             }
         }
