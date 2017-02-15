@@ -58,10 +58,16 @@
         NSInteger existSectionCount = self.wg_cells.count;
         //当添加的section超出现有section数组，则添加中间空sections，以备后续填充
         if (section>=existSectionCount) {
+            [self.wg_tableView beginUpdates];
             NSInteger willAddCount = section-existSectionCount+1;//+1为偏差值
             for (NSInteger i = 0; i < willAddCount; i++) {
                 [self.wg_cells addObject:@[].mutableCopy];
             }
+            NSRange willAddSectionRange = NSMakeRange(existSectionCount, willAddCount);
+            NSIndexSet *indexSet = [NSIndexSet indexSetWithIndexesInRange:willAddSectionRange];
+            [self.wg_tableView insertSections:indexSet
+                             withRowAnimation:UITableViewRowAnimationNone];
+            [self.wg_tableView endUpdates];
         }
         return self.wg_cells[section];
     };
