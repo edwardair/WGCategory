@@ -16,20 +16,22 @@
     return cell;
 }
 
-- (CGFloat)heightOfCellAtIndexPath:(NSIndexPath *)indexPath {
+- (CGFloat)heightOfCellAtIndexPath:(NSIndexPath *)indexPath forceUpdate:(BOOL)force{
     UITableViewCell *cell = [self.dataSource tableView:self cellForRowAtIndexPath:indexPath];
     if (!cell) {
         return 0;
     }
     
-    cell.bounds = CGRectMake(0, 0, self.wg_width, cell.wg_height);
-    [cell layoutIfNeeded];
-    //需要再次强制刷新一次
-    [cell setNeedsLayout];
-    [cell layoutIfNeeded];
+    if (force) {
+        [cell setNeedUpdateHeight];
+    }
+    
+    if (!cell.didUpdateHeight) {
+        cell.bounds = CGRectMake(0, 0, self.wg_width, cell.wg_height);
+        [cell layoutIfNeeded];
+    }
 
-    CGFloat height = [cell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height;
-    height += 1.f;
+    CGFloat height = [cell cellHeight];
     return height;
 }
 @end

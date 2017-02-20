@@ -65,6 +65,10 @@ static const char key_cell_height;
 }
 - (void)updateHeightIfNeed {
     if (!self.didUpdateHeight) {
+        //需要强制刷新一次
+        [self setNeedsLayout];
+        [self layoutIfNeeded];
+
         CGFloat height = [self.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height;
         height += 1.f;
         self.cellHeight = height;
