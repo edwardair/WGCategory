@@ -31,6 +31,7 @@
     return self;
 }
 - (void)awakeFromNib{
+    [super awakeFromNib];
     self.isSelected = NO;
     self.backgroundColor = [UIColor clearColor];
     self.font = [UIFont systemFontOfSize:12.f];

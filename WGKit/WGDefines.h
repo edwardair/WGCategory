@@ -24,7 +24,7 @@
 #import "NSString+WGString.h"
 #import "NSTimer+WGTimer.h"
 #import "NSDate+WGCategory.h"
-
+#import "NSObject+WGBlock.h"
 
 //UIKit
 #import "WGActionSheet.h"

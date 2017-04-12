@@ -14,6 +14,7 @@
     self.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
 }
 - (void)awakeFromNib{
+    [super awakeFromNib];
     [self setup];
 }
 - (id)init{

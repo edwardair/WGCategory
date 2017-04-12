@@ -18,6 +18,7 @@
 }
 
 - (void)awakeFromNib{
+    [super awakeFromNib];
     _testLabel.backgroundColor = [UIColor orangeColor];
 }
 - (id)initWithFrame:(CGRect)frame{

@@ -11,7 +11,8 @@
 @implementation SecondTestView
 
 - (void)awakeFromNib{
-    
+    [super awakeFromNib];
+
     UITableView *table = [[UITableView alloc]initWithFrame:self.bounds];
     [self addSubview:table];
     table.delegate = self;
@@ -21,7 +22,6 @@
     edgeInsetsAtIndexPath:^UIEdgeInsets(NSIndexPath *indexPath) {
         return UIEdgeInsetsZero;
     }];
-    
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{

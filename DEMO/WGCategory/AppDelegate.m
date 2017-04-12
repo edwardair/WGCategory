@@ -13,30 +13,27 @@
 
 @end
 
+
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
+    NSObject *a =[[NSObject alloc]init];
+    [a wg_addBlock:(void *)(^(NSString *a, NSString *b, NSString *c){
+        NSLog(@"a=%@",a);
+        NSLog(@"b=%@",b);
+        NSLog(@"c=%@",c);
+        return a.intValue+b.intValue+c.intValue;
+    })];
 
-//    NSObject *a = [[NSObject alloc]init];
-//    Test *b = [[Test alloc]init];
-//    
-//    if ([b respondsToSelector:@selector(log1122)]) {
-//        NSLog(@"yes");
-//    }else{
-//        NSLog(@"no");
-//    }
-//    if ([b respondsToSelector:@selector(log1122)]) {
-//        NSLog(@"yes");
-//    }else{
-//        NSLog(@"no");
-//    }
-//
-//    
-////    id c = [b forwardingTargetForSelector:@selector(log1122)];
-//    [b performSelector:@selector(log1122)];
+    int res = WGBLOCK(int, a)(@"1",@"2",@"3");
+    NSLog(@"%d",res);
+
+    WGBLOCK(void, a)(@"a1",@"b1",@"c1");
+    NSLog(@"%@",WGBLOCK(NSString *, a)(@"a2",@"b2",@"c2"));
     
+    ((void(^)())[a wg_doBlock])(@"a4",@"b4",@"c4");
+    NSLog(@"%@",((NSString *(^)())[a wg_doBlock])(@"a5",@"b5",@"c5"));
+
     return YES;
 }
 
