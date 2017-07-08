@@ -12,6 +12,7 @@
 @implementation WGLog
 #pragma mark - 打印处理
 + (void)logWithColor:(NSString *)color Value:(NSString *)value{
+#if DEBUG
     NSString *head = @"";
     NSString *color_ = @"";
     NSString *foot = @"";
@@ -20,7 +21,6 @@
         color_ = color;
         foot = XCODE_COLORS_RESET;
     }
-#if DEBUG
     NSLog( (@"%@" @"%@" @"%@" @"%@"),head,color_,[NSString changeObjToString:value CurLV:0],foot);
 #endif
 }

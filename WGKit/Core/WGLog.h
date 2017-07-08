@@ -217,14 +217,14 @@ const static NSString *separateLine = @"";
                      XCODE_COLORS_ESCAPE, WARN_COLOR, WGOBJC(__VA_ARGS__)))]
 
 #else
-#define WGLogFormatValue(fmd, ...) NSLog(@"")
-#define WGLogValue(...) NSLog(@"")
-#define WGLogFormatMsg(fmd, ...) NSLog(@"")
-#define WGLogMsg(...) NSLog(@"")
-#define WGLogFormatError(fmd, ...) NSLog(@"")
-#define WGLogError(...) NSLog(@"")
-#define WGLogFormatWarn(fmd, ...) NSLog(@"")
-#define WGLogWarn(...) NSLog(@"")
+#define WGLogFormatValue(fmd, ...)
+#define WGLogValue(...)
+#define WGLogFormatMsg(fmd, ...)
+#define WGLogMsg(...)
+#define WGLogFormatError(fmd, ...)
+#define WGLogError(...)
+#define WGLogFormatWarn(fmd, ...)
+#define WGLogWarn(...)
 #endif
 /**
  *@brief	NSLog封装，带颜色、方法名、方法、line打印

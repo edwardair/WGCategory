@@ -33,16 +33,12 @@
 #pragma mark 正则表达式
 - (BOOL)isMatchingRegularEpressionByPattern:(NSString *)pattern{
     //nil 调用此方法，不执行，返回NO
-    NSLog(@"匹配字符串：%@\n正则表达式：%@",self,pattern);
     NSError *error;
     //检测正则表达式
     NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:pattern options:0 error:&error];
     if (nil != regex) {
         NSRange firstMatch = [regex rangeOfFirstMatchInString:self options:0 range:NSMakeRange(0, self.length)];
-        NSLog(@"正则匹配度：%lu:%lu",(unsigned long)firstMatch.length,(unsigned long)self.length);
         if (firstMatch.location==0 && firstMatch.length==self.length) {
-            NSMutableString *ss = [NSMutableString stringWithString:self];
-            WGLogFormatValue(@"正则匹配结果：%@",[ss substringWithRange:firstMatch]);
             return YES;
         }
     }
@@ -61,9 +57,6 @@
         }
         
         return [NSArray arrayWithArray:texts];
-    }
-    else{
-        NSLog(@"regex初始化错误：%@",error.description);
     }
     return nil;
 }

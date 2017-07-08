@@ -719,13 +719,15 @@
 			baseConfigurationReference = 094756FD9BBB6011F44B3DEA /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 9K9256C42S;
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				INFOPLIST_FILE = WGCategory/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.eduoduo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "7a4a7ffb-a474-40af-aa19-222c92df8f70";
+				PROVISIONING_PROFILE = "2a8bd2bc-009f-4994-81fe-053721d3c76a";
+				PROVISIONING_PROFILE_SPECIFIER = DEBUG_Roidmi_All;
 			};
 			name = Release;
 		};
