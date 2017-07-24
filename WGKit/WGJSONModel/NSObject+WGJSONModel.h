@@ -48,6 +48,9 @@ model;                                                                     \
 #pragma mark -
 @interface NSDictionary (WGJSONModel)<WGJSONModelProtocol>
 @end
+#pragma mark -
+@interface NSNull(WGJSONModel)<WGJSONModelProtocol>
+@end
 
 
 #pragma mark - Model
@@ -66,7 +69,6 @@ model;                                                                     \
 // */
 //- (void)modelUpdateWithData:(NSDictionary *)dic;
 @end
-
 
 
 

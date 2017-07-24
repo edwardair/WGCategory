@@ -47,6 +47,21 @@
     return model;
 }
 @end
+#pragma mark - NSNull
+@implementation NSNull (WGJSONModel)
+- (id)modelWithClass:(Class)modelClass{
+    return [self modelWithClassName:NSStringFromClass(modelClass)];
+}
+- (id )modelWithClassName:(NSString *)className{
+    Class modelClass = NSClassFromString(className);
+    if (!modelClass) {
+        //如果class不存在，则直接返回self
+        return self;
+    }
+    id model = [[modelClass alloc]init];
+    return model;
+}
+@end
 
 
 #pragma mark - Model
