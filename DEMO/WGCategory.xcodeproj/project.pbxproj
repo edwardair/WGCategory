@@ -81,6 +81,7 @@
 		F76AE7BF1B55FC2E000B68C6 /* TestTimerVCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestTimerVCViewController.m; sourceTree = "<group>"; };
 		F76F8F751E9CA5DA002995C2 /* NSObject+WGBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+WGBlock.h"; sourceTree = "<group>"; };
 		F76F8F761E9CA5DA002995C2 /* NSObject+WGBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+WGBlock.m"; sourceTree = "<group>"; };
+		F77548161FEB537600CE1DA9 /* WGKit.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = WGKit.podspec; path = ../WGKit.podspec; sourceTree = "<group>"; };
 		F79817081D40B8930004884A /* TestSuperTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestSuperTableViewCell.h; sourceTree = "<group>"; };
 		F79817091D40B8930004884A /* TestSuperTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestSuperTableViewCell.m; sourceTree = "<group>"; };
 		F79E59BC1D24E56800A65363 /* TestTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestTableViewCell.h; sourceTree = "<group>"; };
@@ -219,6 +220,7 @@
 		F7A4F87D1B1D531A00B84A4E = {
 			isa = PBXGroup;
 			children = (
+				F77548161FEB537600CE1DA9 /* WGKit.podspec */,
 				F7F18A7C1CDAEEA100CAD550 /* WGKit */,
 				F7A4F8881B1D531A00B84A4E /* WGCategory */,
 				F7A4F8A51B1D531A00B84A4E /* WGCategoryTests */,

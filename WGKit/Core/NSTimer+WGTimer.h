@@ -29,7 +29,7 @@
  *
  *  @return NSTimer instance Obj
  */
-+ (NSTimer *)initWithTimeInterval:(NSTimeInterval)ti target:(id)aTarget selector:(SEL)aSelector userInfo:(id)userInfo repeats:(BOOL)repeat;
++ (instancetype)initWithTimeInterval:(NSTimeInterval)ti target:(id)aTarget selector:(SEL)aSelector userInfo:(id)userInfo repeats:(BOOL)repeat;
 + (instancetype)scheduledTimerWithTimeInterval:(NSTimeInterval )ti UserInfo:(id )userInfo repeates:(BOOL )repeat Block:(void(^)(NSTimer *timer_,id userInfo))block;
 
 

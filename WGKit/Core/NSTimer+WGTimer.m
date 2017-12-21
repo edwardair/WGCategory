@@ -20,7 +20,7 @@
 
 #pragma mark -
 @implementation NSTimer (WGTimer)
-+ (NSTimer *)initWithTimeInterval:(NSTimeInterval)ti target:(id)aTarget selector:(SEL)aSelector userInfo:(id)userInfo repeats:(BOOL)repeat{
++ (instancetype)initWithTimeInterval:(NSTimeInterval)ti target:(id)aTarget selector:(SEL)aSelector userInfo:(id)userInfo repeats:(BOOL)repeat{
     
 //    {
 //        NSTimer *timer = [NSTimer timerWithTimeInterval:ti target:aTarget selector:aSelector userInfo:userInfo repeats:YES];
@@ -31,7 +31,7 @@
     WGTimerTargetHelper *target = [[WGTimerTargetHelper alloc]init];
 
     //与上面两句等效
-    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:ti target:target selector:@selector(callSelector) userInfo:userInfo repeats:repeat];
+    NSTimer *timer = [self scheduledTimerWithTimeInterval:ti target:target selector:@selector(callSelector) userInfo:userInfo repeats:repeat];
     //默认初始化后为停止计时状态 需要手动resume
     [timer pause];
     
