@@ -26,6 +26,8 @@
 		F7A4F89A1B1D531A00B84A4E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7A4F8991B1D531A00B84A4E /* Images.xcassets */; };
 		F7A4F89D1B1D531A00B84A4E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7A4F89B1B1D531A00B84A4E /* LaunchScreen.xib */; };
 		F7B65B5C1D375AD0006E5975 /* WGCenterImageAndTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F7B65B5B1D375AD0006E5975 /* WGCenterImageAndTitleButton.m */; };
+		F7F0F1E02013102A00816AC6 /* NSArray+Map.m in Sources */ = {isa = PBXBuildFile; fileRef = F7F0F1DF2013102A00816AC6 /* NSArray+Map.m */; };
+		F7F0F1E32013118400816AC6 /* NSDictionary+Map.m in Sources */ = {isa = PBXBuildFile; fileRef = F7F0F1E22013118400816AC6 /* NSDictionary+Map.m */; };
 		F7F18AC81CDAEEA200CAD550 /* NSDate+WGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = F7F18A7F1CDAEEA200CAD550 /* NSDate+WGCategory.m */; };
 		F7F18AC91CDAEEA200CAD550 /* NSObject+WGObject.m in Sources */ = {isa = PBXBuildFile; fileRef = F7F18A811CDAEEA200CAD550 /* NSObject+WGObject.m */; };
 		F7F18ACA1CDAEEA200CAD550 /* NSString+WGString.m in Sources */ = {isa = PBXBuildFile; fileRef = F7F18A831CDAEEA200CAD550 /* NSString+WGString.m */; };
@@ -102,6 +104,10 @@
 		F7A4F8A81B1D531A00B84A4E /* WGCategoryTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WGCategoryTests.m; sourceTree = "<group>"; };
 		F7B65B5A1D375AD0006E5975 /* WGCenterImageAndTitleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGCenterImageAndTitleButton.h; sourceTree = "<group>"; };
 		F7B65B5B1D375AD0006E5975 /* WGCenterImageAndTitleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGCenterImageAndTitleButton.m; sourceTree = "<group>"; };
+		F7F0F1DE2013102A00816AC6 /* NSArray+Map.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSArray+Map.h"; sourceTree = "<group>"; };
+		F7F0F1DF2013102A00816AC6 /* NSArray+Map.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Map.m"; sourceTree = "<group>"; };
+		F7F0F1E12013118300816AC6 /* NSDictionary+Map.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Map.h"; sourceTree = "<group>"; };
+		F7F0F1E22013118400816AC6 /* NSDictionary+Map.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Map.m"; sourceTree = "<group>"; };
 		F7F18A7E1CDAEEA200CAD550 /* NSDate+WGCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+WGCategory.h"; sourceTree = "<group>"; };
 		F7F18A7F1CDAEEA200CAD550 /* NSDate+WGCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+WGCategory.m"; sourceTree = "<group>"; };
 		F7F18A801CDAEEA200CAD550 /* NSObject+WGObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+WGObject.h"; sourceTree = "<group>"; };
@@ -315,6 +321,10 @@
 				F7F18A851CDAEEA200CAD550 /* NSTimer+WGTimer.m */,
 				F76F8F751E9CA5DA002995C2 /* NSObject+WGBlock.h */,
 				F76F8F761E9CA5DA002995C2 /* NSObject+WGBlock.m */,
+				F7F0F1DE2013102A00816AC6 /* NSArray+Map.h */,
+				F7F0F1DF2013102A00816AC6 /* NSArray+Map.m */,
+				F7F0F1E12013118300816AC6 /* NSDictionary+Map.h */,
+				F7F0F1E22013118400816AC6 /* NSDictionary+Map.m */,
 				F7F18AEA1CDAEF3C00CAD550 /* WGLog.h */,
 				F7F18AEB1CDAEF3C00CAD550 /* WGLog.m */,
 			);
@@ -542,6 +552,7 @@
 				F7F18AEC1CDAEF3C00CAD550 /* WGLog.m in Sources */,
 				F79E59BE1D24E56800A65363 /* TestTableViewCell.m in Sources */,
 				F7F18ACA1CDAEEA200CAD550 /* NSString+WGString.m in Sources */,
+				F7F0F1E32013118400816AC6 /* NSDictionary+Map.m in Sources */,
 				F7F18AE71CDAEEA200CAD550 /* NSObject+WGJSONModel.m in Sources */,
 				F7F18AD91CDAEEA200CAD550 /* UIImageView+WGCategory.m in Sources */,
 				F7F18AE91CDAEEA200CAD550 /* NSObject+WGModelValue.m in Sources */,
@@ -556,6 +567,7 @@
 				F73B4C831D48AE3C00580588 /* UITableViewCell+WGAutoLayout.m in Sources */,
 				F7F18AD11CDAEEA200CAD550 /* WGPopoverView.m in Sources */,
 				F7F18AD71CDAEEA200CAD550 /* UIGestureRecognizer+WGCategory.m in Sources */,
+				F7F0F1E02013102A00816AC6 /* NSArray+Map.m in Sources */,
 				F7F18AD81CDAEEA200CAD550 /* UIImage+WGCategory.m in Sources */,
 				F7F18ACD1CDAEEA200CAD550 /* WGControl.m in Sources */,
 				F7F18ACB1CDAEEA200CAD550 /* NSTimer+WGTimer.m in Sources */,

@@ -50,6 +50,8 @@
 #import "UIDevice+WGCategory.h"
 #import "UIColor+WGColor.h"
 
+#import "NSArray+Map.h"
+#import "NSDictionary+Map.h"
 
 //JSON MODEL
 #import "NSObject+WGAutoModelHelper.h"
