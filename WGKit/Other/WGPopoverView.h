@@ -16,7 +16,7 @@
 	@param ^Title block
 	@returns NSString *
  */
-typedef NSString *(^Title)();
+typedef NSString *(^Title)(void);
 /**
 	是否使用默认弹出界面
 	@param ^UserDefinedInterface block

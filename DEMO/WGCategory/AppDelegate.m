@@ -17,6 +17,7 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+        
     NSObject *a =[[NSObject alloc]init];
     [a wg_addBlock:(void *)(^(NSString *a, NSString *b, NSString *c){
         NSLog(@"a=%@",a);
@@ -25,14 +26,17 @@
         return a.intValue+b.intValue+c.intValue;
     })];
 
-    int res = WGBLOCK(int, a)(@"1",@"2",@"3");
+    int res = (WGBLOCK(int, a,NSString *,NSString *,NSString *))(@"1",@"2",@"3");
     NSLog(@"%d",res);
-
-    WGBLOCK(void, a)(@"a1",@"b1",@"c1");
-    NSLog(@"%@",WGBLOCK(NSString *, a)(@"a2",@"b2",@"c2"));
+    {
+        int res = WGBLOCK(int, a,void)();
+        NSLog(@"%d",res);
+    }
+    WGBLOCK(void, a,NSString *,NSString *,NSString *)(@"a1",@"b1",@"c1");
+    NSLog(@"%@",WGBLOCK(NSString *, a,NSString *,NSString *,NSString *)(@"a2",@"b2",@"c2"));
     
-    ((void(^)())[a wg_doBlock])(@"a4",@"b4",@"c4");
-    NSLog(@"%@",((NSString *(^)())[a wg_doBlock])(@"a5",@"b5",@"c5"));
+    ((void(^)(NSString *,NSString *,NSString *))[a wg_doBlock])(@"a4",@"b4",@"c4");
+    NSLog(@"%@",((NSString *(^)(NSString *,NSString *,NSString *))[a wg_doBlock])(@"a5",@"b5",@"c5"));
 
     return YES;
 }

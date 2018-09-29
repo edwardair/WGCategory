@@ -17,7 +17,7 @@
  *
  *  @return __rType
  */
-#define WGBLOCK(__rType,__obj) ((__rType(^)())[__obj wg_doBlock])
+#define WGBLOCK(__rType,__obj,...) ((__rType(^)(__VA_ARGS__))[__obj wg_doBlock])
 #endif
 
 @interface NSObject (WGBlock)

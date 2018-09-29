@@ -302,7 +302,7 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     NSArray *cells = [NSArray cellsForIndexPaths:indexes in:self.subject.wg_cells];
     [cells makeObjectsPerformSelector:@selector(setNeedUpdateHeight)];
 
-    void(^reload)() = ^(){
+    void(^reload)(void) = ^(){
         [self.subject.wg_tableView reloadRowsAtIndexPaths:indexes withRowAnimation:UITableViewRowAnimationNone];
         //MARK: 必须多调用一次，UI才会正确刷新，如果用reload，则只需一遍即可，但动画很生硬，不知道是否是系统BUG
         [self.subject.wg_tableView reloadRowsAtIndexPaths:indexes withRowAnimation:UITableViewRowAnimationNone];

@@ -83,7 +83,7 @@ userDefinedInterface:(UserDefinedInterface )userDefinedBlack
     _emptyTouched.alpha = 0;
     [UIView animateWithDuration:.35 animations:^{
         self.alpha = 1;
-        _emptyTouched.alpha = .5f;
+        self->_emptyTouched.alpha = .5f;
         self.transform = CGAffineTransformMakeScale(1, 1);
     }];
 }
@@ -93,12 +93,12 @@ userDefinedInterface:(UserDefinedInterface )userDefinedBlack
     [UIView animateWithDuration:.35 animations:^{
         self.transform = CGAffineTransformMakeScale(1.3, 1.3);
         self.alpha = 0.0;
-        _emptyTouched.alpha = 0;
+        self->_emptyTouched.alpha = 0;
     } completion:^(BOOL finished) {
         if (finished) {
-            if (_emptyTouched)
+            if (self->_emptyTouched)
             {
-                [_emptyTouched removeFromSuperview];
+                [self->_emptyTouched removeFromSuperview];
             }
             [self removeFromSuperview];
         }
