@@ -17,8 +17,6 @@ typedef NS_ENUM(int, UIDeviceResolution){
     UIDevice_iPhone6,                       // iPhone6 High Resolution              (1334x750px)
     UIDevice_iPhone6P,                      // iPhone6P High Resolution             (2208*1242px)
     UIDevice_iPhoneX,                       // iPhoneX High Resolution               (1125*2436px)
-    UIDevice_iPhoneXr,                       // iPhoneXr High Resolution               (828*1792px)
-    UIDevice_iPhoneXsMax,                       // iPhoneX High Resolution               (1242*2688px)
     UIDevice_Not_Supprot            = 999,  //                                    不支持
 };
 

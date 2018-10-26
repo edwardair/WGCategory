@@ -1,0 +1,7 @@
+platform :ios, '8.0'
+#use_frameworks!
+inhibit_all_warnings!
+
+target :'RemotePodsTest' do
+    pod 'WGKit', :git => 'https://github.com/edwardair/WGCategory.git', :tag => '0.1.8'
+end

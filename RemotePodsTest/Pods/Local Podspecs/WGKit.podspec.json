@@ -1,0 +1,54 @@
+{
+  "name": "WGKit",
+  "version": "0.1.7",
+  "summary": "A short description of WGKit.",
+  "description": "A longer description of WGKit in Markdown format.\n\n* Think: Why did you write this? What is the focus? What does it do?\n* CocoaPods will be using this to generate tags, and improve search results.\n* Try to keep it short, snappy and to the point.\n* Finally, don't worry about the indent, CocoaPods strips it!",
+  "homepage": "http://EXAMPLE/WGCategory",
+  "license": "MIT",
+  "authors": {
+    "Eduoduo": "550621009@qq.com"
+  },
+  "platforms": {
+    "ios": "7.0"
+  },
+  "source": {
+    "git": "https://github.com/edwardair/WGCategory.git",
+    "tag": "0.1.7"
+  },
+  "requires_arc": true,
+  "source_files": "WGKit/WGDefines.h",
+  "public_header_files": "WGKit/WGDefines.h",
+  "subspecs": [
+    {
+      "name": "Core",
+      "source_files": "WGKit/Core/*.{h,m}"
+    },
+    {
+      "name": "UIKit",
+      "subspecs": [
+        {
+          "name": "Category",
+          "source_files": "WGKit/UIKit/Category/*.{h,m}"
+        },
+        {
+          "name": "View",
+          "source_files": "WGKit/UIKit/View/*.{h,m}",
+          "subspecs": [
+            {
+              "name": "WGTableController",
+              "source_files": "WGKit/UIKit/View/WGTableController/*.{h,m}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "WGJSONModel",
+      "source_files": "WGKit/WGJSONModel/*.{h,m}"
+    },
+    {
+      "name": "Other",
+      "source_files": "WGKit/Other/*.{h,m}"
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+../../../WGKit/WGKit/UIKit/Category/UIGestureRecognizer+WGCategory.h

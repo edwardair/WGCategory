@@ -37,10 +37,6 @@
             return UIDevice_iPhone6P;
         case 2436:
             return UIDevice_iPhoneX;
-        case 1792:
-            return UIDevice_iPhoneXr;
-        case 2688:
-            return UIDevice_iPhoneXsMax;
         default:
             return UIDevice_Not_Supprot;
     }

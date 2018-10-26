@@ -1,0 +1,1 @@
+../../../WGKit/WGKit/Core/NSObject+WGBlock.h
