@@ -39,8 +39,6 @@ CGRect WGCGRectChangeBy(CGRect rect, CGFloat dOriginX, CGFloat dOriginY, CGFloat
 /**
  *  默认背景色为clearColor，带frame初始化，
  *
- *  @param frame
- *
  *  @return UIView
  */
 + (instancetype )initWithNoneBGColorWithFrame:(CGRect )frame;

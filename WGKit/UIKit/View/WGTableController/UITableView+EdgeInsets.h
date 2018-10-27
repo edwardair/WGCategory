@@ -20,7 +20,6 @@ typedef UIEdgeInsets (^WGTableViewEdgeInsetsBlock) (NSIndexPath *indexPath);
  *  @param table      UITableView
  *  @param edgeInsets UIEdgeinsets，当多次调用此方法时，inset相同，则只更新block，如果不同，则增加多个inset，配合enable使用，
  控制cell.sepectInsets
- *  @param enable     根据需要，针对某个cell才启用修改
  */
 - (void)wg_setTableView:(UITableView *)table
   edgeInsetsAtIndexPath:(WGTableViewEdgeInsetsBlock )edgeInsets;

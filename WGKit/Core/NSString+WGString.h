@@ -78,7 +78,7 @@
 /**
  *  unicode 字符串替换为NSString
  *
- *  @param unicodeStr
+ *  @param unicodeStr unicde string
  */
 + (NSString *)replaceUnicode:(NSString *)unicodeStr;
 

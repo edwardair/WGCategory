@@ -51,9 +51,8 @@ static inline BOOL isInstanceSelectorConformsToProtocol(Protocol *protocol, SEL 
 /**
  *  category方式修改系统方法
  *
- *  @param aClass          需要修改api的Class
- *  @param originSelector  原Class的selector
- *  @param replaceSelector 修改后的selector
+ *  @param oldSelector  原Class的selector
+ *  @param newSelector 修改后的selector
  */
 + (void)swizzleExchangeInstanceAPI:(SEL )oldSelector newSelector:(SEL )newSelector;
 + (void)swizzleExchangeClassAPI:(SEL )oldSelector newSelector:(SEL )newSelector;

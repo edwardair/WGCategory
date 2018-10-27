@@ -16,7 +16,7 @@ typedef void(^ReloadBlock)(id cell_, id model_);
 /**
  *  加载数据
  *
- *  @param model
+ *  @param model any ObjC Object
  *  @param block 处理具体cell的数据加载
  */
 - (void)loadModel:(id)model doReload:(ReloadBlock )block;
