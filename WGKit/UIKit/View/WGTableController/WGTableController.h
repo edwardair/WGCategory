@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 @interface WGTableController : NSObject
++ (void)replaceSelector:(SEL )selector;
+
 @property (nonatomic,assign,readonly) id delegate;
 - (instancetype)initWithTable:(UITableView *)tableView delegate:(id )delegate;
 @end
@@ -57,6 +59,7 @@
  *  @param newSelector 调用类中，真正实现协议的方法名
  */
 - (void)wg_replaceSelector:(SEL )selector withNewSelector:(SEL )newSelector;
+
 @end
 
 
