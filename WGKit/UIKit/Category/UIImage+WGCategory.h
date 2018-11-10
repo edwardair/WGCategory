@@ -31,4 +31,6 @@
 + (UIImage*)captureView:(UIView *)theView;
 - (UIImage *)fixOrientationWithImageOrientation:(UIImageOrientation )orientation ;
 
++ (instancetype)imageWithColor:(nonnull UIColor *)color;
+
 @end
