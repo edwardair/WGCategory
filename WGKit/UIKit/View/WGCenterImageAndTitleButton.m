@@ -32,12 +32,9 @@
                                             -(intrinsicContentSize.width - self.imageView.bounds.size.width) / 2);
     self.titleEdgeInsets = UIEdgeInsetsMake(
                                             self.imageView.bounds.size.height + _verticalSpacing,
-                                            -(self.imageView.bounds.size.width +
-                                              self.titleLabel.bounds.size.width) /
-                                            2,
+                                            -((self.imageView.bounds.size.width+self.titleLabel.bounds.size.width/2)-(MAX(self.imageView.image.size.width, self.titleLabel.bounds.size.width))/2),
                                             0,
-                                            (self.imageView.bounds.size.width + self.titleLabel.bounds.size.width) /
-                                            2);
+                                            0);
 }
 - (CGSize)intrinsicContentSize{
     UIImageView *imageView = self.imageView;
