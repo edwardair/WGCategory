@@ -33,6 +33,8 @@
 
 #import "UIViewController+WGCategory.h"
 
+#import "UIAlertController+WGAdd.h"
+
 #import "UIView+WGCategory.h"
 #import "UIView+IBDESIGNABLE.h"
 

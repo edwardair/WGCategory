@@ -31,11 +31,19 @@
 #pragma mark -
 @implementation NSObject (WGModelValue)
 - (id )modelValue{
+    return [self modelValueWithClass:[self class]];
+}
+- (id )modelValueWithClass:(Class)aClazz{
     //此处方法如被调用，则可以视为self为model，否则会走各自基本类型的方法
     NSMutableDictionary *json = @{}.mutableCopy;
     
+    Class superclass = class_getSuperclass(aClazz);
+    if(![superclass isEqual:[NSObject class]]){
+        [json addEntriesFromDictionary:[self modelValueWithClass:superclass]];
+    }
+
     u_int count;
-    objc_property_t *properties  = class_copyPropertyList([self class], &count);
+    objc_property_t *properties  = class_copyPropertyList(aClazz, &count);
     for (int i = 0; i<count; i++){
         
         const char* propertyName_CStr = property_getName(properties[i]);
@@ -59,7 +67,6 @@
     
     return json;
 }
-
 #pragma mark - model转value时，当值为nil时，转化为默认0值
 + (char *)propertyAttributesPrefixWithAttributes:(const char *)property_attributes{
     size_t len = strlen(property_attributes);

@@ -16,6 +16,7 @@
 		F73B4C841D48AE3C00580588 /* WGTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = F73B4C7F1D48AE3C00580588 /* WGTableController.m */; };
 		F76AE7C01B55FC2E000B68C6 /* TestTimerVCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F76AE7BF1B55FC2E000B68C6 /* TestTimerVCViewController.m */; };
 		F76F8F771E9CA5DA002995C2 /* NSObject+WGBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = F76F8F761E9CA5DA002995C2 /* NSObject+WGBlock.m */; };
+		F791270B225F0C520033D01E /* UIAlertController+WGAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = F791270A225F0C520033D01E /* UIAlertController+WGAdd.m */; };
 		F798170A1D40B8930004884A /* TestSuperTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F79817091D40B8930004884A /* TestSuperTableViewCell.m */; };
 		F79E59BE1D24E56800A65363 /* TestTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F79E59BD1D24E56800A65363 /* TestTableViewCell.m */; };
 		F7A4F88C1B1D531A00B84A4E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A4F88B1B1D531A00B84A4E /* main.m */; };
@@ -84,6 +85,8 @@
 		F76F8F751E9CA5DA002995C2 /* NSObject+WGBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+WGBlock.h"; sourceTree = "<group>"; };
 		F76F8F761E9CA5DA002995C2 /* NSObject+WGBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+WGBlock.m"; sourceTree = "<group>"; };
 		F77548161FEB537600CE1DA9 /* WGKit.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = WGKit.podspec; path = ../WGKit.podspec; sourceTree = "<group>"; };
+		F7912709225F0C520033D01E /* UIAlertController+WGAdd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+WGAdd.h"; sourceTree = "<group>"; };
+		F791270A225F0C520033D01E /* UIAlertController+WGAdd.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+WGAdd.m"; sourceTree = "<group>"; };
 		F79817081D40B8930004884A /* TestSuperTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestSuperTableViewCell.h; sourceTree = "<group>"; };
 		F79817091D40B8930004884A /* TestSuperTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestSuperTableViewCell.m; sourceTree = "<group>"; };
 		F79E59BC1D24E56800A65363 /* TestTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestTableViewCell.h; sourceTree = "<group>"; };
@@ -390,6 +393,8 @@
 				F7F18AB01CDAEEA200CAD550 /* UIView+WGCategory.m */,
 				F7F18AB11CDAEEA200CAD550 /* UIViewController+WGCategory.h */,
 				F7F18AB21CDAEEA200CAD550 /* UIViewController+WGCategory.m */,
+				F7912709225F0C520033D01E /* UIAlertController+WGAdd.h */,
+				F791270A225F0C520033D01E /* UIAlertController+WGAdd.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -580,6 +585,7 @@
 				F7F18ADD1CDAEEA200CAD550 /* UITextView+WGCategory.m in Sources */,
 				F7F18AE41CDAEEA200CAD550 /* WGTextView.m in Sources */,
 				F7F18AC81CDAEEA200CAD550 /* NSDate+WGCategory.m in Sources */,
+				F791270B225F0C520033D01E /* UIAlertController+WGAdd.m in Sources */,
 				F73B4C801D48AE3C00580588 /* NSArray+NSIndexPath.m in Sources */,
 				F7F18AD61CDAEEA200CAD550 /* UIDevice+WGCategory.m in Sources */,
 				F7F18AD31CDAEEA200CAD550 /* UIButton+WGCategory.m in Sources */,

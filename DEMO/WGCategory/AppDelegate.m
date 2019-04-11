@@ -14,30 +14,28 @@
 @end
 
 
+@interface ModelA:NSObject
+@property (nonatomic,copy) NSString *aDesc;
+@end
+@implementation ModelA
+@end
+
+@interface ModelB:ModelA
+@property (nonatomic,copy) NSString *bDesc;
+@end
+@implementation ModelB
+@end
+
+
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-        
-    NSObject *a =[[NSObject alloc]init];
-    [a wg_addBlock:(void *)(^(NSString *a, NSString *b, NSString *c){
-        NSLog(@"a=%@",a);
-        NSLog(@"b=%@",b);
-        NSLog(@"c=%@",c);
-        return a.intValue+b.intValue+c.intValue;
-    })];
-
-    int res = (WGBLOCK(int, a,NSString *,NSString *,NSString *))(@"1",@"2",@"3");
-    NSLog(@"%d",res);
-    {
-        int res = WGBLOCK(int, a,void)();
-        NSLog(@"%d",res);
-    }
-    WGBLOCK(void, a,NSString *,NSString *,NSString *)(@"a1",@"b1",@"c1");
-    NSLog(@"%@",WGBLOCK(NSString *, a,NSString *,NSString *,NSString *)(@"a2",@"b2",@"c2"));
     
-    ((void(^)(NSString *,NSString *,NSString *))[a wg_doBlock])(@"a4",@"b4",@"c4");
-    NSLog(@"%@",((NSString *(^)(NSString *,NSString *,NSString *))[a wg_doBlock])(@"a5",@"b5",@"c5"));
-
+    NSDictionary *info = @{@"aDesc":@"aaaa",@"bDesc":@"bbbbb",};
+    ModelB *b = [info modelWithClass:[ModelB class]];
+    NSLog(@"%@",b);
+    NSDictionary *info2 = [b modelValue];
+    
     return YES;
 }
 
