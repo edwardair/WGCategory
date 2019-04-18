@@ -8,6 +8,8 @@
 
 #import "WGAlertView.h"
 
+#if __IPHONE_OS_VERSION_MIN_REQUIRED < 80300
+
 @interface WGAlertView ()
 @end
 @implementation WGAlertView
@@ -84,3 +86,5 @@
 }
 
 @end
+
+#endif

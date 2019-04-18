@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#if __IPHONE_OS_VERSION_MIN_REQUIRED < 80300
+
 @class WGActionSheet;
 typedef void (^ ActionSheetClickedAtIndex)(NSInteger buttonIndex,WGActionSheet *sheet_);
 
@@ -29,3 +31,5 @@ sheet_;                                                                    \
 @property (nonatomic,copy) ActionSheetClickedAtIndex block;
 
 @end
+
+#endif

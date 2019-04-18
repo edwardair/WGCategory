@@ -11,12 +11,17 @@
 @implementation NSObject(WGObject)
 #pragma mark - 纯提示性UIAlertView显示
 + (void)alertShowErrorWithMsg:(NSString *)msg{
+    
+#if __IPHONE_OS_VERSION_MIN_REQUIRED < 90000
     UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@""
                                                    message:msg
                                                   delegate:nil
                                          cancelButtonTitle:@"OK"
                                          otherButtonTitles: nil];
     [alert show];
+#else
+    [[[UIAlertController alert:@"" message:msg] cancel:@"OK" handler:nil] show:KeyWindow.rootViewController];
+#endif
 }
 
 #pragma mark - 根据绝对路径 计算单个文件大小

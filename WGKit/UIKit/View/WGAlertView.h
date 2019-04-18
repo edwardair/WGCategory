@@ -7,6 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+
+#if __IPHONE_OS_VERSION_MIN_REQUIRED < 80300
+
 @class WGAlertView;
 typedef void (^ AlertViewClickedAtIndex)(NSInteger buttonIndex,WGAlertView *alert_);
 
@@ -41,3 +44,5 @@ typedef void (^ AlertViewClickedAtIndex)(NSInteger buttonIndex,WGAlertView *aler
             cancelButtonTitle:(NSString *)cancelButtonTitle
             otherButtonTitles:(NSString *)otherButtonTitles, ...NS_REQUIRES_NIL_TERMINATION;
 @end
+
+#endif
