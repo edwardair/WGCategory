@@ -38,7 +38,7 @@
 }
 - (id )modelWithClassName:(NSString *)className{
     Class modelClass = NSClassFromString(className);
-    if (!modelClass) {
+    if (!modelClass||[self isKindOfClass:modelClass]) {
         //如果class不存在，则直接返回self
         return self;
     }
@@ -50,16 +50,10 @@
 #pragma mark - NSNull
 @implementation NSNull (WGJSONModel)
 - (id)modelWithClass:(Class)modelClass{
-    return [self modelWithClassName:NSStringFromClass(modelClass)];
+    return nil;
 }
 - (id )modelWithClassName:(NSString *)className{
-    Class modelClass = NSClassFromString(className);
-    if (!modelClass) {
-        //如果class不存在，则直接返回self
-        return self;
-    }
-    id model = [[modelClass alloc]init];
-    return model;
+    return nil;
 }
 @end
 
@@ -99,9 +93,7 @@
                 //如果属性为NSArray，则检测是否引用某协议，此协议名字即为所使用的类名
                 if ([value isKindOfClass:[NSArray class]]) {
                     Class valueClass = class.propertyClass_NSArray(propertyName_NSString);
-                    if (class) {
-                        value = [value modelWithClass:valueClass];
-                    }
+                    value = [value modelWithClass:valueClass];
                 }else{
                     Class valueClass = class.propertyClass(propertyName_NSString);
                     value = [value modelWithClass:valueClass];
