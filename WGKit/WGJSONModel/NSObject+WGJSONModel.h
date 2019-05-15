@@ -40,6 +40,11 @@ model;                                                                     \
 - (id )modelWithClassName:(NSString *)className;
 @end
 
+#pragma mark - JSON转Model时，忽略指定字段
+@protocol WGJSONModelIgnoreProtocol
+@required
+- (nonnull NSArray<NSString *> *)wg_excepts;
+@end
 
 
 #pragma mark -

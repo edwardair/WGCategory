@@ -60,6 +60,14 @@
 
 #pragma mark - Model
 @implementation NSObject (WGJSONModel_Append)
+- (BOOL)wg_isPropertyIgnores:(NSString *)key {
+    if ([self conformsToProtocol:@protocol(WGJSONModelIgnoreProtocol)]) {
+        id<WGJSONModelIgnoreProtocol> tmp = (id<WGJSONModelIgnoreProtocol>)self;
+        NSArray *excepts = [tmp wg_excepts];
+        return [excepts containsObject:key];
+    }
+    return NO;
+}
 - (void)modelUpdateWithData:(NSDictionary *)dic{
     [self modelUpdateWithData:dic inClass:[self class]];
 }
@@ -69,6 +77,7 @@
     if(![superclass isEqual:[NSObject class]]){
         [self modelUpdateWithData:dic inClass:superclass];
     }
+    
     u_int count;
     objc_property_t *properties  = class_copyPropertyList(class, &count);
     for (int i = 0; i<count; i++){
@@ -79,6 +88,11 @@
         NSString *dataKeyString = [NSString stringWithString:propertyName_NSString];
         if (AutoPropertyNamePrefix.length && [dataKeyString hasPrefix:AutoPropertyNamePrefix]) {
             dataKeyString = [dataKeyString stringByReplacingOccurrencesOfString:AutoPropertyNamePrefix withString:@""];
+        }
+        
+        //检测是否忽略指定字段
+        if ([self wg_isPropertyIgnores:dataKeyString]) {
+            continue;
         }
         
         id value = dic[dataKeyString];
@@ -131,10 +145,17 @@
         if (AutoPropertyNamePrefix.length && [dataKeyString hasPrefix:AutoPropertyNamePrefix]) {
             dataKeyString = [dataKeyString stringByReplacingOccurrencesOfString:AutoPropertyNamePrefix withString:@""];
         }
+        
+        //检测是否忽略指定字段
+        if ([self wg_isPropertyIgnores:dataKeyString]) {
+            continue;
+        }
+
         //只有在新数据中存在key的情况，才更新model数据
         if (![allKeys containsObject:dataKeyString]) {
             continue;
         }
+        
         id value = dic[dataKeyString];
         //需要递归转化model
         //由于  nil/null 肯定不会有 WGJSONModelProtocol，故无需预先判断 nil/null
