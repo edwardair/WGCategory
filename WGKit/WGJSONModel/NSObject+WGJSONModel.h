@@ -68,6 +68,18 @@ model;                                                                     \
 // *  @param lv  lv==0时，同上方法；此方法为内部使用的，外部一般不需要调用
 // */
 //- (void)modelUpdateWithData:(NSDictionary *)dic;
+
+- (void)modelMergeFromData:(NSDictionary *)dic;
+/**
+ model与新数据合并，仅更新新数据中存在的字段、并且值不为nil的数据
+ ！！！注：如存在子model，子model将重新初始化，而非merge！！！
+ ！！！注：如存在子model，子model将重新初始化，而非merge！！！
+ ！！！注：如存在子model，子model将重新初始化，而非merge！！！
+ @param dic 新数据
+ @param clazz 父类
+ */
+- (void)modelMergeFromData:(NSDictionary *)dic inClass:(Class)clazz;
+
 @end
 
 

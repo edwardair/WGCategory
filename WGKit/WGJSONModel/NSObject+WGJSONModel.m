@@ -108,4 +108,56 @@
     }
     free(properties);
 }
+
+#pragma mark - data merge
+- (void)modelMergeFromData:(NSDictionary *)dic {
+    [self modelMergeFromData:dic inClass:[self class]];
+}
+- (void)modelMergeFromData:(NSDictionary *)dic inClass:(Class)clazz {
+    //如果父类非NSObject，则递归
+    Class superclass = class_getSuperclass(clazz);
+    if(![superclass isEqual:[NSObject class]]){
+        [self modelMergeFromData:dic inClass:superclass];
+    }
+    NSArray *allKeys = dic.allKeys;
+    u_int count;
+    objc_property_t *properties  = class_copyPropertyList(clazz, &count);
+    for (int i = 0; i < count; i++){
+        //model属性名
+        const char* propertyName_CStr = property_getName(properties[i]);
+        NSString *propertyName_NSString = [NSString stringWithFormat:@"%s",propertyName_CStr];
+        //数据源中的key
+        NSString *dataKeyString = [NSString stringWithString:propertyName_NSString];
+        if (AutoPropertyNamePrefix.length && [dataKeyString hasPrefix:AutoPropertyNamePrefix]) {
+            dataKeyString = [dataKeyString stringByReplacingOccurrencesOfString:AutoPropertyNamePrefix withString:@""];
+        }
+        //只有在新数据中存在key的情况，才更新model数据
+        if (![allKeys containsObject:dataKeyString]) {
+            continue;
+        }
+        id value = dic[dataKeyString];
+        //需要递归转化model
+        //由于  nil/null 肯定不会有 WGJSONModelProtocol，故无需预先判断 nil/null
+        if ([value conformsToProtocol:@protocol(WGJSONModelProtocol)]) {
+            //如果属性为NSArray，则检测是否引用某协议，此协议名字即为所使用的类名
+            if ([value isKindOfClass:[NSArray class]]) {
+                Class valueClass = clazz.propertyClass_NSArray(propertyName_NSString);
+                if (clazz) {
+                    value = [value modelWithClass:valueClass];
+                }
+            }else{
+                Class valueClass = clazz.propertyClass(propertyName_NSString);
+                value = [value modelWithClass:valueClass];
+            }
+        }
+        //值为nil/null的，不更新model
+        if (!value || [value isEqual:[NSNull null]]) {
+            continue;
+        }
+        //最终更新model数据
+        [self setValue:value forKey:propertyName_NSString];
+    }
+    free(properties);
+}
+
 @end
