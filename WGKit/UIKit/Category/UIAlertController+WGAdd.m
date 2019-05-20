@@ -14,7 +14,10 @@
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
     return alert;
 }
-
++(instancetype)actionSheet:(NSString *)title message:(NSString *)message {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
+    return alert;
+}
 -(UIAlertController *)textField:(void(^)(UITextField *textField))configurationHandler {
     [self addTextFieldWithConfigurationHandler:configurationHandler];
     return self;

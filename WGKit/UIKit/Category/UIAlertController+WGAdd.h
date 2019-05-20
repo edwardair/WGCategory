@@ -10,18 +10,19 @@
 
 #pragma mark - initialize
 @interface UIAlertController (initialize)
-+(instancetype)alert:(NSString *)title message:(NSString *)message ;
--(UIAlertController *)textField:(void(^)(UITextField *textField))configurationHandler;
--(UIAlertController *)secretTextField:(void(^)(UITextField *textField))configurationHandle;
--(void)show:(UIViewController *)from;
++(_Nonnull instancetype)alert:(NSString * _Nullable)title message:(NSString * _Nullable)message;
++(_Nonnull instancetype)actionSheet:(NSString * _Nullable)title message:(NSString * _Nullable)message;
+-(UIAlertController * _Nonnull)textField:(void(^)(UITextField * _Nonnull textField))configurationHandler;
+-(UIAlertController * _Nonnull)secretTextField:(void(^)(UITextField * _Nonnull textField))configurationHandle;
+-(void)show:(UIViewController *_Nonnull)from;
 @end
 
 #pragma mark - action
 @interface UIAlertController (action)
--(UIAlertController *)cancelWithTitle:(NSString *)title;
--(UIAlertController *)cancelWithHandler:(void(^)(UIAlertAction *action))handler;
--(UIAlertController *)cancel:(NSString *)title handler:(void(^)(UIAlertAction *action))handler;
--(UIAlertController *)action:(NSString *)title handler:(void(^)(UIAlertAction *action))handler;
+-(UIAlertController * _Nonnull)cancelWithTitle:(NSString * _Nullable)title;
+-(UIAlertController * _Nonnull)cancelWithHandler:(void(^)(UIAlertAction * _Nullable action))handler;
+-(UIAlertController * _Nonnull)cancel:(NSString * _Nullable)title handler:(void(^)(UIAlertAction * _Nonnull action))handler;
+-(UIAlertController * _Nonnull)action:(NSString * _Nullable)title handler:(void(^)(UIAlertAction * _Nonnull action))handler;
 
 @end
 
