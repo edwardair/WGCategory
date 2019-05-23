@@ -15,7 +15,7 @@
     return alert;
 }
 +(instancetype)actionSheet:(NSString *)title message:(NSString *)message {
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleActionSheet];
     return alert;
 }
 -(UIAlertController *)textField:(void(^)(UITextField *textField))configurationHandler {
