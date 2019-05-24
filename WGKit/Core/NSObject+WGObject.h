@@ -63,8 +63,10 @@ static inline BOOL isInstanceSelectorConformsToProtocol(Protocol *protocol, SEL 
  *  获取系统语言
  */
 + (NSString *)systemLanguage;
-
-typedef Class(^PropertyClass)(NSString *propertyName);
-+ (PropertyClass) propertyClass;//获取属性的类型
-+ (PropertyClass)propertyClass_NSArray;//获取属性为NSArray类型时，支持的协议名
-@end
+    
+    typedef Class(^PropertyClass)(NSString *propertyName);
+//+ (PropertyClass) propertyClass;//获取属性的类型
+//+ (PropertyClass)propertyClass_NSArray;//获取属性为NSArray类型时，支持的协议名
+    + ( Class  )getPropertyClass:(NSString *)property;
+    + ( Class )getPropertyClass_NSArray:(NSString *)property;
+    @end

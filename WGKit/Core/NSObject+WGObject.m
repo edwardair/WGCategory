@@ -23,7 +23,7 @@
     [[[UIAlertController alert:@"" message:msg] cancel:@"OK" handler:nil] show:KeyWindow.rootViewController];
 #endif
 }
-
+    
 #pragma mark - 根据绝对路径 计算单个文件大小
 + (long)mathFileSize:(NSString *)path{
     long size = 0;
@@ -54,7 +54,7 @@
     }
     return size;
 }
-
+    
 #pragma mark - 注销第一响应者
 + (void)resignFirstResponder{
     UIWindow *keyWindow = KeyWindow;
@@ -63,7 +63,7 @@
         [firstResponder resignFirstResponder];
     }
 }
-
+    
 #pragma mark - category 修改系统api
 + (void)swizzleExchangeInstanceAPI:(SEL )oldSelector newSelector:(SEL )newSelector{
     Method oldMethod = class_getInstanceMethod(self, oldSelector);
@@ -78,19 +78,19 @@
 + (BOOL)swizzleAddInstanceAPI:(SEL )newSelector withIMP:(IMP)imp types:(const char *)types{
     Method newMethod = class_getInstanceMethod(self, newSelector);
     if (!newMethod) {
-       return class_addMethod(self, newSelector, imp, types);
+        return class_addMethod(self, newSelector, imp, types);
     }
     return NO;
 }
 + (BOOL)swizzleAddClassAPI:(SEL )newSelector withIMP:(IMP)imp types:(const char *)types{
     Method newMethod = class_getClassMethod(self, newSelector);
     if (!newMethod) {
-       return class_addMethod(self, newSelector, imp, types);
+        return class_addMethod(self, newSelector, imp, types);
     }
     return NO;
 }
-
-
+    
+    
 #pragma mark - 获取系统语言
 + (NSString *)systemLanguage{
     NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
@@ -99,12 +99,12 @@
     
     return [languages objectAtIndex:0];
 }
-
+    
 #pragma mark - 覆写NSObject的nilValue方法，防止程序闪退
 - (void)setNilValueForKey:(NSString *)key{
     WGLogFormatWarn(@"%@企图设置nilValue，key=%@",NSStringFromClass([self class]),key);
 }
-
+    
 #pragma mark - 获取属性名对应的Class
 + (char *)propertyAttributesPrefixWithAttributes:(const char *)property_attributes{
     size_t len = strlen(property_attributes);
@@ -114,25 +114,31 @@
     return prefix;
 }
 + (PropertyClass)propertyClass{
-    PropertyClass block = ^ Class(NSString *propertyName){
-        objc_property_t property = class_getProperty(self, propertyName.UTF8String);
-        char *columnPropertyAttributes = property_copyAttributeValue(property, "T");
-        NSString *className = [NSString stringWithFormat:@"%s",columnPropertyAttributes];
-        free(columnPropertyAttributes);
-        className = [className stringFromRegularEpression:@"[^@\"]+"].firstObject;
-        return NSClassFromString(className);
+    PropertyClass block = ^ Class (NSString *propertyName){
+        return [self getPropertyClass:propertyName];
     };
     return block;
 }
++ ( Class )getPropertyClass:(NSString *)propertyName{
+    objc_property_t property = class_getProperty(self, propertyName.UTF8String);
+    char *columnPropertyAttributes = property_copyAttributeValue(property, "T");
+    NSString *className = [NSString stringWithFormat:@"%s",columnPropertyAttributes];
+    free(columnPropertyAttributes);
+    className = [className stringFromRegularEpression:@"[^@\"]+"].firstObject;
+    return NSClassFromString(className);
+}
 + (PropertyClass)propertyClass_NSArray{
     PropertyClass block = ^ Class(NSString *propertyName){
-        objc_property_t property = class_getProperty(self, propertyName.UTF8String);
-        char *columnPropertyAttributes = property_copyAttributeValue(property, "T");
-        NSString *className = [NSString stringWithFormat:@"%s",columnPropertyAttributes];
-        free(columnPropertyAttributes);
-        className = [className stringFromRegularEpression:@"[^<]*(?=>)"].firstObject;
-        return NSClassFromString(className);
+        return  [self getPropertyClass_NSArray:propertyName];
     };
     return block;
+}
++ ( Class  )getPropertyClass_NSArray:(NSString *)propertyName{
+    objc_property_t property = class_getProperty(self, propertyName.UTF8String);
+    char *columnPropertyAttributes = property_copyAttributeValue(property, "T");
+    NSString *className = [NSString stringWithFormat:@"%s",columnPropertyAttributes];
+    free(columnPropertyAttributes);
+    className = [className stringFromRegularEpression:@"[^<]*(?=>)"].firstObject;
+    return NSClassFromString(className);
 }
 @end

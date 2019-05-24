@@ -106,10 +106,12 @@
             if ([value conformsToProtocol:@protocol(WGJSONModelProtocol)]) {
                 //如果属性为NSArray，则检测是否引用某协议，此协议名字即为所使用的类名
                 if ([value isKindOfClass:[NSArray class]]) {
-                    Class valueClass = class.propertyClass_NSArray(propertyName_NSString);
+                    Class valueClass = [class getPropertyClass_NSArray:propertyName_NSString];
+//                    Class valueClass = class.propertyClass_NSArray(propertyName_NSString);
                     value = [value modelWithClass:valueClass];
                 }else{
-                    Class valueClass = class.propertyClass(propertyName_NSString);
+                    Class valueClass = [class getPropertyClass:propertyName_NSString];
+//                    Class valueClass = class.propertyClass(propertyName_NSString);
                     value = [value modelWithClass:valueClass];
                 }
             }
@@ -162,12 +164,14 @@
         if ([value conformsToProtocol:@protocol(WGJSONModelProtocol)]) {
             //如果属性为NSArray，则检测是否引用某协议，此协议名字即为所使用的类名
             if ([value isKindOfClass:[NSArray class]]) {
-                Class valueClass = clazz.propertyClass_NSArray(propertyName_NSString);
+                Class valueClass = [clazz getPropertyClass_NSArray:propertyName_NSString];
+                //                    Class valueClass = class.propertyClass_NSArray(propertyName_NSString);
                 if (clazz) {
                     value = [value modelWithClass:valueClass];
                 }
             }else{
-                Class valueClass = clazz.propertyClass(propertyName_NSString);
+                Class valueClass = [clazz getPropertyClass:propertyName_NSString];
+                //                    Class valueClass = class.propertyClass(propertyName_NSString);
                 value = [value modelWithClass:valueClass];
             }
         }
