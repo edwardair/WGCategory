@@ -12,4 +12,7 @@
 @interface WGTextView : UITextView
 @property (copy, nonatomic) IBInspectable NSString *placeHolder;
 @property (nonatomic,strong) IBInspectable NSAttributedString *attributedString;
+
+@property (nonatomic,assign) CGPoint placeHolderOrigin;//default = (8,8)
+
 @end

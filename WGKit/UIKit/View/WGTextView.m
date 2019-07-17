@@ -29,6 +29,8 @@
 }
 
 - (void)initialize{
+    _placeHolderOrigin = CGPointMake(8, 8);
+    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textDidChanged:) name:UITextViewTextDidChangeNotification object:nil];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textDidChanged:) name:UITextViewTextDidBeginEditingNotification object:nil];
@@ -36,33 +38,45 @@
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(textDidChanged:) name:UITextViewTextDidEndEditingNotification object:nil];
 }
 
+- (void)setPlaceHolderOrigin:(CGPoint)placeHolderOrigin {
+    [self setNeedsDisplay];
+}
+
+- (void)setPlaceHolder:(NSString *)placeHolder{
+    [self setNeedsDisplay];
+}
 
 - (void)textDidChanged:(NSNotification *)noti{
     [self setNeedsDisplay];
 }
 
-- (void)drawRect:(CGRect)rect
-{
-    
-//    if (![self isFirstResponder]) {
-        if (self.text.length == 0) {
-            
-            //绘制placeHolder
-            if (_placeHolder.length) {
-                [_placeHolder drawInRect:CGRectMake(8, 8, rect.size.width - 8 * 2,
-                                                    rect.size.height - 8 * 2)
-                          withAttributes:@{
-                                           NSFontAttributeName : self.font,
-                                           NSForegroundColorAttributeName : [UIColor lightGrayColor],
-                                           NSParagraphStyleAttributeName :
-                                               [NSParagraphStyle defaultParagraphStyle]
-                                           }];
-            } else if (_attributedString) {
-                [_attributedString drawInRect:CGRectMake(8, 8, rect.size.width - 8 * 2,
-                                                         rect.size.height - 8 * 2)];
-            }
+- (void)drawRect:(CGRect)rect{
+    if (self.text.length == 0) {
+        //绘制placeHolder
+        if (_placeHolder.length) {
+            [_placeHolder
+             drawInRect:CGRectMake(
+                                   _placeHolderOrigin.x,
+                                   _placeHolderOrigin.y,
+                                   rect.size.width - _placeHolderOrigin.x * 2,
+                                   rect.size.height - _placeHolderOrigin.y * 2
+                                   )
+             withAttributes:@{
+                              NSFontAttributeName : self.font,
+                              NSForegroundColorAttributeName : [UIColor lightGrayColor],
+                              NSParagraphStyleAttributeName :
+                                  [NSParagraphStyle defaultParagraphStyle]
+                              }];
+        }else if (_attributedString) {
+            [_attributedString
+             drawInRect:CGRectMake(
+                                   _placeHolderOrigin.x,
+                                   _placeHolderOrigin.y,
+                                   rect.size.width - _placeHolderOrigin.x * 2,
+                                   rect.size.height - _placeHolderOrigin.y * 2
+                                   )];
         }
-//    }
+    }
 }
 
 - (void)dealloc{
