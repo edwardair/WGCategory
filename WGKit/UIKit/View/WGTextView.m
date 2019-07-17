@@ -39,10 +39,12 @@
 }
 
 - (void)setPlaceHolderOrigin:(CGPoint)placeHolderOrigin {
+    _placeHolderOrigin = placeHolderOrigin;
     [self setNeedsDisplay];
 }
 
 - (void)setPlaceHolder:(NSString *)placeHolder{
+    _placeHolder = placeHolder;
     [self setNeedsDisplay];
 }
 
