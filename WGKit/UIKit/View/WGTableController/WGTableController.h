@@ -8,41 +8,44 @@
 
 #import <UIKit/UIKit.h>
 @interface WGTableController : NSObject
-+ (void)replaceSelector:(SEL )selector;
++ (void)replaceSelector:(SEL _Nonnull )selector;
 
-@property (nonatomic,assign,readonly) id delegate;
-- (instancetype)initWithTable:(UITableView *)tableView delegate:(id )delegate;
+@property (nonatomic,assign,readonly) id _Nullable delegate;
+- (instancetype _Nonnull )initWithTable:(UITableView *_Nullable)tableView delegate:(id _Nonnull )delegate;
 @end
 
 
 #pragma mark - Category
 @interface WGTableController (DataSource)
 
-- (NSMutableArray *(^)(NSInteger))sectionAtIndex;
+//根据section，获取一组cell
+- (NSMutableArray<UITableViewCell *> *_Nonnull(^_Nonnull)(NSInteger))sectionAtIndex;
+//获取指定cell对应的indexPath
+- (NSArray<NSIndexPath *> *_Nonnull)indexPathesFor:(NSArray<UITableViewCell *> *_Nonnull)cells in:(NSInteger )section;
 
-- (void)addCells:(NSArray<UITableViewCell *> *)cells
+- (void)addCells:(NSArray<UITableViewCell *> *_Nonnull)cells
        atSection:(NSInteger )section;
-- (void)addCells:(NSArray<UITableViewCell *> *)cells
+- (void)addCells:(NSArray<UITableViewCell *> *_Nonnull)cells
        atSection:(NSInteger )section
        animation:(UITableViewRowAnimation)animation;
 
-- (void)insertCells:(NSArray<UITableViewCell *> *)cells
+- (void)insertCells:(NSArray<UITableViewCell *> *_Nonnull)cells
               atRow:(NSInteger )row
           inSection:(NSInteger )section;
-- (void)insertCells:(NSArray<UITableViewCell *> *)cells
+- (void)insertCells:(NSArray<UITableViewCell *> *_Nonnull)cells
               atRow:(NSInteger )row
           inSection:(NSInteger )section
           animation:(UITableViewRowAnimation)animation;
 
-- (void)deleteCellsAtIndexes:(NSArray<NSIndexPath *> *)indexes;
-- (void)deleteCellsAtIndexes:(NSArray<NSIndexPath *> *)indexes
+- (void)deleteCellsAtIndexes:(NSArray<NSIndexPath *> *_Nonnull)indexes;
+- (void)deleteCellsAtIndexes:(NSArray<NSIndexPath *> *_Nonnull)indexes
                    animation:(UITableViewRowAnimation)animation;
 
 /**
  *  reload 重新批量刷新cell高度
  */
 - (void)updateHeightOfAllCells;
-- (void)updateHeightAtIndexes:(NSArray<NSIndexPath *> *)indexes;
+- (void)updateHeightAtIndexes:(NSArray<NSIndexPath *> *_Nonnull)indexes;
 
 @end
 
@@ -51,14 +54,14 @@
 /**
  *  @see[WGTableController wg_replaceSelector:selector withNewSelector:selector]
  */
-- (void)wg_replaceSelector:(SEL )selector;
+- (void)wg_replaceSelector:(SEL _Nonnull )selector;
 /**
  *  在不需继承WGTableController的情况下，增加调用类实现UITableViewDelegat/UITableViewDataSource协议
  *
  *  @param selector    原协议方法
  *  @param newSelector 调用类中，真正实现协议的方法名
  */
-- (void)wg_replaceSelector:(SEL )selector withNewSelector:(SEL )newSelector;
+- (void)wg_replaceSelector:(SEL _Nonnull )selector withNewSelector:(SEL _Nonnull )newSelector;
 
 @end
 

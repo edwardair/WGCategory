@@ -16,21 +16,21 @@
  *
  *  @return UIImage
  */
-- (UIImage *)imageWithTintColor:(UIColor *)tintColor;
+- (UIImage *_Nonnull)imageWithTintColor:(UIColor *_Nonnull)tintColor;
 
-- (UIImage *)roundImageWithRadius:(float )radius;
+- (UIImage *_Nonnull)roundImageWithRadius:(float )radius;
 
 + (CGSize )size:(CGSize )size ThatFits:(CGSize)fitSize;
-- (UIImage *)scaleTo:(CGFloat )scale;
-- (UIImage *)reSizeTo:(CGSize)reSize;
-- (UIImage*)imageScaleToMaxSize:(CGSize )maxSize;
+- (UIImage *_Nonnull)scaleTo:(CGFloat )scale;
+- (UIImage *_Nonnull)reSizeTo:(CGSize)reSize;
+- (UIImage*_Nonnull)imageScaleToMaxSize:(CGSize )maxSize;
 
-- (UIImage *)imageRotatedByRadians:(CGFloat)radians;
-- (UIImage *)imageRotatedByDegrees:(CGFloat)degrees;
+- (UIImage *_Nonnull)imageRotatedByRadians:(CGFloat)radians;
+- (UIImage *_Nonnull)imageRotatedByDegrees:(CGFloat)degrees;
 
-+ (UIImage*)captureView:(UIView *)theView;
-- (UIImage *)fixOrientationWithImageOrientation:(UIImageOrientation )orientation ;
++ (UIImage*_Nonnull)captureView:(UIView *_Nonnull)theView;
+- (UIImage *_Nonnull)fixOrientationWithImageOrientation:(UIImageOrientation )orientation ;
 
-+ (instancetype)imageWithColor:(nonnull UIColor *)color;
++ (instancetype _Nonnull )imageWithColor:(nonnull UIColor *)color;
 
 @end

@@ -9,5 +9,5 @@
 #import <Foundation/Foundation.h>
 
 @interface NSArray (Map)
-- (instancetype)wg_map:(id(^)(id obj,NSUInteger idx))block;
+- (instancetype _Nonnull)wg_map:(id _Nonnull (^_Nonnull)(id _Nonnull obj,NSUInteger idx))block;
 @end

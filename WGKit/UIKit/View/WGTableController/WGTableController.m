@@ -14,12 +14,12 @@
 #import "NSArray+NSIndexPath.h"
 #import <objc/runtime.h>
 #import <objc/message.h>
+#import "NSArray+Map.h"
 
 #pragma mark - Subject
 @interface WGTableSubject:NSObject<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,strong) UITableView *wg_tableView;
-@property (nonatomic,strong) NSMutableArray *wg_dataSource;/**< @[] if not used*/
-@property (nonatomic,strong) NSMutableArray *wg_cells;/**< 通过以下定义方法增加cell*/
+@property (nonatomic,strong) NSMutableArray<NSMutableArray<UITableViewCell *> *> *wg_cells;/**< 通过以下定义方法增加cell*/
 
 /**
  *  安全获取某个section，如果section之前的不存在，则会创建空section
@@ -74,13 +74,7 @@
 }
 
 #pragma mark - getter
-- (NSMutableArray *)wg_dataSource{
-    if (!_wg_dataSource) {
-        _wg_dataSource = [[NSMutableArray alloc]init];
-    }
-    return _wg_dataSource;
-}
-- (NSMutableArray *)wg_cells{
+- (NSMutableArray<NSMutableArray<UITableViewCell *> *> *)wg_cells{
     if (!_wg_cells) {
         _wg_cells = [[NSMutableArray alloc]init];
         [_wg_cells addObject:@[].mutableCopy];//默认始终至少有一个section
@@ -198,10 +192,16 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
 
 #pragma mark - Category
 @implementation WGTableController (DataSource)
-- (NSMutableArray *(^)(NSInteger))sectionAtIndex{
+- (NSMutableArray<UITableViewCell *> *(^)(NSInteger))sectionAtIndex{
     return self.subject.sectionAtIndex;
 }
-
+- (NSArray<NSIndexPath *> *_Nonnull)indexPathesFor:(NSArray<UITableViewCell *> *)cells in:(NSInteger)section{
+    NSArray *tmp = self.sectionAtIndex(section);
+    NSArray *indexPathes = [cells wg_map:^id(id obj, NSUInteger idx) {
+        return [tmp containsObject:obj] ? [NSIndexPath indexPathForRow:idx inSection:section] : nil;
+    }];
+    return indexPathes;
+}
 #pragma mark - add
 - (void)addCells:(NSArray<UITableViewCell *> *)cells
        atSection:(NSInteger)section {

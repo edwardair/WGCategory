@@ -28,7 +28,7 @@ model;                                                                     \
  *
  *  @return if value==nil, return nil; else class.instance
  */
-- (id )modelWithClass:(Class )modelClass;
+- (id _Nullable )modelWithClass:(Class _Nullable )modelClass;
 /**
  *  生成model
  注意：如果value==nil，则会返回nil，可以使用MODELWITHVALUE(value, class)宏来确保返回非nil
@@ -37,7 +37,7 @@ model;                                                                     \
  *
  *  @return if value==nil, return nil; else class.instance
  */
-- (id )modelWithClassName:(NSString *)className;
+- (id _Nullable )modelWithClassName:(NSString *_Nullable)className;
 @end
 
 #pragma mark - JSON转Model时，忽略指定字段
@@ -65,7 +65,7 @@ model;                                                                     \
  *
  *  @param dic 数据源
  */
-- (void)modelUpdateWithData:(NSDictionary *)dic;
+- (void)modelUpdateWithData:(NSDictionary *_Nullable)dic;
 ///**
 // *  同上
 // *
@@ -74,7 +74,7 @@ model;                                                                     \
 // */
 //- (void)modelUpdateWithData:(NSDictionary *)dic;
 
-- (void)modelMergeFromData:(NSDictionary *)dic;
+- (void)modelMergeFromData:(NSDictionary *_Nullable)dic;
 /**
  model与新数据合并，仅更新新数据中存在的字段、并且值不为nil的数据
  ！！！注：如存在子model，子model将重新初始化，而非merge！！！
@@ -83,7 +83,7 @@ model;                                                                     \
  @param dic 新数据
  @param clazz 父类
  */
-- (void)modelMergeFromData:(NSDictionary *)dic inClass:(Class)clazz;
+- (void)modelMergeFromData:(NSDictionary *_Nullable)dic inClass:(Class _Nonnull )clazz;
 
 @end
 
