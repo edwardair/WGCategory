@@ -15,7 +15,7 @@
 - (instancetype _Nonnull )initWithTable:(UITableView *_Nullable)tableView delegate:(id _Nonnull )delegate;
 
 @property (nonatomic,readonly) NSInteger sections;
-@property (nonatomic,readonly) NSInteger(^rows)(NSInteger atSection);
+@property (nonatomic,readonly) NSInteger(^ _Nonnull rows)(NSInteger atSection);
 @end
 
 
