@@ -7,17 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+
 @interface WGTableController : NSObject
 + (void)replaceSelector:(SEL _Nonnull )selector;
 
 @property (nonatomic,assign,readonly) id _Nullable delegate;
 - (instancetype _Nonnull )initWithTable:(UITableView *_Nullable)tableView delegate:(id _Nonnull )delegate;
+
+@property (nonatomic,readonly) NSInteger sections;
+@property (nonatomic,readonly) NSInteger(^rows)(NSInteger atSection);
 @end
 
 
 #pragma mark - Category
 @interface WGTableController (DataSource)
-
 //根据section，获取一组cell
 - (NSMutableArray<UITableViewCell *> *_Nonnull(^_Nonnull)(NSInteger))sectionAtIndex;
 //获取指定cell对应的indexPath

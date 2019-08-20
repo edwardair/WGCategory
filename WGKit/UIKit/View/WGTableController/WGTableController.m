@@ -81,7 +81,6 @@
     }
     return _wg_cells;
 }
-
 #pragma mark - UITableViewDelegate
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return self.wg_cells.count;
@@ -120,6 +119,7 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
 @interface WGTableController ()
 @property (nonatomic,strong) NSMutableDictionary *registedSelectors;
 @property (nonatomic,strong) WGTableSubject *subject;
+@property (nonatomic,copy) NSInteger(^rows)(NSInteger atSection);
 + (void)replaceSelector:(SEL)selector;
 @end
 
@@ -150,13 +150,28 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return self;
 }
 
+#pragma mark - getter
 - (WGTableSubject *)subject{
     if (!_subject) {
         _subject = [[WGTableSubject alloc]init];
     }
     return _subject;
 }
-
+- (NSInteger )sections{
+    return self.subject.wg_cells.count;
+}
+- (NSInteger (^)(NSInteger))rows {
+    if (!_rows) {
+        typeof(self) __weak weakSelf = self;
+        _rows = ^NSInteger(NSInteger atSection){
+            if (atSection < weakSelf.sections) {
+                return weakSelf.subject.wg_cells[atSection].count;
+            }
+            return 0;
+        };
+    }
+    return _rows;
+}
 #pragma mark - 将UITableViewDelegate UITableViewDataSource 的协议方法替换为_objc_msgForward，以便系统转发消息
 + (void)replaceSelector:(SEL )selector{
     Method targetMethod = class_getInstanceMethod(self, selector);
