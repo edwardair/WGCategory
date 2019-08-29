@@ -26,6 +26,7 @@
 //获取指定cell对应的indexPath
 - (NSArray<NSIndexPath *> *_Nonnull)indexPathesFor:(NSArray<UITableViewCell *> *_Nonnull)cells in:(NSInteger )section;
 
+- (void)reloadData;
 - (void)addCells:(NSArray<UITableViewCell *> *_Nonnull)cells
        atSection:(NSInteger )section;
 - (void)addCells:(NSArray<UITableViewCell *> *_Nonnull)cells

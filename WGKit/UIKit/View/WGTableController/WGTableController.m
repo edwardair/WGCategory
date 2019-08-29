@@ -217,6 +217,9 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     }];
     return indexPathes;
 }
+- (void)reloadData {
+    [self.subject.wg_tableView reloadData];
+}
 #pragma mark - add
 - (void)addCells:(NSArray<UITableViewCell *> *)cells
        atSection:(NSInteger)section {
@@ -243,7 +246,7 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
   [self insertCells:cells
           atRow:row
           inSection:section
-          animation:UITableViewRowAnimationLeft];
+          animation:UITableViewRowAnimationAutomatic];
 }
 - (void)insertCells:(NSArray<UITableViewCell *> *)cells
               atRow:(NSInteger)row
