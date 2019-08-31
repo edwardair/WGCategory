@@ -145,4 +145,19 @@ const static NSString *_blank = @"\t";
         return [firstCharacter stringByAppendingString:lastString];
     }
 }
+
+- (NSString *)starString:(NSString *)replace {
+    return [self starString:replace withMaxLenght:4];
+}
+- (NSString *)starString:(NSString *)replace withMaxLenght:(NSUInteger )maxLen {
+    NSUInteger len = MIN(maxLen, self.length / 2);
+    NSMutableString *stars = @"".mutableCopy;
+    for (NSUInteger i = 0; i < len; i++) {
+        [stars appendString:replace];
+    }
+    NSUInteger from = self.length / 2 - len / 2;
+    NSString *newStr = [self stringByReplacingCharactersInRange:NSMakeRange(from, len) withString:stars];
+    return newStr;
+}
+
 @end

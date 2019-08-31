@@ -86,4 +86,10 @@
  *  首字母大写
  */
 - (NSString *)uppercaseFirstString;
+
+/**
+ * 字符串 加星处理，将一般字符替换为replace， maxLen = 4
+ */
+- (NSString *)starString:(NSString *)replace;
+- (NSString *)starString:(NSString *)replace withMaxLenght:(NSUInteger )maxLen;
 @end
