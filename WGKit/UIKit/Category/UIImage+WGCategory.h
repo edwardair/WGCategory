@@ -16,7 +16,7 @@
  *
  *  @return UIImage
  */
-- (UIImage *_Nonnull)imageWithTintColor:(UIColor *_Nonnull)tintColor;
+- (UIImage *_Nonnull)wg_imageWithTintColor:(UIColor *_Nonnull)tintColor;
 
 - (UIImage *_Nonnull)roundImageWithRadius:(float )radius;
 
