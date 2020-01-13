@@ -136,7 +136,7 @@ const static NSString *_blank = @"\t";
     return [returnStr stringByReplacingOccurrencesOfString:@"\\r\\n"withString:@"\n"];
 }
 - (NSString *)uppercaseFirstString {
-    if (self.length==0) {
+    if (self.length==0 || self.length==1) {
         return self;
     }else{
         NSString *firstCharacter = [[self substringToIndex:1] uppercaseString];
