@@ -28,18 +28,67 @@
 @implementation WGNullValueHelper
 @end
 
+#pragma mark - WGModelValueKeysFilter
+@implementation NSString (WGModelValueKeysFilterProtocol)
+- (NSArray<NSString *> *)wg_filterKeys {
+    return @[self];
+}
+@end
+@implementation NSDictionary (WGModelValueKeysFilterProtocol)
+- (NSArray<NSString *> *)wg_filterKeys {
+    return self.allKeys;
+}
+@end
+@implementation NSArray (WGModelValueKeysFilterProtocol)
+- (NSArray<NSString *> *)wg_filterKeys {
+    //使用NSSet去重
+    NSMutableSet<NSString *> *tmp = [NSMutableSet set];
+    for (id v in self) {
+        [tmp addObjectsFromArray:[v wg_filterKeys]];
+    }
+    return tmp.objectEnumerator.allObjects;
+}
+- (NSArray<WGModelValueKeysFilterProtocol> * _Nullable)wg_filterKeys_next:(NSString *)curKey {
+    for (id v in self) {
+        if ([v isEqual:curKey]) {
+            return nil;
+        }else if ([v isKindOfClass:[NSDictionary class]]) {
+            for (NSString *nextKey in [v allKeys]) {
+                if ([nextKey isEqualToString:curKey]) {
+                    id value = ((NSDictionary *)v)[nextKey];
+                    if ([value isKindOfClass:[NSArray class]]) {
+                        return value;
+                    }else {
+                        return [value wg_filterKeys];
+                    }
+                }
+            }
+        }
+    }
+    return nil;
+}
+@end
+@implementation NSObject (WGModelValueKeysFilterProtocol)
+- (NSArray<NSString *> *)wg_filterKeys {
+    return @[];
+}
+@end
+
 #pragma mark -
 @implementation NSObject (WGModelValue)
 - (id )modelValue{
-    return [self modelValueWithClass:[self class]];
+    return [self modelValueForKeys:nil];
 }
-- (id )modelValueWithClass:(Class)aClazz{
+- (id )modelValueForKeys:(NSArray<WGModelValueKeysFilterProtocol> *)keys {
+    return [self modelValueWithClass:[self class] onlyThese:keys];
+}
+- (id )modelValueWithClass:(Class)aClazz onlyThese:(NSArray<WGModelValueKeysFilterProtocol> *)keys{
     //此处方法如被调用，则可以视为self为model，否则会走各自基本类型的方法
     NSMutableDictionary *json = @{}.mutableCopy;
     
     Class superclass = class_getSuperclass(aClazz);
     if(![superclass isEqual:[NSObject class]]){
-        [json addEntriesFromDictionary:[self modelValueWithClass:superclass]];
+        [json addEntriesFromDictionary:[self modelValueWithClass:superclass onlyThese:keys]];
     }
 
     u_int count;
@@ -51,17 +100,33 @@
         //model属性名
         NSString *propertyName_NSString = [NSString stringWithFormat:@"%s",propertyName_CStr];
         
+        //检测是否忽略指定字段
+        if ([self wg_isPropertyIgnores:propertyName_NSString]) {
+            continue;
+        }
+        
+        NSArray<NSString *> *flattenKeys = [keys wg_filterKeys];
+        if (flattenKeys.count && ![flattenKeys containsObject:propertyName_NSString]) {
+            continue;//不需要的字段，直接忽略
+        }
+
         id value = [self valueForKey:propertyName_NSString];
         
         //将value深层转化
-        value = [value modelValue];
+        value = [value modelValueForKeys:[keys wg_filterKeys_next:propertyName_NSString]];
         
         //确保value不是null
         if (!value) {
             value = [self notNullValueWithProperty:properties[i]];
         }
         
-        [json setValue:value forKey:propertyName_NSString];
+        //真实字段名
+        NSString *realPropertyName = propertyName_NSString;
+        //处理字段前缀
+        if (AutoPropertyNamePrefix.length && [realPropertyName hasPrefix:AutoPropertyNamePrefix]) {
+            realPropertyName = [realPropertyName stringByReplacingOccurrencesOfString:AutoPropertyNamePrefix withString:@""];
+        }
+        [json setValue:value forKey:realPropertyName];
     }
     free(properties);
     
@@ -126,13 +191,12 @@
 
 #pragma mark -
 @interface NSArray (WGModelValue)
-- (instancetype)modelValue;
 @end
 @implementation NSArray (WGModelValue)
-- (instancetype )modelValue{
+- (instancetype )modelValueForKeys:(NSArray<WGModelValueKeysFilterProtocol> *)keys {
     NSMutableArray *tmp = [NSMutableArray arrayWithCapacity:self.count];
     for (id obj in self) {
-        [tmp addObject:[obj modelValue]];
+        [tmp addObject:[obj modelValueForKeys:keys]];
     }
     return tmp;
 }
@@ -140,59 +204,64 @@
 
 #pragma mark -
 @interface NSDictionary (WGModelValue)
-- (instancetype)modelValue;
 @end
 @implementation NSDictionary (WGModelValue)
-- (instancetype )modelValue{
-    return self;
+- (instancetype )modelValueForKeys:(NSArray<WGModelValueKeysFilterProtocol> *)keys{
+    NSArray<NSString *> *flattenKeys = [keys wg_filterKeys];
+    NSArray *needKeys = self.allKeys;
+    if (flattenKeys.count) {
+        needKeys = [needKeys wg_map:^NSString * _Nonnull(NSString *  _Nonnull obj, NSUInteger idx) {
+            return [flattenKeys containsObject:obj] ? obj : nil;
+        }];
+    }
+    NSMutableDictionary *result = @{}.mutableCopy;
+    for (NSString *key in needKeys) {
+        [result setObject:[self[key] modelValueForKeys:[keys wg_filterKeys_next:key]] forKey:key];
+    }
+    return result;
 }
 @end
 
 #pragma mark -
 @interface NSString (WGModelValue)
-- (instancetype)modelValue;
 @end
 @implementation NSString (WGModelValue)
-- (instancetype )modelValue{
+- (instancetype )modelValueForKeys:(NSArray<WGModelValueKeysFilterProtocol> *)keys{
     return self;
 }
 @end
 
 #pragma mark -
 @interface NSNumber (WGModelValue)
-- (instancetype)modelValue;
 @end
 @implementation NSNumber (WGModelValue)
-- (instancetype )modelValue{
+- (instancetype )modelValueForKeys:(NSArray<WGModelValueKeysFilterProtocol> *)keys{
     return self;
 }
 @end
 
 #pragma mark -
 @interface NSValue (WGModelValue)
-- (instancetype)modelValue;
 @end
 @implementation NSValue (WGModelValue)
-- (instancetype )modelValue{
+- (instancetype )modelValueForKeys:(NSArray<WGModelValueKeysFilterProtocol> *)keys{
     return self;
 }
 @end
 
 #pragma mark -
 @interface NSData (WGModelValue)
-- (instancetype)modelValue;
 @end
 @implementation NSData (WGModelValue)
-- (instancetype )modelValue{
+- (instancetype )modelValueForKeys:(NSArray<WGModelValueKeysFilterProtocol> *)keys{
     return self;
 }
 @end
 #pragma mark -
 @interface NSDate (WGModelValue)
-- (instancetype)modelValue;
 @end
 @implementation NSDate (WGModelValue)
-- (instancetype )modelValue{
+- (instancetype )modelValueForKeys:(NSArray<WGModelValueKeysFilterProtocol> *)keys{
     return self;
 }
 @end

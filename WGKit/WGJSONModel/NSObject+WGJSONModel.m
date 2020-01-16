@@ -13,6 +13,9 @@
 
 #pragma mark - NSArray
 @implementation NSArray (WGJSONModel)
+- (NSArray<NSString *> *)wg_properties:(Class )clazz{
+    return nil;
+}
 - (id)modelWithClass:(Class)modelClass{
     return [self modelWithClassName:NSStringFromClass(modelClass)];
 }
@@ -33,6 +36,9 @@
 
 #pragma mark - NSDictionary
 @implementation NSDictionary (WGJSONModel)
+- (NSArray<NSString *> *)wg_properties:(Class )clazz{
+    return self.allKeys;
+}
 - (id)modelWithClass:(Class)modelClass{
     return [self modelWithClassName:NSStringFromClass(modelClass)];
 }
@@ -49,6 +55,9 @@
 @end
 #pragma mark - NSNull
 @implementation NSNull (WGJSONModel)
+- (NSArray<NSString *> *)wg_properties:(Class )clazz{
+    return nil;
+}
 - (id)modelWithClass:(Class)modelClass{
     return nil;
 }
@@ -60,6 +69,32 @@
 
 #pragma mark - Model
 @implementation NSObject (WGJSONModel_Append)
+//WGDO:  后续优化：如clazz为系统组件，一般都返回nil
+- (NSArray<NSString *> *)wg_properties:(Class )clazz {
+    NSMutableArray<NSString *> *keys = @[].mutableCopy;
+    
+    //如果父类非NSObject，则递归
+    Class superclass = class_getSuperclass(clazz);
+    if(![superclass isEqual:[NSObject class]]){
+        [keys addObjectsFromArray:[self wg_properties:superclass]];
+    }
+
+    u_int count;
+    objc_property_t *properties  = class_copyPropertyList(clazz, &count);
+    for (int i = 0; i<count; i++){
+        //model属性名
+        const char* propertyName_CStr = property_getName(properties[i]);
+        NSString *propertyName_NSString = [NSString stringWithFormat:@"%s",propertyName_CStr];
+        if (![keys containsObject:propertyName_NSString]) {
+            [keys addObject:propertyName_NSString];
+        }
+    }
+    free(properties);
+    return keys;
+}
+- (NSArray<NSString *> *)wg_properties {
+    return [self wg_properties:[self class]];
+}
 - (BOOL)wg_isPropertyIgnores:(NSString *)key {
     if ([self conformsToProtocol:@protocol(WGJSONModelIgnoreProtocol)]) {
         id<WGJSONModelIgnoreProtocol> tmp = (id<WGJSONModelIgnoreProtocol>)self;

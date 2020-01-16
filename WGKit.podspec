@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "WGKit"
-  s.version      = "0.4.2"
+  s.version      = "0.5.0"
   s.summary      = "A short description of WGKit."
   s.description  = <<-DESC
                    A longer description of WGKit in Markdown format.

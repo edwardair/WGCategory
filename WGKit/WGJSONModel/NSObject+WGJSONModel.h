@@ -60,6 +60,10 @@ model;                                                                     \
 
 #pragma mark - Model
 @interface NSObject (WGJSONModel_Append)
+- (NSArray<NSString *> *)wg_properties;
+- (NSArray<NSString *> *)wg_properties:(Class )clazz;
+- (BOOL)wg_isPropertyIgnores:(NSString *)key;
+
 /**
  *  对存在的model更新数据
  *
