@@ -1,17 +1,12 @@
 Pod::Spec.new do |s|
   s.name         = "WGKit"
   s.version      = "0.5.0"
-  s.summary      = "A short description of WGKit."
+  s.summary      = "WGKit"
   s.description  = <<-DESC
-                   A longer description of WGKit in Markdown format.
-
-                   * Think: Why did you write this? What is the focus? What does it do?
-                   * CocoaPods will be using this to generate tags, and improve search results.
-                   * Try to keep it short, snappy and to the point.
-                   * Finally, don't worry about the indent, CocoaPods strips it!
+                   常用组件封装
                    DESC
-  s.homepage     = "http://EXAMPLE/WGCategory"
-  s.license      = "MIT"
+  s.homepage     = "https://github.com/edwardair/WGCategory.git"
+  s.license      = "LICENSE"
   s.author       = { "Eduoduo" => "550621009@qq.com" }
   s.platform     = :ios, "7.0"
   s.source       = { :git => "https://github.com/edwardair/WGCategory.git", :tag => s.version}
