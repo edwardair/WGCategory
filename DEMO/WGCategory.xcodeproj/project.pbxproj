@@ -157,6 +157,7 @@
 		F74C19BD23D13C8B00D1CF15 /* WGControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGControl.h; sourceTree = "<group>"; };
 		F74C19BE23D13C8B00D1CF15 /* WGCheckBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGCheckBox.h; sourceTree = "<group>"; };
 		F74C19BF23D13C8B00D1CF15 /* WGDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGDefines.h; sourceTree = "<group>"; };
+		F74C19EB23D142A700D1CF15 /* WGKit.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; name = WGKit.podspec; path = ../WGKit.podspec; sourceTree = "<group>"; };
 		F76AE7BE1B55FC2E000B68C6 /* TestTimerVCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestTimerVCViewController.h; sourceTree = "<group>"; };
 		F76AE7BF1B55FC2E000B68C6 /* TestTimerVCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestTimerVCViewController.m; sourceTree = "<group>"; };
 		F79817081D40B8930004884A /* TestSuperTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestSuperTableViewCell.h; sourceTree = "<group>"; };
@@ -362,6 +363,7 @@
 		F7A4F87D1B1D531A00B84A4E = {
 			isa = PBXGroup;
 			children = (
+				F74C19EB23D142A700D1CF15 /* WGKit.podspec */,
 				F74C196123D13C8B00D1CF15 /* WGKit */,
 				F7A4F8881B1D531A00B84A4E /* WGCategory */,
 				F7A4F8A51B1D531A00B84A4E /* WGCategoryTests */,

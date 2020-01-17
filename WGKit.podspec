@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "WGKit"
-  s.version      = "0.5.0"
+  s.version      = "0.5.1"
   s.summary      = "WGKit"
   s.description  = <<-DESC
                    常用组件封装
@@ -8,8 +8,8 @@ Pod::Spec.new do |s|
   s.homepage     = "https://github.com/edwardair/WGCategory.git"
   s.license      = "LICENSE"
   s.author       = { "Eduoduo" => "550621009@qq.com" }
-  s.platform     = :ios, "7.0"
-  s.source       = { :git => "https://github.com/edwardair/WGCategory.git", :tag => s.version}
+  s.platform     = :ios, "8.0"
+  s.source       = { :path => "https://github.com/edwardair/WGCategory.git", :tag => s.version}
   s.requires_arc = true
 
   s.source_files  = 'WGKit/WGDefines.h'
