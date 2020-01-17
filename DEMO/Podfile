@@ -1,6 +1,10 @@
 #/ Uncomment this line to define a global platform for your projec
-platform :ios, '7.0'
+platform :ios, '8.0'
 #use_frameworks!
 inhibit_all_warnings!
 
-pod 'ReactiveCocoa', '~> 2.5'
+target 'WGCategory' do
+    pod 'ReactiveCocoa', '~> 2.5'
+#    pod 'WGKit', :path => '../WGKit.podspec'
+end
+

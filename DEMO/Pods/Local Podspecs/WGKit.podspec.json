@@ -1,0 +1,54 @@
+{
+  "name": "WGKit",
+  "version": "0.5.0",
+  "summary": "WGKit",
+  "description": "常用组件封装",
+  "homepage": "https://github.com/edwardair/WGCategory.git",
+  "license": "LICENSE",
+  "authors": {
+    "Eduoduo": "550621009@qq.com"
+  },
+  "platforms": {
+    "ios": "7.0"
+  },
+  "source": {
+    "git": "https://github.com/edwardair/WGCategory.git",
+    "tag": "0.5.0"
+  },
+  "requires_arc": true,
+  "source_files": "WGKit/WGDefines.h",
+  "public_header_files": "WGKit/WGDefines.h",
+  "subspecs": [
+    {
+      "name": "Core",
+      "source_files": "WGKit/Core/*.{h,m}"
+    },
+    {
+      "name": "UIKit",
+      "subspecs": [
+        {
+          "name": "Category",
+          "source_files": "WGKit/UIKit/Category/*.{h,m}"
+        },
+        {
+          "name": "View",
+          "source_files": "WGKit/UIKit/View/*.{h,m}",
+          "subspecs": [
+            {
+              "name": "WGTableController",
+              "source_files": "WGKit/UIKit/View/WGTableController/*.{h,m}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "WGJSONModel",
+      "source_files": "WGKit/WGJSONModel/*.{h,m}"
+    },
+    {
+      "name": "Other",
+      "source_files": "WGKit/Other/*.{h,m}"
+    }
+  ]
+}

@@ -106,13 +106,6 @@
 }
     
 #pragma mark - 获取属性名对应的Class
-+ (char *)propertyAttributesPrefixWithAttributes:(const char *)property_attributes{
-    size_t len = strlen(property_attributes);
-    char *prefix = malloc(len);
-    memset(prefix, 0, len);
-    memccpy(prefix, property_attributes, ',', len);
-    return prefix;
-}
 + (PropertyClass)propertyClass{
     PropertyClass block = ^ Class (NSString *propertyName){
         return [self getPropertyClass:propertyName];

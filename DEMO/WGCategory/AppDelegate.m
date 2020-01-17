@@ -35,7 +35,7 @@
     ModelB *b = [info modelWithClass:[ModelB class]];
     NSLog(@"%@",b);
     NSDictionary *info2 = [b modelValue];
-    
+    NSLog(@"%@",info2);
     return YES;
 }
 

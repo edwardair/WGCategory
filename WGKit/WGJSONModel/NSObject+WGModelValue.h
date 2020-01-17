@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 @protocol WGModelValueKeysFilterProtocol
 @required
-- (NSArray<NSString *> *)wg_filterKeys;
+- (NSArray<NSString *> *_Nullable)wg_filterKeys;
 @end
 
 @interface NSString (WGModelValueKeysFilter) <WGModelValueKeysFilterProtocol>
@@ -19,7 +19,7 @@
 @interface NSArray (WGModelValueKeysFilter) <WGModelValueKeysFilterProtocol>
 /// 下一级过滤keys
 /// @param curKey: 第一级key，如key对应为NSString(self)，则返回空，如key对应为NSDictionary，则返回字典中key对应的value
-- (NSArray<WGModelValueKeysFilterProtocol> * _Nullable)wg_filterKeys_next:(NSString *)curKey;//下一级过滤keys
+- (NSArray<WGModelValueKeysFilterProtocol> * _Nullable)wg_filterKeys_next:(NSString *_Nullable)curKey;//下一级过滤keys
 @end
 @interface NSObject (WGModelValueKeysFilter) <WGModelValueKeysFilterProtocol>
 @end
@@ -28,9 +28,9 @@
  *  model转NSDictionary、NSArray
  */
 @interface NSObject (WGModelValue)
-- (id )modelValue;
+- (id _Nullable )modelValue;
 
 /// model 转 value
 /// @param keys 仅获取keys对应的值，不支持多级递归
-- (id )modelValueForKeys:(NSArray<WGModelValueKeysFilterProtocol> *)keys;
+- (id _Nullable )modelValueForKeys:(NSArray<WGModelValueKeysFilterProtocol> *_Nullable)keys;
 @end
