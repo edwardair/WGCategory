@@ -7,8 +7,11 @@
 //
 
 #import "NSObject+WGModelValue.h"
+#import "NSObject+WGJSONModel.h"
+#import "NSObject+WGAutoModelHelper.h"
+#import "WGLog.h"
+#import "NSArray+Map.h"
 #import <objc/runtime.h>
-#import "WGDefines.h"
 #pragma mark -
 
 #pragma mark - WGSQL支持的属性转column类型定义

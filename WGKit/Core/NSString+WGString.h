@@ -29,7 +29,7 @@
 //密码
 #define RE_Password @"[a-zA-Z]\\w{5,17}"
 
-
+#import <Foundation/Foundation.h>
 
 @interface NSString(Category)
 
@@ -38,7 +38,7 @@
 *
 *@param 	string 	网络数据对象
 *
-*@return	NSNumber：NSString，NSNull：WGNull，NSString：self，其他：self
+*@return	NSNumber：NSString，NSNull：""，NSString：self，其他：self
 */
 + (NSString *)handleNetString:(id )string;
 

@@ -5,7 +5,8 @@
 //  Copyright (c) 2014年 Apple. All rights reserved.
 //
 
-#import "WGDefines.h"
+
+#import "UIView+WGCategory.h"
 
 @implementation UIImageView (WGCategory)
 #pragma mark - copy zone

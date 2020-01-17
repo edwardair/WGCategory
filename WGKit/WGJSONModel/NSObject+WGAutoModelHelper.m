@@ -8,7 +8,8 @@
 
 #import "NSObject+WGAutoModelHelper.h"
 #import <objc/runtime.h>
-#import "WGDefines.h"
+#import "NSString+WGString.h"
+#import "WGLog.h"
 
 #define PropertyDeclaration(value,propertyAttributes,propertyName) ([NSString stringWithFormat:@"@property (nonatomic,%@) %@ *%@;",[NSObject retainTypeFromValue:value],propertyAttributes,propertyName])
 

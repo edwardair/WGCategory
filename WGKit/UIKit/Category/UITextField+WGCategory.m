@@ -6,8 +6,7 @@
 //  Copyright (c) 2014年 Apple. All rights reserved.
 //
 
-#import "WGDefines.h"
-
+#import "UITextField+WGCategory.h"
 @implementation UITextField (WGCategory)
 #pragma mark copy zone
 - (id )copyWithZone:(NSZone *)zone{

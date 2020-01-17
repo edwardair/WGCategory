@@ -8,7 +8,8 @@
 
 #import "WGPopoverView.h"
 #import <QuartzCore/QuartzCore.h>
-#import "WGDefines.h"
+#import "UIDevice+WGCategory.h"
+
 #define TitleHeight 30
 
 @interface WGPopoverView()

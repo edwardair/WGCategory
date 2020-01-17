@@ -8,7 +8,9 @@
 
 #import "WGTextInputAccessoryView.h"
 #import "UIView+WGCategory.h"
-#import "WGDefines.h"
+#import "WGConstant.h"
+#import "WGLog.h"
+#import "NSObject+WGObject.h"
 
 static WGTextInputAccessoryView *inputAccessoryView = nil;
 
@@ -77,9 +79,6 @@ static WGTextInputAccessoryView *inputAccessoryView = nil;
 }
 - (void)hideEmptyTouchView{
     self.hidden = YES;
-    
-    
-    
 }
 
 #pragma mark - 键盘弹出状态，self接收触摸处理方法

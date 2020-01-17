@@ -7,8 +7,8 @@
 //
 
 
-#import "WGDefines.h"
-#import <objc/runtime.h>
+#import "UILabel+WGCategory.h"
+
 @implementation UILabel (WGCategory)
 #pragma mark copy zone
 - (id )copyWithZone:(NSZone *)zone{

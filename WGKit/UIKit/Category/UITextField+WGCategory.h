@@ -6,6 +6,8 @@
 //  Copyright (c) 2014年 Apple. All rights reserved.
 //
 
+#import <UIKit/UIKit.h>
+#import "UIView+WGCategory.h"
 
 @interface UITextField (WGCategory)
 /**

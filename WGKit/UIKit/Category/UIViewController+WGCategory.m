@@ -6,7 +6,8 @@
 //  Copyright (c) 2013年 Apple. All rights reserved.
 //
 
-#import "WGDefines.h"
+#import <UIKit/UIKit.h>
+#import "UIDevice+WGCategory.h"
 
 #pragma mark - UIViewController
 @interface UIViewController()

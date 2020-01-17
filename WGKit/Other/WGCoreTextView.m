@@ -7,7 +7,7 @@
 //
 
 #import "WGCoreTextView.h"
-#import "WGDefines.h"
+#import "UIView+WGCategory.h"
 @interface WGCoreTextView(){
     CTFramesetterRef _framesetter;
 }

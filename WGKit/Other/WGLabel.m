@@ -7,7 +7,8 @@
 //
 
 #import "WGLabel.h"
-#import "WGDefines.h"
+#import "NSString+WGString.h"
+
 @implementation WGLabel
 
 - (void)setText:(NSString *)text{

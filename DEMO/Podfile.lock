@@ -6,17 +6,51 @@ PODS:
   - ReactiveCocoa/no-arc (2.5)
   - ReactiveCocoa/UI (2.5):
     - ReactiveCocoa/Core
+  - WGKit (0.5.2):
+    - WGKit/Constant (= 0.5.2)
+    - WGKit/Core (= 0.5.2)
+    - WGKit/Other (= 0.5.2)
+    - WGKit/UIKit (= 0.5.2)
+    - WGKit/WGJSONModel (= 0.5.2)
+  - WGKit/Constant (0.5.2)
+  - WGKit/Core (0.5.2):
+    - WGKit/Constant
+  - WGKit/Other (0.5.2):
+    - WGKit/Constant
+    - WGKit/Core
+    - WGKit/UIKit/Category
+  - WGKit/UIKit (0.5.2):
+    - WGKit/UIKit/Category (= 0.5.2)
+    - WGKit/UIKit/View (= 0.5.2)
+  - WGKit/UIKit/Category (0.5.2)
+  - WGKit/UIKit/View (0.5.2):
+    - WGKit/Constant
+    - WGKit/Core
+    - WGKit/UIKit/Category
+    - WGKit/UIKit/View/WGTableController (= 0.5.2)
+  - WGKit/UIKit/View/WGTableController (0.5.2):
+    - WGKit/Constant
+    - WGKit/Core
+    - WGKit/UIKit/Category
+  - WGKit/WGJSONModel (0.5.2):
+    - WGKit/Core
 
 DEPENDENCIES:
   - ReactiveCocoa (~> 2.5)
+  - WGKit (from `../WGKit.podspec`)
 
 SPEC REPOS:
   trunk:
     - ReactiveCocoa
 
+EXTERNAL SOURCES:
+  WGKit:
+    :path: "../WGKit.podspec"
+
 SPEC CHECKSUMS:
   ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
+  WGKit: ca4d9ddf27971bd1e70bf643365179d7c5961125
 
-PODFILE CHECKSUM: 532dbab53dc683c1b523eda6973195d6c293a662
+PODFILE CHECKSUM: 8380bec37f23e0dfa86ee0fe38c101ae78f37ddb
 
 COCOAPODS: 1.8.4

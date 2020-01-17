@@ -9,7 +9,8 @@
 #import "NSObject+WGJSONModel.h"
 #import <objc/runtime.h>
 #import <objc/message.h>
-#import "WGDefines.h"
+#import "NSObject+WGAutoModelHelper.h"
+#import "NSObject+WGObject.h"
 
 #pragma mark - NSArray
 @implementation NSArray (WGJSONModel)

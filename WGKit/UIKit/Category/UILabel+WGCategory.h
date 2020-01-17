@@ -6,7 +6,8 @@
 //  Copyright (c) 2014年 Apple. All rights reserved.
 //
 
-#import "WGDefines.h"
+
+#import "UIView+WGCategory.h"
 
 @interface UILabel (WGCategory)
 /**

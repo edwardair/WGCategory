@@ -1,27 +1,48 @@
 {
   "name": "WGKit",
-  "version": "0.5.0",
+  "version": "0.5.2",
   "summary": "WGKit",
   "description": "常用组件封装",
-  "homepage": "https://github.com/edwardair/WGCategory.git",
+  "homepage": "https://github.com/edwardair/WGTest.git",
   "license": "LICENSE",
   "authors": {
     "Eduoduo": "550621009@qq.com"
   },
   "platforms": {
-    "ios": "7.0"
+    "ios": "8.0"
   },
   "source": {
     "git": "https://github.com/edwardair/WGCategory.git",
-    "tag": "0.5.0"
+    "tag": "0.5.2"
   },
   "requires_arc": true,
-  "source_files": "WGKit/WGDefines.h",
-  "public_header_files": "WGKit/WGDefines.h",
+  "ios": {
+    "frameworks": [
+      "Foundation",
+      "UIKit"
+    ]
+  },
+  "source_files": [
+    "WGKit/WGDefines.h"
+  ],
+  "public_header_files": [
+    "WGKit/WGDefines.h"
+  ],
   "subspecs": [
     {
+      "name": "Constant",
+      "source_files": "WGKit/WGConstant.h",
+      "public_header_files": "WGKit/WGConstant.h"
+    },
+    {
       "name": "Core",
-      "source_files": "WGKit/Core/*.{h,m}"
+      "dependencies": {
+        "WGKit/Constant": [
+
+        ]
+      },
+      "source_files": "WGKit/Core/*.{h,m}",
+      "public_header_files": "WGKit/Core/*.{h}"
     },
     {
       "name": "UIKit",
@@ -32,6 +53,17 @@
         },
         {
           "name": "View",
+          "dependencies": {
+            "WGKit/Core": [
+
+            ],
+            "WGKit/Constant": [
+
+            ],
+            "WGKit/UIKit/Category": [
+
+            ]
+          },
           "source_files": "WGKit/UIKit/View/*.{h,m}",
           "subspecs": [
             {
@@ -44,10 +76,26 @@
     },
     {
       "name": "WGJSONModel",
+      "dependencies": {
+        "WGKit/Core": [
+
+        ]
+      },
       "source_files": "WGKit/WGJSONModel/*.{h,m}"
     },
     {
       "name": "Other",
+      "dependencies": {
+        "WGKit/Constant": [
+
+        ],
+        "WGKit/Core": [
+
+        ],
+        "WGKit/UIKit/Category": [
+
+        ]
+      },
       "source_files": "WGKit/Other/*.{h,m}"
     }
   ]

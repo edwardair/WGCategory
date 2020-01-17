@@ -7,7 +7,9 @@
 //
 
 #import "UITableView+WGAutoLayout.h"
-#import "WGDefines.h"
+#import "UITableViewCell+WGAutoLayout.h"
+#import "UIView+WGCategory.h"
+
 @implementation UITableView (WGAutoLayout)
 - (id )wgDequeueReusableCellWithIdentifier:(NSString *)idfer{
     UITableViewCell *cell = [self dequeueReusableCellWithIdentifier:idfer];

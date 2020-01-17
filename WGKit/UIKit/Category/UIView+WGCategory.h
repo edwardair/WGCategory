@@ -6,6 +6,8 @@
 //  Copyright (c) 2013年 Apple. All rights reserved.
 //
 
+#import <UIKit/UIKit.h>
+
 CGPoint WGCGRectGetCenter(CGRect rect);//获取rect的中心点
 CGRect WGCGRectMoveTo(CGRect rect, CGPoint origin);//以左上角为基准点平移
 CGRect WGCGRectMoveBy(CGRect rect, CGPoint delta);//以左上角为基准点平移

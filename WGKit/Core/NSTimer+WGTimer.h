@@ -6,7 +6,7 @@
 //  Copyright (c) 2014年 Apple. All rights reserved.
 //
 
-
+#import <Foundation/Foundation.h>
 #pragma mark - NSTimer Target Helper
 
 @interface WGTimerTargetHelper:NSObject

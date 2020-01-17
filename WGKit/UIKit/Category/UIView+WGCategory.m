@@ -6,9 +6,10 @@
 //  Copyright (c) 2013年 Apple. All rights reserved.
 //
 
-#import "WGDefines.h"
-#import <objc/runtime.h>
 
+
+#import "UIView+WGCategory.h"
+#import <objc/runtime.h>
 
 @implementation UIView(WGCategory)
 #pragma mark - CGRect

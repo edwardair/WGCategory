@@ -6,8 +6,7 @@
 //  Copyright (c) 2014年 Apple. All rights reserved.
 //
 
-#import "WGDefines.h"
-
+#import "NSTimer+WGTimer.h"
 #pragma mark - NSTimer Target Helper
 
 @implementation WGTimerTargetHelper

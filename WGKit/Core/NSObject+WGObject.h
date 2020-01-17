@@ -6,7 +6,8 @@
 //  Copyright (c) 2013年 Apple. All rights reserved.
 //
 
-
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 #import <objc/runtime.h>
 
 static inline BOOL isInstanceSelectorConformsToProtocol(Protocol *protocol, SEL _cmd){

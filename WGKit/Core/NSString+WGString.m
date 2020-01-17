@@ -6,23 +6,23 @@
 //  Copyright (c) 2013年 Apple. All rights reserved.
 //
 
-#import "WGDefines.h"
+#import "NSString+WGString.h"
 #import <CommonCrypto/CommonDigest.h>
 @implementation NSString(Category)
 #pragma mark ----------------------------
 #pragma mark 检测服务器返回数据是否为null，返回WGNull或者对象为NSNumber转为NSString返回
 + (NSString *)handleNetString:(id )string{
     if ([string isKindOfClass:[NSString class]]) {
-        if ([(NSString *)string length]==0) {//为空字符，按需求返回WGNull
-            return WGNull;
+        if ([(NSString *)string length]==0) {//为空字符
+            return @"";
         }
         return string;
     }
     else if ([string isKindOfClass:[NSNumber class]]) {//为纯数字，格式化
         return [NSString stringWithFormat:@"%@",string];
     }
-    else if([string isKindOfClass:[NSNull class]] || !string){//为null，返回WGNull
-        return WGNull;
+    else if([string isKindOfClass:[NSNull class]] || !string){//为null
+        return @"";
     }
     else{//其他，比如NSArray。。。原类型返回
         return string;
