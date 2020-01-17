@@ -61,8 +61,6 @@ typedef struct WGCoreTextView_Height_CTFramsetter{
 @property (nonatomic,assign)  WGCoreTextView_Height_CTFramsetter height_CTFramsetter;
 /**
  *	@brief	需要在参数设置好之后 手动调用此方法，以便获取到计算出来的text高度，更改self.frame
- *
- *	@return	text适配后的高度
  */
 - (void )update;
 + (WGCoreTextView_Height_CTFramsetter )estimateHeightWithText:(NSString *)text

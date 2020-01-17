@@ -34,7 +34,7 @@
 /**
  *  indexes = NSArray<NSIndexPath *> *
  *
- *  @param 【cells = NSArray<NSArray *> *】 二维数组，为UITableView.dataSource，所有section的数据源
+ *  @param cells = NSArray<NSArray *> *】 二维数组，为UITableView.dataSource，所有section的数据源
  *
  *  @return indexPath对应的cell，只有设置cell.indexPath后，
  */

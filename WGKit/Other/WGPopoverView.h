@@ -13,19 +13,16 @@
 #define kTableView_Title_FontSize 16.f
 /**
 	弹出框的标题
-	@param ^Title block
 	@returns NSString *
  */
 typedef NSString *(^Title)(void);
 /**
 	是否使用默认弹出界面
-	@param ^UserDefinedInterface block
 	@returns YES/NO
  */
 typedef BOOL (^UserDefinedInterface)(void);
 /**
 	弹出框所加载的视图view
-	@param ^LoadingView block
 	@returns UIView* 将要显示的view
  */
 typedef UIView *(^LoadingView)(void);

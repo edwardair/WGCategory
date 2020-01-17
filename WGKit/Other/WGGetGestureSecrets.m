@@ -83,7 +83,7 @@ static int dy[5][5] = {
 /**
  *  以index对应的value为密码第一位，开始计算所有符合条件的密码串
  *
- *  @param index numbers下标
+ *  @param coord numbers下标
  *
  *  @since v1.0
  */

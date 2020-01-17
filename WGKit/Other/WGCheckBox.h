@@ -10,8 +10,6 @@
 
 /**
  *	@brief	checkBox touchesEnd回调方法
- *
- *	@param 	^BoxTouchesEnd 	block
  */
 @class WGCheckBox;
 typedef void (^BoxTouchesEnd)(WGCheckBox *checkBox);

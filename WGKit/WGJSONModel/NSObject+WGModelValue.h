@@ -18,7 +18,7 @@
 @end
 @interface NSArray (WGModelValueKeysFilter) <WGModelValueKeysFilterProtocol>
 /// 下一级过滤keys
-/// @param curKey: 第一级key，如key对应为NSString(self)，则返回空，如key对应为NSDictionary，则返回字典中key对应的value
+/// @param curKey 第一级key，如key对应为NSString(self)，则返回空，如key对应为NSDictionary，则返回字典中key对应的value
 - (NSArray<WGModelValueKeysFilterProtocol> * _Nullable)wg_filterKeys_next:(NSString *_Nullable)curKey;//下一级过滤keys
 @end
 @interface NSObject (WGModelValueKeysFilter) <WGModelValueKeysFilterProtocol>

@@ -713,6 +713,7 @@
 			baseConfigurationReference = 6410406AB87B03BCFBC45A17 /* Pods-WGCategory.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				DEVELOPMENT_TEAM = 9K9256C42S;
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				INFOPLIST_FILE = WGCategory/Info.plist;
@@ -730,6 +731,7 @@
 			baseConfigurationReference = F202139EF7A680A5F8E28A67 /* Pods-WGCategory.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				DEVELOPMENT_TEAM = 9K9256C42S;
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				INFOPLIST_FILE = WGCategory/Info.plist;

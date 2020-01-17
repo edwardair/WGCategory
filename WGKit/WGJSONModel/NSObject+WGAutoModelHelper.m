@@ -41,7 +41,7 @@
 /**
  *  根据类名，返回此类的retain类型，
  *
- *  @param name 类名
+ *  @param value 类名
  *
  *  @return assign、strong、copy
  */
