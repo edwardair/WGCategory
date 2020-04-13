@@ -27,7 +27,7 @@
 		F202139EF7A680A5F8E28A67 /* Pods-WGCategory.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WGCategory.release.xcconfig"; path = "Target Support Files/Pods-WGCategory/Pods-WGCategory.release.xcconfig"; sourceTree = "<group>"; };
 		F7118AEA1CB366F5007AF228 /* SecondTestView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondTestView.h; sourceTree = "<group>"; };
 		F7118AEB1CB366F5007AF228 /* SecondTestView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondTestView.m; sourceTree = "<group>"; };
-		F74C19EB23D142A700D1CF15 /* WGKit.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; name = WGKit.podspec; path = ../WGKit.podspec; sourceTree = "<group>"; };
+		F74C19EB23D142A700D1CF15 /* WGKit.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; name = WGKit.podspec; path = ../WGKit.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		F76AE7BE1B55FC2E000B68C6 /* TestTimerVCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestTimerVCViewController.h; sourceTree = "<group>"; };
 		F76AE7BF1B55FC2E000B68C6 /* TestTimerVCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestTimerVCViewController.m; sourceTree = "<group>"; };
 		F79817081D40B8930004884A /* TestSuperTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestSuperTableViewCell.h; sourceTree = "<group>"; };
