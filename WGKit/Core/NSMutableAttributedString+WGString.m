@@ -34,7 +34,7 @@
     return [self add:text font:font color:color extra:nil];
 }
 - (instancetype)add:(NSString *)text font:(UIFont *)font color:(UIColor *)color extra:(NSDictionary<NSAttributedStringKey,id> *)extra {
-    NSMutableDictionary<NSAttributedStringKey,id> *attributes = @[].mutableCopy;
+    NSMutableDictionary<NSAttributedStringKey,id> *attributes = @{}.mutableCopy;
     if (font) {
         [attributes setObject:font forKey:NSFontAttributeName];
     }
@@ -49,7 +49,7 @@
     return self;
 }
 - (instancetype)addAttributed:(NSRange )inRange font:(UIFont *)font color:(UIColor *)color extra:(NSDictionary<NSAttributedStringKey,id> *)extra {
-    NSMutableDictionary<NSAttributedStringKey,id> *attributes = @[].mutableCopy;
+    NSMutableDictionary<NSAttributedStringKey,id> *attributes = @{}.mutableCopy;
     if (font) {
         [attributes setObject:font forKey:NSFontAttributeName];
     }
