@@ -41,6 +41,12 @@
             return UIDevice_iPhoneXr;
         case 2688:
             return UIDevice_iPhoneXsMax;
+        case 2532:
+            return UIDevice_iPhone12;
+        case 2340:
+            return UIDevice_iPhone12mini;
+        case 2778:
+            return UIDevice_iPhone12ProMax;
         default:
             return UIDevice_Not_Supprot;
     }

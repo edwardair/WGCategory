@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "WGKit"
-  s.version      = "0.5.4"
+  s.version      = "0.5.5"
   s.summary      = "WGKit"
   s.description  = <<-DESC
                    常用组件封装
