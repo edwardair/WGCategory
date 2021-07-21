@@ -8,7 +8,7 @@
 
 #import "NSArray+Map.h"
 
-@implementation NSArray (Map)
+@implementation NSArray (WGMap)
 - (instancetype)wg_map:(id (^)(id,NSUInteger))block{
     NSMutableArray *tmp = [NSMutableArray arrayWithCapacity:self.count];
     [self enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {

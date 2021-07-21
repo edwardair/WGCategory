@@ -8,6 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSArray (Map)
+@interface NSArray (WGMap)
 - (instancetype _Nonnull)wg_map:(id _Nonnull (^_Nonnull)(id _Nonnull obj,NSUInteger idx))block;
 @end
