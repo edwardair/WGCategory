@@ -22,7 +22,11 @@
                                          otherButtonTitles: nil];
     [alert show];
 #else
-    [[[UIAlertController alert:@"" message:msg] cancel:@"OK" handler:nil] show:KeyWindow.rootViewController];
+    [[UIAlertController alertControllerWithTitle:@""
+                                            message:msg
+                                     preferredStyle:UIAlertControllerStyleAlert]
+        showViewController:KeyWindow.rootViewController
+     sender:nil];
 #endif
 }
     
